@@ -1,0 +1,287 @@
+/* ============================================================
+   RESET
+============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: radial-gradient(
+    circle at 50% 35%,
+    #695445 0%,
+    #493b32 48%,
+    #302923 100%
+  );
+
+  font-family: Inter, Arial, sans-serif;
+}
+
+/* ============================================================
+   BLOCK
+============================================================ */
+
+.import-visual {
+  width: 100%;
+
+  padding: 30px;
+}
+
+.import-globe {
+  width: min(760px, 100%);
+
+  margin: 0 auto;
+
+  user-select: none;
+}
+
+.import-globe__svg {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  overflow: visible;
+}
+
+/* ============================================================
+   GLOBE
+============================================================ */
+
+.import-globe__halo {
+  fill: none;
+
+  stroke: rgba(255, 122, 36, 0.055);
+
+  stroke-width: 1;
+}
+
+.import-globe__shell {
+  fill: none;
+
+  stroke: rgba(239, 224, 209, 0.3);
+
+  stroke-width: 1.2;
+}
+
+.import-globe__background {
+  fill: url(#importGlobeGradient);
+}
+
+/* ============================================================
+   GRID
+============================================================ */
+
+.import-grid ellipse {
+  fill: none;
+
+  stroke: rgba(239, 224, 209, 0.07);
+
+  stroke-width: 0.8;
+}
+
+/* ============================================================
+   CONTINENTS
+============================================================ */
+
+.import-continents path {
+  fill: rgba(255, 255, 255, 0.025);
+
+  stroke: rgba(239, 224, 209, 0.11);
+
+  stroke-width: 1;
+}
+
+.import-continents .import-continent--europe {
+  fill: rgba(255, 122, 36, 0.08);
+
+  stroke: rgba(255, 145, 71, 0.3);
+}
+
+/* ============================================================
+   ROUTES
+============================================================ */
+
+.import-routes path {
+  fill: none;
+
+  stroke: rgba(239, 224, 209, 0.27);
+
+  stroke-width: 1;
+
+  stroke-linecap: round;
+
+  stroke-dasharray: 4 6;
+
+  vector-effect: non-scaling-stroke;
+}
+
+/* ============================================================
+   DESTINATION NODES
+============================================================ */
+
+.import-destinations circle {
+  fill: rgba(238, 214, 192, 0.92);
+
+  filter: url(#importSoftGlow);
+}
+
+.import-destinations text {
+  fill: rgba(255, 255, 255, 0.67);
+
+  font-size: 11px;
+
+  letter-spacing: 0.1px;
+
+  pointer-events: none;
+}
+
+/* ============================================================
+   EUROPE
+============================================================ */
+
+.import-europe-hub__pulse {
+  fill: rgba(255, 119, 31, 0.13);
+
+  transform-origin: center;
+
+  animation: importEuropePulse 2.7s ease-out infinite;
+}
+
+.import-europe-hub__ring {
+  fill: none;
+
+  stroke: rgba(255, 173, 108, 0.92);
+
+  stroke-width: 1.4;
+}
+
+.import-europe-hub__point {
+  fill: #ff7924;
+
+  filter: url(#importOrangeGlow);
+}
+
+.import-europe-hub text {
+  fill: #ff9d5d;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+}
+
+@keyframes importEuropePulse {
+  0% {
+    transform: scale(0.55);
+
+    opacity: 0.8;
+  }
+
+  75% {
+    transform: scale(1.35);
+
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.35);
+
+    opacity: 0;
+  }
+}
+
+/* ============================================================
+   DOTS
+============================================================ */
+
+.import-globe-dot {
+  fill: rgba(244, 230, 217, 0.34);
+}
+
+.import-globe-dot--accent {
+  fill: rgba(255, 143, 65, 0.85);
+
+  filter: url(#importOrangeGlow);
+}
+
+/* ============================================================
+   MOVING CARDS
+============================================================ */
+
+.import-transport {
+  pointer-events: none;
+}
+
+.import-transport__bg {
+  fill: rgba(50, 42, 36, 0.92);
+
+  stroke: rgba(255, 255, 255, 0.16);
+
+  stroke-width: 0.8;
+}
+
+.import-transport__icon {
+  fill: none;
+
+  stroke: rgba(255, 246, 238, 0.95);
+
+  stroke-width: 1.45;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+
+  vector-effect: non-scaling-stroke;
+}
+
+.import-transport__text {
+  fill: rgba(255, 244, 235, 0.93);
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  dominant-baseline: middle;
+}
+
+.import-transport__arrow {
+  fill: #ff8130;
+
+  filter: url(#importOrangeGlow);
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 700px) {
+  .import-visual {
+    padding: 10px;
+  }
+
+  .import-destinations text {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .import-europe-hub__pulse {
+    animation: none;
+  }
+}
