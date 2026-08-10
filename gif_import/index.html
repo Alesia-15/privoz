@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>PRIVOZ Import Globe</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <section class="import-visual">
+      <div class="import-globe" id="importGlobe">
+        <svg
+          class="import-globe__svg"
+          viewBox="0 0 760 760"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Международные маршруты импорта PRIVOZ"
+        >
+          <defs>
+            <filter
+              id="importOrangeGlow"
+              x="-100%"
+              y="-100%"
+              width="300%"
+              height="300%"
+            >
+              <feGaussianBlur stdDeviation="4" result="blur" />
+
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+
+            <filter
+              id="importSoftGlow"
+              x="-100%"
+              y="-100%"
+              width="300%"
+              height="300%"
+            >
+              <feGaussianBlur stdDeviation="2" result="blur" />
+
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+
+            <radialGradient id="importGlobeGradient" cx="42%" cy="35%" r="70%">
+              <stop offset="0%" stop-color="#806653" stop-opacity=".21" />
+
+              <stop offset="60%" stop-color="#554438" stop-opacity=".12" />
+
+              <stop offset="100%" stop-color="#352d27" stop-opacity=".05" />
+            </radialGradient>
+
+            <!-- Всё внутри этого круга -->
+            <clipPath id="importGlobeClip">
+              <circle cx="380" cy="380" r="300" />
+            </clipPath>
+          </defs>
+
+          <!-- ==================================================
+               GLOBE
+          =================================================== -->
+
+          <circle class="import-globe__halo" cx="380" cy="380" r="315" />
+
+          <circle class="import-globe__shell" cx="380" cy="380" r="300" />
+
+          <circle class="import-globe__background" cx="380" cy="380" r="300" />
+
+          <!-- ==================================================
+               ВСЁ, ЧТО ДОЛЖНО БЫТЬ ВНУТРИ ШАРА
+          =================================================== -->
+
+          <g clip-path="url(#importGlobeClip)">
+            <!-- ----------------------------------------------
+                 СЕТКА ШАРА
+            ----------------------------------------------- -->
+
+            <g class="import-grid">
+              <ellipse cx="380" cy="380" rx="298" ry="95" />
+
+              <ellipse cx="380" cy="380" rx="298" ry="180" />
+
+              <ellipse cx="380" cy="380" rx="110" ry="298" />
+
+              <ellipse cx="380" cy="380" rx="210" ry="298" />
+            </g>
+
+            <!-- ----------------------------------------------
+                 КОНТИНЕНТЫ
+            ----------------------------------------------- -->
+
+            <g class="import-continents">
+              <!-- North America -->
+              <path
+                d="
+                  M150 267
+                  C174 220 226 199 269 215
+                  C300 226 309 249 291 270
+                  C270 294 243 299 225 324
+                  C206 351 173 345 151 318
+                  C136 300 136 280 150 267
+                  Z
+                "
+              />
+
+              <!-- South America -->
+              <path
+                d="
+                  M248 371
+                  C276 379 296 400 296 428
+                  C296 457 282 477 276 506
+                  C270 535 253 564 234 579
+                  C222 588 207 578 211 559
+                  C216 534 226 512 222 489
+                  C218 463 203 439 210 415
+                  C216 395 226 379 248 371
+                  Z
+                "
+              />
+
+              <!-- Europe -->
+              <path
+                class="import-continent--europe"
+                d="
+                  M362 253
+                  C379 238 409 240 426 252
+                  C440 261 436 278 421 285
+                  C406 293 392 285 378 291
+                  C363 297 347 286 348 272
+                  C349 263 355 258 362 253
+                  Z
+                "
+              />
+
+              <!-- Africa -->
+              <path
+                d="
+                  M378 310
+                  C406 292 441 307 454 335
+                  C468 366 458 395 450 421
+                  C442 450 430 489 407 512
+                  C390 528 372 514 365 488
+                  C359 464 365 440 354 418
+                  C341 390 334 356 347 334
+                  C355 321 366 316 378 310
+                  Z
+                "
+              />
+
+              <!-- Asia -->
+              <path
+                d="
+                  M429 242
+                  C470 216 533 218 578 239
+                  C620 258 650 290 637 322
+                  C627 347 599 357 571 353
+                  C546 349 526 361 509 379
+                  C490 400 460 397 447 378
+                  C435 359 447 334 439 316
+                  C433 300 419 288 418 270
+                  C417 260 421 249 429 242
+                  Z
+                "
+              />
+
+              <!-- Australia -->
+              <path
+                d="
+                  M562 473
+                  C586 456 622 459 641 481
+                  C658 502 650 528 629 540
+                  C609 553 572 548 558 525
+                  C548 507 549 486 562 473
+                  Z
+                "
+              />
+            </g>
+
+            <!-- ----------------------------------------------
+                 ЛИНИИ ИМПОРТА ИЗ ЕВРОПЫ
+            ----------------------------------------------- -->
+
+            <g class="import-routes">
+              <path
+                id="importRouteAmerica"
+                d="
+                  M391 268
+                  C330 245 267 252 204 296
+                "
+              />
+
+              <path
+                id="importRouteSouthAmerica"
+                d="
+                  M391 268
+                  C327 326 280 408 249 503
+                "
+              />
+
+              <path
+                id="importRouteAfrica"
+                d="
+                  M391 268
+                  C411 327 410 390 404 455
+                "
+              />
+
+              <path
+                id="importRouteAsia"
+                d="
+                  M391 268
+                  C455 259 522 278 579 324
+                "
+              />
+
+              <path
+                id="importRouteAustralia"
+                d="
+                  M391 268
+                  C480 327 543 405 599 498
+                "
+              />
+
+              <path
+                id="importRouteEast"
+                d="
+                  M391 268
+                  C474 298 523 350 548 411
+                "
+              />
+            </g>
+
+            <!-- ----------------------------------------------
+                 ТОЧКИ НАЗНАЧЕНИЯ
+            ----------------------------------------------- -->
+
+            <g class="import-destinations">
+              <g transform="translate(204 296)">
+                <circle r="5" />
+                <text x="-8" y="-15" text-anchor="middle">Америка</text>
+              </g>
+
+              <g transform="translate(249 503)">
+                <circle r="5" />
+                <text x="-4" y="25" text-anchor="middle">Южная Америка</text>
+              </g>
+
+              <g transform="translate(404 455)">
+                <circle r="5" />
+                <text x="0" y="25" text-anchor="middle">Африка</text>
+              </g>
+
+              <g transform="translate(579 324)">
+                <circle r="5" />
+                <text x="12" y="-14">Азия</text>
+              </g>
+
+              <g transform="translate(599 498)">
+                <circle r="5" />
+                <text x="0" y="26" text-anchor="middle">Австралия</text>
+              </g>
+
+              <g transform="translate(548 411)">
+                <circle r="4" />
+                <text x="13" y="3">Восток</text>
+              </g>
+            </g>
+
+            <!-- ----------------------------------------------
+                 ЕВРОПА
+            ----------------------------------------------- -->
+
+            <g class="import-europe-hub" transform="translate(391 268)">
+              <circle class="import-europe-hub__pulse" r="23" />
+
+              <circle class="import-europe-hub__ring" r="12" />
+
+              <circle class="import-europe-hub__point" r="5" />
+
+              <text x="0" y="-28" text-anchor="middle">ЕВРОПА</text>
+            </g>
+
+            <!-- ----------------------------------------------
+                 ТОЧКИ ШАРА
+                 создаются JavaScript
+            ----------------------------------------------- -->
+
+            <g class="import-globe-dots"></g>
+
+            <!-- ----------------------------------------------
+                 ТРАНСПОРТ
+                 создаётся JavaScript
+            ----------------------------------------------- -->
+
+            <g class="import-moving-cards"></g>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
