@@ -7,133 +7,250 @@
     <title>PRIVOZ</title>
 
     <link rel="stylesheet" href="style.css" />
-
-    <link rel="stylesheet" href="style_section.css" />
   </head>
 
   <body>
-    <header class="site-header" id="siteHeader">
-      <div class="header-container">
-        <!-- LOGO -->
-
-        <a class="header-logo" href="/" aria-label="PRIVOZ — на главную">
-          <img src="images/logo.svg" alt="PRIVOZ" />
-        </a>
-
-        <!-- DESKTOP NAV -->
-
-        <nav class="desktop-nav" aria-label="Основная навигация">
-          <a class="nav-link" href="#services"> Услуги </a>
-
-          <a class="nav-link" href="#catalog"> Каталог </a>
-
-          <a class="nav-link" href="#solutions"> Решения </a>
-
-          <a class="nav-link" href="#about"> О компании </a>
-        </nav>
-
-        <!-- RIGHT -->
-
-        <div class="header-right">
-          <a class="header-text-link header-consultation" href="#consultation">
-            Онлайн консультация
+    <header class="site-header">
+      <div class="header-shell">
+        <!-- Верхняя часть -->
+        <div class="header-top">
+          <!-- Логотип -->
+          <a href="/" class="logo">
+            <img src="images/logo.svg" alt="Privoz" />
           </a>
+
+          <!-- ЛИЧНЫЙ КАБИНЕТ -->
+          <div class="account-dropdown nav-dropdown">
+            <button class="account-button dropdown-toggle" type="button">
+              <span class="account-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="8" r="4"></circle>
+                  <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"></path>
+                </svg>
+              </span>
+
+              <span class="account-text"> Личный кабинет </span>
+
+              <svg class="account-arrow" viewBox="0 0 12 8" aria-hidden="true">
+                <path d="M1 1.5 6 6.5l5-5" />
+              </svg>
+            </button>
+
+            <div class="dropdown-menu dropdown-menu-account">
+              <a href="/login"> Вход </a>
+
+              <a href="/register"> Регистрация </a>
+            </div>
+          </div>
+
+          <!-- DESKTOP NAV -->
+          <nav class="main-nav">
+            <!-- УСЛУГИ -->
+            <div class="nav-dropdown">
+              <button class="nav-link dropdown-toggle" type="button">
+                Услуги
+
+                <svg viewBox="0 0 12 8" aria-hidden="true">
+                  <path d="M1 1.5 6 6.5l5-5" />
+                </svg>
+              </button>
+
+              <div class="dropdown-menu dropdown-menu-large">
+                <div class="dropdown-heading">Услуги</div>
+
+                <div class="dropdown-grid">
+                  <a href="/services"> Все услуги </a>
+
+                  <a href="/services/export"> Экспорт </a>
+
+                  <a href="/services/import"> Импорт </a>
+
+                  <a href="/services/retail-purchases"> Розничные покупки </a>
+
+                  <a href="/services/search"> Поиск </a>
+
+                  <a href="/services/international-purchases">
+                    Международные закупки
+                  </a>
+
+                  <a href="/services/quality-control"> Контроль качества </a>
+
+                  <a href="/services/international-logistics">
+                    Международная логистика
+                  </a>
+
+                  <a href="/services/expert-support">
+                    Экспертное сопровождение
+                  </a>
+
+                  <a href="/services/additional"> Дополнительные услуги </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- РЕШЕНИЯ -->
+            <div class="nav-dropdown">
+              <button class="nav-link dropdown-toggle" type="button">
+                Решения
+
+                <svg viewBox="0 0 12 8" aria-hidden="true">
+                  <path d="M1 1.5 6 6.5l5-5" />
+                </svg>
+              </button>
+
+              <div class="dropdown-menu dropdown-menu-large">
+                <div class="dropdown-heading">Решения для бизнеса</div>
+
+                <div class="dropdown-grid">
+                  <a href="/solutions/retail"> Розничная торговля </a>
+
+                  <a href="/solutions/manufacturers"> Производители </a>
+
+                  <a href="/solutions/factories"> Заводы </a>
+
+                  <a href="/solutions/wholesale"> Оптовые компании </a>
+
+                  <a href="/solutions/distributors"> Дистрибьюторы </a>
+
+                  <a href="/solutions/retail-business"> Ритейл </a>
+
+                  <a href="/solutions/marketplaces"> Маркетплейсы </a>
+
+                  <a href="/solutions/government">
+                    Государственные предприятия
+                  </a>
+
+                  <a href="/solutions/construction"> Строительные компании </a>
+                </div>
+              </div>
+            </div>
+
+            <a href="/catalog" class="nav-link"> Каталог </a>
+
+            <a href="/about" class="nav-link"> О компании </a>
+          </nav>
+
+          <!-- RIGHT -->
+          <div class="header-actions">
+            <div class="language">
+              <button class="language-btn" type="button">
+                <span class="current-language"> RU </span>
+
+                <svg viewBox="0 0 12 8">
+                  <path d="M1 1.5 6 6.5l5-5" />
+                </svg>
+              </button>
+
+              <div class="language-menu">
+                <button type="button" data-language="RU">RU</button>
+
+                <button type="button" data-language="PL">PL</button>
+
+                <button type="button" data-language="EN">EN</button>
+              </div>
+            </div>
+
+            <a href="/consultation" class="contact-btn">
+              Онлайн-консультация
+            </a>
+
+            <button class="burger" type="button" aria-label="Открыть меню">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div class="mobile-menu">
+        <!-- Услуги -->
+        <div class="mobile-dropdown">
+          <button type="button" class="mobile-dropdown-toggle">
+            Услуги
+
+            <span class="mobile-arrow"> + </span>
+          </button>
+
+          <div class="mobile-submenu">
+            <a href="/services"> Все услуги </a>
+
+            <a href="/services/export"> Экспорт </a>
+
+            <a href="/services/import"> Импорт </a>
+
+            <a href="/services/retail-purchases"> Розничные покупки </a>
+
+            <a href="/services/search"> Поиск </a>
+
+            <a href="/services/international-purchases">
+              Международные закупки
+            </a>
+
+            <a href="/services/quality-control"> Контроль качества </a>
+
+            <a href="/services/international-logistics">
+              Международная логистика
+            </a>
+
+            <a href="/services/expert-support"> Экспертное сопровождение </a>
+
+            <a href="/services/additional"> Дополнительные услуги </a>
+          </div>
+        </div>
+
+        <!-- Решения -->
+        <div class="mobile-dropdown">
+          <button type="button" class="mobile-dropdown-toggle">
+            Решения
+
+            <span class="mobile-arrow"> + </span>
+          </button>
+
+          <div class="mobile-submenu">
+            <a href="/solutions/retail"> Розничная торговля </a>
+
+            <a href="/solutions/manufacturers"> Производители </a>
+
+            <a href="/solutions/factories"> Заводы </a>
+
+            <a href="/solutions/wholesale"> Оптовые компании </a>
+
+            <a href="/solutions/distributors"> Дистрибьюторы </a>
+
+            <a href="/solutions/retail-business"> Ритейл </a>
+
+            <a href="/solutions/marketplaces"> Маркетплейсы </a>
+
+            <a href="/solutions/government"> Государственные предприятия </a>
+
+            <a href="/solutions/construction"> Строительные компании </a>
+          </div>
+        </div>
+
+        <a href="/catalog"> Каталог </a>
+
+        <a href="/about"> О компании </a>
+
+        <!-- Личный кабинет -->
+        <div class="mobile-dropdown">
+          <button type="button" class="mobile-dropdown-toggle">
+            Личный кабинет
+
+            <span class="mobile-arrow"> + </span>
+          </button>
+
+          <div class="mobile-submenu">
+            <a href="/login"> Вход </a>
+
+            <a href="/register"> Регистрация </a>
+          </div>
+        </div>
+
+        <a href="/consultation" class="mobile-contact"> Онлайн-консультация </a>
       </div>
     </header>
-
-    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-      <div class="mobile-menu-backdrop"></div>
-
-      <div class="mobile-menu-panel">
-        <div class="mobile-menu-top">
-          <a class="mobile-logo" href="/" aria-label="PRIVOZ — на главную">
-            <img src="images/logo.svg" alt="PRIVOZ" />
-          </a>
-
-          <button
-            class="mobile-menu-close"
-            type="button"
-            aria-label="Закрыть меню"
-          >
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-
-        <nav class="mobile-nav">
-          <a href="#services">
-            <span>Услуги</span>
-
-            <span class="mobile-nav-arrow">↗</span>
-          </a>
-
-          <a href="#catalog">
-            <span>Каталог</span>
-
-            <span class="mobile-nav-arrow">↗</span>
-          </a>
-
-          <a href="#solutions">
-            <span>Решения</span>
-
-            <span class="mobile-nav-arrow">↗</span>
-          </a>
-
-          <a href="#about">
-            <span>О компании</span>
-
-            <span class="mobile-nav-arrow">↗</span>
-          </a>
-        </nav>
-
-        <div class="mobile-menu-secondary">
-          <a href="#account">
-            <span class="mobile-secondary-icon">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle
-                  cx="12"
-                  cy="8"
-                  r="3.5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-
-                <path
-                  d="M5.5 19C6.1 15.7 8.5 14 12 14C15.5 14 17.9 15.7 18.5 19"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </span>
-
-            Личный кабинет
-          </a>
-
-          <a href="#consultation">
-            <span class="mobile-secondary-icon">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M4 5.5C4 4.7 4.7 4 5.5 4H18.5C19.3 4 20 4.7 20 5.5V14.5C20 15.3 19.3 16 18.5 16H10L6 20V16H5.5C4.7 16 4 15.3 4 14.5V5.5Z"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </span>
-
-            Онлайн консультация
-          </a>
-        </div>
-
-        <a class="mobile-request" href="#request">
-          Оставить заявку
-
-          <span>→</span>
-        </a>
-      </div>
-    </div>
 
     <main>
       <section class="hero">
