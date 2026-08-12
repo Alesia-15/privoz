@@ -1,439 +1,501 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /*
-  ========================================
-  ELEMENTS
-  ========================================
-  */
+  /* ======================================================
+     ELEMENTS
+  ====================================================== */
 
-  const siteHeader = document.querySelector(".site-header");
+  const header = document.querySelector(".site-header");
 
-  const desktopDropdowns = document.querySelectorAll(".nav-dropdown");
+  const megaItems = document.querySelectorAll(".header-nav-item.has-mega-menu");
 
-  const language = document.querySelector(".language");
+  const accountItem = document.querySelector(
+    ".header-nav-item.has-account-menu",
+  );
 
-  const languageButton = document.querySelector(".language-btn");
+  const languageSwitcher = document.querySelector(".language-switcher");
 
-  const languageCurrent = document.querySelector(".current-language");
-
-  const languageOptions = document.querySelectorAll(".language-menu button");
+  const languageButton = document.querySelector(".language-button");
 
   const burger = document.querySelector(".burger");
 
   const mobileMenu = document.querySelector(".mobile-menu");
 
-  const mobileDropdowns = document.querySelectorAll(".mobile-dropdown");
+  const mobileDropdowns = document.querySelectorAll(".mobile-nav-dropdown");
 
-  /*
-  ========================================
-  HEADER SCROLL
-  ========================================
-  */
+  /* ======================================================
+     HEADER ON SCROLL
+  ====================================================== */
 
-  function updateHeader() {
-    if (!siteHeader) {
-      return;
-    }
+  function handleHeaderScroll() {
+    if (!header) return;
 
     if (window.scrollY > 20) {
-      siteHeader.classList.add("scrolled");
+      header.classList.add("is-fixed");
     } else {
-      siteHeader.classList.remove("scrolled");
+      header.classList.remove("is-fixed");
     }
   }
 
-  updateHeader();
+  handleHeaderScroll();
 
-  window.addEventListener("scroll", updateHeader, {
+  window.addEventListener("scroll", handleHeaderScroll, {
     passive: true,
   });
 
-  /*
-  ========================================
-  DESKTOP DROPDOWNS
-  ========================================
-  */
+  /* ======================================================
+     CLOSE DESKTOP MENUS
+  ====================================================== */
 
-  function closeDesktopDropdowns(exception = null) {
-    desktopDropdowns.forEach((dropdown) => {
-      if (dropdown !== exception) {
-        dropdown.classList.remove("active");
+  function closeDesktopMenus(except = null) {
+    megaItems.forEach((item) => {
+      if (item === except) return;
+
+      item.classList.remove("is-open");
+
+      const button = item.querySelector(".mega-menu-toggle");
+
+      if (button) {
+        button.setAttribute("aria-expanded", "false");
       }
     });
+
+    if (accountItem && accountItem !== except) {
+      accountItem.classList.remove("is-open");
+
+      const button = accountItem.querySelector(".account-toggle");
+
+      if (button) {
+        button.setAttribute("aria-expanded", "false");
+      }
+    }
   }
 
-  desktopDropdowns.forEach((dropdown) => {
-    const button = dropdown.querySelector(".dropdown-toggle");
+  /* ======================================================
+     MEGA MENU
+  ====================================================== */
 
-    if (!button) {
-      return;
-    }
+  megaItems.forEach((item) => {
+    const button = item.querySelector(".mega-menu-toggle");
+
+    if (!button) return;
 
     button.addEventListener("click", (event) => {
+      event.preventDefault();
       event.stopPropagation();
 
-      const isOpen = dropdown.classList.contains("active");
+      const isOpen = item.classList.contains("is-open");
 
-      closeDesktopDropdowns(dropdown);
+      closeDesktopMenus(item);
 
-      closeLanguage();
+      item.classList.toggle("is-open", !isOpen);
 
-      dropdown.classList.toggle("active", !isOpen);
+      button.setAttribute("aria-expanded", String(!isOpen));
     });
   });
 
-  /*
-  ========================================
-  LANGUAGE
-  ========================================
-  */
+  /* ======================================================
+     ACCOUNT
+  ====================================================== */
 
-  function closeLanguage() {
-    if (!language) {
-      return;
+  if (accountItem) {
+    const accountButton = accountItem.querySelector(".account-toggle");
+
+    if (accountButton) {
+      accountButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const isOpen = accountItem.classList.contains("is-open");
+
+        closeDesktopMenus(accountItem);
+
+        accountItem.classList.toggle("is-open", !isOpen);
+
+        accountButton.setAttribute("aria-expanded", String(!isOpen));
+      });
     }
-
-    language.classList.remove("active");
   }
 
-  if (language && languageButton) {
+  /* ======================================================
+     LANGUAGE
+  ====================================================== */
+
+  if (languageButton && languageSwitcher) {
     languageButton.addEventListener("click", (event) => {
       event.stopPropagation();
 
-      const isOpen = language.classList.contains("active");
+      const isOpen = languageSwitcher.classList.contains("is-open");
 
-      closeDesktopDropdowns();
+      languageSwitcher.classList.toggle("is-open", !isOpen);
 
-      language.classList.toggle("active", !isOpen);
+      languageButton.setAttribute("aria-expanded", String(!isOpen));
     });
   }
 
-  languageOptions.forEach((option) => {
-    option.addEventListener("click", () => {
-      const selectedLanguage = option.dataset.language;
+  /* ======================================================
+     MOBILE MENU
+  ====================================================== */
 
-      if (selectedLanguage && languageCurrent) {
-        languageCurrent.textContent = selectedLanguage;
-      }
+  function openMobileMenu() {
+    if (!burger || !mobileMenu) {
+      return;
+    }
 
-      closeLanguage();
-    });
-  });
+    burger.classList.add("is-active");
 
-  /*
-  ========================================
-  MOBILE MENU
-  ========================================
-  */
+    burger.setAttribute("aria-expanded", "true");
+
+    burger.setAttribute("aria-label", "Закрыть меню");
+
+    mobileMenu.classList.add("is-open");
+
+    mobileMenu.setAttribute("aria-hidden", "false");
+
+    document.body.classList.add("menu-open");
+  }
 
   function closeMobileMenu() {
-    if (burger) {
-      burger.classList.remove("active");
-
-      burger.setAttribute("aria-expanded", "false");
+    if (!burger || !mobileMenu) {
+      return;
     }
 
-    if (mobileMenu) {
-      mobileMenu.classList.remove("active");
-    }
+    burger.classList.remove("is-active");
+
+    burger.setAttribute("aria-expanded", "false");
+
+    burger.setAttribute("aria-label", "Открыть меню");
+
+    mobileMenu.classList.remove("is-open");
+
+    mobileMenu.setAttribute("aria-hidden", "true");
 
     document.body.classList.remove("menu-open");
+
+    mobileDropdowns.forEach((dropdown) => {
+      dropdown.classList.remove("is-open");
+
+      const submenu = dropdown.querySelector(".mobile-submenu");
+
+      if (submenu) {
+        submenu.style.maxHeight = null;
+      }
+    });
   }
 
   if (burger && mobileMenu) {
-    burger.setAttribute("aria-expanded", "false");
-
-    burger.addEventListener("click", (event) => {
-      event.stopPropagation();
-
-      const shouldOpen = !mobileMenu.classList.contains("active");
-
-      burger.classList.toggle("active", shouldOpen);
-
-      mobileMenu.classList.toggle("active", shouldOpen);
-
-      document.body.classList.toggle("menu-open", shouldOpen);
-
-      burger.setAttribute("aria-expanded", String(shouldOpen));
+    burger.addEventListener("click", () => {
+      if (mobileMenu.classList.contains("is-open")) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
     });
   }
 
-  /*
-  ========================================
-  MOBILE DROPDOWNS
-  ========================================
-  */
+  /* ======================================================
+     MOBILE ACCORDION
+  ====================================================== */
 
   mobileDropdowns.forEach((dropdown) => {
-    const button = dropdown.querySelector(".mobile-dropdown-toggle");
+    const button = dropdown.querySelector(".mobile-nav-toggle");
 
-    if (!button) {
+    const submenu = dropdown.querySelector(".mobile-submenu");
+
+    if (!button || !submenu) {
       return;
     }
 
     button.addEventListener("click", () => {
-      const isOpen = dropdown.classList.contains("active");
+      const isOpen = dropdown.classList.contains("is-open");
 
-      mobileDropdowns.forEach((item) => {
-        if (item !== dropdown) {
-          item.classList.remove("active");
+      mobileDropdowns.forEach((otherDropdown) => {
+        if (otherDropdown === dropdown) {
+          return;
+        }
+
+        otherDropdown.classList.remove("is-open");
+
+        const otherSubmenu = otherDropdown.querySelector(".mobile-submenu");
+
+        if (otherSubmenu) {
+          otherSubmenu.style.maxHeight = null;
         }
       });
 
-      dropdown.classList.toggle("active", !isOpen);
+      dropdown.classList.toggle("is-open", !isOpen);
+
+      if (!isOpen) {
+        submenu.style.maxHeight = submenu.scrollHeight + "px";
+      } else {
+        submenu.style.maxHeight = null;
+      }
     });
   });
 
-  /*
-  ========================================
-  MOBILE LINKS
-  ========================================
-  */
-
-  document.querySelectorAll(".mobile-menu a").forEach((link) => {
-    link.addEventListener("click", () => {
-      closeMobileMenu();
-    });
-  });
-
-  /*
-  ========================================
-  CLICK OUTSIDE
-  ========================================
-  */
+  /* ======================================================
+     CLICK OUTSIDE
+  ====================================================== */
 
   document.addEventListener("click", (event) => {
-    const insideDropdown = event.target.closest(".nav-dropdown");
+    const insideNav = event.target.closest(".header-nav");
 
-    const insideLanguage = event.target.closest(".language");
-
-    const insideMobileMenu = event.target.closest(".mobile-menu");
-
-    const insideBurger = event.target.closest(".burger");
-
-    if (!insideDropdown) {
-      closeDesktopDropdowns();
+    if (!insideNav) {
+      closeDesktopMenus();
     }
 
-    if (!insideLanguage) {
-      closeLanguage();
-    }
+    if (languageSwitcher && !languageSwitcher.contains(event.target)) {
+      languageSwitcher.classList.remove("is-open");
 
-    if (
-      window.innerWidth <= 1150 &&
-      mobileMenu &&
-      mobileMenu.classList.contains("active") &&
-      !insideMobileMenu &&
-      !insideBurger
-    ) {
-      closeMobileMenu();
+      if (languageButton) {
+        languageButton.setAttribute("aria-expanded", "false");
+      }
     }
   });
 
-  /*
-  ========================================
-  ESC
-  ========================================
-  */
+  /* ======================================================
+     ESC
+  ====================================================== */
 
   document.addEventListener("keydown", (event) => {
     if (event.key !== "Escape") {
       return;
     }
 
-    closeDesktopDropdowns();
+    closeDesktopMenus();
 
-    closeLanguage();
+    if (languageSwitcher) {
+      languageSwitcher.classList.remove("is-open");
+    }
+
+    if (languageButton) {
+      languageButton.setAttribute("aria-expanded", "false");
+    }
 
     closeMobileMenu();
   });
 
-  /*
-  ========================================
-  RESIZE
-  ========================================
-  */
+  /* ======================================================
+     CLOSE MOBILE AFTER LINK CLICK
+  ====================================================== */
+
+  if (mobileMenu) {
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
+    });
+  }
+
+  /* ======================================================
+     RESIZE
+  ====================================================== */
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 1150) {
+    if (window.innerWidth > 1120) {
       closeMobileMenu();
-
-      mobileDropdowns.forEach((dropdown) => {
-        dropdown.classList.remove("active");
-      });
-    }
-  });
-
-  /*
-  ========================================
-  PRODUCT SEARCH
-  ========================================
-  */
-
-  const productSearchForm = document.querySelector("#productSearchForm");
-
-  const productSearchInput = document.querySelector("#productSearchInput");
-
-  const productSearchClear = document.querySelector("#productSearchClear");
-
-  const searchExampleButtons = document.querySelectorAll("[data-search]");
-
-  /*
-  Показываем кнопку очистки,
-  если в input что-то введено.
-  */
-
-  function updateClearButton() {
-    if (!productSearchInput || !productSearchClear) {
-      return;
     }
 
-    const hasText = productSearchInput.value.trim().length > 0;
-
-    productSearchClear.classList.toggle("visible", hasText);
-  }
-
-  if (productSearchInput) {
-    productSearchInput.addEventListener("input", updateClearButton);
-  }
-
-  /*
-  Очистка строки
-  */
-
-  if (productSearchClear && productSearchInput) {
-    productSearchClear.addEventListener("click", () => {
-      productSearchInput.value = "";
-
-      updateClearButton();
-
-      productSearchInput.focus();
-    });
-  }
-
-  /*
-  Популярные поисковые запросы
-  */
-
-  searchExampleButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      if (!productSearchInput) {
+    mobileDropdowns.forEach((dropdown) => {
+      if (!dropdown.classList.contains("is-open")) {
         return;
       }
 
-      const query = button.dataset.search || "";
+      const submenu = dropdown.querySelector(".mobile-submenu");
 
-      productSearchInput.value = query;
-
-      updateClearButton();
-
-      productSearchInput.focus();
+      if (submenu) {
+        submenu.style.maxHeight = submenu.scrollHeight + "px";
+      }
     });
   });
 
+  /* ======================================================
+     SCROLL REVEAL
+  ====================================================== */
+
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
   /*
-  ========================================
-  SEARCH SUBMIT
-  ========================================
-
-  Пока backend / AI-поиск не подключён,
-  форма просто имитирует отправку.
-
-  Потом здесь можно сделать fetch()
-  к API.
+    Добавляет класс анимации
+    и delay.
   */
 
-  if (productSearchForm && productSearchInput) {
-    productSearchForm.addEventListener("submit", (event) => {
-      event.preventDefault();
+  function prepareReveal(element, animationClass, delayClass = "") {
+    if (!element) return;
 
-      const query = productSearchInput.value.trim();
+    element.classList.add(animationClass);
 
-      /*
-        Пустой запрос
-        */
+    if (delayClass) {
+      element.classList.add(delayClass);
+    }
+  }
 
-      if (!query) {
-        productSearchInput.focus();
+  /* ======================================================
+     SEARCH REVEAL
+  ====================================================== */
 
-        const wrapper = productSearchInput.closest(
-          ".product-search-input-wrap",
-        );
+  const searchSection = document.querySelector(".ai-search-section");
 
-        if (wrapper) {
-          wrapper.animate(
-            [
-              {
-                transform: "translateX(0)",
-              },
+  if (searchSection) {
+    prepareReveal(searchSection.querySelector(".ai-search-label"), "reveal-up");
 
-              {
-                transform: "translateX(-5px)",
-              },
+    prepareReveal(
+      searchSection.querySelector(".ai-search-line"),
+      "reveal-up",
+      "reveal-delay-1",
+    );
 
-              {
-                transform: "translateX(5px)",
-              },
+    prepareReveal(
+      searchSection.querySelector(".ai-search-title"),
+      "reveal-up",
+      "reveal-delay-2",
+    );
 
-              {
-                transform: "translateX(0)",
-              },
-            ],
-            {
-              duration: 260,
-              easing: "ease",
-            },
-          );
-        }
+    prepareReveal(
+      searchSection.querySelector(".ai-search-description"),
+      "reveal-up",
+      "reveal-delay-3",
+    );
 
-        return;
-      }
+    prepareReveal(
+      searchSection.querySelector(".ai-search-form"),
+      "reveal-scale",
+      "reveal-delay-3",
+    );
 
-      /*
-        Временная имитация поиска
-        */
+    prepareReveal(
+      searchSection.querySelector(".ai-search-tags"),
+      "reveal-up",
+      "reveal-delay-4",
+    );
+  }
 
-      productSearchForm.classList.add("loading");
+  /* ======================================================
+     SERVICE SECTIONS
+  ====================================================== */
 
-      const submitButton = productSearchForm.querySelector(
-        ".product-search-button span",
+  const serviceSections = document.querySelectorAll(".import-section");
+
+  serviceSections.forEach((section) => {
+    const content = section.querySelector(".import-content");
+
+    const label = section.querySelector(".import-label");
+
+    const title = section.querySelector(".import-title");
+
+    const description = section.querySelector(".import-description");
+
+    const button = section.querySelector(".import-button");
+
+    const media = section.querySelector(".import-media-placeholder");
+
+    const shapes = section.querySelectorAll(".import-shape");
+
+    /*
+        EXPORT зеркальный:
+        visual слева, text справа.
+      */
+
+    const isExport = section.classList.contains("export-section");
+
+    /*
+        Сам контейнер content не двигаем,
+        чтобы дочерние элементы могли
+        всплывать по очереди.
+      */
+
+    prepareReveal(label, isExport ? "reveal-right" : "reveal-left");
+
+    prepareReveal(
+      title,
+      isExport ? "reveal-right" : "reveal-left",
+      "reveal-delay-1",
+    );
+
+    prepareReveal(
+      description,
+      isExport ? "reveal-right" : "reveal-left",
+      "reveal-delay-2",
+    );
+
+    prepareReveal(button, "reveal-up", "reveal-delay-3");
+
+    prepareReveal(
+      media,
+      isExport ? "reveal-left" : "reveal-right",
+      "reveal-delay-1",
+    );
+
+    shapes.forEach((shape, index) => {
+      prepareReveal(
+        shape,
+        "reveal-shape",
+        `reveal-delay-${Math.min(index + 1, 4)}`,
       );
-
-      const originalText = submitButton ? submitButton.textContent : "";
-
-      if (submitButton) {
-        submitButton.textContent = "Ищем...";
-      }
-
-      /*
-        Здесь позже можно заменить
-        setTimeout на реальный API:
-
-        fetch("/api/search", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            query
-          })
-        });
-        */
-
-      setTimeout(() => {
-        productSearchForm.classList.remove("loading");
-
-        if (submitButton) {
-          submitButton.textContent = originalText;
-        }
-
-        console.log("Поиск товара:", query);
-      }, 900);
     });
+  });
+
+  /* ======================================================
+     OBSERVER
+  ====================================================== */
+
+  const revealElements = document.querySelectorAll(
+    ".reveal-up, " +
+      ".reveal-left, " +
+      ".reveal-right, " +
+      ".reveal-scale, " +
+      ".reveal-shape",
+  );
+
+  /*
+    Если пользователь отключил анимацию —
+    сразу показываем всё.
+  */
+
+  if (prefersReducedMotion) {
+    revealElements.forEach((element) => {
+      element.classList.add("reveal-visible");
+    });
+
+    return;
   }
 
   /*
-  Инициализация
+    Каждый элемент отслеживается
+    независимо.
   */
 
-  updateClearButton();
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("reveal-visible");
+
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      /*
+          10% элемента должно
+          попасть на экран.
+        */
+
+      threshold: 0.1,
+
+      /*
+          Анимация стартует немного
+          раньше, чем элемент дойдёт
+          далеко вверх.
+        */
+
+      rootMargin: "0px 0px -8% 0px",
+    },
+  );
+
+  revealElements.forEach((element) => {
+    revealObserver.observe(element);
+  });
 });

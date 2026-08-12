@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <title>PRIVOZ</title>
 
@@ -11,497 +17,684 @@
 
   <body>
     <header class="site-header">
-      <div class="header-shell">
-        <!-- Верхняя часть -->
-        <div class="header-top">
-          <!-- Логотип -->
-          <a href="/" class="logo">
-            <img src="images/logo.svg" alt="Privoz" />
+      <div class="header-inner">
+        <!-- LOGO -->
+        <a href="/" class="header-logo" aria-label="Privoz">
+          <img src="images/logo.svg" alt="Privoz" />
+        </a>
+
+        <!-- DESKTOP NAV -->
+        <nav class="header-nav" aria-label="Основное меню">
+          <ul class="header-nav-list">
+            <!-- УСЛУГИ -->
+            <li class="header-nav-item has-mega-menu">
+              <button
+                class="header-nav-link mega-menu-toggle"
+                type="button"
+                aria-expanded="false"
+              >
+                <span>Услуги</span>
+
+                <svg class="nav-arrow" viewBox="0 0 12 8" aria-hidden="true">
+                  <path d="M1 1.5L6 6.5L11 1.5"></path>
+                </svg>
+              </button>
+
+              <div class="mega-menu">
+                <div class="mega-menu-panel">
+                  <div class="mega-menu-main">
+                    <div class="mega-column">
+                      <a href="/services/" class="mega-featured">
+                        <span class="mega-title"> Все услуги </span>
+
+                        <span class="mega-description">
+                          Международная торговля, закупки, логистика и
+                          сопровождение бизнеса
+                        </span>
+                      </a>
+
+                      <a href="/export/" class="mega-link">
+                        <span class="mega-title"> Экспорт </span>
+
+                        <span class="mega-description">
+                          Организация экспортных поставок товаров на
+                          международные рынки
+                        </span>
+                      </a>
+
+                      <a href="/import/" class="mega-link">
+                        <span class="mega-title"> Импорт </span>
+
+                        <span class="mega-description">
+                          Импорт товаров и сопровождение международных сделок
+                        </span>
+                      </a>
+                    </div>
+
+                    <div class="mega-column">
+                      <a href="/retail-purchases/" class="mega-link">
+                        <span class="mega-title"> Розничные покупки </span>
+
+                        <span class="mega-description">
+                          Выкуп товаров для бизнеса и частных клиентов
+                        </span>
+                      </a>
+
+                      <a href="/international-purchases/" class="mega-link">
+                        <span class="mega-title"> Международные закупки </span>
+
+                        <span class="mega-description">
+                          Поиск и закупка товаров по всему миру
+                        </span>
+                      </a>
+
+                      <a href="/quality-control/" class="mega-link">
+                        <span class="mega-title"> Контроль качества </span>
+
+                        <span class="mega-description">
+                          Проверка поставщиков, товаров и производства
+                        </span>
+                      </a>
+                    </div>
+
+                    <div class="mega-column">
+                      <a href="/international-logistics/" class="mega-link">
+                        <span class="mega-title">
+                          Международная логистика
+                        </span>
+
+                        <span class="mega-description">
+                          Доставка грузов международными транспортными
+                          маршрутами
+                        </span>
+                      </a>
+
+                      <a href="/expert-support/" class="mega-link">
+                        <span class="mega-title">
+                          Экспертное сопровождение
+                        </span>
+
+                        <span class="mega-description">
+                          Поддержка сделок и решение нестандартных задач
+                        </span>
+                      </a>
+
+                      <a href="/additional-services/" class="mega-link">
+                        <span class="mega-title"> Дополнительные услуги </span>
+
+                        <span class="mega-description">
+                          Дополнительные решения для международного бизнеса
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- PROMO -->
+                  <a href="/consultation/" class="mega-promo">
+                    <div class="mega-promo-top">
+                      <span class="mega-promo-label"> PRIVOZ </span>
+
+                      <h3>Нужна помощь с международной поставкой?</h3>
+
+                      <p>
+                        Разберём задачу и предложим оптимальную схему работы.
+                      </p>
+                    </div>
+
+                    <span class="mega-promo-button">
+                      Получить консультацию
+
+                      <svg viewBox="0 0 20 20">
+                        <path d="M5 10H15"></path>
+                        <path d="M11 6L15 10L11 14"></path>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- КАТАЛОГ -->
+            <li class="header-nav-item">
+              <a href="/catalog/" class="header-nav-link">
+                <span>Каталог</span>
+              </a>
+            </li>
+
+            <!-- РЕШЕНИЕ -->
+            <li class="header-nav-item has-mega-menu">
+              <button
+                class="header-nav-link mega-menu-toggle"
+                type="button"
+                aria-expanded="false"
+              >
+                <span>Решение</span>
+
+                <svg class="nav-arrow" viewBox="0 0 12 8" aria-hidden="true">
+                  <path d="M1 1.5L6 6.5L11 1.5"></path>
+                </svg>
+              </button>
+
+              <div class="mega-menu">
+                <div class="mega-menu-panel">
+                  <div class="mega-menu-main">
+                    <div class="mega-column">
+                      <a href="/solutions/retail/" class="mega-featured">
+                        <span class="mega-title"> Розничным покупателям </span>
+
+                        <span class="mega-description">
+                          Покупка и доставка товаров из других стран
+                        </span>
+                      </a>
+
+                      <a href="/solutions/manufacturers/" class="mega-link">
+                        <span class="mega-title"> Производителям </span>
+
+                        <span class="mega-description">
+                          Закупка сырья, оборудования и выход на новые рынки
+                        </span>
+                      </a>
+
+                      <a href="/solutions/factories/" class="mega-link">
+                        <span class="mega-title"> Заводам </span>
+
+                        <span class="mega-description">
+                          Международное снабжение и логистические решения
+                        </span>
+                      </a>
+                    </div>
+
+                    <div class="mega-column">
+                      <a href="/solutions/wholesale/" class="mega-link">
+                        <span class="mega-title"> Оптовым компаниям </span>
+
+                        <span class="mega-description">
+                          Закупка крупных партий товаров и организация поставок
+                        </span>
+                      </a>
+
+                      <a href="/solutions/distributors/" class="mega-link">
+                        <span class="mega-title"> Дистрибьюторам </span>
+
+                        <span class="mega-description">
+                          Международные закупки и расширение ассортимента
+                        </span>
+                      </a>
+
+                      <a href="/solutions/retailers/" class="mega-link">
+                        <span class="mega-title"> Ритейлу </span>
+
+                        <span class="mega-description">
+                          Поставка товаров для розничных сетей
+                        </span>
+                      </a>
+                    </div>
+
+                    <div class="mega-column">
+                      <a href="/solutions/marketplaces/" class="mega-link">
+                        <span class="mega-title"> Маркетплейсам </span>
+
+                        <span class="mega-description">
+                          Импорт и поставка товаров для онлайн-площадок
+                        </span>
+                      </a>
+
+                      <a href="/solutions/government/" class="mega-link">
+                        <span class="mega-title">
+                          Государственным предприятиям
+                        </span>
+
+                        <span class="mega-description">
+                          Международные закупки и комплексное сопровождение
+                        </span>
+                      </a>
+
+                      <a href="/solutions/construction/" class="mega-link">
+                        <span class="mega-title"> Строительным компаниям </span>
+
+                        <span class="mega-description">
+                          Поставка оборудования, материалов и комплектующих
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <a href="/solutions/" class="mega-promo mega-promo-dark">
+                    <div>
+                      <span class="mega-promo-label"> РЕШЕНИЯ </span>
+
+                      <h3>Подберём решение под ваш бизнес</h3>
+
+                      <p>
+                        Сформируем схему закупки, логистики и сопровождения.
+                      </p>
+                    </div>
+
+                    <span class="mega-promo-button">
+                      Все решения
+
+                      <svg viewBox="0 0 20 20">
+                        <path d="M5 10H15"></path>
+                        <path d="M11 6L15 10L11 14"></path>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- О КОМПАНИИ -->
+            <li class="header-nav-item">
+              <a href="/about/" class="header-nav-link">
+                <span>О компании</span>
+              </a>
+            </li>
+
+            <!-- ЛИЧНЫЙ КАБИНЕТ -->
+            <li class="header-nav-item has-account-menu">
+              <button
+                class="header-nav-link account-toggle"
+                type="button"
+                aria-expanded="false"
+              >
+                <span>Личный кабинет</span>
+
+                <svg class="nav-arrow" viewBox="0 0 12 8" aria-hidden="true">
+                  <path d="M1 1.5L6 6.5L11 1.5"></path>
+                </svg>
+              </button>
+
+              <div class="account-dropdown">
+                <a href="/login/"> Вход </a>
+
+                <a href="/registration/"> Регистрация </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- RIGHT ACTIONS -->
+        <div class="header-actions">
+          <!-- CONSULTATION -->
+          <a href="#" class="consultation-button consultation-modal-open">
+            <span> Получить консультацию </span>
+
+            <span class="consultation-arrow">
+              <svg viewBox="0 0 20 20">
+                <path d="M5 10H15"></path>
+                <path d="M11 6L15 10L11 14"></path>
+              </svg>
+            </span>
           </a>
 
-          <!-- ЛИЧНЫЙ КАБИНЕТ -->
-          <div class="account-dropdown nav-dropdown">
-            <button class="account-button dropdown-toggle" type="button">
-              <span class="account-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="12" cy="8" r="4"></circle>
-                  <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"></path>
-                </svg>
-              </span>
+          <!-- LANGUAGE - САМОЕ КРАЙНЕЕ СПРАВА -->
+          <div class="language-switcher">
+            <button class="language-button" type="button" aria-expanded="false">
+              RU
 
-              <span class="account-text"> Личный кабинет </span>
-
-              <svg class="account-arrow" viewBox="0 0 12 8" aria-hidden="true">
-                <path d="M1 1.5 6 6.5l5-5" />
+              <svg viewBox="0 0 12 8">
+                <path d="M1 1.5L6 6.5L11 1.5"></path>
               </svg>
             </button>
 
-            <div class="dropdown-menu dropdown-menu-account">
-              <a href="/login"> Вход </a>
-
-              <a href="/register"> Регистрация </a>
+            <div class="language-dropdown">
+              <a href="#" class="is-active">RU</a>
+              <a href="#">EN</a>
+              <a href="#">PL</a>
             </div>
           </div>
 
-          <!-- DESKTOP NAV -->
-          <nav class="main-nav">
-            <!-- УСЛУГИ -->
-            <div class="nav-dropdown">
-              <button class="nav-link dropdown-toggle" type="button">
-                Услуги
-
-                <svg viewBox="0 0 12 8" aria-hidden="true">
-                  <path d="M1 1.5 6 6.5l5-5" />
-                </svg>
-              </button>
-
-              <div class="dropdown-menu dropdown-menu-large">
-                <div class="dropdown-heading">Услуги</div>
-
-                <div class="dropdown-grid">
-                  <a href="/services"> Все услуги </a>
-
-                  <a href="/services/export"> Экспорт </a>
-
-                  <a href="/services/import"> Импорт </a>
-
-                  <a href="/services/retail-purchases"> Розничные покупки </a>
-
-                  <a href="/services/search"> Поиск </a>
-
-                  <a href="/services/international-purchases">
-                    Международные закупки
-                  </a>
-
-                  <a href="/services/quality-control"> Контроль качества </a>
-
-                  <a href="/services/international-logistics">
-                    Международная логистика
-                  </a>
-
-                  <a href="/services/expert-support">
-                    Экспертное сопровождение
-                  </a>
-
-                  <a href="/services/additional"> Дополнительные услуги </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- РЕШЕНИЯ -->
-            <div class="nav-dropdown">
-              <button class="nav-link dropdown-toggle" type="button">
-                Решения
-
-                <svg viewBox="0 0 12 8" aria-hidden="true">
-                  <path d="M1 1.5 6 6.5l5-5" />
-                </svg>
-              </button>
-
-              <div class="dropdown-menu dropdown-menu-large">
-                <div class="dropdown-heading">Решения для бизнеса</div>
-
-                <div class="dropdown-grid">
-                  <a href="/solutions/retail"> Розничная торговля </a>
-
-                  <a href="/solutions/manufacturers"> Производители </a>
-
-                  <a href="/solutions/factories"> Заводы </a>
-
-                  <a href="/solutions/wholesale"> Оптовые компании </a>
-
-                  <a href="/solutions/distributors"> Дистрибьюторы </a>
-
-                  <a href="/solutions/retail-business"> Ритейл </a>
-
-                  <a href="/solutions/marketplaces"> Маркетплейсы </a>
-
-                  <a href="/solutions/government">
-                    Государственные предприятия
-                  </a>
-
-                  <a href="/solutions/construction"> Строительные компании </a>
-                </div>
-              </div>
-            </div>
-
-            <a href="/catalog" class="nav-link"> Каталог </a>
-
-            <a href="/about" class="nav-link"> О компании </a>
-          </nav>
-
-          <!-- RIGHT -->
-          <div class="header-actions">
-            <div class="language">
-              <button class="language-btn" type="button">
-                <span class="current-language"> RU </span>
-
-                <svg viewBox="0 0 12 8">
-                  <path d="M1 1.5 6 6.5l5-5" />
-                </svg>
-              </button>
-
-              <div class="language-menu">
-                <button type="button" data-language="RU">RU</button>
-
-                <button type="button" data-language="PL">PL</button>
-
-                <button type="button" data-language="EN">EN</button>
-              </div>
-            </div>
-
-            <a href="/consultation" class="contact-btn">
-              Онлайн-консультация
-            </a>
-
-            <button class="burger" type="button" aria-label="Открыть меню">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
+          <!-- BURGER -->
+          <button
+            class="burger"
+            type="button"
+            aria-label="Открыть меню"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
 
-      <!-- MOBILE MENU -->
-      <div class="mobile-menu">
-        <!-- Услуги -->
-        <div class="mobile-dropdown">
-          <button type="button" class="mobile-dropdown-toggle">
-            Услуги
+      <!-- MOBILE -->
+      <div class="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-inner">
+          <nav class="mobile-nav">
+            <!-- MOBILE УСЛУГИ -->
+            <div class="mobile-nav-dropdown">
+              <button class="mobile-nav-toggle" type="button">
+                <span>Услуги</span>
+                <span class="mobile-plus"></span>
+              </button>
 
-            <span class="mobile-arrow"> + </span>
-          </button>
+              <div class="mobile-submenu">
+                <a href="/services/">Все услуги</a>
+                <a href="/export/">Экспорт</a>
+                <a href="/import/">Импорт</a>
+                <a href="/retail-purchases/">Розничные покупки</a>
+                <a href="/international-purchases/">Международные закупки</a>
+                <a href="/quality-control/">Контроль качества</a>
+                <a href="/international-logistics/">Международная логистика</a>
+                <a href="/expert-support/">Экспертное сопровождение</a>
+                <a href="/additional-services/">Дополнительные услуги</a>
+              </div>
+            </div>
 
-          <div class="mobile-submenu">
-            <a href="/services"> Все услуги </a>
+            <a href="/catalog/" class="mobile-main-link"> Каталог </a>
 
-            <a href="/services/export"> Экспорт </a>
+            <!-- MOBILE РЕШЕНИЕ -->
+            <div class="mobile-nav-dropdown">
+              <button class="mobile-nav-toggle" type="button">
+                <span>Решение</span>
+                <span class="mobile-plus"></span>
+              </button>
 
-            <a href="/services/import"> Импорт </a>
+              <div class="mobile-submenu">
+                <a href="/solutions/retail/"> Розничным покупателям </a>
 
-            <a href="/services/retail-purchases"> Розничные покупки </a>
+                <a href="/solutions/manufacturers/"> Производителям </a>
 
-            <a href="/services/search"> Поиск </a>
+                <a href="/solutions/factories/"> Заводам </a>
 
-            <a href="/services/international-purchases">
-              Международные закупки
+                <a href="/solutions/wholesale/"> Оптовым компаниям </a>
+
+                <a href="/solutions/distributors/"> Дистрибьюторам </a>
+
+                <a href="/solutions/retailers/"> Ритейлу </a>
+
+                <a href="/solutions/marketplaces/"> Маркетплейсам </a>
+
+                <a href="/solutions/government/">
+                  Государственным предприятиям
+                </a>
+
+                <a href="/solutions/construction/"> Строительным компаниям </a>
+              </div>
+            </div>
+
+            <a href="/about/" class="mobile-main-link"> О компании </a>
+
+            <!-- MOBILE CABINET -->
+            <div class="mobile-nav-dropdown">
+              <button class="mobile-nav-toggle" type="button">
+                <span>Личный кабинет</span>
+                <span class="mobile-plus"></span>
+              </button>
+
+              <div class="mobile-submenu">
+                <a href="/login/">Вход</a>
+                <a href="/registration/">Регистрация</a>
+              </div>
+            </div>
+          </nav>
+
+          <div class="mobile-bottom">
+            <a href="#" class="mobile-consultation consultation-modal-open">
+              Получить консультацию
             </a>
 
-            <a href="/services/quality-control"> Контроль качества </a>
-
-            <a href="/services/international-logistics">
-              Международная логистика
-            </a>
-
-            <a href="/services/expert-support"> Экспертное сопровождение </a>
-
-            <a href="/services/additional"> Дополнительные услуги </a>
+            <div class="mobile-languages">
+              <a href="#" class="is-active">RU</a>
+              <a href="#">EN</a>
+              <a href="#">PL</a>
+            </div>
           </div>
         </div>
-
-        <!-- Решения -->
-        <div class="mobile-dropdown">
-          <button type="button" class="mobile-dropdown-toggle">
-            Решения
-
-            <span class="mobile-arrow"> + </span>
-          </button>
-
-          <div class="mobile-submenu">
-            <a href="/solutions/retail"> Розничная торговля </a>
-
-            <a href="/solutions/manufacturers"> Производители </a>
-
-            <a href="/solutions/factories"> Заводы </a>
-
-            <a href="/solutions/wholesale"> Оптовые компании </a>
-
-            <a href="/solutions/distributors"> Дистрибьюторы </a>
-
-            <a href="/solutions/retail-business"> Ритейл </a>
-
-            <a href="/solutions/marketplaces"> Маркетплейсы </a>
-
-            <a href="/solutions/government"> Государственные предприятия </a>
-
-            <a href="/solutions/construction"> Строительные компании </a>
-          </div>
-        </div>
-
-        <a href="/catalog"> Каталог </a>
-
-        <a href="/about"> О компании </a>
-
-        <!-- Личный кабинет -->
-        <div class="mobile-dropdown">
-          <button type="button" class="mobile-dropdown-toggle">
-            Личный кабинет
-
-            <span class="mobile-arrow"> + </span>
-          </button>
-
-          <div class="mobile-submenu">
-            <a href="/login"> Вход </a>
-
-            <a href="/register"> Регистрация </a>
-          </div>
-        </div>
-
-        <a href="/consultation" class="mobile-contact"> Онлайн-консультация </a>
       </div>
     </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-container">
-          <!-- Левая часть -->
-          <div class="hero-content">
-            <div class="hero-label">
-              <span class="hero-label-mark"></span>
-              Закупки • Торговля • Логистика
-            </div>
+    <section class="hero-section">
+      <div class="hero-bg-glow hero-bg-glow-1"></div>
+      <div class="hero-bg-glow hero-bg-glow-2"></div>
 
-            <h1 class="hero-title">
-              <span class="hero-brand">PRIVOZ</span>
-              Комплексные решения
-              <br />
-              в области закупок
-              <br />
-              и торговли
-            </h1>
+      <div class="hero-container">
+        <div class="hero-content">
+          <span class="hero-label">PRIVOZ</span>
 
-            <p class="hero-description">
-              Помогаем бизнесу находить товары, организовывать закупки,
-              контролировать качество и выстраивать международную логистику.
-            </p>
+          <h1 class="hero-title">
+            Комплексные решения
+            <br />
+            в области закупок
+            <br />
+            и торговли
+          </h1>
 
-            <div class="hero-actions">
-              <a href="/consultation" class="hero-btn hero-btn-primary">
-                Обсудить задачу
+          <p class="hero-text">
+            PRIVOZ помогает компаниям выстраивать эффективные закупки,
+            международные поставки и торговые процессы, объединяя экспертизу,
+            логистику и сопровождение в одном решении.
+          </p>
 
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12h14"></path>
-                  <path d="m14 7 5 5-5 5"></path>
-                </svg>
-              </a>
+          <div class="hero-actions">
+            <a href="#" class="hero-button hero-button-outline">
+              Подробнее
+              <span>›</span>
+            </a>
 
-              <a href="/services" class="hero-btn hero-btn-secondary">
-                Наши услуги
-              </a>
-            </div>
-
-            <!-- Мини-преимущества -->
-            <div class="hero-features">
-              <div class="hero-feature">
-                <strong>15+</strong>
-                <span>лет опыта</span>
-              </div>
-
-              <div class="hero-feature">
-                <strong>24/7</strong>
-                <span>на связи</span>
-              </div>
-
-              <div class="hero-feature">
-                <strong>Европа</strong>
-                <span>и международные рынки</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Правая часть -->
-          <div class="hero-media">
-            <div class="hero-media-placeholder">
-              <!-- Декор -->
-              <span class="hero-decoration hero-decoration-one"></span>
-              <span class="hero-decoration hero-decoration-two"></span>
-
-              <!-- Заглушка -->
-              <div class="hero-placeholder-content">
-                <div class="hero-play">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M9 7l8 5-8 5V7Z"></path>
-                  </svg>
-                </div>
-
-                <div class="hero-placeholder-text">
-                  <strong>Видео / Фото</strong>
-                  <span>Место для будущего контента</span>
-                </div>
-              </div>
-
-              <div class="hero-media-badge">
-                <span class="hero-media-dot"></span>
-
-                Международная торговля
-                <br />
-                без лишних границ
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="product-search-section" id="product-search">
-        <div class="product-search-container">
-          <div class="product-search-head">
-            <div class="section-label">
-              <span class="section-label-line"></span>
-              Поиск товара
-            </div>
-
-            <h2 class="product-search-title">
-              Найдите товар и производителя
-              <span>за несколько секунд</span>
-            </h2>
-
-            <p class="product-search-description">
-              Наш AI-консультант поможет подобрать продукцию и производителя по
-              названию. Выполните поиск среди миллионов товаров от проверенных
-              производителей и поставщиков.
-            </p>
-          </div>
-
-          <div class="product-search-box">
-            <form class="product-search-form" id="productSearchForm">
-              <div class="product-search-input-wrap">
-                <svg
-                  class="product-search-icon"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <circle cx="11" cy="11" r="7"></circle>
-                  <path d="m16 16 5 5"></path>
-                </svg>
-
-                <input
-                  type="search"
-                  id="productSearchInput"
-                  class="product-search-input"
-                  placeholder="Например: промышленный насос, кофе, оборудование..."
-                  autocomplete="off"
-                />
-
-                <button
-                  class="product-search-clear"
-                  id="productSearchClear"
-                  type="button"
-                  aria-label="Очистить поиск"
-                >
-                  <svg viewBox="0 0 24 24">
-                    <path d="M6 6l12 12"></path>
-                    <path d="M18 6 6 18"></path>
-                  </svg>
-                </button>
-              </div>
-
-              <button type="submit" class="product-search-button">
-                <span>Найти товар</span>
-
-                <svg viewBox="0 0 24 24">
-                  <path d="M5 12h14"></path>
-                  <path d="m14 7 5 5-5 5"></path>
-                </svg>
-              </button>
-            </form>
-
-            <div class="product-search-bottom">
-              <div class="product-search-hint">
-                <span class="search-status-dot"></span>
-                AI-консультант готов к поиску
-              </div>
-
-              <div class="product-search-examples">
-                <span>Популярные запросы:</span>
-
-                <button type="button" data-search="Электроника">
-                  Электроника
-                </button>
-
-                <button type="button" data-search="Оборудование">
-                  Оборудование
-                </button>
-
-                <button type="button" data-search="Стройматериалы">
-                  Стройматериалы
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="import-section" id="import">
-        <div class="import-container">
-          <!-- Левая часть: фото / видео -->
-          <div class="import-media">
-            <div class="import-media-placeholder">
-              <span class="import-decor import-decor-top"></span>
-              <span class="import-decor import-decor-bottom"></span>
-
-              <div class="import-placeholder-content">
-                <div class="import-placeholder-icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M9 7l8 5-8 5V7Z"></path>
-                  </svg>
-                </div>
-
-                <div class="import-placeholder-text">
-                  <strong>Фото / Видео</strong>
-                  <span>Место для будущего контента</span>
-                </div>
-              </div>
-
-              <div class="import-media-label">Международные поставки</div>
-            </div>
-          </div>
-
-          <!-- Правая часть -->
-          <div class="import-content">
-            <div class="section-label">
-              <span class="section-label-line"></span>
-              Международные поставки
-            </div>
-
-            <h2 class="import-title">Импорт</h2>
-
-            <p class="import-description">
-              Организуем полный цикл поставки продукции в любую страну мира.
-              Помогаем найти надежного производителя, провести переговоры,
-              проверить качество товара, оформить документы и доставить груз до
-              вашего склада.
-            </p>
-
-            <div class="import-services">
-              <div class="import-service">
-                <span class="import-service-number">01</span>
-                <span>Поиск производителя</span>
-              </div>
-
-              <div class="import-service">
-                <span class="import-service-number">02</span>
-                <span>Проверка качества</span>
-              </div>
-
-              <div class="import-service">
-                <span class="import-service-number">03</span>
-                <span>Документы и логистика</span>
-              </div>
-            </div>
-
-            <a href="/services/import" class="import-button">
-              <span>Подробнее</span>
-
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M5 12h14"></path>
-                <path d="m14 7 5 5-5 5"></path>
-              </svg>
+            <a
+              href="#"
+              class="hero-button hero-button-solid consultation-modal-open"
+            >
+              Получить консультацию
+              <span>›</span>
             </a>
           </div>
         </div>
-      </section>
-    </main>
+
+        <div class="hero-media">
+          <div class="hero-media-placeholder">
+            <div class="hero-media-placeholder-inner">
+              <span class="hero-media-badge">ЗАГЛУШКА</span>
+              <h3>Фото / Видео</h3>
+              <p>Здесь будет фото, видео или фирменная визуализация</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-search-section">
+      <div class="ai-search-container">
+        <div class="ai-search-head">
+          <span class="ai-search-label">AI SEARCH</span>
+
+          <span class="ai-search-line"></span>
+
+          <h2 class="ai-search-title">
+            Найдите товар и производителя
+            <br />
+            за несколько секунд
+          </h2>
+
+          <p class="ai-search-description">
+            Наш AI-консультант поможет подобрать продукцию и производителя по
+            названию. Выполните поиск среди миллионов товаров от проверенных
+            производителей и поставщиков.
+          </p>
+        </div>
+
+        <div class="ai-search-form-wrap">
+          <form class="ai-search-form" action="#" method="get">
+            <div class="ai-search-input-wrap">
+              <svg
+                class="ai-search-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="6.5"></circle>
+                <path d="M16 16L21 21"></path>
+              </svg>
+
+              <input
+                type="text"
+                class="ai-search-input"
+                placeholder="Введите название товара или производителя"
+                aria-label="Поиск товара или производителя"
+              />
+            </div>
+
+            <button type="submit" class="ai-search-button">
+              <span>Найти товар</span>
+
+              <span class="ai-search-button-arrow">
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M5 10H15"></path>
+                  <path d="M11 6L15 10L11 14"></path>
+                </svg>
+              </span>
+            </button>
+          </form>
+
+          <div class="ai-search-tags">
+            <span class="ai-search-tag-label">Примеры:</span>
+
+            <a href="#" class="ai-search-tag">Станки</a>
+            <a href="#" class="ai-search-tag">Электроника</a>
+            <a href="#" class="ai-search-tag">Текстиль</a>
+            <a href="#" class="ai-search-tag">Упаковка</a>
+            <a href="#" class="ai-search-tag">Запчасти</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="import-section">
+      <div class="import-container">
+        <div class="import-content">
+          <span class="import-label">ИМПОРТ</span>
+
+          <h2 class="import-title">
+            Полный цикл
+            <br />
+            международной
+            <br />
+            поставки
+          </h2>
+
+          <p class="import-description">
+            Организуем полный цикл поставки продукции в любую страну мира.
+            Помогаем найти надежного производителя, провести переговоры,
+            проверить качество товара, оформить документы и доставить груз до
+            вашего склада.
+          </p>
+
+          <a href="/import/" class="import-button">
+            <span>Подробнее</span>
+
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M5 10H15"></path>
+              <path d="M11 6L15 10L11 14"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="import-visual">
+          <div class="import-shape import-shape-1"></div>
+          <div class="import-shape import-shape-2"></div>
+          <div class="import-shape import-shape-3"></div>
+
+          <div class="import-media-placeholder">
+            <div class="import-media-inner">
+              <span class="import-media-label">IMAGE / VIDEO</span>
+
+              <h3>Визуализация международных поставок</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="import-section export-section">
+      <div class="import-container export-container">
+        <!-- ВИЗУАЛ СЛЕВА -->
+        <div class="import-visual export-visual">
+          <div class="import-shape import-shape-1"></div>
+          <div class="import-shape import-shape-2"></div>
+          <div class="import-shape import-shape-3"></div>
+
+          <div class="import-media-placeholder">
+            <div class="import-media-inner">
+              <span class="import-media-label"> IMAGE / VIDEO </span>
+
+              <h3>Визуализация международного экспорта</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- КОНТЕНТ СПРАВА -->
+        <div class="import-content export-content">
+          <span class="import-label"> ЭКСПОРТ </span>
+
+          <h2 class="import-title">
+            Международный
+            <br />
+            экспорт
+            <br />
+            продукции
+          </h2>
+
+          <p class="import-description">
+            Организуем полный цикл экспорта продукции в любую страну мира.
+            Помогаем найти покупателей, подготовить необходимую документацию,
+            оформить таможенные процедуры и обеспечить безопасную международную
+            доставку груза.
+          </p>
+
+          <a href="/export/" class="import-button">
+            <span>Подробнее</span>
+
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M5 10H15"></path>
+              <path d="M11 6L15 10L11 14"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="import-section retail-section">
+      <div class="import-container retail-container">
+        <!-- КОНТЕНТ СЛЕВА -->
+        <div class="import-content retail-content">
+          <span class="import-label"> РОЗНИЧНЫЕ ПОКУПКИ </span>
+
+          <h2 class="import-title">
+            Покупки товаров
+            <br />
+            по всему миру
+          </h2>
+
+          <p class="import-description">
+            Помогаем приобрести товары у производителей и в интернет-магазинах.
+          </p>
+
+          <a href="/retail-purchases/" class="import-button">
+            <span>Подробнее</span>
+
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M5 10H15"></path>
+              <path d="M11 6L15 10L11 14"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- ЗАГЛУШКА СПРАВА -->
+        <div class="import-visual retail-visual">
+          <div class="import-shape import-shape-1"></div>
+          <div class="import-shape import-shape-2"></div>
+          <div class="import-shape import-shape-3"></div>
+
+          <div class="import-media-placeholder">
+            <div class="import-media-inner">
+              <span class="import-media-label"> IMAGE / VIDEO </span>
+
+              <h3>Покупки у производителей и в интернет-магазинах</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script src="script.js"></script>
   </body>
