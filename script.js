@@ -436,6 +436,200 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ======================================================
+     ABOUT COMPANY REVEAL
+  ====================================================== */
+
+  const aboutSection = document.querySelector(".about-company-section");
+
+  if (aboutSection) {
+    const aboutLabel = aboutSection.querySelector(".about-company-label");
+
+    const aboutTitle = aboutSection.querySelector(".about-company-title");
+
+    const aboutText = aboutSection.querySelector(".about-company-text");
+
+    const aboutButton = aboutSection.querySelector(".about-company-button");
+
+    const aboutLogo = aboutSection.querySelector(".about-logo-center");
+
+    const aboutCards = aboutSection.querySelectorAll(".about-card");
+
+    prepareReveal(aboutLabel, "reveal-left");
+
+    prepareReveal(aboutTitle, "reveal-left", "reveal-delay-1");
+
+    prepareReveal(aboutText, "reveal-left", "reveal-delay-2");
+
+    prepareReveal(aboutButton, "reveal-up", "reveal-delay-3");
+
+    /*
+      Центральный логотип
+    */
+
+    prepareReveal(aboutLogo, "reveal-scale", "reveal-delay-1");
+
+    /*
+      Карточки появляются
+      одна за другой
+    */
+
+    aboutCards.forEach((card, index) => {
+      const delay = Math.min(index + 1, 5);
+
+      prepareReveal(card, "reveal-scale", `reveal-delay-${delay}`);
+    });
+  }
+
+  /* ======================================================
+     BUSINESS SOLUTIONS REVEAL
+  ====================================================== */
+
+  const businessSection = document.querySelector(".business-solutions-section");
+
+  if (businessSection) {
+    const businessLabel = businessSection.querySelector(
+      ".business-solutions-label",
+    );
+
+    const businessTitle = businessSection.querySelector(
+      ".business-solutions-title",
+    );
+
+    const businessDescription = businessSection.querySelector(
+      ".business-solutions-description",
+    );
+
+    const businessCards = businessSection.querySelectorAll(
+      ".business-solution-card",
+    );
+
+    prepareReveal(businessLabel, "reveal-up");
+
+    prepareReveal(businessTitle, "reveal-up", "reveal-delay-1");
+
+    prepareReveal(businessDescription, "reveal-up", "reveal-delay-2");
+
+    /*
+      4 карточки первого ряда
+      и затем 4 второго ряда.
+    */
+
+    businessCards.forEach((card, index) => {
+      const positionInRow = index % 4;
+
+      const delay = positionInRow + 1;
+
+      prepareReveal(card, "reveal-up", `reveal-delay-${delay}`);
+    });
+  }
+
+  /* ======================================================
+     PARTNERS REVEAL
+  ====================================================== */
+
+  const partnersSection = document.querySelector(".partners-section");
+
+  if (partnersSection) {
+    const partnersLabel = partnersSection.querySelector(".partners-label");
+
+    const partnersTitle = partnersSection.querySelector(".partners-title");
+
+    const partnersDescription = partnersSection.querySelector(
+      ".partners-description",
+    );
+
+    const partnerLogos = partnersSection.querySelectorAll(".partner-logo");
+
+    prepareReveal(partnersLabel, "reveal-left");
+
+    prepareReveal(partnersTitle, "reveal-left", "reveal-delay-1");
+
+    prepareReveal(partnersDescription, "reveal-left", "reveal-delay-2");
+
+    /*
+      Логотипы всплывают волной.
+      На десктопе 5 элементов в ряду.
+    */
+
+    partnerLogos.forEach((logo, index) => {
+      const positionInRow = index % 5;
+
+      const delay = Math.min(positionInRow + 1, 5);
+
+      prepareReveal(logo, "reveal-scale", `reveal-delay-${delay}`);
+    });
+  }
+
+  /* ======================================================
+     REQUEST FORM REVEAL
+  ====================================================== */
+
+  const requestSection = document.querySelector(".request-section");
+
+  if (requestSection) {
+    const requestLabel = requestSection.querySelector(".request-label");
+
+    const requestTitle = requestSection.querySelector(".request-title");
+
+    const requestText = requestSection.querySelector(".request-text");
+
+    const requestForm = requestSection.querySelector(".request-form");
+
+    const requestFields = requestSection.querySelectorAll(".request-field");
+
+    const requestBottom = requestSection.querySelector(".request-form-bottom");
+
+    /*
+      Левая колонка
+    */
+
+    prepareReveal(requestLabel, "reveal-left");
+
+    prepareReveal(requestTitle, "reveal-left", "reveal-delay-1");
+
+    prepareReveal(requestText, "reveal-left", "reveal-delay-2");
+
+    /*
+      Сама форма появляется справа
+    */
+
+    prepareReveal(requestForm, "reveal-right", "reveal-delay-1");
+
+    /*
+      Поля слегка всплывают
+      внутри формы
+    */
+
+    requestFields.forEach((field, index) => {
+      const delay = Math.min(index + 1, 5);
+
+      prepareReveal(field, "reveal-up", `reveal-delay-${delay}`);
+    });
+
+    prepareReveal(requestBottom, "reveal-up", "reveal-delay-4");
+  }
+
+  /* ======================================================
+     FOOTER REVEAL
+  ====================================================== */
+
+  const footer = document.querySelector(".site-footer");
+
+  if (footer) {
+    const footerBrand = footer.querySelector(".footer-brand");
+
+    const footerNav = footer.querySelector(".footer-nav");
+
+    const footerSocial = footer.querySelector(".footer-social");
+
+    prepareReveal(footerBrand, "reveal-up");
+
+    prepareReveal(footerNav, "reveal-up", "reveal-delay-1");
+
+    prepareReveal(footerSocial, "reveal-up", "reveal-delay-2");
+  }
+
+  /* ======================================================
      OBSERVER
   ====================================================== */
 
