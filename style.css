@@ -1715,7 +1715,7 @@ a {
 
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 
   border: 0;
 
@@ -2897,6 +2897,10 @@ a {
   .import-media-inner {
     min-height: 295px;
   }
+
+  .reveal-left {
+    transform: none;
+  }
 }
 
 /* ======================================================
@@ -3533,12 +3537,8 @@ a {
 ====================================================== */
 
 @media (max-width: 480px) {
-  .about-company-grid {
-    grid-template-columns: 1fr;
-  }
-
   .about-logo-center {
-    grid-column: 1;
+    grid-template-columns: 1fr;
   }
 
   .about-card {
