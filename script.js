@@ -692,4 +692,13 @@ document.addEventListener("DOMContentLoaded", () => {
   revealElements.forEach((element) => {
     revealObserver.observe(element);
   });
+
+  const BASE_PATH =
+    window.location.hostname === "alesia-15.github.io" ? "/privoz" : "";
+
+  document.querySelectorAll("[data-link]").forEach((link) => {
+    const path = link.dataset.link;
+
+    link.href = `${BASE_PATH}${path}`;
+  });
 });
