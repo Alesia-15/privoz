@@ -5144,3 +5144,7 @@ a {
     gap: 10px;
   }
 }
+
+.about-mega-item .mega-menu-main {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
