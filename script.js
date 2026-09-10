@@ -630,6 +630,40 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ======================================================
+   BASE PATH FOR GITHUB PAGES
+====================================================== */
+
+  const BASE_PATH =
+    window.location.hostname === "alesia-15.github.io" ? "/privoz" : "";
+
+  document.querySelectorAll("a[data-link]").forEach((link) => {
+    const path = link.dataset.link;
+
+    if (!path) {
+      return;
+    }
+
+    /* Внешние ссылки не изменяем */
+    if (
+      path.startsWith("http://") ||
+      path.startsWith("https://") ||
+      path.startsWith("mailto:") ||
+      path.startsWith("tel:")
+    ) {
+      link.href = path;
+      return;
+    }
+
+    /* Якорь текущей страницы */
+    if (path.startsWith("#")) {
+      link.href = path;
+      return;
+    }
+
+    /* Внутренний путь */
+    link.href = `${BASE_PATH}${path}`;
+  });
+  /* ======================================================
      OBSERVER
   ====================================================== */
 
@@ -691,14 +725,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   revealElements.forEach((element) => {
     revealObserver.observe(element);
-  });
-
-  const BASE_PATH =
-    window.location.hostname === "alesia-15.github.io" ? "/privoz" : "";
-
-  document.querySelectorAll("[data-link]").forEach((link) => {
-    const path = link.dataset.link;
-
-    link.href = `${BASE_PATH}${path}`;
   });
 });
