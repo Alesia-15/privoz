@@ -13,7 +13,7 @@
     <title>PRIVOZ</title>
 
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="retail.css" />
+    <link rel="stylesheet" href="expert.css" />
   </head>
 
   <body>
@@ -108,7 +108,7 @@
                         </span>
                       </a>
 
-                      <a data-link="/expert-support.html" class="mega-link">
+                      <a data-link="/expert.html" class="mega-link">
                         <span class="mega-title">
                           Экспертное сопровождение
                         </span>
@@ -466,7 +466,7 @@
               </button>
 
               <div class="mobile-submenu">
-                <a data-link="/services/">Все услуги</a>
+                <a data-link="/search.html">Поиск товара</a>
                 <a data-link="/export.html">Экспорт</a>
                 <a data-link="/import.html">Импорт</a>
                 <a data-link="/retail.html">Розничные покупки</a>
@@ -552,63 +552,72 @@
       </div>
     </header>
 
-    <main class="retail-main">
+    <main class="expert-page">
       <!-- ======================================================
-           HERO
-      ======================================================= -->
+       HERO
+  ======================================================= -->
 
-      <section class="retail-hero">
-        <div class="container retail-hero-grid">
-          <div class="retail-hero-content" data-reveal="left">
-            <span class="retail-section-kicker">Розничные покупки</span>
+      <section class="expert-hero">
+        <div class="expert-hero-grid-bg"></div>
 
-            <h1 class="retail-hero-title">
-              Везде выбираю. <br />
-              Здесь забираю.
+        <div class="expert-container expert-hero-container">
+          <div class="expert-hero-content">
+            <span class="expert-kicker"> ЭКСПЕРТНОЕ СОПРОВОЖДЕНИЕ </span>
+
+            <h1 class="expert-hero-title">
+              Экспертиза
+              <span>на каждом этапе сделки</span>
             </h1>
 
-            <p class="retail-hero-text">
-              Покупайте товары в интернет-магазинах, маркетплейсах и других
-              торговых площадках. Отправьте ссылку или просто назовите товар —
-              персональный менеджер поможет найти, выкупить и получить.
+            <p class="expert-hero-text">
+              Наша команда — специалисты с практическим опытом в международных
+              закупках, работе с европейскими поставщиками, логистике,
+              таможенном оформлении, платежах и внешнеэкономической
+              деятельности.
             </p>
 
-            <div class="retail-hero-actions">
-              <a
-                href="https://client.privoz.pl/users/register"
-                target="_blank"
-                rel="noopener"
-                class="retail-btn retail-btn-primary"
-              >
-                <span>Зарегистрироваться</span>
-                <span>→</span>
-              </a>
+            <p class="expert-hero-text expert-hero-text-small">
+              Подключаем экспертов на каждом этапе сделки и помогаем принимать
+              взвешенные решения с учётом стоимости, сроков, рисков и требований
+              законодательства.
+            </p>
 
-              <a
-                data-link="/catalog.html"
-                class="retail-btn retail-btn-secondary"
-              >
-                <span>Найти товар</span>
-                <span>→</span>
-              </a>
+            <a href="#expert-request" class="expert-primary-button">
+              <span>Получить консультацию</span>
+
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M5 10H15"></path>
+                <path d="M11 6L15 10L11 14"></path>
+              </svg>
+            </a>
+
+            <div class="expert-hero-note">
+              Закупки • Платежи • Логистика • Таможня • Документы
             </div>
-
-            <p class="retail-hero-note">
-              Любой товар • Любой магазин • Личный менеджер
-            </p>
           </div>
 
-          <div class="retail-hero-visual" data-reveal="right">
-            <div class="retail-hero-shape retail-hero-shape-back"></div>
-            <div class="retail-hero-shape retail-hero-shape-middle"></div>
+          <div class="expert-hero-visual">
+            <div class="expert-hero-shape expert-hero-shape-one"></div>
+            <div class="expert-hero-shape expert-hero-shape-two"></div>
 
-            <div class="retail-hero-card">
-              <div class="retail-hero-card-frame">
-                <span class="retail-visual-kicker">IMAGE / VIDEO</span>
+            <div class="expert-hero-media">
+              <div class="expert-hero-media-frame">
+                <span> EXPERTISE / CONSULTING </span>
+
+                <div class="expert-hero-icon">
+                  <svg viewBox="0 0 64 64" aria-hidden="true">
+                    <circle cx="32" cy="19" r="10"></circle>
+                    <path d="M14 54C16 40 23 34 32 34C41 34 48 40 50 54"></path>
+                    <path d="M44 10L48 14L56 6"></path>
+                  </svg>
+                </div>
 
                 <h3>
-                  Покупки у производителей <br />
-                  и в интернет-магазинах
+                  Единая точка
+                  <br />
+                  компетенции
+                  <br />
+                  по всей сделке
                 </h3>
               </div>
             </div>
@@ -617,585 +626,572 @@
       </section>
 
       <!-- ======================================================
-           HOW IT WORKS
-      ======================================================= -->
-
-      <section class="retail-scheme">
-        <div class="container">
-          <div class="retail-section-head" data-reveal="up">
-            <span class="retail-section-kicker">Как это работает</span>
-            <h2>От выбора товара до получения заказа</h2>
-          </div>
-
-          <div class="retail-scheme-track">
-            <div class="retail-scheme-line"></div>
-
-            <article class="retail-scheme-step" data-reveal="up">
-              <span class="retail-step-number">01</span>
-              <h3>Выбираете</h3>
-              <p>Товар в любом магазине.</p>
-            </article>
-
-            <article class="retail-scheme-step" data-reveal="up">
-              <span class="retail-step-number">02</span>
-              <h3>Отправляете</h3>
-              <p>Ссылку или название товара.</p>
-            </article>
-
-            <article class="retail-scheme-step" data-reveal="up">
-              <span class="retail-step-number">03</span>
-              <h3>Мы находим</h3>
-              <p>Лучший вариант и цену.</p>
-            </article>
-
-            <article class="retail-scheme-step" data-reveal="up">
-              <span class="retail-step-number">04</span>
-              <h3>Выкупаем</h3>
-              <p>Менеджер оформляет покупку.</p>
-            </article>
-
-            <article class="retail-scheme-step" data-reveal="up">
-              <span class="retail-step-number">05</span>
-              <h3>Получаете</h3>
-              <p>Заказ в удобном пункте Privoz.pl.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================
-           STORES / SEARCH
-      ======================================================= -->
-
-      <section class="retail-marketplaces">
-        <div class="container">
-          <div class="retail-marketplaces-grid">
-            <div class="retail-marketplaces-text" data-reveal="left">
-              <span class="retail-section-kicker">Покупайте где хотите</span>
-
-              <h2>Один сервис — тысячи магазинов</h2>
-
-              <p>
-                Не ограничивайтесь одним сайтом. Вы можете выбрать товар в любом
-                интернет-магазине, на маркетплейсе или другой торговой площадке.
-              </p>
-
-              <p>
-                Если ссылки нет — достаточно назвать товар, модель или описать,
-                что вы ищете. Персональный менеджер поможет найти подходящий
-                вариант.
-              </p>
-            </div>
-
-            <div class="retail-marketplaces-panel" data-reveal="right">
-              <div class="retail-logo-marquee">
-                <div class="retail-logo-track">
-                  <span>Zalando</span>
-                  <span>Allegro</span>
-                  <span>Amazon</span>
-                  <span>Media Expert</span>
-                  <span>Decathlon</span>
-                  <span>eBay</span>
-                  <span>C&amp;A</span>
-                  <span>Otto</span>
-                  <span>Yoox</span>
-
-                  <span>Zalando</span>
-                  <span>Allegro</span>
-                  <span>Amazon</span>
-                  <span>Media Expert</span>
-                  <span>Decathlon</span>
-                  <span>eBay</span>
-                  <span>C&amp;A</span>
-                  <span>Otto</span>
-                  <span>Yoox</span>
-                </div>
-              </div>
-
-              <form class="retail-search-box" id="retailSearchForm">
-                <label class="retail-search-label" for="retailSearchInput">
-                  🔗 Вставьте ссылку или напишите название товара
-                </label>
-
-                <div class="retail-search-row">
-                  <input
-                    id="retailSearchInput"
-                    type="text"
-                    placeholder="Например: https://... / Nike Air Max / iPhone 15"
-                  />
-
-                  <button type="submit" class="retail-btn retail-btn-primary">
-                    <span>Найти товар</span>
-                    <span>→</span>
-                  </button>
-                </div>
-
-                <p class="retail-search-note">
-                  Или просто напишите название товара — менеджер найдёт его за
-                  вас.
-                </p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================
-           MANAGER
-      ======================================================= -->
-
-      <section class="retail-manager">
-        <div class="container retail-manager-grid">
-          <div class="retail-manager-content" data-reveal="left">
-            <span class="retail-section-kicker">Ваш персональный менеджер</span>
-
-            <h2>Не знаете, где купить? Найдём за вас.</h2>
-
-            <p>
-              Найти нужный товар сложнее, чем кажется: другой язык, несколько
-              магазинов, разные цены, условия покупки, наличие, оплаты, доставка
-              до склада.
-            </p>
-
-            <p>
-              Поэтому вам не обязательно разбираться со всем самостоятельно.
-            </p>
-
-            <p class="retail-manager-highlight">
-              Ваш персональный менеджер может взять поиск и оформление покупки
-              на себя.
-            </p>
-
-            <h3 class="retail-manager-subtitle">
-              Вы говорите, что хотите купить. Мы занимаемся поиском и покупкой.
-            </h3>
-          </div>
-
-          <div class="retail-manager-cards" data-reveal="right">
-            <article class="retail-manager-card">
-              <span>01</span>
-              <h3>Найти</h3>
-              <p>Найдёт товар по названию, модели или вашему описанию.</p>
-            </article>
-
-            <article class="retail-manager-card">
-              <span>02</span>
-              <h3>Сравнить</h3>
-              <p>
-                Проверит доступные варианты и поможет выбрать оптимальное
-                предложение.
-              </p>
-            </article>
-
-            <article class="retail-manager-card">
-              <span>03</span>
-              <h3>Выкупить</h3>
-              <p>После согласования оформит покупку от вашего имени.</p>
-            </article>
-
-            <article class="retail-manager-card">
-              <span>04</span>
-              <h3>Сопроводить</h3>
-              <p>Останется на связи и поможет с вопросами по заказу.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================
-           PROCESS
-      ======================================================= -->
-
-      <section class="retail-process">
-        <div class="container">
-          <div class="retail-section-head" data-reveal="up">
-            <span class="retail-section-kicker">Как проходит покупка</span>
-            <h2>От ссылки до получения — всё по шагам</h2>
-          </div>
-
-          <div class="retail-process-grid">
-            <article class="retail-process-card" data-reveal="up">
-              <span class="retail-process-number">Шаг 01</span>
-              <h3>Вы отправляете товар</h3>
-              <ul>
-                <li>вставить ссылку на товар;</li>
-                <li>написать название;</li>
-                <li>указать модель;</li>
-                <li>сообщить характеристики;</li>
-                <li>отправить описание того, что ищете.</li>
-              </ul>
-            </article>
-
-            <article class="retail-process-card" data-reveal="up">
-              <span class="retail-process-number">Шаг 02</span>
-              <h3>Менеджер проверяет товар</h3>
-              <ul>
-                <li>где доступен товар;</li>
-                <li>его актуальную стоимость;</li>
-                <li>возможность покупки;</li>
-                <li>условия доставки до склада;</li>
-                <li>другие важные параметры заказа.</li>
-              </ul>
-            </article>
-
-            <article class="retail-process-card" data-reveal="up">
-              <span class="retail-process-number">Шаг 03</span>
-              <h3>Вы согласовываете покупку</h3>
-              <p>Вы получаете информацию о заказе и стоимости.</p>
-            </article>
-
-            <article class="retail-process-card" data-reveal="up">
-              <span class="retail-process-number">Шаг 04</span>
-              <h3>Privoz.pl оформляет покупку</h3>
-              <p>
-                После подтверждения менеджер занимается оформлением и выкупом
-                товара.
-              </p>
-            </article>
-
-            <article class="retail-process-card" data-reveal="up">
-              <span class="retail-process-number">Шаг 05</span>
-              <h3>Товар поступает на склад</h3>
-              <p>Заказ приходит в один из пунктов Privoz.pl в Польше.</p>
-            </article>
-
-            <article class="retail-process-card" data-reveal="up">
-              <span class="retail-process-number">Шаг 06</span>
-              <h3>Вы получаете заказ</h3>
-              <p>Выбираете удобный пункт выдачи и забираете свою покупку.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================
-           VAT
-      ======================================================= -->
-
-      <section class="retail-vat">
-        <div class="container retail-vat-grid">
-          <div class="retail-vat-content" data-reveal="left">
-            <span class="retail-section-kicker">VAT</span>
-
-            <h2>Верните до 23% VAT с покупок</h2>
-
-            <p>
-              Покупая товары через Privoz.pl, вы можете воспользоваться
-              возможностью возврата VAT.
-            </p>
-
-            <p>
-              Мы помогаем пройти процедуру оформления и подготовить необходимые
-              документы.
-            </p>
-
-            <button
-              type="button"
-              class="retail-btn retail-btn-primary"
-              data-open-modal="vatModal"
-            >
-              <span>Узнать больше о возврате VAT</span>
-              <span>→</span>
-            </button>
-          </div>
-
-          <div class="retail-vat-visual" data-reveal="right">
-            <div class="retail-vat-value">
-              <span>до</span>
-              <strong>23%</strong>
-              <em>VAT</em>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================
-           PICKUP POINTS
-      ======================================================= -->
-
-      <section class="retail-warehouses">
-        <div class="container">
-          <div class="retail-section-head" data-reveal="up">
-            <span class="retail-section-kicker">Три пункта Privoz.pl</span>
-            <h2>Ваши заказы можете забрать</h2>
-            <p>
-              Мы принимаем ваши покупки на трёх складах Privoz.pl. Выбирайте
-              удобный пункт и получайте заказ тогда, когда вам удобно.
-            </p>
-          </div>
-
-          <div class="retail-warehouses-grid">
-            <article class="retail-warehouse-card" data-reveal="up">
-              <div class="retail-warehouse-photo">
-                <span>Фото склада</span>
-              </div>
-
-              <div class="retail-warehouse-body">
-                <h3>Кузница</h3>
-                <p><strong>Адрес:</strong> ul. Sokólska 39, 16-123 Kuźnica</p>
-                <p><strong>Время работы:</strong> Пн–Пт 08:00–17:00</p>
-                <p><strong>Телефон:</strong> +48 514 750 615</p>
-              </div>
-            </article>
-
-            <article class="retail-warehouse-card" data-reveal="up">
-              <div class="retail-warehouse-photo">
-                <span>Фото склада</span>
-              </div>
-
-              <div class="retail-warehouse-body">
-                <h3>Белосток</h3>
-                <p>
-                  <strong>Адрес:</strong> ul. Ciesielska 2 lok.22, 15-542
-                  Białystok
-                </p>
-                <p>
-                  <strong>Время работы:</strong> Пн–Пт 08:00–17:00, Сб
-                  08:00–13:00
-                </p>
-                <p><strong>Телефон:</strong> +48 516 323 116</p>
-              </div>
-            </article>
-
-            <article class="retail-warehouse-card" data-reveal="up">
-              <div class="retail-warehouse-photo">
-                <span>Фото склада</span>
-              </div>
-
-              <div class="retail-warehouse-body">
-                <h3>Бяла-Подляска</h3>
-                <p>
-                  <strong>Адрес:</strong> ul. Sidorska 2D, 21-500 Biała Podlaska
-                </p>
-                <p>
-                  <strong>Время работы:</strong> Пн–Пт 08:00–16:00, Сб
-                  08:00–13:00
-                </p>
-                <p><strong>Телефон:</strong> +48 514 065 495</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================
-           WHY PRIVOZ
-      ======================================================= -->
-
-      <section class="retail-advantages">
-        <div class="container">
-          <div class="retail-section-head" data-reveal="up">
-            <span class="retail-section-kicker">Почему Privoz.pl</span>
-            <h2>Почему тысячи покупателей выбирают Privoz.pl</h2>
-          </div>
-
-          <div class="retail-advantages-grid">
-            <article class="retail-advantage-card" data-reveal="up">
-              <h3>Покупки из всей Европы</h3>
-              <p>
-                Не ограничиваем вас одним магазином. Вы сами выбираете, где
-                хотите купить товар.
-              </p>
-            </article>
-
-            <article class="retail-advantage-card" data-reveal="up">
-              <h3>Персональный менеджер</h3>
-              <p>
-                Вам не обязательно самостоятельно искать товар, разбираться с
-                магазином и оформлять заказ.
-              </p>
-            </article>
-
-            <article class="retail-advantage-card" data-reveal="up">
-              <h3>Поиск по названию</h3>
-              <p>
-                Есть только название товара? Этого достаточно, чтобы начать
-                поиск.
-              </p>
-            </article>
-
-            <article class="retail-advantage-card" data-reveal="up">
-              <h3>Возврат VAT</h3>
-              <p>Возможность вернуть до 23% VAT.</p>
-            </article>
-
-            <article class="retail-advantage-card" data-reveal="up">
-              <h3>Личный кабинет</h3>
-              <p>
-                Управляйте заказами и отслеживайте информацию о покупках в одном
-                месте.
-              </p>
-            </article>
-
-            <article class="retail-advantage-card" data-reveal="up">
-              <h3>Три пункта выдачи</h3>
-              <p>
-                Ваш заказ можно получить в удобном пункте Privoz.pl в Польше.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================
-           ACCOUNT WINDOW
-      ======================================================= -->
-
-      <section class="retail-account-window">
-        <div class="container">
-          <div class="retail-account-panel" data-reveal="up">
-            <span class="retail-section-kicker">Личный кабинет</span>
-
-            <h2>Ваши покупки — в одном месте</h2>
-
-            <p>
-              После регистрации в личном кабинете вы сможете оформлять заказы,
-              передавать ссылки на товары, получать информацию по заказам и
-              взаимодействовать с Privoz.pl.
-            </p>
-
-            <div class="retail-account-actions">
-              <a
-                href="https://client.privoz.pl/users/register"
-                target="_blank"
-                rel="noopener"
-                class="retail-btn retail-btn-primary"
-              >
-                <span>Зарегистрироваться</span>
-                <span>→</span>
-              </a>
-
-              <a
-                href="https://client.privoz.pl/"
-                target="_blank"
-                rel="noopener"
-                class="retail-login-link"
-              >
-                Уже зарегистрированы? Войти →
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================
-           TRUST / AWARDS
-      ======================================================= -->
-
-      <section class="retail-trust">
-        <div class="container">
-          <div class="retail-section-head" data-reveal="up">
-            <span class="retail-section-kicker">Нам доверяют</span>
-            <h2>Сервис, которому доверяют свои покупки</h2>
-          </div>
-
-          <div class="retail-trust-slider" data-reveal="up">
-            <article class="retail-trust-card">
-              <span>Награда / грамота</span>
-            </article>
-
-            <article class="retail-trust-card">
-              <span>Сертификат / лицензия</span>
-            </article>
-
-            <article class="retail-trust-card">
-              <span>Диплом / документ</span>
-            </article>
-
-            <article class="retail-trust-card">
-              <span>Рекомендация / отзыв</span>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================
-           FINAL CTA
-      ======================================================= -->
-
-      <section class="retail-final">
-        <div class="container">
-          <div class="retail-final-panel" data-reveal="up">
-            <span class="retail-section-kicker">Финальный блок</span>
+       DESCRIPTION
+  ======================================================= -->
+
+      <section class="expert-description">
+        <div class="expert-container expert-description-layout">
+          <div class="expert-description-title">
+            <span class="expert-section-label"> ЭКСПЕРТНАЯ ПОДДЕРЖКА </span>
 
             <h2>
-              Везде выбираю. <br />
-              Здесь забираю.
+              Не просто сопровождаем
+              <span>помогаем принимать решения</span>
+            </h2>
+          </div>
+
+          <div class="expert-description-text">
+            <p>
+              Международная сделка объединяет сразу несколько направлений:
+              поставщика, коммерческие условия, оплату, документы, перевозку,
+              таможенные процедуры и требования законодательства.
+            </p>
+
+            <p>
+              Клиенту не требуется самостоятельно разбираться во всех нюансах
+              международной поставки и координировать множество участников.
+            </p>
+
+            <div class="expert-description-highlight">
+              <span> Подход PRIVOZ </span>
+
+              <strong>
+                Наши эксперты становятся единой точкой компетенции по всей
+                сделке — от первого запроса поставщику до получения товара на
+                складе клиента.
+              </strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+       WHAT WE HELP WITH
+  ======================================================= -->
+
+      <section class="expert-included">
+        <div class="expert-container">
+          <div class="expert-section-head">
+            <span class="expert-section-label"> В ЧЁМ МЫ ПОМОГАЕМ </span>
+
+            <h2>
+              Экспертиза
+              <span>по всей цепочке поставки</span>
+            </h2>
+          </div>
+
+          <div class="expert-included-grid">
+            <!-- 01 -->
+
+            <article class="expert-card">
+              <div class="expert-card-top">
+                <span>01</span>
+
+                <div class="expert-card-icon">
+                  <svg viewBox="0 0 48 48">
+                    <circle cx="20" cy="20" r="9"></circle>
+                    <path d="M27 27L38 38"></path>
+                    <path d="M14 20H26"></path>
+                    <path d="M20 14V26"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <h3>Поиск и проверка поставщиков</h3>
+
+              <div class="expert-card-description">
+                <p>
+                  Анализируем производителей и дистрибьюторов, проверяем
+                  контрагентов, помогаем оценить надёжность и коммерческие
+                  условия.
+                </p>
+              </div>
+            </article>
+
+            <!-- 02 -->
+
+            <article class="expert-card">
+              <div class="expert-card-top">
+                <span>02</span>
+
+                <div class="expert-card-icon">
+                  <svg viewBox="0 0 48 48">
+                    <path d="M8 14H29V30H17L10 37V30H8V14Z"></path>
+                    <path d="M29 19H40V34H36V39L30 34H24"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <h3>Переговоры с европейскими партнёрами</h3>
+
+              <div class="expert-card-description">
+                <p>
+                  Помогаем согласовать цены, объёмы, условия оплаты, сроки
+                  производства и поставки.
+                </p>
+              </div>
+            </article>
+
+            <!-- 03 -->
+
+            <article class="expert-card">
+              <div class="expert-card-top">
+                <span>03</span>
+
+                <div class="expert-card-icon">
+                  <svg viewBox="0 0 48 48">
+                    <path d="M8 36L18 25L25 30L39 12"></path>
+                    <path d="M32 12H39V19"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <h3>Подбор схемы закупки</h3>
+
+              <div class="expert-card-description">
+                <p>
+                  Оцениваем доступные варианты поставки и предлагаем решение под
+                  сроки, бюджет и объём клиента.
+                </p>
+              </div>
+            </article>
+
+            <!-- 04 -->
+
+            <article class="expert-card expert-card-accent">
+              <div class="expert-card-top">
+                <span>04</span>
+
+                <div class="expert-card-icon">
+                  <svg viewBox="0 0 48 48">
+                    <rect x="8" y="12" width="32" height="24" rx="2"></rect>
+                    <path d="M8 19H40"></path>
+                    <path d="M14 29H23"></path>
+                    <path d="M31 25V33"></path>
+                    <path d="M27 29H35"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <h3>Международные платежи</h3>
+
+              <div class="expert-card-description">
+                <p>
+                  Консультируем по доступным способам расчётов с иностранными
+                  поставщиками и сопровождаем финансовую часть сделки.
+                </p>
+              </div>
+            </article>
+
+            <!-- 05 -->
+
+            <article class="expert-card">
+              <div class="expert-card-top">
+                <span>05</span>
+
+                <div class="expert-card-icon">
+                  <svg viewBox="0 0 48 48">
+                    <path d="M7 31H29V15H7V31Z"></path>
+                    <path d="M29 21H36L41 26V31H29"></path>
+                    <circle cx="15" cy="35" r="4"></circle>
+                    <circle cx="34" cy="35" r="4"></circle>
+                  </svg>
+                </div>
+              </div>
+
+              <h3>Логистика из Европы</h3>
+
+              <div class="expert-card-description">
+                <p>
+                  Подбираем маршруты и виды транспорта, рассчитываем сроки и
+                  стоимость, контролируем движение груза.
+                </p>
+              </div>
+            </article>
+
+            <!-- 06 -->
+
+            <article class="expert-card">
+              <div class="expert-card-top">
+                <span>06</span>
+
+                <div class="expert-card-icon">
+                  <svg viewBox="0 0 48 48">
+                    <path d="M24 6L39 14V34L24 42L9 34V14L24 6Z"></path>
+                    <path d="M9 14L24 22L39 14"></path>
+                    <path d="M24 22V42"></path>
+                    <path d="M18 12L30 18"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <h3>Таможенное сопровождение</h3>
+
+              <div class="expert-card-description">
+                <p>
+                  Помогаем с документами, классификацией товаров, расчётом
+                  платежей и прохождением необходимых процедур.
+                </p>
+              </div>
+            </article>
+
+            <!-- 07 -->
+
+            <article class="expert-card">
+              <div class="expert-card-top">
+                <span>07</span>
+
+                <div class="expert-card-icon">
+                  <svg viewBox="0 0 48 48">
+                    <path d="M13 7H29L37 15V41H13V7Z"></path>
+                    <path d="M29 7V15H37"></path>
+                    <path d="M18 23H32"></path>
+                    <path d="M18 29H32"></path>
+                    <path d="M18 35H27"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <h3>Документальное сопровождение</h3>
+
+              <div class="expert-card-description">
+                <p>
+                  Контролируем комплектность коммерческих, транспортных и
+                  сопроводительных документов.
+                </p>
+              </div>
+            </article>
+
+            <!-- 08 -->
+
+            <article class="expert-card">
+              <div class="expert-card-top">
+                <span>08</span>
+
+                <div class="expert-card-icon">
+                  <svg viewBox="0 0 48 48">
+                    <path d="M24 7L42 39H6L24 7Z"></path>
+                    <path d="M24 18V28"></path>
+                    <circle cx="24" cy="34" r="1.5"></circle>
+                  </svg>
+                </div>
+              </div>
+
+              <h3>Оценка рисков</h3>
+
+              <div class="expert-card-description">
+                <p>
+                  Заранее выявляем сложности по поставщику, товару, маршруту,
+                  оплате или оформлению и предлагаем варианты решения.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+       EXPERTISE FLOW
+  ======================================================= -->
+
+      <section class="expert-flow">
+        <div class="expert-container">
+          <div class="expert-flow-head">
+            <span class="expert-section-label">
+              ОДНА КОМАНДА — ВСЯ СДЕЛКА
+            </span>
+
+            <h2>
+              От первого запроса
+              <span>до получения товара</span>
+            </h2>
+          </div>
+
+          <div class="expert-flow-track">
+            <div class="expert-flow-line">
+              <span class="expert-flow-progress"></span>
+              <span class="expert-flow-marker"></span>
+            </div>
+
+            <article class="expert-flow-step">
+              <span>01</span>
+              <h3>Запрос</h3>
+              <p>Изучаем задачу, товар, объём, сроки и ключевые требования.</p>
+            </article>
+
+            <article class="expert-flow-step">
+              <span>02</span>
+              <h3>Анализ</h3>
+              <p>
+                Проверяем поставщика, условия сделки, варианты оплаты и
+                возможные риски.
+              </p>
+            </article>
+
+            <article class="expert-flow-step">
+              <span>03</span>
+              <h3>Решение</h3>
+              <p>
+                Предлагаем оптимальную схему закупки, доставки и оформления.
+              </p>
+            </article>
+
+            <article class="expert-flow-step">
+              <span>04</span>
+              <h3>Сопровождение</h3>
+              <p>
+                Координируем поставщика, документы, платежи, перевозку и
+                таможенные процессы.
+              </p>
+            </article>
+
+            <article class="expert-flow-step">
+              <span>05</span>
+              <h3>Результат</h3>
+              <p>Контролируем сделку до получения товара клиентом.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+       RISKS / DECISIONS
+  ======================================================= -->
+
+      <section class="expert-risks">
+        <div class="expert-container expert-risks-layout">
+          <div class="expert-risks-copy">
+            <span class="expert-section-label"> ВЗВЕШЕННЫЕ РЕШЕНИЯ </span>
+
+            <h2>
+              Смотрим на сделку
+              <span>целиком</span>
             </h2>
 
             <p>
-              Найдите товар в любом магазине или просто расскажите нам, что
-              хотите купить.
+              Мы оцениваем не один отдельный этап, а всю цепочку поставки. Это
+              позволяет заранее увидеть взаимосвязь между стоимостью, сроками,
+              маршрутом, способом оплаты, документами и возможными рисками.
+            </p>
+          </div>
+
+          <div class="expert-risks-grid">
+            <article>
+              <span>01</span>
+              <strong>Стоимость</strong>
+              <p>Сравниваем варианты и учитываем сопутствующие расходы.</p>
+            </article>
+
+            <article>
+              <span>02</span>
+              <strong>Сроки</strong>
+              <p>Оцениваем реальные сроки закупки, подготовки и перевозки.</p>
+            </article>
+
+            <article>
+              <span>03</span>
+              <strong>Риски</strong>
+              <p>Выявляем потенциальные проблемы до начала ключевых этапов.</p>
+            </article>
+
+            <article>
+              <span>04</span>
+              <strong>Требования</strong>
+              <p>
+                Учитываем документы, процедуры и требования законодательства.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+       WHY
+  ======================================================= -->
+
+      <section class="expert-why">
+        <div class="expert-why-media">
+          <div class="expert-why-placeholder">
+            <span> IMAGE / VIDEO </span>
+
+            <strong>
+              KNOWLEDGE
+              <br />
+              EXPERIENCE
+            </strong>
+          </div>
+        </div>
+
+        <div class="expert-why-content">
+          <div class="expert-why-inner">
+            <span class="expert-section-label"> ЭКСПЕРТЫ PRIVOZ </span>
+
+            <h2>
+              Не просто организуем
+              <span>поставку</span>
+            </h2>
+
+            <p>
+              Мы делимся экспертизой, предупреждаем риски и помогаем выбрать
+              наиболее эффективное решение для бизнеса.
             </p>
 
-            <a
-              href="https://client.privoz.pl/users/register"
-              target="_blank"
-              rel="noopener"
-              class="retail-btn retail-btn-primary"
-            >
-              <span>Зарегистрироваться и начать заказывать</span>
-              <span>→</span>
+            <p>
+              Клиент получает доступ к специалистам по закупкам, платежам,
+              логистике, таможенному оформлению и документам в рамках одной
+              команды.
+            </p>
+
+            <div class="expert-why-accent">
+              Не нужно самостоятельно координировать множество участников —
+              PRIVOZ объединяет необходимые компетенции в одной точке.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+       REQUEST
+  ======================================================= -->
+
+      <section class="expert-request" id="expert-request">
+        <div class="expert-container expert-request-layout">
+          <div class="expert-request-copy">
+            <span class="expert-section-label"> КОНСУЛЬТАЦИЯ </span>
+
+            <h2>
+              Обсудим
+              <span>вашу задачу</span>
+            </h2>
+
+            <p>
+              Расскажите о планируемой закупке или текущей сделке. Наш
+              специалист изучит запрос и поможет определить, на каких этапах
+              требуется экспертная поддержка.
+            </p>
+
+            <div class="expert-request-media">
+              <span>IMAGE</span>
+
+              <p>Переговоры / консультация / сопровождение сделки</p>
+            </div>
+          </div>
+
+          <form class="expert-request-form">
+            <div class="expert-form-grid">
+              <div class="expert-field">
+                <label for="expert-name"> Имя * </label>
+
+                <input
+                  id="expert-name"
+                  type="text"
+                  required
+                  placeholder="Ваше имя"
+                />
+              </div>
+
+              <div class="expert-field">
+                <label for="expert-company">
+                  Компания
+                  <span>необязательно</span>
+                </label>
+
+                <input
+                  id="expert-company"
+                  type="text"
+                  placeholder="Название компании"
+                />
+              </div>
+
+              <div class="expert-field">
+                <label for="expert-phone"> Телефон * </label>
+
+                <input
+                  id="expert-phone"
+                  type="tel"
+                  required
+                  placeholder="+48 000 000 000"
+                />
+              </div>
+
+              <div class="expert-field">
+                <label for="expert-email"> E-mail </label>
+
+                <input
+                  id="expert-email"
+                  type="email"
+                  placeholder="email@example.com"
+                />
+              </div>
+
+              <div class="expert-field expert-field-full">
+                <label for="expert-topic"> С чем нужна помощь? </label>
+
+                <input
+                  id="expert-topic"
+                  type="text"
+                  placeholder="Закупка, логистика, платежи, документы..."
+                />
+              </div>
+
+              <div class="expert-field expert-field-full">
+                <label for="expert-comment"> Опишите задачу </label>
+
+                <textarea
+                  id="expert-comment"
+                  placeholder="Расскажите подробнее о вашей сделке или планируемой поставке"
+                ></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="expert-submit">
+              <span> Отправить запрос </span>
+
+              <svg viewBox="0 0 20 20">
+                <path d="M5 10H15"></path>
+                <path d="M11 6L15 10L11 14"></path>
+              </svg>
+            </button>
+
+            <div class="expert-form-success">
+              Спасибо. Ваш запрос отправлен. Наш специалист свяжется с вами для
+              обсуждения задачи.
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ======================================================
+       FINAL
+  ======================================================= -->
+
+      <section class="expert-final">
+        <div class="expert-container">
+          <div class="expert-final-panel">
+            <span class="expert-section-label"> PRIVOZ </span>
+
+            <h2>
+              Одна команда.
+              <span>Экспертиза по всей сделке.</span>
+            </h2>
+
+            <p>
+              Поможем разобраться в международной закупке, предупредим риски и
+              предложим эффективное решение под задачи вашего бизнеса.
+            </p>
+
+            <a href="#expert-request" class="expert-primary-button">
+              <span>Получить консультацию</span>
+
+              <svg viewBox="0 0 20 20">
+                <path d="M5 10H15"></path>
+                <path d="M11 6L15 10L11 14"></path>
+              </svg>
             </a>
           </div>
         </div>
       </section>
     </main>
-
-    <!-- ======================================================
-         FOOTER
-         ВСТАВЬ СЮДА СВОЙ ТЕКУЩИЙ FOOTER
-    ======================================================= -->
-
-    <footer class="site-footer">
-      <!-- твой текущий footer -->
-    </footer>
-
-    <!-- ======================================================
-         VAT MODAL
-    ======================================================= -->
-
-    <div class="retail-modal" id="vatModal" aria-hidden="true">
-      <div class="retail-modal-overlay" data-close-modal></div>
-
-      <div class="retail-modal-dialog" role="dialog" aria-modal="true">
-        <button
-          type="button"
-          class="retail-modal-close"
-          data-close-modal
-          aria-label="Закрыть окно"
-        >
-          ×
-        </button>
-
-        <span class="retail-section-kicker">Возврат VAT</span>
-
-        <h3>Верните до 23% VAT с покупок</h3>
-
-        <p>
-          При оформлении покупок через Privoz.pl мы помогаем пройти процедуру
-          возврата VAT и подготовить необходимые документы.
-        </p>
-
-        <p>
-          Условия возврата зависят от типа товара, документов и направления
-          покупки. Для уточнения деталей свяжитесь с менеджером или
-          зарегистрируйтесь в личном кабинете.
-        </p>
-
-        <div class="retail-modal-actions">
-          <a
-            href="https://client.privoz.pl/users/register"
-            target="_blank"
-            rel="noopener"
-            class="retail-btn retail-btn-primary"
-          >
-            <span>Зарегистрироваться</span>
-            <span>→</span>
-          </a>
-        </div>
-      </div>
-    </div>
 
     <footer class="privoz-footer">
       <div class="privoz-footer-shell">
@@ -1492,6 +1488,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="retail.js"></script>
+    <script src="expert.js"></script>
   </body>
 </html>
