@@ -3369,109 +3369,6 @@ a {
 }
 
 /* ======================================================
-   CENTER LOGO
-====================================================== */
-
-.about-logo-center {
-  position: relative;
-
-  z-index: 5;
-
-  grid-column: 1 / 4;
-  grid-row: 2;
-
-  width: 64%;
-  min-height: 150px;
-
-  justify-self: center;
-  align-self: center;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #ffffff;
-
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.06);
-
-  clip-path: polygon(
-    24px 0,
-    calc(100% - 24px) 0,
-    100% 24px,
-    100% calc(100% - 24px),
-    calc(100% - 24px) 100%,
-    24px 100%,
-    0 calc(100% - 24px),
-    0 24px
-  );
-}
-
-.about-logo-center::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 13px;
-
-  border: 1px solid rgba(255, 104, 30, 0.11);
-
-  clip-path: polygon(
-    16px 0,
-    calc(100% - 16px) 0,
-    100% 16px,
-    100% calc(100% - 16px),
-    calc(100% - 16px) 100%,
-    16px 100%,
-    0 calc(100% - 16px),
-    0 16px
-  );
-}
-
-.about-logo-center img {
-  position: relative;
-
-  z-index: 2;
-
-  width: min(220px, 60%);
-
-  height: auto;
-}
-
-/* ======================================================
-   CONNECTING LINES
-====================================================== */
-
-.about-company-grid::before,
-.about-company-grid::after {
-  content: "";
-
-  position: absolute;
-
-  z-index: 1;
-
-  left: 50%;
-
-  width: 1px;
-  height: 100%;
-
-  background: linear-gradient(
-    180deg,
-    rgba(255, 104, 30, 0) 0%,
-    rgba(255, 104, 30, 0.13) 20%,
-    rgba(255, 104, 30, 0.13) 80%,
-    rgba(255, 104, 30, 0) 100%
-  );
-}
-
-.about-company-grid::before {
-  transform: translateX(-50%) rotate(58deg);
-}
-
-.about-company-grid::after {
-  transform: translateX(-50%) rotate(-58deg);
-}
-
-/* ======================================================
    TABLET
 ====================================================== */
 
@@ -5972,5 +5869,306 @@ a {
 
   .privoz-footer-warehouse-data div > span {
     margin-bottom: 2px;
+  }
+}
+
+/* ======================================================
+   ABOUT SERVICES GRID
+====================================================== */
+
+.about-company-grid-services {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+/* ======================================================
+   SERVICE CARD
+====================================================== */
+
+.about-company-grid-services .about-card {
+  position: relative;
+
+  min-width: 0;
+  min-height: 205px;
+
+  padding: 22px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  color: #202020;
+
+  text-decoration: none;
+
+  clip-path: polygon(
+    16px 0,
+    100% 0,
+    100% calc(100% - 16px),
+    calc(100% - 16px) 100%,
+    0 100%,
+    0 16px
+  );
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-company-grid-services .about-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  right: -70px;
+  bottom: -75px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  transform: rotate(35deg);
+
+  pointer-events: none;
+}
+
+.about-company-grid-services .about-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ======================================================
+   ICON
+====================================================== */
+
+.about-company-grid-services .about-card-icon {
+  width: 48px;
+  height: 48px;
+
+  margin-bottom: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  background: rgba(0, 0, 0, 0.18);
+
+  clip-path: polygon(
+    9px 0,
+    100% 0,
+    100% calc(100% - 9px),
+    calc(100% - 9px) 100%,
+    0 100%,
+    0 9px
+  );
+}
+
+.about-company-grid-services .about-card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.about-company-grid-services .about-card-icon path,
+.about-company-grid-services .about-card-icon circle {
+  fill: none;
+
+  stroke: currentColor;
+  stroke-width: 1.5;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ======================================================
+   NUMBER
+====================================================== */
+
+.about-card-number {
+  position: absolute;
+
+  top: 24px;
+  right: 22px;
+
+  color: rgba(0, 0, 0, 0.27);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+}
+
+/* ======================================================
+   TITLE
+====================================================== */
+
+.about-company-grid-services .about-card h3 {
+  position: relative;
+
+  z-index: 2;
+
+  margin: auto 0 0;
+
+  color: inherit;
+
+  font-size: clamp(18px, 1.5vw, 23px);
+  font-weight: 600;
+
+  line-height: 1.14;
+
+  letter-spacing: -0.04em;
+}
+
+/* ======================================================
+   CARD COLORS
+====================================================== */
+
+/* Поиск */
+
+.about-card-orange {
+  background: linear-gradient(145deg, #ffd4bc, #ffc9aa);
+}
+
+.about-card-orange .about-card-icon {
+  background: #ff681e;
+}
+
+/* Экспорт */
+
+.about-card-export {
+  background: linear-gradient(145deg, #dce8ec, #cbdde2);
+}
+
+.about-card-export .about-card-icon {
+  background: #456d7b;
+}
+
+/* Импорт */
+
+.about-card-import {
+  background: linear-gradient(145deg, #f1d8cc, #eacabb);
+}
+
+.about-card-import .about-card-icon {
+  background: #b85e3d;
+}
+
+/* Розничные покупки */
+
+.about-card-retail {
+  background: linear-gradient(145deg, #e6ead9, #dce3cb);
+}
+
+.about-card-retail .about-card-icon {
+  background: #728455;
+}
+
+/* Международные закупки */
+
+.about-card-procurement {
+  background: linear-gradient(145deg, #efd9db, #e7cace);
+}
+
+.about-card-procurement .about-card-icon {
+  background: #a84f56;
+}
+
+/* Контроль качества */
+
+.about-card-quality {
+  background: linear-gradient(145deg, #dce7e3, #ceddd8);
+}
+
+.about-card-quality .about-card-icon {
+  background: #607e76;
+}
+
+/* Логистика */
+
+.about-card-logistics {
+  background: linear-gradient(145deg, #eee2d1, #e7d7c2);
+}
+
+.about-card-logistics .about-card-icon {
+  background: #aa783c;
+}
+
+/* Экспертное сопровождение */
+
+.about-card-expert {
+  background: linear-gradient(145deg, #ead6d4, #dfc3c0);
+}
+
+.about-card-expert .about-card-icon {
+  background: #a84842;
+}
+
+/* Дополнительные услуги */
+
+.about-card-additional {
+  background: linear-gradient(145deg, #e5e5e2, #d9dad6);
+}
+
+.about-card-additional .about-card-icon {
+  background: #555c57;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width: 1120px) {
+  .about-company-grid-services {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .about-company-grid-services .about-card {
+    min-height: 180px;
+
+    padding: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-company-grid-services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .about-company-grid-services .about-card {
+    min-height: 170px;
+
+    padding: 17px;
+  }
+
+  .about-company-grid-services .about-card-icon {
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 25px;
+  }
+
+  .about-company-grid-services .about-card h3 {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 430px) {
+  .about-company-grid-services {
+    grid-template-columns: 1fr;
+  }
+
+  .about-company-grid-services .about-card {
+    min-height: 145px;
   }
 }
