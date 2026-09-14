@@ -1,0 +1,1581 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>PRIVOZ</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="procurement.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- LOGO -->
+        <a data-link="/" class="header-logo" aria-label="Privoz">
+          <img src="images/logo.svg" alt="Privoz" />
+        </a>
+
+        <!-- DESKTOP NAV -->
+        <nav class="header-nav" aria-label="Основное меню">
+          <ul class="header-nav-list">
+            <!-- УСЛУГИ -->
+            <li class="header-nav-item has-mega-menu">
+              <button
+                class="header-nav-link mega-menu-toggle"
+                type="button"
+                aria-expanded="false"
+              >
+                <span>Услуги</span>
+
+                <svg class="nav-arrow" viewBox="0 0 12 8" aria-hidden="true">
+                  <path d="M1 1.5L6 6.5L11 1.5"></path>
+                </svg>
+              </button>
+
+              <div class="mega-menu">
+                <div class="mega-menu-panel">
+                  <div class="mega-menu-main">
+                    <div class="mega-column">
+                      <a data-link="/search.html" class="mega-featured">
+                        <span class="mega-title"> Поиск товара </span>
+
+                        <span class="mega-description">
+                          Поиск продукции и производителей под вашу задачу
+                        </span>
+                      </a>
+
+                      <a data-link="/export.html" class="mega-link">
+                        <span class="mega-title"> Экспорт </span>
+
+                        <span class="mega-description">
+                          Организация экспортных поставок товаров на
+                          международные рынки
+                        </span>
+                      </a>
+
+                      <a data-link="/import.html" class="mega-link">
+                        <span class="mega-title"> Импорт </span>
+
+                        <span class="mega-description">
+                          Импорт товаров и сопровождение международных сделок
+                        </span>
+                      </a>
+                    </div>
+
+                    <div class="mega-column">
+                      <a data-link="/retail.html" class="mega-link">
+                        <span class="mega-title"> Розничные покупки </span>
+
+                        <span class="mega-description">
+                          Выкуп товаров для частных клиентов и бизнеса
+                        </span>
+                      </a>
+
+                      <a data-link="/procurement.html" class="mega-link">
+                        <span class="mega-title"> Международные закупки </span>
+
+                        <span class="mega-description">
+                          Поиск и закупка товаров у поставщиков по всему миру
+                        </span>
+                      </a>
+
+                      <a data-link="/quality.html" class="mega-link">
+                        <span class="mega-title"> Контроль качества </span>
+
+                        <span class="mega-description">
+                          Проверка товаров, поставщиков и производства
+                        </span>
+                      </a>
+                    </div>
+
+                    <div class="mega-column">
+                      <a data-link="/logistics.html" class="mega-link">
+                        <span class="mega-title">
+                          Международная логистика
+                        </span>
+
+                        <span class="mega-description">
+                          Организация международной доставки грузов
+                        </span>
+                      </a>
+
+                      <a data-link="/expert.html" class="mega-link">
+                        <span class="mega-title">
+                          Экспертное сопровождение
+                        </span>
+
+                        <span class="mega-description">
+                          Поддержка сделок и решение нестандартных задач
+                        </span>
+                      </a>
+
+                      <a
+                        data-link="/additional-services.html"
+                        class="mega-link"
+                      >
+                        <span class="mega-title"> Дополнительные услуги </span>
+
+                        <span class="mega-description">
+                          Дополнительные решения для международного бизнеса
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <a data-link="/" class="mega-promo">
+                    <div class="mega-promo-top">
+                      <span class="mega-promo-label"> PRIVOZ </span>
+
+                      <h3>Нужна помощь с международной поставкой?</h3>
+
+                      <p>
+                        Разберём задачу и предложим подходящий формат работы.
+                      </p>
+                    </div>
+
+                    <span class="mega-promo-button">
+                      Получить консультацию
+
+                      <svg viewBox="0 0 20 20">
+                        <path d="M5 10H15"></path>
+                        <path d="M11 6L15 10L11 14"></path>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- КАТАЛОГ -->
+            <li class="header-nav-item">
+              <a data-link="/search.html" class="header-nav-link">
+                <span>Каталог</span>
+              </a>
+            </li>
+
+            <!-- РЕШЕНИЕ -->
+            <li class="header-nav-item has-mega-menu">
+              <button
+                class="header-nav-link mega-menu-toggle"
+                type="button"
+                aria-expanded="false"
+              >
+                <span>Решение</span>
+
+                <svg class="nav-arrow" viewBox="0 0 12 8" aria-hidden="true">
+                  <path d="M1 1.5L6 6.5L11 1.5"></path>
+                </svg>
+              </button>
+
+              <div class="mega-menu">
+                <div class="mega-menu-panel">
+                  <div class="mega-menu-main">
+                    <div class="mega-column">
+                      <a data-link="/solutions/retail/" class="mega-featured">
+                        <span class="mega-title"> Розничным покупателям </span>
+
+                        <span class="mega-description">
+                          Покупка и доставка товаров из других стран
+                        </span>
+                      </a>
+
+                      <a
+                        data-link="/solutions/manufacturers/"
+                        class="mega-link"
+                      >
+                        <span class="mega-title"> Производителям </span>
+
+                        <span class="mega-description">
+                          Закупка сырья, оборудования и выход на новые рынки
+                        </span>
+                      </a>
+
+                      <a data-link="/solutions/factories/" class="mega-link">
+                        <span class="mega-title"> Заводам </span>
+
+                        <span class="mega-description">
+                          Международное снабжение и логистические решения
+                        </span>
+                      </a>
+                    </div>
+
+                    <div class="mega-column">
+                      <a data-link="/solutions/wholesale/" class="mega-link">
+                        <span class="mega-title"> Оптовым компаниям </span>
+
+                        <span class="mega-description">
+                          Закупка крупных партий товаров и организация поставок
+                        </span>
+                      </a>
+
+                      <a data-link="/solutions/distributors/" class="mega-link">
+                        <span class="mega-title"> Дистрибьюторам </span>
+
+                        <span class="mega-description">
+                          Международные закупки и расширение ассортимента
+                        </span>
+                      </a>
+
+                      <a data-link="/solutions/retailers/" class="mega-link">
+                        <span class="mega-title"> Ритейлу </span>
+
+                        <span class="mega-description">
+                          Поставка товаров для розничных сетей
+                        </span>
+                      </a>
+                    </div>
+
+                    <div class="mega-column">
+                      <a data-link="/solutions/marketplaces/" class="mega-link">
+                        <span class="mega-title"> Маркетплейсам </span>
+
+                        <span class="mega-description">
+                          Импорт и поставка товаров для онлайн-площадок
+                        </span>
+                      </a>
+
+                      <a data-link="/solutions/government/" class="mega-link">
+                        <span class="mega-title">
+                          Государственным предприятиям
+                        </span>
+
+                        <span class="mega-description">
+                          Международные закупки и комплексное сопровождение
+                        </span>
+                      </a>
+
+                      <a data-link="/solutions/construction/" class="mega-link">
+                        <span class="mega-title"> Строительным компаниям </span>
+
+                        <span class="mega-description">
+                          Поставка оборудования, материалов и комплектующих
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <a data-link="/solutions/" class="mega-promo mega-promo-dark">
+                    <div>
+                      <span class="mega-promo-label"> РЕШЕНИЯ </span>
+
+                      <h3>Подберём решение под ваш бизнес</h3>
+
+                      <p>
+                        Сформируем схему закупки, логистики и сопровождения.
+                      </p>
+                    </div>
+
+                    <span class="mega-promo-button">
+                      Все решения
+
+                      <svg viewBox="0 0 20 20">
+                        <path d="M5 10H15"></path>
+                        <path d="M11 6L15 10L11 14"></path>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- О КОМПАНИИ -->
+            <li class="header-nav-item has-mega-menu about-mega-item">
+              <a
+                data-link="/about.html"
+                class="header-nav-link mega-menu-toggle"
+              >
+                <span>О компании</span>
+
+                <svg class="nav-arrow" viewBox="0 0 12 8" aria-hidden="true">
+                  <path d="M1 1.5L6 6.5L11 1.5"></path>
+                </svg>
+              </a>
+
+              <div class="mega-menu">
+                <div class="mega-menu-panel">
+                  <div class="mega-menu-main">
+                    <div class="mega-column">
+                      <a data-link="/about.html" class="mega-featured">
+                        <span class="mega-title">О нас</span>
+
+                        <span class="mega-description">
+                          О компании, опыте и направлениях работы Privoz.pl
+                        </span>
+                      </a>
+
+                      <a data-link="/about.html#addresses" class="mega-link">
+                        <span class="mega-title">Адреса</span>
+
+                        <span class="mega-description">
+                          Офис и собственные склады компании в Польше
+                        </span>
+                      </a>
+                    </div>
+
+                    <div class="mega-column">
+                      <a data-link="/about.html#jobs" class="mega-link">
+                        <span class="mega-title">Работа</span>
+
+                        <span class="mega-description">
+                          Открытые вакансии и возможность присоединиться к
+                          команде
+                        </span>
+                      </a>
+
+                      <a data-link="/about.html#contacts" class="mega-link">
+                        <span class="mega-title">Контакты</span>
+
+                        <span class="mega-description">
+                          Контактные данные отделов и руководства компании
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <a data-link="/about.html" class="mega-promo mega-promo-dark">
+                    <div>
+                      <span class="mega-promo-label"> PRIVOZ </span>
+
+                      <h3>
+                        Международная торговля начинается с надёжного партнёра
+                      </h3>
+
+                      <p>
+                        Работаем с международными поставками и сопровождаем
+                        бизнес на всех этапах сделки.
+                      </p>
+                    </div>
+
+                    <span class="mega-promo-button">
+                      О компании
+
+                      <svg viewBox="0 0 20 20">
+                        <path d="M5 10H15"></path>
+                        <path d="M11 6L15 10L11 14"></path>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- ЛИЧНЫЙ КАБИНЕТ -->
+            <li class="header-nav-item has-account-menu">
+              <button
+                class="header-nav-link account-toggle"
+                type="button"
+                aria-expanded="false"
+              >
+                <span>Личный кабинет</span>
+
+                <svg class="nav-arrow" viewBox="0 0 12 8" aria-hidden="true">
+                  <path d="M1 1.5L6 6.5L11 1.5"></path>
+                </svg>
+              </button>
+
+              <div class="account-dropdown">
+                <a
+                  href="https://client.privoz.pl/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Вход
+                </a>
+
+                <a
+                  href="https://client.privoz.pl/users/register"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Регистрация
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- RIGHT ACTIONS -->
+        <div class="header-actions">
+          <!-- CONSULTATION -->
+          <a
+            data-link="#request"
+            class="consultation-button consultation-modal-open"
+          >
+            <span> Получить консультацию </span>
+
+            <span class="consultation-arrow">
+              <svg viewBox="0 0 20 20">
+                <path d="M5 10H15"></path>
+                <path d="M11 6L15 10L11 14"></path>
+              </svg>
+            </span>
+          </a>
+
+          <!-- LANGUAGE - САМОЕ КРАЙНЕЕ СПРАВА -->
+          <div class="language-switcher">
+            <button class="language-button" type="button" aria-expanded="false">
+              RU
+
+              <svg viewBox="0 0 12 8">
+                <path d="M1 1.5L6 6.5L11 1.5"></path>
+              </svg>
+            </button>
+
+            <div class="language-dropdown">
+              <a data-link="#" class="is-active">RU</a>
+              <a data-link="#">EN</a>
+              <a data-link="#">PL</a>
+              <a data-link="#">DE</a>
+              <a data-link="#">UA</a>
+              <a data-link="#">FR</a>
+              <a data-link="#">ES</a>
+            </div>
+          </div>
+
+          <!-- BURGER -->
+          <button
+            class="burger"
+            type="button"
+            aria-label="Открыть меню"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE -->
+      <div class="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-inner">
+          <nav class="mobile-nav">
+            <!-- MOBILE УСЛУГИ -->
+            <div class="mobile-nav-dropdown">
+              <button class="mobile-nav-toggle" type="button">
+                <span>Услуги</span>
+                <span class="mobile-plus"></span>
+              </button>
+
+              <div class="mobile-submenu">
+                <a data-link="/search.html">Поиск товара</a>
+                <a data-link="/export.html">Экспорт</a>
+                <a data-link="/import.html">Импорт</a>
+                <a data-link="/retail.html">Розничные покупки</a>
+                <a data-link="/purchases.html">Международные закупки</a>
+                <a data-link="/quality.html">Контроль качества</a>
+                <a data-link="/logistics.html">Международная логистика</a>
+                <a data-link="/expert.html">Экспертное сопровождение</a>
+                <a data-link="/additional-services.html"
+                  >Дополнительные услуги</a
+                >
+              </div>
+            </div>
+
+            <a data-link="/catalog/" class="mobile-main-link"> Каталог </a>
+
+            <!-- MOBILE РЕШЕНИЕ -->
+            <div class="mobile-nav-dropdown">
+              <button class="mobile-nav-toggle" type="button">
+                <span>Решение</span>
+                <span class="mobile-plus"></span>
+              </button>
+
+              <div class="mobile-submenu">
+                <a data-link="/solutions/retail/"> Розничным покупателям </a>
+
+                <a data-link="/solutions/manufacturers/"> Производителям </a>
+
+                <a data-link="/solutions/factories/"> Заводам </a>
+
+                <a data-link="/solutions/wholesale/"> Оптовым компаниям </a>
+
+                <a data-link="/solutions/distributors/"> Дистрибьюторам </a>
+
+                <a data-link="/solutions/retailers/"> Ритейлу </a>
+
+                <a data-link="/solutions/marketplaces/"> Маркетплейсам </a>
+
+                <a data-link="/solutions/government/">
+                  Государственным предприятиям
+                </a>
+
+                <a data-link="/solutions/construction/">
+                  Строительным компаниям
+                </a>
+              </div>
+            </div>
+
+            <a data-link="/about.html" class="mobile-main-link"> О компании </a>
+
+            <!-- MOBILE CABINET -->
+            <div class="mobile-nav-dropdown">
+              <button class="mobile-nav-toggle" type="button">
+                <span>Личный кабинет</span>
+                <span class="mobile-plus"></span>
+              </button>
+
+              <div class="mobile-submenu">
+                <a data-link="/login/">Вход</a>
+                <a data-link="/registration/">Регистрация</a>
+              </div>
+            </div>
+          </nav>
+
+          <div class="mobile-bottom">
+            <a
+              data-link="#"
+              class="mobile-consultation consultation-modal-open"
+            >
+              Получить консультацию
+            </a>
+
+            <div class="mobile-languages">
+              <a data-link="#" class="is-active">RU</a>
+              <a data-link="#">EN</a>
+              <a data-link="#">PL</a>
+              <a data-link="#">DE</a>
+              <a data-link="#">UA</a>
+              <a data-link="#">FR</a>
+              <a data-link="#">ES</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="purchases-page">
+      <!-- ======================================================
+       HERO
+  ======================================================= -->
+
+      <section class="purchases-hero">
+        <div class="purchases-hero-grid-bg"></div>
+
+        <div class="purchases-container purchases-hero-container">
+          <div class="purchases-hero-content">
+            <span class="purchases-kicker"> МЕЖДУНАРОДНЫЕ ЗАКУПКИ </span>
+
+            <h1 class="purchases-hero-title">
+              Закупки
+              <span>на международном рынке</span>
+            </h1>
+
+            <p class="purchases-hero-text">
+              PRIVOZ берёт на себя организацию закупок у зарубежных
+              производителей и поставщиков — от формирования закупочной
+              стратегии и переговоров до поставки продукции на территорию
+              клиента.
+            </p>
+
+            <p class="purchases-hero-text purchases-hero-text-small">
+              Управляем закупочным процессом с учётом требований к продукции,
+              объёму, стоимости, срокам и условиям поставки.
+            </p>
+
+            <a href="#purchases-request" class="purchases-primary-button">
+              <span>Обсудить закупку</span>
+
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M5 10H15"></path>
+                <path d="M11 6L15 10L11 14"></path>
+              </svg>
+            </a>
+
+            <div class="purchases-hero-note">
+              Поставщики • Переговоры • Контроль • Логистика
+            </div>
+          </div>
+
+          <div class="purchases-hero-visual">
+            <div class="purchases-hero-shape purchases-hero-shape-one"></div>
+            <div class="purchases-hero-shape purchases-hero-shape-two"></div>
+
+            <div class="purchases-hero-media">
+              <div class="purchases-hero-media-frame">
+                <span> INTERNATIONAL PROCUREMENT </span>
+
+                <div class="purchases-hero-icon">
+                  <svg viewBox="0 0 64 64">
+                    <path d="M12 20H52V48H12V20Z"></path>
+                    <path d="M20 20V14H44V20"></path>
+                    <path d="M12 30H52"></path>
+                    <path d="M23 38H41"></path>
+                  </svg>
+                </div>
+
+                <h3>
+                  От поиска поставщика
+                  <br />
+                  до поставки клиенту
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+       DESCRIPTION
+  ======================================================= -->
+
+      <section class="purchases-description">
+        <div class="purchases-container purchases-description-layout">
+          <div class="purchases-description-title">
+            <span class="purchases-section-label"> ОБ УСЛУГЕ </span>
+
+            <h2>
+              Управляем
+              <span>закупочным процессом</span>
+            </h2>
+          </div>
+
+          <div class="purchases-description-text">
+            <p>
+              Международная закупка — это не только выбор поставщика и цены.
+              Необходимо согласовать коммерческие условия, оплату, сроки
+              производства, документы, контроль качества, логистику и импортные
+              процедуры.
+            </p>
+
+            <p>
+              PRIVOZ координирует взаимодействие между клиентом, поставщиком,
+              логистическими компаниями и другими участниками сделки, объединяя
+              закупочный процесс в единую систему.
+            </p>
+
+            <div class="purchases-description-highlight">
+              <span> Наша задача </span>
+
+              <strong>
+                Организовать закупку так, чтобы клиент получил продукцию на
+                согласованных условиях без необходимости самостоятельно
+                координировать каждого участника сделки.
+              </strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+       INCLUDED
+  ======================================================= -->
+
+      <section class="purchases-included">
+        <div class="purchases-container">
+          <div class="purchases-section-head">
+            <span class="purchases-section-label"> ЧТО ВКЛЮЧАЕТ ЗАКУПКА </span>
+
+            <h2>
+              Полный цикл
+              <span>международной закупки</span>
+            </h2>
+          </div>
+
+          <div class="purchases-included-grid">
+            <!-- 01 -->
+            <article class="purchases-card">
+              <span class="purchases-card-number"> 01 </span>
+
+              <div class="purchases-card-icon">
+                <svg viewBox="0 0 48 48">
+                  <circle cx="19" cy="19" r="9"></circle>
+                  <path d="M26 26L38 38"></path>
+                  <path d="M13 19H25"></path>
+                </svg>
+              </div>
+
+              <h3>Поиск поставщиков</h3>
+
+              <div class="purchases-card-text">
+                <p>
+                  Ищем и отбираем зарубежных производителей и поставщиков,
+                  соответствующих требованиям клиента.
+                </p>
+              </div>
+            </article>
+
+            <!-- 02 -->
+            <article class="purchases-card">
+              <span class="purchases-card-number"> 02 </span>
+
+              <div class="purchases-card-icon">
+                <svg viewBox="0 0 48 48">
+                  <path d="M24 6L39 14V34L24 42L9 34V14L24 6Z"></path>
+                  <path d="M17 24L22 29L32 18"></path>
+                </svg>
+              </div>
+
+              <h3>Проверка поставщика</h3>
+
+              <div class="purchases-card-text">
+                <p>
+                  Проверяем поставщика и анализируем его коммерческие
+                  предложения перед началом сотрудничества.
+                </p>
+              </div>
+            </article>
+
+            <!-- 03 -->
+            <article class="purchases-card">
+              <span class="purchases-card-number"> 03 </span>
+
+              <div class="purchases-card-icon">
+                <svg viewBox="0 0 48 48">
+                  <path d="M8 13H28V29H17L10 36V29H8V13Z"></path>
+                  <path d="M29 18H40V33H36V38L31 33H25"></path>
+                </svg>
+              </div>
+
+              <h3>Переговоры</h3>
+
+              <div class="purchases-card-text">
+                <p>
+                  Проводим переговоры и согласовываем ключевые условия сделки с
+                  зарубежным партнёром.
+                </p>
+              </div>
+            </article>
+
+            <!-- 04 -->
+            <article class="purchases-card purchases-card-accent">
+              <span class="purchases-card-number"> 04 </span>
+
+              <div class="purchases-card-icon">
+                <svg viewBox="0 0 48 48">
+                  <path d="M7 35L18 24L25 29L40 11"></path>
+                  <path d="M33 11H40V18"></path>
+                </svg>
+              </div>
+
+              <h3>Цена, объём и сроки</h3>
+
+              <div class="purchases-card-text">
+                <p>
+                  Согласовываем стоимость, объёмы закупки, сроки производства и
+                  поставки.
+                </p>
+              </div>
+            </article>
+
+            <!-- 05 -->
+            <article class="purchases-card">
+              <span class="purchases-card-number"> 05 </span>
+
+              <div class="purchases-card-icon">
+                <svg viewBox="0 0 48 48">
+                  <rect x="8" y="12" width="32" height="24" rx="2"></rect>
+                  <path d="M8 19H40"></path>
+                  <path d="M14 29H24"></path>
+                </svg>
+              </div>
+
+              <h3>Условия оплаты и поставки</h3>
+
+              <div class="purchases-card-text">
+                <p>
+                  Согласовываем финансовые условия сделки и подходящий формат
+                  поставки.
+                </p>
+              </div>
+            </article>
+
+            <!-- 06 -->
+            <article class="purchases-card">
+              <span class="purchases-card-number"> 06 </span>
+
+              <div class="purchases-card-icon">
+                <svg viewBox="0 0 48 48">
+                  <path d="M13 7H29L37 15V41H13V7Z"></path>
+                  <path d="M29 7V15H37"></path>
+                  <path d="M18 23H32"></path>
+                  <path d="M18 29H32"></path>
+                  <path d="M18 35H27"></path>
+                </svg>
+              </div>
+
+              <h3>Документация</h3>
+
+              <div class="purchases-card-text">
+                <p>
+                  Оформляем и проверяем комплект внешнеторговой документации.
+                </p>
+              </div>
+            </article>
+
+            <!-- 07 -->
+            <article class="purchases-card">
+              <span class="purchases-card-number"> 07 </span>
+
+              <div class="purchases-card-icon">
+                <svg viewBox="0 0 48 48">
+                  <circle cx="24" cy="24" r="16"></circle>
+                  <path d="M24 14V25L31 30"></path>
+                </svg>
+              </div>
+
+              <h3>Контроль исполнения</h3>
+
+              <div class="purchases-card-text">
+                <p>
+                  Контролируем выполнение заказа и соблюдение сроков
+                  производства.
+                </p>
+              </div>
+            </article>
+
+            <!-- 08 -->
+            <article class="purchases-card">
+              <span class="purchases-card-number"> 08 </span>
+
+              <div class="purchases-card-icon">
+                <svg viewBox="0 0 48 48">
+                  <path
+                    d="M24 6L39 14V29C39 36 33 41 24 44C15 41 9 36 9 29V14L24 6Z"
+                  ></path>
+                  <path d="M17 25L22 30L32 19"></path>
+                </svg>
+              </div>
+
+              <h3>Контроль качества</h3>
+
+              <div class="purchases-card-text">
+                <p>
+                  Контролируем соответствие продукции согласованным требованиям.
+                </p>
+              </div>
+            </article>
+
+            <!-- 09 -->
+            <article class="purchases-card">
+              <span class="purchases-card-number"> 09 </span>
+
+              <div class="purchases-card-icon">
+                <svg viewBox="0 0 48 48">
+                  <path d="M7 31H29V15H7V31Z"></path>
+                  <path d="M29 21H36L41 26V31H29"></path>
+                  <circle cx="15" cy="35" r="4"></circle>
+                  <circle cx="34" cy="35" r="4"></circle>
+                </svg>
+              </div>
+
+              <h3>Международная логистика</h3>
+
+              <div class="purchases-card-text">
+                <p>
+                  Организуем международную перевозку и доставку продукции
+                  клиенту.
+                </p>
+              </div>
+            </article>
+
+            <!-- 10 -->
+            <article class="purchases-card">
+              <span class="purchases-card-number"> 10 </span>
+
+              <div class="purchases-card-icon">
+                <svg viewBox="0 0 48 48">
+                  <path d="M24 6L40 14V34L24 42L8 34V14L24 6Z"></path>
+                  <path d="M8 14L24 22L40 14"></path>
+                  <path d="M24 22V42"></path>
+                </svg>
+              </div>
+
+              <h3>Импортные процедуры</h3>
+
+              <div class="purchases-card-text">
+                <p>
+                  Координируем импортные процедуры и сопутствующие процессы.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+       PURCHASE FLOW
+  ======================================================= -->
+
+      <section class="purchases-flow">
+        <div class="purchases-container">
+          <div class="purchases-flow-head">
+            <span class="purchases-section-label"> КАК ПРОХОДИТ ЗАКУПКА </span>
+
+            <h2>
+              От задачи
+              <span>до получения продукции</span>
+            </h2>
+          </div>
+
+          <div class="purchases-flow-track">
+            <div class="purchases-flow-line">
+              <span class="purchases-flow-progress"></span>
+              <span class="purchases-flow-marker"></span>
+            </div>
+
+            <article class="purchases-flow-step">
+              <span>01</span>
+              <h3>Задача</h3>
+              <p>Получаем требования к товару, объёму, бюджету и срокам.</p>
+            </article>
+
+            <article class="purchases-flow-step">
+              <span>02</span>
+              <h3>Поставщики</h3>
+              <p>Ищем и проверяем подходящих зарубежных партнёров.</p>
+            </article>
+
+            <article class="purchases-flow-step">
+              <span>03</span>
+              <h3>Условия</h3>
+              <p>Согласовываем цену, объём, оплату, производство и поставку.</p>
+            </article>
+
+            <article class="purchases-flow-step">
+              <span>04</span>
+              <h3>Закупка</h3>
+              <p>
+                Сопровождаем заказ, документы и исполнение обязательств
+                поставщиком.
+              </p>
+            </article>
+
+            <article class="purchases-flow-step">
+              <span>05</span>
+              <h3>Поставка</h3>
+              <p>
+                Организуем логистику, импортные процедуры и доставку клиенту.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+       EXPERTISE
+  ======================================================= -->
+
+      <section class="purchases-expertise">
+        <div class="purchases-container purchases-expertise-layout">
+          <div class="purchases-expertise-copy">
+            <span class="purchases-section-label"> ЭКСПЕРТИЗА ЗАКУПОК </span>
+
+            <h2>
+              Считаем не только
+              <span>цену товара</span>
+            </h2>
+
+            <p>
+              Работа с зарубежными поставщиками требует оценки полной стоимости
+              закупки, а не только цены продукции.
+            </p>
+
+            <p>
+              Мы анализируем условия оплаты, логистику, таможенные расходы,
+              сроки, требования к документации и другие затраты, которые влияют
+              на итоговую эффективность сделки.
+            </p>
+          </div>
+
+          <div class="purchases-expertise-grid">
+            <article>
+              <span>01</span>
+              <strong>Стоимость товара</strong>
+              <p>Анализируем коммерческое предложение и условия закупки.</p>
+            </article>
+
+            <article>
+              <span>02</span>
+              <strong>Платежи</strong>
+              <p>Учитываем доступные способы расчётов и условия оплаты.</p>
+            </article>
+
+            <article>
+              <span>03</span>
+              <strong>Логистика</strong>
+              <p>Рассчитываем перевозку, складские и сопутствующие расходы.</p>
+            </article>
+
+            <article>
+              <span>04</span>
+              <strong>Таможня</strong>
+              <p>Учитываем импортные платежи и процедуры.</p>
+            </article>
+
+            <article>
+              <span>05</span>
+              <strong>Сроки</strong>
+              <p>
+                Оцениваем производство, подготовку и международную доставку.
+              </p>
+            </article>
+
+            <article>
+              <span>06</span>
+              <strong>Документы</strong>
+              <p>Проверяем требования к внешнеторговой документации.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+       CATEGORIES
+  ======================================================= -->
+
+      <section class="purchases-categories">
+        <div class="purchases-container">
+          <div class="purchases-section-head">
+            <span class="purchases-section-label"> КАТЕГОРИИ ПРОДУКЦИИ </span>
+
+            <h2>
+              Работаем
+              <span>с разными товарами</span>
+            </h2>
+          </div>
+
+          <div class="purchases-categories-grid">
+            <div class="purchases-category">
+              <span>01</span>
+              <strong>Сырьё</strong>
+            </div>
+
+            <div class="purchases-category">
+              <span>02</span>
+              <strong>Ингредиенты</strong>
+            </div>
+
+            <div class="purchases-category">
+              <span>03</span>
+              <strong>Комплектующие</strong>
+            </div>
+
+            <div class="purchases-category">
+              <span>04</span>
+              <strong>Продукты питания</strong>
+            </div>
+
+            <div class="purchases-category">
+              <span>05</span>
+              <strong>Текстиль</strong>
+            </div>
+
+            <div class="purchases-category">
+              <span>06</span>
+              <strong>Готовые товары</strong>
+            </div>
+
+            <div class="purchases-category">
+              <span>07</span>
+              <strong>Оборудование</strong>
+            </div>
+
+            <div class="purchases-category">
+              <span>08</span>
+              <strong>Специализированные позиции</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+       WHY PRIVOZ
+  ======================================================= -->
+
+      <section class="purchases-why">
+        <div class="purchases-why-media">
+          <div class="purchases-why-placeholder">
+            <span> IMAGE / VIDEO </span>
+
+            <strong>
+              GLOBAL
+              <br />
+              PROCUREMENT
+            </strong>
+          </div>
+        </div>
+
+        <div class="purchases-why-content">
+          <div class="purchases-why-inner">
+            <span class="purchases-section-label"> ПОДХОД PRIVOZ </span>
+
+            <h2>
+              Закупка как
+              <span>единый процесс</span>
+            </h2>
+
+            <p>
+              PRIVOZ оценивает закупку комплексно и помогает выстроить
+              оптимальную схему поставки с учётом специфики товара, страны
+              происхождения и требований клиента.
+            </p>
+
+            <p>
+              Мы координируем поставщика, коммерческие условия, документы,
+              контроль качества, логистику и импортные процедуры.
+            </p>
+
+            <div class="purchases-why-accent">
+              Один партнёр координирует весь процесс — от поиска поставщика до
+              получения продукции клиентом.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+       REQUEST
+  ======================================================= -->
+
+      <section class="purchases-request" id="purchases-request">
+        <div class="purchases-container purchases-request-layout">
+          <div class="purchases-request-copy">
+            <span class="purchases-section-label"> МЕЖДУНАРОДНАЯ ЗАКУПКА </span>
+
+            <h2>
+              Передайте нам
+              <span>вашу задачу</span>
+            </h2>
+
+            <p>
+              Расскажите, какую продукцию необходимо приобрести, в каком объёме
+              и из какой страны. Мы изучим запрос и предложим формат организации
+              закупки.
+            </p>
+
+            <div class="purchases-request-media">
+              <span>IMAGE</span>
+
+              <p>Поставщик / переговоры / международная закупка</p>
+            </div>
+          </div>
+
+          <form class="purchases-request-form">
+            <div class="purchases-form-grid">
+              <div class="purchases-field">
+                <label for="purchases-name"> Имя * </label>
+
+                <input
+                  id="purchases-name"
+                  type="text"
+                  required
+                  placeholder="Ваше имя"
+                />
+              </div>
+
+              <div class="purchases-field">
+                <label for="purchases-company">
+                  Компания
+                  <span>необязательно</span>
+                </label>
+
+                <input
+                  id="purchases-company"
+                  type="text"
+                  placeholder="Название компании"
+                />
+              </div>
+
+              <div class="purchases-field">
+                <label for="purchases-phone"> Телефон * </label>
+
+                <input
+                  id="purchases-phone"
+                  type="tel"
+                  required
+                  placeholder="+48 000 000 000"
+                />
+              </div>
+
+              <div class="purchases-field">
+                <label for="purchases-country"> Страна закупки </label>
+
+                <input
+                  id="purchases-country"
+                  type="text"
+                  placeholder="Например: Германия"
+                />
+              </div>
+
+              <div class="purchases-field purchases-field-full">
+                <label for="purchases-product">
+                  Что необходимо закупить?
+                </label>
+
+                <input
+                  id="purchases-product"
+                  type="text"
+                  placeholder="Товар / категория / спецификация"
+                />
+              </div>
+
+              <div class="purchases-field purchases-field-full">
+                <label for="purchases-comment">
+                  Дополнительная информация
+                  <span>необязательно</span>
+                </label>
+
+                <textarea
+                  id="purchases-comment"
+                  placeholder="Объём, сроки, требования к продукции и другие детали"
+                ></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="purchases-submit">
+              <span> Отправить запрос </span>
+
+              <svg viewBox="0 0 20 20">
+                <path d="M5 10H15"></path>
+                <path d="M11 6L15 10L11 14"></path>
+              </svg>
+            </button>
+
+            <div class="purchases-form-success">
+              Спасибо. Ваш запрос отправлен. Наш специалист свяжется с вами для
+              обсуждения закупки.
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ======================================================
+       FINAL
+  ======================================================= -->
+
+      <section class="purchases-final">
+        <div class="purchases-container">
+          <div class="purchases-final-panel">
+            <span class="purchases-section-label"> PRIVOZ </span>
+
+            <h2>
+              Международная закупка
+              <span>под контролем одной команды.</span>
+            </h2>
+
+            <p>
+              Передайте нам задачу — PRIVOZ организует процесс, координирует
+              участников сделки и обеспечит сопровождение поставки от поставщика
+              до клиента.
+            </p>
+
+            <a href="#purchases-request" class="purchases-primary-button">
+              <span>Обсудить закупку</span>
+
+              <svg viewBox="0 0 20 20">
+                <path d="M5 10H15"></path>
+                <path d="M11 6L15 10L11 14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="privoz-footer">
+      <div class="privoz-footer-shell">
+        <!-- =====================================================
+         1. CONTACTS
+    ====================================================== -->
+
+        <section class="privoz-footer-section privoz-footer-section-contacts">
+          <div class="privoz-footer-section-inner">
+            <div class="privoz-footer-head">
+              <h2>Контакты</h2>
+            </div>
+
+            <div class="privoz-footer-company">
+              <span class="privoz-footer-label"> Юридическое название </span>
+
+              <strong> Privoz Sp. z o.o. </strong>
+            </div>
+
+            <div class="privoz-footer-socials">
+              <span class="privoz-footer-label"> Социальные сети </span>
+
+              <div class="privoz-footer-social-links">
+                <a href="#" aria-label="LinkedIn"> LI </a>
+
+                <a href="#" aria-label="Facebook"> FB </a>
+
+                <a href="#" aria-label="Instagram"> IG </a>
+              </div>
+            </div>
+
+            <div class="privoz-footer-departments">
+              <!-- WHOLESALE -->
+
+              <div class="privoz-footer-department">
+                <div class="privoz-footer-department-top">
+                  <span> Оптовый отдел </span>
+
+                  <small> B2B </small>
+                </div>
+
+                <div class="privoz-footer-department-info">
+                  <p>Пн–Пт 09:00–17:00</p>
+
+                  <a href="tel:+48000000"> +48 000 000 00 </a>
+
+                  <a href="mailto:trade@privoz.pl"> trade@privoz.pl </a>
+                </div>
+
+                <div class="privoz-footer-messengers">
+                  <a href="#" aria-label="Telegram"> TG </a>
+
+                  <a href="#" aria-label="WhatsApp"> WA </a>
+                </div>
+              </div>
+
+              <!-- RETAIL -->
+
+              <div class="privoz-footer-department">
+                <div class="privoz-footer-department-top">
+                  <span> Розничный отдел </span>
+
+                  <small> B2C </small>
+                </div>
+
+                <div class="privoz-footer-department-info">
+                  <p>Пн–Пт 08:00–16:00</p>
+
+                  <a href="tel:+48000000"> +48 000 000 00 </a>
+
+                  <a href="mailto:info@privoz.pl"> info@privoz.pl </a>
+                </div>
+
+                <div class="privoz-footer-messengers">
+                  <a href="#" aria-label="Telegram"> TG </a>
+
+                  <a href="#" aria-label="WhatsApp"> WA </a>
+
+                  <a href="#" aria-label="Viber"> VB </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================
+         2. WAREHOUSES
+    ====================================================== -->
+
+        <section class="privoz-footer-section privoz-footer-section-warehouses">
+          <div class="privoz-footer-section-inner">
+            <div class="privoz-footer-head">
+              <h2>Склады</h2>
+            </div>
+
+            <div class="privoz-footer-warehouses">
+              <!-- KUZNICA -->
+
+              <article class="privoz-footer-warehouse">
+                <div>
+                  <span class="privoz-footer-label"> Склад </span>
+
+                  <h3>Кузница</h3>
+                </div>
+
+                <div class="privoz-footer-warehouse-data">
+                  <div>
+                    <span>Телефон</span>
+
+                    <a href="tel:+48514750615"> +48 514 750 615 </a>
+                  </div>
+
+                  <div>
+                    <span>Время работы</span>
+
+                    <p>Пн–Пт 08:00–17:00</p>
+                  </div>
+
+                  <div>
+                    <span>Адрес</span>
+
+                    <p>
+                      ul. Sokólska 39,<br />
+                      16-123 Kuźnica
+                    </p>
+                  </div>
+                </div>
+
+                <a
+                  href="#"
+                  class="privoz-footer-map-button"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span> Посмотреть в Google картах </span>
+
+                  <span> ↗ </span>
+                </a>
+              </article>
+
+              <!-- BIALYSTOK -->
+
+              <article class="privoz-footer-warehouse">
+                <div>
+                  <span class="privoz-footer-label"> Склад </span>
+
+                  <h3>Белосток</h3>
+                </div>
+
+                <div class="privoz-footer-warehouse-data">
+                  <div>
+                    <span>Телефон</span>
+
+                    <a href="tel:+48516323116"> +48 516 323 116 </a>
+                  </div>
+
+                  <div>
+                    <span>Время работы</span>
+
+                    <p>
+                      Пн–Пт 08:00–17:00<br />
+                      Сб 08:00–13:00
+                    </p>
+                  </div>
+
+                  <div>
+                    <span>Адрес</span>
+
+                    <p>
+                      ul. Ciesielska 2 lok.22,<br />
+                      15-542 Białystok
+                    </p>
+                  </div>
+                </div>
+
+                <a
+                  href="#"
+                  class="privoz-footer-map-button"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span> Посмотреть в Google картах </span>
+
+                  <span> ↗ </span>
+                </a>
+              </article>
+
+              <!-- BIALA PODLASKA -->
+
+              <article class="privoz-footer-warehouse">
+                <div>
+                  <span class="privoz-footer-label"> Склад </span>
+
+                  <h3>Бяла-Подляска</h3>
+                </div>
+
+                <div class="privoz-footer-warehouse-data">
+                  <div>
+                    <span>Телефон</span>
+
+                    <a href="tel:+48514065495"> +48 514 065 495 </a>
+                  </div>
+
+                  <div>
+                    <span>Время работы</span>
+
+                    <p>
+                      Пн–Пт 08:00–16:00<br />
+                      Сб 08:00–13:00
+                    </p>
+                  </div>
+
+                  <div>
+                    <span>Адрес</span>
+
+                    <p>
+                      ul. Sidorska 2D,<br />
+                      21-500 Biała Podlaska
+                    </p>
+                  </div>
+                </div>
+
+                <a
+                  href="#"
+                  class="privoz-footer-map-button"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span> Посмотреть в Google картах </span>
+
+                  <span> ↗ </span>
+                </a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================
+         3. DOCUMENTS
+    ====================================================== -->
+
+        <section class="privoz-footer-section privoz-footer-section-documents">
+          <div class="privoz-footer-section-inner">
+            <div class="privoz-footer-head">
+              <h2>Документы</h2>
+            </div>
+
+            <div class="privoz-footer-documents">
+              <div class="privoz-footer-document-links">
+                <a href="#">
+                  <span> Регламент компании </span>
+
+                  <span> ↗ </span>
+                </a>
+
+                <a href="#">
+                  <span> Политика конфиденциальности RODO </span>
+
+                  <span> ↗ </span>
+                </a>
+              </div>
+
+              <a
+                href="#"
+                class="privoz-footer-trust-card"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="privoz-footer-label"> Проверенная компания </span>
+
+                <div class="privoz-footer-rzetelna-logo">
+                  <img src="images/rz.svg" alt="Rzetelna Firma" />
+                </div>
+
+                <span class="privoz-footer-trust-link">
+                  Проверить компанию ↗
+                </span>
+              </a>
+            </div>
+
+            <div class="privoz-footer-bottom">
+              <div class="privoz-footer-bottom-brand">
+                <img src="images/logo.svg" alt="Privoz" />
+              </div>
+
+              <p>
+                © 2016–<span id="current-year"></span> Privoz Sp. z o.o. Все
+                права защищены.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="procurement.js"></script>
+  </body>
+</html>
