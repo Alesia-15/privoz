@@ -291,17 +291,16 @@
 
             <!-- О КОМПАНИИ -->
             <li class="header-nav-item has-mega-menu about-mega-item">
-              <button
+              <a
+                data-link="/about.html"
                 class="header-nav-link mega-menu-toggle"
-                type="button"
-                aria-expanded="false"
               >
                 <span>О компании</span>
 
                 <svg class="nav-arrow" viewBox="0 0 12 8" aria-hidden="true">
                   <path d="M1 1.5L6 6.5L11 1.5"></path>
                 </svg>
-              </button>
+              </a>
 
               <div class="mega-menu">
                 <div class="mega-menu-panel">
@@ -386,13 +385,18 @@
               </button>
 
               <div class="account-dropdown">
-                <a data-link="https://client.privoz.pl/" target="_blank">
+                <a
+                  href="https://client.privoz.pl/"
+                  target="_blank"
+                  rel="noopener"
+                >
                   Вход
                 </a>
 
                 <a
-                  data-link="https://client.privoz.pl/users/register"
+                  href="https://client.privoz.pl/users/register"
                   target="_blank"
+                  rel="noopener"
                 >
                   Регистрация
                 </a>
@@ -1584,7 +1588,10 @@
                 <img src="images/logo.svg" alt="Privoz" />
               </div>
 
-              <p>© 2014–2026 Privoz Sp. z o.o. Все права защищены.</p>
+              <p>
+                © 2016–<span id="current-year"></span> Privoz Sp. z o.o. Все
+                права защищены.
+              </p>
             </div>
           </div>
         </section>

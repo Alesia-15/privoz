@@ -74,11 +74,23 @@ document.addEventListener("DOMContentLoaded", () => {
   ====================================================== */
 
   megaItems.forEach((item) => {
-    const button = item.querySelector(".mega-menu-toggle");
+    const trigger = item.querySelector(".mega-menu-toggle");
 
-    if (!button) return;
+    if (!trigger) return;
 
-    button.addEventListener("click", (event) => {
+    trigger.addEventListener("click", (event) => {
+      /*
+      Если это ссылка — разрешаем обычный переход.
+      Например "О компании" → about.html.
+    */
+      if (trigger.tagName.toLowerCase() === "a") {
+        return;
+      }
+
+      /*
+      Если это button — оставляем старое
+      открытие по клику.
+    */
       event.preventDefault();
       event.stopPropagation();
 
@@ -88,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       item.classList.toggle("is-open", !isOpen);
 
-      button.setAttribute("aria-expanded", String(!isOpen));
+      trigger.setAttribute("aria-expanded", String(!isOpen));
     });
   });
 
@@ -643,7 +655,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    /* Внешние ссылки не изменяем */
     if (
       path.startsWith("http://") ||
       path.startsWith("https://") ||
@@ -654,18 +665,17 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    /* Якорь текущей страницы */
     if (path.startsWith("#")) {
       link.href = path;
       return;
     }
 
-    /* Внутренний путь */
     link.href = `${BASE_PATH}${path}`;
   });
+
   /* ======================================================
-     OBSERVER
-  ====================================================== */
+   OBSERVER
+====================================================== */
 
   const revealElements = document.querySelectorAll(
     ".reveal-up, " +
@@ -675,55 +685,59 @@ document.addEventListener("DOMContentLoaded", () => {
       ".reveal-shape",
   );
 
-  /*
-    Если пользователь отключил анимацию —
-    сразу показываем всё.
-  */
-
   if (prefersReducedMotion) {
     revealElements.forEach((element) => {
       element.classList.add("reveal-visible");
     });
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
 
-    return;
+          entry.target.classList.add("reveal-visible");
+
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -8% 0px",
+      },
+    );
+
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
   }
 
-  /*
-    Каждый элемент отслеживается
-    независимо.
-  */
+  /* ======================================================
+   CURRENT YEAR
+====================================================== */
 
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
+  const currentYear = document.getElementById("current-year");
 
-        entry.target.classList.add("reveal-visible");
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+  }
 
-        observer.unobserve(entry.target);
-      });
-    },
-    {
-      /*
-          10% элемента должно
-          попасть на экран.
-        */
+  /* ======================================================
+   ACTIVE CURRENT PAGE
+====================================================== */
 
-      threshold: 0.1,
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-      /*
-          Анимация стартует немного
-          раньше, чем элемент дойдёт
-          далеко вверх.
-        */
+  document.querySelectorAll(".header-nav-link[data-link]").forEach((link) => {
+    const target = link.dataset.link?.split("/").pop();
 
-      rootMargin: "0px 0px -8% 0px",
-    },
-  );
+    if (!target) {
+      return;
+    }
 
-  revealElements.forEach((element) => {
-    revealObserver.observe(element);
+    if (target === currentPage) {
+      link.closest(".header-nav-item")?.classList.add("is-current");
+    }
   });
 });

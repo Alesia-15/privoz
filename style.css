@@ -284,6 +284,16 @@ a {
   width: 105px;
 }
 
+.header-nav-item.is-current > .header-nav-link {
+  color: #171717;
+}
+
+.header-nav-item.is-current::after {
+  width: 105px;
+
+  opacity: 1;
+}
+
 /* ======================================================
    NAV ARROW
 ====================================================== */
@@ -516,7 +526,8 @@ a {
 .mega-menu {
   position: fixed;
 
-  top: calc(var(--header-height) + 18px);
+  /* без зазора между шапкой и меню */
+  top: var(--header-height);
   left: 50%;
 
   width: min(1320px, calc(100vw - 80px));
@@ -527,7 +538,7 @@ a {
   visibility: hidden;
   pointer-events: none;
 
-  transform: translateX(-50%) translateY(-12px);
+  transform: translateX(-50%) translateY(8px);
 
   transition:
     opacity 0.22s ease,
@@ -535,13 +546,37 @@ a {
     transform 0.22s ease;
 }
 
-.header-nav-item.is-open .mega-menu {
+/* Открытие через JS */
+
+.header-nav-item.is-open > .mega-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 
   transform: translateX(-50%) translateY(0);
 }
+
+/* Открытие наведением на DESKTOP */
+
+@media (min-width: 1121px) {
+  .header-nav-item.has-mega-menu:hover > .mega-menu,
+  .header-nav-item.has-mega-menu:focus-within > .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .header-nav-item.has-mega-menu:hover .nav-arrow,
+  .header-nav-item.has-mega-menu:focus-within .nav-arrow {
+    transform: rotate(180deg);
+  }
+}
+
+/* ======================================================
+   MEGA MENU PANEL
+====================================================== */
 
 .mega-menu-panel {
   width: 100%;
@@ -573,7 +608,13 @@ a {
   );
 }
 
+/* ======================================================
+   MEGA MENU MAIN
+====================================================== */
+
 .mega-menu-main {
+  min-width: 0;
+
   padding: 10px;
 
   display: grid;
@@ -584,6 +625,8 @@ a {
 }
 
 .mega-column {
+  min-width: 0;
+
   display: flex;
   flex-direction: column;
 
@@ -596,6 +639,7 @@ a {
 
 .mega-link,
 .mega-featured {
+  min-width: 0;
   min-height: 102px;
 
   padding: 16px 18px;
@@ -672,6 +716,7 @@ a {
 .mega-promo {
   position: relative;
 
+  min-width: 0;
   min-height: 412px;
 
   padding: 28px 25px;
@@ -803,6 +848,14 @@ a {
 }
 
 /* ======================================================
+   ABOUT MEGA MENU
+====================================================== */
+
+.about-mega-item .mega-menu-main {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* ======================================================
    ACCOUNT DROPDOWN
 ====================================================== */
 
@@ -851,6 +904,22 @@ a {
   pointer-events: auto;
 
   transform: translateX(-50%) translateY(0);
+}
+
+@media (min-width: 1121px) {
+  .header-nav-item.has-account-menu:hover .account-dropdown,
+  .header-nav-item.has-account-menu:focus-within .account-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .header-nav-item.has-account-menu:hover .nav-arrow,
+  .header-nav-item.has-account-menu:focus-within .nav-arrow {
+    transform: rotate(180deg);
+  }
 }
 
 .account-dropdown a {
@@ -5143,10 +5212,6 @@ a {
 
     gap: 10px;
   }
-}
-
-.about-mega-item .mega-menu-main {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 /* ======================================================
