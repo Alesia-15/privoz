@@ -5148,3 +5148,764 @@ a {
 .about-mega-item .mega-menu-main {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
+
+/* ======================================================
+   PRIVOZ FOOTER
+====================================================== */
+
+.privoz-footer {
+  position: relative;
+
+  overflow: hidden;
+
+  background: #101010;
+
+  color: #ffffff;
+}
+
+.privoz-footer-shell {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  min-height: calc(100vh - var(--header-height));
+  height: auto;
+}
+
+/* ======================================================
+   SECTIONS
+====================================================== */
+
+.privoz-footer-section {
+  position: relative;
+
+  min-width: 0;
+
+  padding: 38px 42px 24px;
+
+  overflow: hidden;
+}
+
+.privoz-footer-section-inner {
+  position: relative;
+
+  z-index: 3;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ======================================================
+   DIAGONAL LOGO STYLE
+====================================================== */
+
+.privoz-footer-section::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+.privoz-footer-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -90px;
+  bottom: -90px;
+
+  transform: rotate(45deg);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+/* CONTACTS */
+
+.privoz-footer-section-contacts {
+  background: linear-gradient(145deg, #e96322 0%, #d9561c 100%);
+
+  clip-path: polygon(0 0, calc(100% - 48px) 0, 100% 48px, 100% 100%, 0 100%);
+}
+
+.privoz-footer-section-contacts::before {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    transparent 45%
+  );
+}
+
+/* WAREHOUSES */
+
+.privoz-footer-section-warehouses {
+  margin-left: -32px;
+
+  padding-left: 64px;
+
+  background: #272727;
+
+  clip-path: polygon(
+    48px 0,
+    calc(100% - 48px) 0,
+    100% 48px,
+    100% 100%,
+    0 100%,
+    0 48px
+  );
+}
+
+.privoz-footer-section-warehouses::before {
+  background: linear-gradient(145deg, rgba(255, 104, 30, 0.1), transparent 48%);
+}
+
+/* DOCUMENTS */
+
+.privoz-footer-section-documents {
+  margin-left: -32px;
+
+  padding-left: 64px;
+
+  background: #171717;
+
+  clip-path: polygon(48px 0, 100% 0, 100% 100%, 0 100%, 0 48px);
+}
+
+.privoz-footer-section-documents::before {
+  background: radial-gradient(
+    circle at 85% 15%,
+    rgba(255, 104, 30, 0.13),
+    transparent 28%
+  );
+}
+
+/* ======================================================
+   HEAD
+====================================================== */
+
+.privoz-footer-head {
+  margin-bottom: 24px;
+}
+
+.privoz-footer-head h2 {
+  margin: 0;
+
+  font-size: clamp(30px, 2.5vw, 42px);
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+}
+
+/* ======================================================
+   LABELS
+====================================================== */
+
+.privoz-footer-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+/* ======================================================
+   COMPANY
+====================================================== */
+
+.privoz-footer-company {
+  margin-bottom: 26px;
+}
+
+.privoz-footer-company strong {
+  font-size: 19px;
+  font-weight: 500;
+}
+
+/* ======================================================
+   SOCIALS
+====================================================== */
+
+.privoz-footer-socials {
+  margin-bottom: 38px;
+}
+
+.privoz-footer-social-links,
+.privoz-footer-messengers {
+  display: flex;
+
+  gap: 8px;
+}
+
+.privoz-footer-social-links a,
+.privoz-footer-messengers a {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.privoz-footer-social-links a:hover,
+.privoz-footer-messengers a:hover {
+  background: #ffffff;
+
+  border-color: #ffffff;
+
+  color: #161616;
+}
+
+/* ======================================================
+   DEPARTMENTS
+====================================================== */
+
+.privoz-footer-departments {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 12px;
+}
+
+.privoz-footer-department {
+  padding: 20px;
+
+  background: rgba(122, 45, 12, 0.18);
+
+  border: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+.privoz-footer-department-top {
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.privoz-footer-department-top > span {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.privoz-footer-department-top small {
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+}
+
+.privoz-footer-department-info {
+  margin-bottom: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.privoz-footer-department-info p,
+.privoz-footer-department-info a {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 12px;
+
+  line-height: 1.45;
+
+  text-decoration: none;
+}
+
+.privoz-footer-department-info a:hover {
+  color: #ffffff;
+}
+
+/* ======================================================
+   WAREHOUSES
+====================================================== */
+
+.privoz-footer-warehouses {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.privoz-footer-warehouse {
+  padding: 19px 0;
+
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 24px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.privoz-footer-warehouse:first-child {
+  border-top: 0;
+}
+
+.privoz-footer-warehouse h3 {
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  letter-spacing: -0.03em;
+}
+
+.privoz-footer-warehouse-data {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.privoz-footer-warehouse-data div > span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: rgba(255, 255, 255, 0.44);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.privoz-footer-warehouse-data p,
+.privoz-footer-warehouse-data a {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 13px;
+  line-height: 1.4;
+
+  text-decoration: none;
+}
+
+/* ======================================================
+   MAP BUTTON
+====================================================== */
+
+.privoz-footer-map-button {
+  grid-column: 1 / -1;
+
+  min-height: 40px;
+  margin-top: 2px;
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.privoz-footer-map-button:hover {
+  background: #ffffff;
+
+  color: #171717;
+}
+
+/* ======================================================
+   DOCUMENTS
+====================================================== */
+
+.privoz-footer-documents {
+  display: flex;
+  flex-direction: column;
+
+  gap: 28px;
+}
+
+.privoz-footer-document-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.privoz-footer-document-links a {
+  min-height: 62px;
+
+  padding: 0 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+
+  color: rgba(255, 255, 255, 0.76);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    padding 0.2s ease;
+}
+
+.privoz-footer-document-links a:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.privoz-footer-document-links a:hover {
+  padding-left: 8px;
+
+  color: #ffffff;
+}
+
+/* ======================================================
+   TRUST CARD
+====================================================== */
+
+.privoz-footer-trust-card {
+  min-height: 185px;
+
+  padding: 22px 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 104, 30, 0.18),
+    rgba(255, 255, 255, 0.02)
+  );
+
+  border: 1px solid rgba(255, 104, 30, 0.22);
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  clip-path: polygon(
+    18px 0,
+    100% 0,
+    100% calc(100% - 18px),
+    calc(100% - 18px) 100%,
+    0 100%,
+    0 18px
+  );
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.privoz-footer-trust-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(255, 104, 30, 0.6);
+}
+
+.privoz-footer-trust-link {
+  margin-top: auto;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.privoz-footer-rzetelna-logo {
+  margin: 22px 0 28px;
+
+  width: 190px;
+  max-width: 100%;
+}
+
+.privoz-footer-rzetelna-logo img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+/* ======================================================
+   BOTTOM
+====================================================== */
+
+.privoz-footer-bottom {
+  margin-top: auto;
+  padding-top: 34px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.privoz-footer-bottom-brand {
+  width: 130px;
+}
+
+.privoz-footer-bottom-brand img {
+  width: 100%;
+  height: auto;
+
+  filter: brightness(0) invert(1);
+
+  opacity: 0.9;
+}
+
+.privoz-footer-bottom p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.36);
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+/* ======================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 1180px) {
+  .privoz-footer-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .privoz-footer-section {
+    min-height: auto;
+
+    padding: 60px 50px;
+  }
+
+  .privoz-footer-section-contacts,
+  .privoz-footer-section-warehouses,
+  .privoz-footer-section-documents {
+    margin-left: 0;
+
+    clip-path: polygon(0 0, calc(100% - 35px) 0, 100% 35px, 100% 100%, 0 100%);
+  }
+
+  .privoz-footer-section-warehouses,
+  .privoz-footer-section-documents {
+    padding-left: 50px;
+  }
+
+  .privoz-footer-departments {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .privoz-footer-warehouses {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+  .privoz-footer-warehouse {
+    padding: 14px 0;
+
+    grid-template-columns: 0.72fr 1.28fr;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .privoz-footer-map-button {
+    grid-column: auto;
+  }
+
+  .privoz-footer-documents {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+  }
+
+  .privoz-footer-bottom {
+    margin-top: 45px;
+  }
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 768px) {
+  .privoz-footer-section {
+    padding: 50px 16px;
+  }
+
+  .privoz-footer-section-warehouses,
+  .privoz-footer-section-documents {
+    padding-left: 16px;
+  }
+
+  .privoz-footer-head {
+    margin-bottom: 30px;
+  }
+
+  .privoz-footer-head h2 {
+    font-size: 36px;
+  }
+
+  .privoz-footer-departments {
+    grid-template-columns: 1fr;
+  }
+
+  .privoz-footer-warehouses {
+    grid-template-columns: 1fr;
+  }
+
+  .privoz-footer-documents {
+    grid-template-columns: 1fr;
+  }
+
+  .privoz-footer-trust-card {
+    min-height: 200px;
+  }
+
+  .privoz-footer-trust-card strong {
+    font-size: 38px;
+  }
+}
+
+/* ======================================================
+   FOOTER COMPACT DESKTOP
+====================================================== */
+
+@media (min-width: 1181px) {
+  .privoz-footer-shell {
+    min-height: calc(100vh - var(--header-height));
+    height: calc(100vh - var(--header-height));
+  }
+
+  .privoz-footer-section {
+    padding-top: 28px;
+    padding-bottom: 18px;
+  }
+
+  .privoz-footer-section-warehouses,
+  .privoz-footer-section-documents {
+    padding-left: 58px;
+  }
+
+  .privoz-footer-company {
+    margin-bottom: 18px;
+  }
+
+  .privoz-footer-socials {
+    margin-bottom: 24px;
+  }
+
+  .privoz-footer-departments {
+    gap: 10px;
+  }
+
+  .privoz-footer-department {
+    padding: 16px 18px;
+  }
+
+  .privoz-footer-department-top {
+    margin-bottom: 14px;
+  }
+
+  .privoz-footer-department-info {
+    margin-bottom: 12px;
+    gap: 4px;
+  }
+
+  .privoz-footer-social-links a,
+  .privoz-footer-messengers a {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* WAREHOUSES */
+
+  .privoz-footer-warehouses {
+    gap: 0;
+  }
+
+  .privoz-footer-warehouse {
+    padding: 10px 0 12px;
+
+    grid-template-columns: 0.78fr 1.22fr;
+
+    gap: 14px 18px;
+  }
+
+  .privoz-footer-warehouse-data {
+    gap: 6px;
+  }
+
+  .privoz-footer-warehouse-data div > span {
+    margin-bottom: 2px;
+  }
+}
