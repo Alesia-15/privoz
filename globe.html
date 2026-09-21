@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEST</title>
+
+    <link rel="stylesheet" href="/globe.css" />
+  </head>
+  <body>
+    <section class="privoz-globe-section">
+      <div class="privoz-globe-scene">
+        <!-- GLOBE -->
+        <div class="privoz-globe-wrap">
+          <canvas id="privozGlobe"></canvas>
+        </div>
+
+        <!-- ICONS AROUND GLOBE -->
+        <div class="globe-service" style="--angle: -90deg">
+          <div class="globe-service__card">
+            <i data-lucide="plane"></i>
+          </div>
+        </div>
+
+        <div class="globe-service" style="--angle: -54deg">
+          <div class="globe-service__card">
+            <i data-lucide="ship"></i>
+          </div>
+        </div>
+
+        <div class="globe-service" style="--angle: -18deg">
+          <div class="globe-service__card">
+            <i data-lucide="boxes"></i>
+          </div>
+        </div>
+
+        <div class="globe-service" style="--angle: 18deg">
+          <div class="globe-service__card">
+            <i data-lucide="warehouse"></i>
+          </div>
+        </div>
+
+        <div class="globe-service" style="--angle: 54deg">
+          <div class="globe-service__card">
+            <i data-lucide="package"></i>
+          </div>
+        </div>
+
+        <div class="globe-service" style="--angle: 90deg">
+          <div class="globe-service__card">
+            <i data-lucide="file-text"></i>
+          </div>
+        </div>
+
+        <div class="globe-service" style="--angle: 126deg">
+          <div class="globe-service__card">
+            <i data-lucide="truck"></i>
+          </div>
+        </div>
+
+        <div class="globe-service" style="--angle: 162deg">
+          <div class="globe-service__card">
+            <i data-lucide="shopping-cart"></i>
+          </div>
+        </div>
+
+        <div class="globe-service" style="--angle: 198deg">
+          <div class="globe-service__card">
+            <i data-lucide="banknote"></i>
+          </div>
+        </div>
+
+        <div class="globe-service" style="--angle: 234deg">
+          <div class="globe-service__card">
+            <i data-lucide="shield-check"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+    <script src="globe.js"></script>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
