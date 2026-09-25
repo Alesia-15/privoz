@@ -488,8 +488,12 @@
 .purchases-included {
   padding: 120px 0 140px;
 
-  background: linear-gradient(135deg, #f0e2e3, #f8eeee);
+  background: linear-gradient(135deg, #f0e2e3 0%, #f8eeee 65%, #ead7d9 100%);
+
+  border-top: 1px solid var(--purchases-border);
 }
+
+/* GRID */
 
 .purchases-included-grid {
   display: grid;
@@ -497,12 +501,15 @@
   grid-template-columns: repeat(5, minmax(0, 1fr));
 
   gap: 14px;
+  align-items: stretch;
 }
+
+/* CARD */
 
 .purchases-card {
   position: relative;
 
-  min-height: 285px;
+  min-height: 390px;
 
   padding: 23px;
 
@@ -526,26 +533,40 @@
 
   transition:
     background 0.3s ease,
-    transform 0.3s ease;
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .purchases-card:hover {
   background: #ffffff;
 
+  border-color: rgba(var(--purchases-accent-rgb), 0.35);
+
   transform: translateY(-5px);
 }
 
-.purchases-card-accent {
-  background: var(--purchases-accent-dark);
+/* убираем старую тёмную карточку */
 
-  color: #ffffff;
+.purchases-card-accent {
+  background: rgba(255, 255, 255, 0.68);
+
+  color: inherit;
+
+  border-color: var(--purchases-border);
 }
 
-.purchases-card-number {
-  position: absolute;
+.purchases-card-accent:hover {
+  background: #ffffff;
 
-  top: 24px;
-  left: 23px;
+  border-color: rgba(var(--purchases-accent-rgb), 0.35);
+}
+
+/* NUMBER */
+
+.purchases-card-number {
+  position: static;
+
+  display: block;
 
   color: rgba(var(--purchases-accent-rgb), 0.68);
 
@@ -555,41 +576,45 @@
   letter-spacing: 0.14em;
 }
 
-.purchases-card-icon {
-  width: 46px;
-  height: 46px;
+/* IMAGE */
 
-  margin-left: auto;
+.purchases-card-image {
+  width: 100%;
+  height: 165px;
+
+  margin: 15px 0 20px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: var(--purchases-accent-dark);
-
-  border: 1px solid rgba(var(--purchases-accent-rgb), 0.27);
+  overflow: hidden;
 }
 
-.purchases-card-icon svg {
-  width: 25px;
-  height: 25px;
+.purchases-card-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  mix-blend-mode: multiply;
+
+  transition: transform 0.35s ease;
 }
 
-.purchases-card-icon path,
-.purchases-card-icon rect,
-.purchases-card-icon circle {
-  fill: none;
-
-  stroke: currentColor;
-
-  stroke-width: 1.5;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.purchases-card:hover .purchases-card-image img {
+  transform: scale(1.04);
 }
 
-.purchases-card h3 {
+/* TITLE */
+
+.purchases-card h3,
+.purchases-card-accent h3 {
   margin: auto 0 0;
+
+  max-width: 230px;
 
   color: var(--purchases-text-dark);
 
@@ -601,8 +626,12 @@
   letter-spacing: -0.04em;
 }
 
+/* DESCRIPTION */
+
 .purchases-card-text {
   max-height: 0;
+
+  margin-top: 0;
 
   overflow: hidden;
 
@@ -610,11 +639,12 @@
 
   transition:
     max-height 0.35s ease,
-    opacity 0.3s ease,
-    margin 0.35s ease;
+    margin 0.35s ease,
+    opacity 0.3s ease;
 }
 
-.purchases-card-text p {
+.purchases-card-text p,
+.purchases-card-accent .purchases-card-text p {
   margin: 0;
 
   color: var(--purchases-text-soft);
@@ -625,26 +655,73 @@
 }
 
 .purchases-card:hover .purchases-card-text {
-  max-height: 150px;
+  max-height: 160px;
 
   margin-top: 17px;
 
   opacity: 1;
 }
 
-.purchases-card-accent h3,
-.purchases-card-accent .purchases-card-text p {
-  color: #ffffff;
+/* ======================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 1120px) {
+  .purchases-included {
+    padding: 95px 0 105px;
+  }
+
+  .purchases-included-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .purchases-card {
+    min-height: 390px;
+  }
+
+  .purchases-card-image {
+    height: 180px;
+  }
 }
 
-.purchases-card-accent .purchases-card-number {
-  color: rgba(255, 255, 255, 0.55);
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 768px) {
+  .purchases-included {
+    padding: 75px 0 85px;
+  }
+
+  .purchases-included-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .purchases-card {
+    min-height: 390px;
+  }
+
+  .purchases-card-image {
+    height: 180px;
+  }
+
+  .purchases-card-text {
+    max-height: 180px;
+
+    margin-top: 17px;
+
+    opacity: 1;
+  }
 }
 
-.purchases-card-accent .purchases-card-icon {
-  color: #ffffff;
+@media (max-width: 430px) {
+  .purchases-card {
+    padding: 22px;
+  }
 
-  border-color: rgba(255, 255, 255, 0.25);
+  .purchases-card h3 {
+    font-size: 20px;
+  }
 }
 
 /* ======================================================

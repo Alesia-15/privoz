@@ -487,8 +487,12 @@
 .logistics-services {
   padding: 120px 0 140px;
 
-  background: linear-gradient(135deg, #efe4d5, #f7f0e8);
+  background: linear-gradient(135deg, #efe4d5 0%, #f7f0e8 65%, #eadbc8 100%);
+
+  border-top: 1px solid var(--logistics-border);
 }
+
+/* GRID */
 
 .logistics-services-grid {
   display: grid;
@@ -496,10 +500,15 @@
   grid-template-columns: repeat(5, minmax(0, 1fr));
 
   gap: 14px;
+  align-items: stretch;
 }
 
+/* CARD */
+
 .logistics-card {
-  min-height: 285px;
+  position: relative;
+
+  min-height: 390px;
 
   padding: 23px;
 
@@ -507,8 +516,6 @@
   flex-direction: column;
 
   overflow: hidden;
-
-  position: relative;
 
   background: rgba(255, 255, 255, 0.68);
 
@@ -525,26 +532,40 @@
 
   transition:
     background 0.3s ease,
-    transform 0.3s ease;
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .logistics-card:hover {
   background: #ffffff;
 
+  border-color: rgba(var(--logistics-accent-rgb), 0.35);
+
   transform: translateY(-5px);
 }
 
-.logistics-card-accent {
-  background: var(--logistics-accent-dark);
+/* убираем отдельную тёмную карточку 04 */
 
-  color: #ffffff;
+.logistics-card-accent {
+  background: rgba(255, 255, 255, 0.68);
+
+  color: inherit;
+
+  border-color: var(--logistics-border);
 }
 
-.logistics-card-number {
-  position: absolute;
+.logistics-card-accent:hover {
+  background: #ffffff;
 
-  top: 24px;
-  left: 23px;
+  border-color: rgba(var(--logistics-accent-rgb), 0.35);
+}
+
+/* NUMBER */
+
+.logistics-card-number {
+  position: static;
+
+  display: block;
 
   color: rgba(var(--logistics-accent-rgb), 0.7);
 
@@ -554,40 +575,45 @@
   letter-spacing: 0.14em;
 }
 
-.logistics-card-icon {
-  width: 46px;
-  height: 46px;
+/* IMAGE */
 
-  margin-left: auto;
+.logistics-card-image {
+  width: 100%;
+  height: 165px;
+
+  margin: 15px 0 20px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: var(--logistics-accent-dark);
-
-  border: 1px solid rgba(var(--logistics-accent-rgb), 0.27);
+  overflow: hidden;
 }
 
-.logistics-card-icon svg {
-  width: 25px;
-  height: 25px;
+.logistics-card-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  mix-blend-mode: multiply;
+
+  transition: transform 0.35s ease;
 }
 
-.logistics-card-icon path,
-.logistics-card-icon circle {
-  fill: none;
-
-  stroke: currentColor;
-
-  stroke-width: 1.5;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.logistics-card:hover .logistics-card-image img {
+  transform: scale(1.04);
 }
 
-.logistics-card h3 {
+/* TITLE */
+
+.logistics-card h3,
+.logistics-card-accent h3 {
   margin: auto 0 0;
+
+  max-width: 230px;
 
   color: var(--logistics-text-dark);
 
@@ -599,8 +625,12 @@
   letter-spacing: -0.04em;
 }
 
+/* DESCRIPTION */
+
 .logistics-card-text {
   max-height: 0;
+
+  margin-top: 0;
 
   overflow: hidden;
 
@@ -608,11 +638,12 @@
 
   transition:
     max-height 0.35s ease,
-    opacity 0.3s ease,
-    margin 0.35s ease;
+    margin 0.35s ease,
+    opacity 0.3s ease;
 }
 
-.logistics-card-text p {
+.logistics-card-text p,
+.logistics-card-accent .logistics-card-text p {
   margin: 0;
 
   color: var(--logistics-text-soft);
@@ -623,26 +654,73 @@
 }
 
 .logistics-card:hover .logistics-card-text {
-  max-height: 140px;
+  max-height: 160px;
 
   margin-top: 17px;
 
   opacity: 1;
 }
 
-.logistics-card-accent h3,
-.logistics-card-accent .logistics-card-text p {
-  color: #ffffff;
+/* ======================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 1120px) {
+  .logistics-services {
+    padding: 95px 0 105px;
+  }
+
+  .logistics-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .logistics-card {
+    min-height: 390px;
+  }
+
+  .logistics-card-image {
+    height: 180px;
+  }
 }
 
-.logistics-card-accent .logistics-card-number {
-  color: rgba(255, 255, 255, 0.55);
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 768px) {
+  .logistics-services {
+    padding: 75px 0 85px;
+  }
+
+  .logistics-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logistics-card {
+    min-height: 390px;
+  }
+
+  .logistics-card-image {
+    height: 180px;
+  }
+
+  .logistics-card-text {
+    max-height: 180px;
+
+    margin-top: 17px;
+
+    opacity: 1;
+  }
 }
 
-.logistics-card-accent .logistics-card-icon {
-  color: #ffffff;
+@media (max-width: 430px) {
+  .logistics-card {
+    padding: 22px;
+  }
 
-  border-color: rgba(255, 255, 255, 0.24);
+  .logistics-card h3 {
+    font-size: 20px;
+  }
 }
 
 /* ======================================================

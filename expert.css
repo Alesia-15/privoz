@@ -1496,33 +1496,3 @@
     transition: none !important;
   }
 }
-
-.expert-card-image {
-  width: 100%;
-  height: 180px;
-
-  margin: 8px 0 20px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  overflow: hidden;
-}
-
-.expert-card-image img {
-  width: 165px;
-  height: 165px;
-
-  display: block;
-
-  object-fit: cover;
-
-  border-radius: 0;
-
-  transition: transform 0.4s ease;
-}
-
-.expert-card:hover .expert-card-image img {
-  transform: scale(1.05);
-}

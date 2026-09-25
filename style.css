@@ -6172,3 +6172,45 @@ a {
     min-height: 145px;
   }
 }
+
+.expert-card-image,
+.export-card-image,
+.import-card-image,
+.purchases-card-image,
+.quality-card-image {
+  width: 100%;
+  height: 180px;
+
+  margin: 8px 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.expert-card-image img,
+.export-card-image img,
+.import-card-image img,
+.purchases-card-image img,
+.quality-card-image img {
+  width: 165px;
+  height: 165px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 0;
+
+  transition: transform 0.4s ease;
+}
+
+.expert-card:hover .expert-card-image img,
+.export-card:hover .export-card-image img,
+.import-card:hover .import-card-image img,
+.purchases-card:hover .purchases-card-image img,
+.quality-card:hover .quality-card-image img {
+  transform: scale(1.05);
+}

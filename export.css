@@ -506,7 +506,7 @@
 ====================================================== */
 
 .export-included {
-  padding: 120px 0 135px;
+  padding: 120px 0 140px;
 
   background: linear-gradient(135deg, #e5eff2 0%, #edf4f6 65%, #dce9ed 100%);
 
@@ -514,7 +514,7 @@
 }
 
 .export-section-head {
-  max-width: 900px;
+  max-width: 950px;
 
   margin-bottom: 65px;
 }
@@ -525,6 +525,8 @@
   margin-bottom: 22px;
 }
 
+/* GRID */
+
 .export-included-grid {
   display: grid;
 
@@ -533,19 +535,21 @@
   gap: 14px;
 }
 
+/* CARD */
+
 .export-included-card {
   position: relative;
 
-  height: 280px;
+  min-height: 390px;
 
-  padding: 25px;
+  padding: 24px;
 
   display: flex;
   flex-direction: column;
 
   overflow: hidden;
 
-  background: rgba(255, 255, 255, 0.58);
+  background: rgba(255, 255, 255, 0.67);
 
   border: 1px solid var(--service-border);
 
@@ -559,46 +563,81 @@
   );
 
   transition:
-    background 0.35s ease,
-    transform 0.35s ease,
-    border-color 0.35s ease;
+    background 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .export-included-card:hover {
-  background: var(--service-card);
+  background: #ffffff;
 
-  border-color: rgba(var(--service-accent-rgb), 0.45);
+  border-color: rgba(var(--service-accent-rgb), 0.35);
 
   transform: translateY(-5px);
 }
 
-.export-included-card-accent {
-  background: var(--service-accent-dark);
+/* TOP */
 
-  border-color: transparent;
+.export-card-top {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 20px;
 }
 
 .export-card-top > span {
-  color: rgba(36, 70, 81, 0.38);
+  color: rgba(var(--service-accent-rgb), 0.68);
 
   font-size: 10px;
   font-weight: 700;
 
-  letter-spacing: 0.15em;
+  letter-spacing: 0.14em;
 }
 
-.export-included-card-accent .export-card-top > span {
-  color: rgba(255, 255, 255, 0.55);
+/* IMAGE */
+
+.export-card-image {
+  width: 100%;
+  height: 175px;
+
+  margin: 15px 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
 }
+
+.export-card-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  mix-blend-mode: multiply;
+
+  transition: transform 0.35s ease;
+}
+
+.export-included-card:hover .export-card-image img {
+  transform: scale(1.04);
+}
+
+/* TITLE */
 
 .export-included-card h3 {
   margin: auto 0 0;
 
-  max-width: 240px;
+  max-width: 260px;
 
-  color: var(--service-text);
+  color: var(--service-text-dark);
 
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 500;
 
   line-height: 1.2;
@@ -606,21 +645,21 @@
   letter-spacing: -0.04em;
 }
 
-.export-included-card-accent h3 {
-  color: #ffffff;
-}
+/* DESCRIPTION */
 
 .export-card-hidden {
   max-height: 0;
 
-  opacity: 0;
+  margin-top: 0;
 
   overflow: hidden;
 
+  opacity: 0;
+
   transition:
-    max-height 0.4s ease,
-    opacity 0.3s ease,
-    margin 0.3s ease;
+    max-height 0.35s ease,
+    margin 0.35s ease,
+    opacity 0.3s ease;
 }
 
 .export-card-hidden p {
@@ -630,25 +669,60 @@
 
   font-size: 13px;
 
-  line-height: 1.55;
-}
-
-.export-included-card-accent .export-card-hidden p {
-  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
 }
 
 .export-included-card:hover .export-card-hidden {
-  max-height: 145px;
+  max-height: 150px;
 
-  margin-top: 18px;
+  margin-top: 17px;
 
   opacity: 1;
 }
 
-.export-included-card:hover h3 {
-  margin-top: 35px;
+/* ======================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 1120px) {
+  .export-included {
+    padding: 95px 0 105px;
+  }
+
+  .export-included-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 768px) {
+  .export-included {
+    padding: 75px 0 85px;
+  }
+
+  .export-included-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .export-included-card {
+    min-height: 390px;
+  }
+
+  .export-card-image {
+    height: 180px;
+  }
+
+  .export-card-hidden {
+    max-height: 180px;
+
+    margin-top: 17px;
+
+    opacity: 1;
+  }
+}
 /* ======================================================
    PROCESS
 ====================================================== */

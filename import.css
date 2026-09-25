@@ -535,7 +535,7 @@
 ====================================================== */
 
 .import-included {
-  padding: 120px 0 135px;
+  padding: 120px 0 140px;
 
   background: linear-gradient(135deg, #f6e5db 0%, #f8eae2 65%, #efd2c1 100%);
 
@@ -543,7 +543,7 @@
 }
 
 .import-section-head {
-  max-width: 900px;
+  max-width: 950px;
 
   margin-bottom: 65px;
 }
@@ -554,6 +554,8 @@
   margin-bottom: 22px;
 }
 
+/* GRID */
+
 .import-included-grid {
   display: grid;
 
@@ -562,19 +564,21 @@
   gap: 14px;
 }
 
+/* CARD */
+
 .import-included-card {
   position: relative;
 
-  height: 280px;
+  min-height: 390px;
 
-  padding: 25px;
+  padding: 24px;
 
   display: flex;
   flex-direction: column;
 
   overflow: hidden;
 
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.67);
 
   border: 1px solid var(--service-border);
 
@@ -588,137 +592,197 @@
   );
 
   transition:
-    background 0.35s ease,
-    transform 0.35s ease,
-    border-color 0.35s ease;
+    background 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .import-included-card:hover {
-  background: var(--service-card);
+  background: #ffffff;
 
-  border-color: rgba(var(--service-accent-rgb), 0.4);
+  border-color: rgba(var(--service-accent-rgb), 0.35);
 
   transform: translateY(-5px);
 }
 
-.import-included-card-accent {
-  background: var(--service-accent-dark);
+/* убираем старое отдельное оформление карточки 08 */
 
-  border-color: transparent;
+.import-included-card-accent {
+  background: rgba(255, 255, 255, 0.67);
+
+  border-color: var(--service-border);
 }
+
+.import-included-card-accent:hover {
+  background: #ffffff;
+
+  border-color: rgba(var(--service-accent-rgb), 0.35);
+}
+
+/* TOP */
 
 .import-card-top {
   display: flex;
-  align-items: center;
+
   justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 20px;
 }
 
-.import-card-top > span {
-  color: rgba(135, 61, 40, 0.35);
+.import-card-top > span,
+.import-included-card-accent .import-card-top > span {
+  color: rgba(var(--service-accent-rgb), 0.68);
 
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
 
-  letter-spacing: 0.15em;
+  letter-spacing: 0.14em;
 }
 
-.import-card-icon {
-  width: 45px;
-  height: 45px;
+/* IMAGE */
+
+.import-card-image {
+  width: 100%;
+  height: 175px;
+
+  margin: 15px 0 20px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: var(--service-accent-dark);
-
-  border: 1px solid rgba(var(--service-accent-rgb), 0.25);
+  overflow: hidden;
 }
 
-.import-included-card-accent .import-card-top > span {
-  color: rgba(255, 255, 255, 0.55);
-}
+.import-card-image img {
+  width: 100%;
+  height: 100%;
 
-.import-included-card-accent .import-card-icon {
-  color: #ffffff;
+  display: block;
 
-  border-color: rgba(255, 255, 255, 0.3);
-}
+  object-fit: contain;
 
-.import-card-icon svg {
-  width: 24px;
-  height: 24px;
-}
-
-.import-card-icon path,
-.import-card-icon circle {
-  fill: none;
-
-  stroke: currentColor;
-  stroke-width: 1.5;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.import-included-card h3 {
-  margin: auto 0 0;
-
-  max-width: 240px;
-
-  color: var(--service-text);
-
-  font-size: 23px;
-  font-weight: 500;
-
-  line-height: 1.2;
-
-  letter-spacing: -0.04em;
+  mix-blend-mode: multiply;
 
   transition: transform 0.35s ease;
 }
 
-.import-included-card-accent h3 {
-  color: #ffffff;
+.import-included-card:hover .import-card-image img {
+  transform: scale(1.04);
 }
+
+/* TITLE */
+
+.import-included-card h3,
+.import-included-card-accent h3 {
+  margin: auto 0 0;
+
+  max-width: 260px;
+
+  color: var(--service-text);
+
+  font-size: 22px;
+  font-weight: 500;
+
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+
+  transition: none;
+}
+
+/* DESCRIPTION */
 
 .import-card-hidden {
   max-height: 0;
 
-  opacity: 0;
+  margin-top: 0;
 
   overflow: hidden;
 
+  opacity: 0;
+
   transition:
-    max-height 0.4s ease,
-    opacity 0.3s ease,
-    margin 0.3s ease;
+    max-height 0.35s ease,
+    margin 0.35s ease,
+    opacity 0.3s ease;
 }
 
-.import-card-hidden p {
+.import-card-hidden p,
+.import-included-card-accent .import-card-hidden p {
   margin: 0;
 
   color: var(--service-text-soft);
 
   font-size: 13px;
 
-  line-height: 1.55;
-}
-
-.import-included-card-accent .import-card-hidden p {
-  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.6;
 }
 
 .import-included-card:hover .import-card-hidden {
-  max-height: 130px;
+  max-height: 150px;
 
-  margin-top: 18px;
+  margin-top: 17px;
 
   opacity: 1;
 }
 
 .import-included-card:hover h3 {
-  margin-top: 35px;
+  margin-top: auto;
+}
+
+/* ======================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 1120px) {
+  .import-included {
+    padding: 95px 0 105px;
+  }
+
+  .import-included-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 768px) {
+  .import-included {
+    padding: 75px 0 85px;
+  }
+
+  .import-included-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .import-included-card {
+    min-height: 390px;
+  }
+
+  .import-card-image {
+    height: 180px;
+  }
+
+  .import-card-hidden {
+    max-height: 180px;
+
+    margin-top: 17px;
+
+    opacity: 1;
+  }
+
+  .import-included-card h3 {
+    margin-top: auto;
+  }
+}
+
+@media (max-width: 430px) {
+  .import-included-card {
+    padding: 22px;
+  }
 }
 
 /* ======================================================

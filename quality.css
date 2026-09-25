@@ -472,7 +472,9 @@
 .quality-included {
   padding: 120px 0 140px;
 
-  background: linear-gradient(135deg, #e8eeeb, #f1f4f1);
+  background: linear-gradient(135deg, #e8eeeb 0%, #f1f4f1 65%, #dfe8e4 100%);
+
+  border-top: 1px solid var(--quality-border);
 }
 
 .quality-included-grid {
@@ -481,10 +483,13 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
 
   gap: 14px;
+  align-items: stretch;
 }
 
 .quality-card {
-  min-height: 285px;
+  position: relative;
+
+  min-height: 390px;
 
   padding: 24px;
 
@@ -493,7 +498,7 @@
 
   overflow: hidden;
 
-  background: rgba(255, 255, 255, 0.68);
+  background: rgba(255, 255, 255, 0.67);
 
   border: 1px solid var(--quality-border);
 
@@ -508,11 +513,14 @@
 
   transition:
     background 0.3s ease,
-    transform 0.3s ease;
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .quality-card:hover {
   background: #ffffff;
+
+  border-color: rgba(var(--quality-accent-rgb), 0.35);
 
   transform: translateY(-5px);
 }
@@ -522,19 +530,30 @@
 }
 
 .quality-card-accent {
-  background: var(--quality-accent-dark);
+  background: rgba(255, 255, 255, 0.67);
 
-  color: #ffffff;
+  color: inherit;
+
+  border-color: var(--quality-border);
+}
+
+.quality-card-accent:hover {
+  background: #ffffff;
+
+  border-color: rgba(var(--quality-accent-rgb), 0.35);
 }
 
 .quality-card-top {
   display: flex;
+
   justify-content: space-between;
+  align-items: flex-start;
 
   gap: 20px;
 }
 
-.quality-card-top > span {
+.quality-card-top > span,
+.quality-card-accent .quality-card-top > span {
   color: rgba(var(--quality-accent-rgb), 0.7);
 
   font-size: 10px;
@@ -543,42 +562,45 @@
   letter-spacing: 0.14em;
 }
 
-.quality-card-icon {
-  width: 46px;
-  height: 46px;
+.quality-card-image {
+  width: 100%;
+  height: 175px;
+
+  margin: 15px 0 20px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: var(--quality-accent-dark);
-
-  border: 1px solid rgba(var(--quality-accent-rgb), 0.28);
+  overflow: hidden;
 }
 
-.quality-card-icon svg {
-  width: 25px;
-  height: 25px;
+.quality-card-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  mix-blend-mode: multiply;
+
+  transition: transform 0.35s ease;
 }
 
-.quality-card-icon path,
-.quality-card-icon rect,
-.quality-card-icon circle {
-  fill: none;
-
-  stroke: currentColor;
-  stroke-width: 1.5;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.quality-card:hover .quality-card-image img {
+  transform: scale(1.04);
 }
 
-.quality-card h3 {
+.quality-card h3,
+.quality-card-accent h3 {
   margin: auto 0 0;
+
+  max-width: 270px;
 
   color: var(--quality-text-dark);
 
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 500;
 
   line-height: 1.2;
@@ -601,7 +623,8 @@
     opacity 0.3s ease;
 }
 
-.quality-card-description p {
+.quality-card-description p,
+.quality-card-accent .quality-card-description p {
   margin: 0;
 
   color: var(--quality-text-soft);
@@ -612,26 +635,69 @@
 }
 
 .quality-card:hover .quality-card-description {
-  max-height: 150px;
+  max-height: 160px;
 
   margin-top: 17px;
 
   opacity: 1;
 }
 
-.quality-card-accent h3,
-.quality-card-accent .quality-card-description p {
-  color: #ffffff;
+/* ======================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 1120px) {
+  .quality-included {
+    padding: 95px 0 105px;
+  }
+
+  .quality-included-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quality-card-wide {
+    grid-column: span 2;
+  }
 }
 
-.quality-card-accent .quality-card-top > span {
-  color: rgba(255, 255, 255, 0.55);
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 768px) {
+  .quality-included {
+    padding: 75px 0 85px;
+  }
+
+  .quality-included-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quality-card {
+    min-height: 390px;
+  }
+
+  .quality-card-wide {
+    grid-column: auto;
+  }
+
+  .quality-card-image {
+    height: 180px;
+  }
+
+  .quality-card-description {
+    max-height: 180px;
+
+    margin-top: 17px;
+
+    opacity: 1;
+  }
 }
 
-.quality-card-accent .quality-card-icon {
-  color: #ffffff;
-
-  border-color: rgba(255, 255, 255, 0.25);
+@media (max-width: 430px) {
+  .quality-card {
+    padding: 22px;
+  }
 }
 
 /* ======================================================
