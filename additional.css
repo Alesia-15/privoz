@@ -16,7 +16,7 @@ html {
 
 body {
   margin: 0;
-  background: #ffffff;
+  background: #fff;
   color: #171717;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -48,8 +48,7 @@ a {
 
 .additional-eyebrow {
   display: block;
-
-  margin-bottom: 26px;
+  margin: 0 0 26px;
 
   color: #ff641e;
 
@@ -60,10 +59,8 @@ a {
   text-transform: uppercase;
 }
 
-/* убираем кружочки */
-
 .additional-eyebrow span {
-  display: none;
+  display: none !important;
 }
 
 .additional-eyebrow--light {
@@ -85,7 +82,7 @@ a {
   outline: none;
 
   background: #171717;
-  color: #ffffff;
+  color: #fff;
 
   font-size: 14px;
   font-weight: 700;
@@ -102,6 +99,7 @@ a {
 .additional-btn > span:first-child {
   display: flex;
   align-items: center;
+
   padding-right: 30px;
 }
 
@@ -112,9 +110,7 @@ a {
   align-items: center;
   justify-content: center;
 
-  border-left: 1px solid rgba(255, 255, 255, 0.18);
-
-  font-size: 19px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .additional-btn--dark {
@@ -122,7 +118,7 @@ a {
 }
 
 .additional-btn--dark:hover {
-  background: #333333;
+  background: #333;
 }
 
 .additional-btn--orange {
@@ -138,11 +134,11 @@ a {
 ========================================================= */
 
 .additional-hero {
-  padding: 90px 0 110px;
+  padding: 100px 0 110px;
 
   overflow: hidden;
 
-  background: #ffffff;
+  background: #fff;
 }
 
 .additional-hero__grid {
@@ -184,7 +180,9 @@ a {
   line-height: 1.7;
 }
 
-/* HERO MEDIA */
+/* =========================================================
+   HERO MEDIA
+========================================================= */
 
 .additional-hero__media {
   position: relative;
@@ -202,7 +200,7 @@ a {
   width: 68%;
   height: 55%;
 
-  background: #eeeeeb;
+  background: #eee;
 
   clip-path: polygon(7% 0, 100% 0, 100% 90%, 91% 100%, 0 100%, 0 8%);
 }
@@ -222,6 +220,10 @@ a {
   clip-path: polygon(4% 0, 100% 0, 100% 94%, 94% 100%, 0 100%, 0 5%);
 }
 
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
 .additional-media-placeholder {
   position: relative;
   z-index: 1;
@@ -236,9 +238,9 @@ a {
 
   background: linear-gradient(135deg, #eeeeec, #d9d9d6);
 
-  clip-path: polygon(4% 0, 100% 0, 100% 94%, 94% 100%, 0 100%, 0 5%);
+  color: #999;
 
-  color: #999999;
+  clip-path: polygon(4% 0, 100% 0, 100% 94%, 94% 100%, 0 100%, 0 5%);
 }
 
 .additional-media-placeholder span {
@@ -249,7 +251,7 @@ a {
 }
 
 .additional-media-placeholder strong {
-  color: #888888;
+  color: #888;
 
   font-size: 24px;
 }
@@ -259,7 +261,7 @@ a {
 ========================================================= */
 
 .additional-section-head {
-  margin-bottom: 55px;
+  margin: 0 0 55px;
 
   display: grid;
   grid-template-columns: 1fr 430px;
@@ -290,15 +292,34 @@ a {
 ========================================================= */
 
 .additional-services {
-  padding: 110px 0 125px;
+  position: relative;
 
-  background: #f3f3f1;
+  /*
+       ВАЖНО:
+       100px сверху
+       100px снизу ПОСЛЕ карточек
+    */
+  padding: 100px 0;
+
+  background: #f5f5f3;
+}
+
+.additional-services .additional-container {
+  width: min(1380px, calc(100% - 120px));
+  margin: 0 auto;
 }
 
 .additional-services__grid {
+  width: 100%;
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  column-gap: 18px;
+  row-gap: 20px;
+
+  margin: 0;
+  padding: 0;
 }
 
 /* =========================================================
@@ -308,15 +329,15 @@ a {
 .service-card {
   position: relative;
 
-  min-height: 410px;
-  padding: 30px 32px 32px;
+  min-width: 0;
+  min-height: 390px;
+
+  padding: 30px 32px 34px;
 
   overflow: hidden;
 
   display: flex;
   flex-direction: column;
-
-  background: #e9e9e6;
 
   clip-path: polygon(5% 0, 100% 0, 100% 94%, 94% 100%, 0 100%, 0 6%);
 
@@ -326,32 +347,15 @@ a {
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
-/* декоративная геометрия */
-
-.service-card::after {
-  content: "";
-
-  position: absolute;
-  right: -100px;
-  bottom: -155px;
-
-  width: 330px;
-  height: 390px;
-
-  border: 1px solid rgba(255, 255, 255, 0.55);
-
-  transform: rotate(35deg);
-
-  pointer-events: none;
-}
-
-/* серые оттенки карточек */
+/* =========================================================
+   CARD COLORS
+========================================================= */
 
 .service-card--01 {
-  background: #e8e8e5;
+  background: #e9e9e6;
 }
 
 .service-card--02 {
@@ -363,7 +367,7 @@ a {
 }
 
 .service-card--04 {
-  background: #ddddda;
+  background: #dededb;
 }
 
 .service-card--05 {
@@ -371,19 +375,41 @@ a {
 }
 
 .service-card--06 {
-  background: #dcdedc;
+  background: #dcdfdd;
 }
 
 .service-card--01:hover,
 .service-card--03:hover,
 .service-card--05:hover {
-  background: #ddddda;
+  background: #dfdfdc;
 }
 
 .service-card--02:hover,
 .service-card--04:hover,
 .service-card--06:hover {
-  background: #d2d3d1;
+  background: #d5d6d3;
+}
+
+/* =========================================================
+   DECORATION
+========================================================= */
+
+.service-card::after {
+  content: "";
+
+  position: absolute;
+
+  right: -95px;
+  bottom: -165px;
+
+  width: 330px;
+  height: 390px;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  transform: rotate(35deg);
+
+  pointer-events: none;
 }
 
 /* =========================================================
@@ -394,27 +420,42 @@ a {
   position: relative;
   z-index: 2;
 
-  flex: 0 0 auto;
-
   width: 55px;
   height: 55px;
+
+  flex: 0 0 55px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   background: #4c4e4d !important;
-  color: #ffffff;
+  color: #fff;
 
   font-size: 11px;
   font-weight: 700;
 
   clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
-/* первая карточка — фирменный оранжевый */
+/* никакой постоянно оранжевой 01 */
 
-.service-card--01 .service-card__number {
+.service-card--01 .service-card__number,
+.service-card--02 .service-card__number,
+.service-card--03 .service-card__number,
+.service-card--04 .service-card__number,
+.service-card--05 .service-card__number,
+.service-card--06 .service-card__number {
+  background: #4c4e4d !important;
+}
+
+/* оранжевый только при наведении */
+
+.service-card:hover .service-card__number {
   background: #ff641e !important;
 }
 
@@ -422,22 +463,19 @@ a {
    SERVICE CONTENT
 ========================================================= */
 
-.service-card__content {
+.service-card__content,
+.service-card:nth-child(even) .service-card__content,
+.service-card:nth-child(odd) .service-card__content {
   position: relative;
   z-index: 2;
 
   width: 100%;
-  max-width: none;
 
-  margin: auto 0 0 !important;
-
-  text-align: left !important;
-}
-
-/* полностью убираем чередование */
-
-.service-card:nth-child(even) .service-card__content {
-  margin: auto 0 0 !important;
+  /*
+       ФИКСИРОВАННОЕ расстояние от номера.
+       Никакого margin:auto.
+    */
+  margin: 64px 0 0 !important;
 
   text-align: left !important;
 }
@@ -445,9 +483,9 @@ a {
 .service-card__label {
   display: block;
 
-  margin-bottom: 14px;
+  margin: 0 0 13px;
 
-  color: #777777;
+  color: #777;
 
   font-size: 11px;
   line-height: 1.3;
@@ -462,15 +500,15 @@ a {
   margin: 0 0 17px;
 
   font-size: 27px;
-  line-height: 1.02;
+  line-height: 1.03;
   letter-spacing: -1.3px;
   font-weight: 700;
 }
 
 .service-card p {
-  max-width: 370px;
+  max-width: 380px;
 
-  margin: 0 0 20px;
+  margin: 0 0 22px;
 
   color: #606060;
 
@@ -479,11 +517,12 @@ a {
 }
 
 /* =========================================================
-   SERVICE "ПОДРОБНЕЕ"
+   MORE
 ========================================================= */
 
 .service-card__more {
-  padding: 8px 0;
+  margin: 0;
+  padding: 7px 0;
 
   display: inline-flex;
   align-items: center;
@@ -513,8 +552,6 @@ a {
 .service-card__more span {
   display: inline-block;
 
-  font-size: 16px;
-
   transition: transform 0.2s ease;
 }
 
@@ -524,27 +561,31 @@ a {
 
 /* =========================================================
    COMPLEX
-   ОДНА УСЛУГА ИЛИ КОМПЛЕКСНОЕ РЕШЕНИЕ
 ========================================================= */
 
 .additional-complex {
-  padding: 115px 0;
+  /*
+       Здесь больше НЕ компенсируем отсутствие
+       отступа предыдущего блока.
+    */
+  padding: 110px 0;
 
-  background: #e8e8e5;
+  background: #e7e7e4;
+
   color: #171717;
 }
 
 .additional-complex__grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
+
   gap: 90px;
+
   align-items: center;
 }
 
 .additional-complex__content h2 {
   margin: 0 0 32px;
-
-  color: #171717;
 
   font-size: clamp(52px, 4.7vw, 76px);
   line-height: 0.94;
@@ -582,39 +623,33 @@ a {
   height: 520px;
 }
 
-/* светлая заглушка вместо тёмной */
-
 .additional-media-placeholder--dark {
   background: linear-gradient(135deg, #d8d8d5, #c9c9c6);
 
-  color: #888888;
+  color: #888;
 }
 
 .additional-media-placeholder--dark span {
-  color: #999999;
+  color: #999;
 }
 
 .additional-media-placeholder--dark strong {
-  color: #777777;
+  color: #777;
 }
 
 /* =========================================================
-   INTERNATIONAL TRADE
+   TRADE
 ========================================================= */
 
 .additional-trade {
   padding: 120px 0;
 
-  background: #ffffff;
+  background: #fff;
 }
 
 .additional-trade__top {
-  margin-bottom: 60px;
-
-  display: block;
+  margin: 0 0 60px;
 }
-
-/* скрываем 03 / PRIVOZ */
 
 .additional-trade__number {
   display: none !important;
@@ -623,22 +658,20 @@ a {
 .additional-trade__grid {
   display: grid;
   grid-template-columns: 1.15fr 0.75fr;
+
   gap: 110px;
+
   align-items: start;
 }
 
 .additional-trade h2 {
   margin: 0;
 
-  color: #171717;
-
   font-size: clamp(52px, 5vw, 82px);
   line-height: 0.94;
   letter-spacing: -4px;
   font-weight: 500;
 }
-
-/* PRIVOZ.PL — оранжевый */
 
 .additional-trade h2 span {
   color: #ff641e;
@@ -663,7 +696,7 @@ a {
 
   display: block;
 
-  border-top: 1px solid #dddddd;
+  border-top: 1px solid #ddd;
 
   color: #171717;
 
@@ -676,13 +709,13 @@ a {
 ========================================================= */
 
 .additional-scenarios {
-  padding: 115px 0;
+  padding: 110px 0;
 
-  background: #f1f1ef;
+  background: #f3f3f1;
 }
 
 .scenarios-list {
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
 }
 
 .scenario {
@@ -690,14 +723,16 @@ a {
 
   display: grid;
   grid-template-columns: 150px 0.85fr 1fr;
+
   gap: 55px;
+
   align-items: start;
 
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #ccc;
 }
 
 .scenario__number {
-  color: #888888;
+  color: #888;
 
   font-size: 10px;
   font-weight: 700;
@@ -745,22 +780,20 @@ a {
 ========================================================= */
 
 .additional-form {
-  padding: 115px 0;
+  padding: 110px 0;
 
   background: #e7e7e4;
-  color: #171717;
 }
 
 .additional-form__grid {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
+
   gap: 120px;
 }
 
 .additional-form h2 {
   margin: 0 0 28px;
-
-  color: #171717;
 
   font-size: clamp(52px, 4.8vw, 76px);
   line-height: 0.93;
@@ -777,11 +810,10 @@ a {
   line-height: 1.7;
 }
 
-/* FORM ROW */
-
 .request-form__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   gap: 25px;
 }
 
@@ -796,15 +828,13 @@ a {
 
   display: block;
 
-  color: #777777;
+  color: #777;
 
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-
-/* INPUTS */
 
 .request-form input,
 .request-form textarea {
@@ -813,7 +843,8 @@ a {
   padding: 14px 0;
 
   border: 0;
-  border-bottom: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaa;
+
   outline: 0;
 
   background: transparent;
@@ -829,11 +860,6 @@ a {
   resize: vertical;
 }
 
-.request-form input::placeholder,
-.request-form textarea::placeholder {
-  color: #999999;
-}
-
 .request-form input:focus,
 .request-form textarea:focus {
   border-color: #ff641e;
@@ -844,9 +870,9 @@ a {
 ========================================================= */
 
 .additional-other {
-  padding: 115px 0;
+  padding: 110px 0;
 
-  background: #ffffff;
+  background: #fff;
 }
 
 .additional-other h2 {
@@ -863,6 +889,7 @@ a {
 .additional-other__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
   gap: 12px;
 }
 
@@ -870,33 +897,34 @@ a {
   position: relative;
 
   min-height: 270px;
+
   padding: 28px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  background: #e9e9e6 !important;
+  background: #e9e9e6;
 
   clip-path: polygon(6% 0, 100% 0, 100% 92%, 92% 100%, 0 100%, 0 7%);
 
   transition:
-    background 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    background 0.25s ease;
 }
 
 .other-service:nth-child(even) {
-  background: #dedfdd !important;
+  background: #dedfdd;
 }
 
 .other-service:hover {
   transform: translateY(-5px);
 
-  background: #d6d6d2 !important;
+  background: #d6d6d2;
 }
 
 .other-service > span {
-  color: #888888;
+  color: #888;
 
   font-size: 11px;
   font-weight: 700;
@@ -925,7 +953,7 @@ a {
 ========================================================= */
 
 .additional-reliability {
-  padding: 115px 0;
+  padding: 110px 0;
 
   background: #eeeeeb;
 }
@@ -933,14 +961,14 @@ a {
 .additional-reliability__grid {
   display: grid;
   grid-template-columns: 1fr 0.65fr;
+
   gap: 110px;
+
   align-items: end;
 }
 
 .additional-reliability h2 {
   margin: 0;
-
-  color: #171717;
 
   font-size: clamp(52px, 4.8vw, 78px);
   line-height: 0.94;
@@ -962,10 +990,10 @@ a {
 
   display: inline-flex;
   align-items: center;
+
   gap: 30px;
 
   border: 0;
-  border-bottom: 0;
 
   color: #171717;
 
@@ -979,14 +1007,6 @@ a {
   color: #ff641e;
 }
 
-.additional-text-link span {
-  transition: transform 0.2s ease;
-}
-
-.additional-text-link:hover span {
-  transform: translateX(5px);
-}
-
 /* =========================================================
    MODAL
 ========================================================= */
@@ -994,9 +1014,10 @@ a {
 .service-modal {
   position: fixed;
   inset: 0;
+
   z-index: 9999;
 
-  padding: 25px;
+  padding: 24px;
 
   display: flex;
   align-items: center;
@@ -1015,8 +1036,6 @@ a {
   opacity: 1;
 }
 
-/* MODAL BACKDROP */
-
 .service-modal__backdrop {
   position: absolute;
   inset: 0;
@@ -1024,21 +1043,18 @@ a {
   background: rgba(20, 20, 20, 0.55);
 
   backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
 }
-
-/* MODAL WINDOW */
 
 .service-modal__window {
   position: relative;
   z-index: 2;
 
-  width: min(820px, calc(100vw - 50px));
-  max-height: calc(100vh - 50px);
+  width: min(820px, calc(100vw - 48px));
+  max-height: calc(100vh - 48px);
 
   overflow: hidden;
 
-  background: #ffffff;
+  background: #fff;
 
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
 
@@ -1060,8 +1076,6 @@ a {
   transform: translateY(0) scale(1);
 }
 
-/* MODAL CLOSE */
-
 .service-modal__close {
   position: absolute;
   top: 20px;
@@ -1081,44 +1095,22 @@ a {
   border: 0;
 
   background: #ff641e;
-  color: #ffffff;
+  color: #fff;
 
   font-size: 25px;
-  line-height: 1;
-
-  transition: background 0.2s ease;
 }
 
 .service-modal__close:hover {
   background: #e95718;
 }
 
-/* MODAL INNER */
-
 .service-modal__inner {
-  max-height: calc(100vh - 50px);
+  max-height: calc(100vh - 48px);
 
   overflow-y: auto;
 
   padding: 48px 65px 45px;
-
-  scrollbar-width: thin;
-  scrollbar-color: #aaaaaa #eeeeee;
 }
-
-.service-modal__inner::-webkit-scrollbar {
-  width: 6px;
-}
-
-.service-modal__inner::-webkit-scrollbar-track {
-  background: #eeeeee;
-}
-
-.service-modal__inner::-webkit-scrollbar-thumb {
-  background: #aaaaaa;
-}
-
-/* MODAL CONTENT */
 
 .modal-service-number {
   margin-bottom: 16px;
@@ -1147,7 +1139,7 @@ a {
 
   margin: 0 70px 22px 0;
 
-  color: #555555;
+  color: #555;
 
   font-size: 18px;
   line-height: 1.25;
@@ -1158,7 +1150,6 @@ a {
   margin: 23px 0 9px;
 
   font-size: 16px;
-  line-height: 1.3;
 }
 
 .service-modal__inner p,
@@ -1184,45 +1175,43 @@ a {
   margin-bottom: 3px;
 }
 
-/* MODAL NOTE */
-
 .modal-note {
   margin-top: 18px;
+
   padding: 14px 18px;
 
   background: #f0f0ee;
 
-  color: #555555;
+  color: #555;
 
   font-size: 13px;
   line-height: 1.5;
 }
 
-/* MODAL ACTION */
-
 .modal-action {
   margin-top: 22px;
 }
 
-.modal-action .additional-btn {
-  min-height: 50px;
-}
-
 /* =========================================================
-   DESKTOP / SMALL LAPTOP
+   <= 1200
 ========================================================= */
 
 @media (max-width: 1200px) {
-  .additional-container {
-    width: min(100% - 60px, 1380px);
+  .additional-container,
+  .additional-services .additional-container {
+    width: calc(100% - 60px);
   }
 
   .additional-hero__grid {
     gap: 50px;
   }
 
+  .additional-services {
+    padding: 85px 0;
+  }
+
   .additional-services__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .additional-other__grid {
@@ -1231,14 +1220,10 @@ a {
 }
 
 /* =========================================================
-   TABLET
+   <= 900
 ========================================================= */
 
 @media (max-width: 900px) {
-  .additional-hero {
-    padding: 70px 0 80px;
-  }
-
   .additional-hero__grid,
   .additional-complex__grid,
   .additional-trade__grid,
@@ -1255,29 +1240,6 @@ a {
     gap: 25px;
   }
 
-  .additional-section-head > p {
-    max-width: 600px;
-  }
-
-  .additional-hero__content h1 {
-    letter-spacing: -4px;
-  }
-
-  .additional-hero__media,
-  .additional-hero__media img,
-  .additional-hero__media video,
-  .additional-hero__media .additional-media-placeholder {
-    min-height: 480px;
-    height: 480px;
-  }
-
-  .additional-complex__media,
-  .additional-complex__media img,
-  .additional-complex__media .additional-media-placeholder {
-    min-height: 480px;
-    height: 480px;
-  }
-
   .scenario {
     grid-template-columns: 100px 1fr;
 
@@ -1290,11 +1252,12 @@ a {
 }
 
 /* =========================================================
-   MOBILE
+   <= 650
 ========================================================= */
 
 @media (max-width: 650px) {
-  .additional-container {
+  .additional-container,
+  .additional-services .additional-container {
     width: calc(100% - 36px);
   }
 
@@ -1310,36 +1273,32 @@ a {
     padding-bottom: 70px;
   }
 
-  /* HERO */
-
-  .additional-hero__content h1 {
-    font-size: 54px;
-    letter-spacing: -3px;
-  }
-
-  .additional-hero__content h2 {
-    font-size: 22px;
-  }
-
-  /* SERVICES */
-
   .additional-services__grid {
     grid-template-columns: 1fr;
 
-    gap: 10px;
+    gap: 14px;
   }
 
   .service-card {
-    min-height: 390px;
+    min-height: 360px;
 
     padding: 25px;
+  }
+
+  .service-card__content,
+  .service-card:nth-child(even) .service-card__content,
+  .service-card:nth-child(odd) .service-card__content {
+    margin-top: 52px !important;
   }
 
   .service-card h3 {
     font-size: 25px;
   }
 
-  /* HEADINGS */
+  .additional-hero__content h1 {
+    font-size: 54px;
+    letter-spacing: -3px;
+  }
 
   .additional-complex__content h2,
   .additional-trade h2,
@@ -1349,8 +1308,6 @@ a {
     font-size: 46px;
     letter-spacing: -2.5px;
   }
-
-  /* SCENARIOS */
 
   .scenario {
     grid-template-columns: 1fr;
@@ -1362,25 +1319,15 @@ a {
     grid-column: auto;
   }
 
-  .additional-scenarios__button {
-    text-align: left;
-  }
-
-  /* OTHER */
-
   .additional-other__grid {
     grid-template-columns: 1fr;
   }
-
-  /* FORM */
 
   .request-form__row {
     grid-template-columns: 1fr;
 
     gap: 0;
   }
-
-  /* MODAL */
 
   .service-modal {
     padding: 12px;
@@ -1396,30 +1343,10 @@ a {
 
     padding: 68px 24px 35px;
   }
-
-  .service-modal__close {
-    top: 14px;
-    right: 14px;
-
-    width: 40px;
-    height: 40px;
-  }
-
-  .service-modal__inner h2 {
-    margin-right: 0;
-
-    font-size: 34px;
-  }
-
-  .service-modal__inner h3 {
-    margin-right: 0;
-
-    font-size: 18px;
-  }
 }
 
 /* =========================================================
-   VERY SMALL MOBILE
+   <= 420
 ========================================================= */
 
 @media (max-width: 420px) {
@@ -1434,12 +1361,13 @@ a {
   .additional-btn > span:first-child {
     flex: 1;
   }
+}
 
-  .additional-hero__media,
-  .additional-hero__media img,
-  .additional-hero__media video,
-  .additional-hero__media .additional-media-placeholder {
-    min-height: 390px;
-    height: 390px;
-  }
+/* =========================================
+   ФИНАЛЬНЫЙ FIX СТЫКА СЕКЦИЙ
+========================================= */
+
+section.additional {
+  padding-bottom: 80px !important;
+  background: #f5f5f3 !important;
 }
