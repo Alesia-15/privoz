@@ -4,16 +4,15 @@
 ========================================================= */
 
 :root {
-  --construction-orange: #ff681e;
-  --construction-orange-dark: #e95612;
-  --construction-black: #171717;
-  --construction-text: #5e5e5e;
-  --construction-light: #f6f6f4;
-  --construction-line: #e3e3e0;
-  --construction-sand: #e7d4bf;
-  --construction-sand-light: #f4eee7;
-  --construction-brown: #755540;
-  --construction-dark: #22201e;
+  --solution-orange: #ff681e;
+  --solution-orange-dark: #e95612;
+  --solution-black: #171717;
+  --solution-text: #625e58;
+  --construction-main: #906d48;
+  --construction-main-dark: #6a4e31;
+  --construction-light: #f1e8dd;
+  --construction-light-2: #e2d2bd;
+  --solution-border: #e4d9cc;
 }
 
 .construction-page {
@@ -591,7 +590,7 @@
 
 .construction-cycle-card:hover,
 .construction-cycle-card.is-active {
-  background: var(--construction-orange);
+  background: var(--construction-main);
   border-color: var(--construction-orange);
   transform: translateY(-5px);
 }
@@ -626,7 +625,7 @@
   padding: 24px;
   display: flex;
   align-items: flex-end;
-  background: var(--construction-orange);
+  background: var(--construction-main);
   opacity: 0;
   transform: translateY(45%);
   transition:
@@ -658,7 +657,7 @@
 
 .solution-partner-section {
   padding: 120px 0;
-  background: #f1ebe4;
+  background: #f3ece4;
 }
 
 .solution-partner-grid {

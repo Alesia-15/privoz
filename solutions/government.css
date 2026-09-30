@@ -5,17 +5,13 @@
 :root {
   --gov-orange: #ff681e;
   --gov-orange-dark: #e95612;
-
   --gov-black: #171717;
   --gov-text: #60656a;
-
-  --gov-main: #5f6f7b;
-  --gov-main-dark: #34424c;
-
-  --gov-light: #e9eef1;
-  --gov-light-2: #f4f6f7;
-
-  --gov-border: #e1e5e7;
+  --gov-main: #5b6770;
+  --gov-main-dark: #414b52;
+  --gov-light: #eceeef;
+  --gov-light-2: #dfe3e5;
+  --gov-border: #e1e4e6;
 }
 
 /* =========================================================
@@ -859,7 +855,7 @@
 .solution-partner-section {
   padding: 120px 0;
 
-  background: #eef2f4;
+  background: #f1f3f4;
 }
 
 .solution-partner-grid {
