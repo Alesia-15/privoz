@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const main = document.querySelector(".enterprise-page");
+  const main = document.querySelector(".retail-customer-page");
 
   if (!main) return;
 
   /* =========================================================
-     1. ПЛАВНЫЙ ПЕРЕХОД К ФОРМЕ ЗАЯВКИ
+     1. ПЛАВНЫЙ ПЕРЕХОД К ЗАЯВКЕ
   ========================================================= */
 
   main.querySelectorAll('a[href="#request"]').forEach((link) => {
@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      2. КАРТОЧКИ "ПОЛНЫЙ ЦИКЛ"
-     На компьютере работает hover через CSS.
-     На телефоне / планшете — по нажатию.
+     На компьютере — hover через CSS
+     На телефоне / планшете — клик
   ========================================================= */
 
-  const cycleCards = main.querySelectorAll(".enterprise-cycle-card");
+  const cycleCards = main.querySelectorAll(".rc-cycle-card");
 
   cycleCards.forEach((card) => {
     card.setAttribute("tabindex", "0");
@@ -64,21 +64,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =========================================================
-     3. АНИМАЦИЯ ПОЯВЛЕНИЯ БЛОКОВ ПРИ СКРОЛЛЕ
+     3. АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ
   ========================================================= */
 
   const revealTargets = [
     ...main.querySelectorAll(
-      ".solution-about-grid, " +
-        ".enterprise-category-card, " +
-        ".enterprise-search-block, " +
-        ".enterprise-cycle-card, " +
-        ".solution-partner-copy, " +
-        ".solution-partner-item, " +
+      ".rc-about-grid, " +
+        ".rc-cat-card, " +
+        ".rc-search, " +
+        ".rc-cycle-card, " +
+        ".rc-vat-grid, " +
+        ".rc-pickup-head, " +
+        ".rc-pickup-grid article, " +
+        ".rc-account-grid, " +
         ".request-content, " +
         ".request-form, " +
-        ".solution-service-card, " +
-        ".solution-number-card, " +
         ".partner-logo",
     ),
   ];
@@ -118,11 +118,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================================================
-     4. ПОИСК ПО КАТАЛОГУ
-     Не отправляем форму, если строка пустая
+     4. ПОИСК
+     Не отправляем форму, если поле пустое
   ========================================================= */
 
-  const searchForm = main.querySelector(".enterprise-search-form");
+  const searchForm = main.querySelector(".rc-search-form");
 
   if (searchForm) {
     const searchInput = searchForm.querySelector('input[name="q"]');
@@ -140,11 +140,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      5. ЗАКРЫТИЕ КАРТОЧЕК "ПОЛНЫЙ ЦИКЛ"
-     при клике вне карточек
+     ПРИ КЛИКЕ ВНЕ НИХ
   ========================================================= */
 
   document.addEventListener("click", (event) => {
-    if (event.target.closest(".enterprise-cycle-card")) {
+    if (event.target.closest(".rc-cycle-card")) {
       return;
     }
 
