@@ -6421,3 +6421,440 @@ a {
     height: 75px;
   }
 }
+
+/* ==============================================
+   PRIVOZ — РЕШЕНИЯ ДЛЯ ВАШЕГО БИЗНЕСА
+============================================== */
+
+/* Карточки */
+
+.business-solutions-section .business-solution-card {
+  position: relative;
+  min-height: 310px;
+  padding: 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  overflow: hidden;
+  color: #202020;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.business-solutions-section .business-solution-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* 3D-ИЗОБРАЖЕНИЯ СПРАВА СВЕРХУ */
+
+.business-solutions-section .business-solution-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  left: auto;
+
+  width: 130px;
+  height: 130px;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  clip-path: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.business-solutions-section .business-solution-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  transition: transform 0.35s ease;
+}
+
+.business-solutions-section
+  .business-solution-card:hover
+  .business-solution-icon
+  img {
+  transform: scale(1.06);
+}
+
+/* ЗАГОЛОВКИ */
+
+.business-solutions-section .business-solution-card h3 {
+  position: relative;
+  z-index: 2;
+
+  margin: 135px 0 10px;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: #202020;
+}
+
+/* ОПИСАНИЯ */
+
+.business-solutions-section .business-solution-card p {
+  position: relative;
+  z-index: 2;
+
+  margin: 0 0 20px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #55504d;
+}
+
+/* КНОПКА ПОДРОБНЕЕ */
+
+.business-solutions-section .business-solution-card > a {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  width: fit-content;
+  min-height: 42px;
+  margin-top: auto;
+  padding: 11px 20px;
+
+  background: #202020;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+
+  transition: background 0.25s ease;
+}
+
+.business-solutions-section .business-solution-card > a:hover {
+  background: #ff681e;
+  color: #ffffff;
+}
+
+.business-solutions-section .business-solution-card > a span {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.business-solutions-section .business-solution-card > a:hover span {
+  transform: translateX(4px);
+}
+
+/* ПЛАНШЕТ */
+
+@media (max-width: 1100px) {
+  .business-solutions-section .business-solution-card {
+    min-height: 295px;
+    padding: 20px;
+  }
+
+  .business-solutions-section .business-solution-icon {
+    width: 110px;
+    height: 110px;
+  }
+
+  .business-solutions-section .business-solution-card h3 {
+    margin-top: 115px;
+    font-size: 18px;
+  }
+
+  .business-solutions-section .business-solution-card p {
+    font-size: 13px;
+  }
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+
+@media (max-width: 768px) {
+  .business-solutions-section .business-solution-card {
+    min-height: 275px;
+    padding: 18px;
+  }
+
+  .business-solutions-section .business-solution-icon {
+    top: 10px;
+    right: 10px;
+    width: 95px;
+    height: 95px;
+  }
+
+  .business-solutions-section .business-solution-card h3 {
+    margin-top: 100px;
+    font-size: 18px;
+  }
+
+  .business-solutions-section .business-solution-card p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .business-solutions-section .business-solution-card > a {
+    min-height: 38px;
+    padding: 10px 16px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .business-solutions-section .business-solution-icon {
+    width: 85px;
+    height: 85px;
+  }
+
+  .business-solutions-section .business-solution-card h3 {
+    margin-top: 90px;
+    font-size: 17px;
+  }
+}
+
+/* ============================================
+   PRIVOZ — PARTNERS
+============================================ */
+
+.partners-section {
+  position: relative;
+  width: 100%;
+  padding: 90px 0 100px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.partners-section .partners-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Заголовок */
+
+.partners-section .partners-header {
+  padding: 0 4%;
+  margin-bottom: 45px;
+}
+
+/* Общий контейнер строк */
+
+.partners-section .partners-marquee {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+
+  overflow: hidden;
+}
+
+/* Отдельная строка */
+
+.partners-section .partners-row {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Движущаяся дорожка */
+
+.partners-section .partners-track {
+  display: flex;
+  align-items: center;
+
+  width: max-content;
+  will-change: transform;
+}
+
+/* Набор логотипов */
+
+.partners-section .partners-group {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+/* Каждый логотип */
+
+.partners-section .partners-item {
+  width: 200px;
+  height: 80px;
+  flex: 0 0 200px;
+
+  margin-right: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: none;
+}
+
+/* Изображения */
+
+.partners-section .partners-item img {
+  display: block;
+
+  max-width: 150px;
+  max-height: 64px;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* Наведение */
+
+.partners-section .partners-item:hover img {
+  transform: scale(1.08);
+}
+
+/* ============================================
+   АНИМАЦИЯ
+============================================ */
+
+/* Строки 1, 3, 5 ... влево */
+
+.partners-section .partners-row:nth-child(odd) .partners-track {
+  animation: partnersMoveLeft var(--duration, 100s) linear infinite;
+}
+
+/* Строки 2, 4, 6 ... вправо */
+
+.partners-section .partners-row:nth-child(even) .partners-track {
+  animation: partnersMoveRight var(--duration, 100s) linear infinite;
+}
+
+@keyframes partnersMoveLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes partnersMoveRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Плавное затухание по краям */
+
+.partners-section .partners-row {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 4%,
+    #000 96%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 4%,
+    #000 96%,
+    transparent 100%
+  );
+}
+
+/* Остановка при наведении */
+
+.partners-section .partners-row:hover .partners-track {
+  animation-play-state: paused;
+}
+
+/* ============================================
+   TABLET
+============================================ */
+
+@media (max-width: 1024px) {
+  .partners-section {
+    padding: 70px 0 80px;
+  }
+
+  .partners-section .partners-marquee {
+    gap: 26px;
+  }
+
+  .partners-section .partners-item {
+    width: 165px;
+    height: 75px;
+    flex-basis: 165px;
+    margin-right: 25px;
+  }
+
+  .partners-section .partners-item img {
+    max-width: 135px;
+    max-height: 58px;
+  }
+}
+
+/* ============================================
+   MOBILE
+============================================ */
+
+@media (max-width: 768px) {
+  .partners-section {
+    padding: 55px 0 65px;
+  }
+
+  .partners-section .partners-header {
+    margin-bottom: 30px;
+  }
+
+  .partners-section .partners-label {
+    font-size: 14px;
+  }
+
+  .partners-section .partners-marquee {
+    gap: 18px;
+  }
+
+  .partners-section .partners-item {
+    width: 135px;
+    height: 65px;
+    flex-basis: 135px;
+
+    margin-right: 18px;
+  }
+
+  .partners-section .partners-item img {
+    max-width: 110px;
+    max-height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partners-section .partners-track {
+    animation: none !important;
+    transform: none !important;
+  }
+}

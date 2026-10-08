@@ -817,3 +817,115 @@ document.addEventListener("DOMContentLoaded", () => {
       "Форма заполнена. Для отправки необходимо подключить обработчик заявок.";
   });
 });
+
+/* ============================================
+   PRIVOZ — PARTNERS MARQUEE
+============================================ */
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const marquee = document.getElementById("partnersMarquee");
+
+  if (!marquee) return;
+
+  const ROWS = 3;
+
+  // Скорость движения в пикселях в секунду
+  // Меньше число = медленнее
+  const SPEED = 25;
+
+  const BASE_PATH = "images/partners/";
+
+  try {
+    const response = await fetch(BASE_PATH + "manifest.json");
+
+    if (!response.ok) {
+      throw new Error("Не найден manifest.json");
+    }
+
+    const fileNames = await response.json();
+
+    // Убираем повторяющиеся имена
+    const uniqueFiles = [...new Set(fileNames)];
+
+    // Допустимые форматы
+    const allowedExtensions = /\.(svg|png|jpg|jpeg|webp|gif)$/i;
+
+    const images = uniqueFiles.filter((file) => allowedExtensions.test(file));
+
+    // Перемешиваем
+    for (let i = images.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+
+      [images[i], images[j]] = [images[j], images[i]];
+    }
+
+    // Распределяем по четырём строкам
+    const rows = Array.from({ length: ROWS }, () => []);
+
+    images.forEach((file, index) => {
+      rows[index % ROWS].push(file);
+    });
+
+    // Создаём разметку каждой строки
+    rows.forEach((files, rowIndex) => {
+      if (!files.length) return;
+
+      const row = document.createElement("div");
+      row.className = "partners-row";
+
+      const track = document.createElement("div");
+      track.className = "partners-track";
+
+      const group = document.createElement("div");
+      group.className = "partners-group";
+
+      files.forEach((file) => {
+        const item = document.createElement("div");
+        item.className = "partners-item";
+
+        const img = document.createElement("img");
+
+        img.src = BASE_PATH + encodeURIComponent(file);
+        img.alt = file.replace(/\.[^.]+$/, "").replace(/[_-]/g, " ");
+
+        img.loading = "lazy";
+        img.decoding = "async";
+
+        item.appendChild(img);
+        group.appendChild(item);
+      });
+
+      // Вторая копия нужна только для
+      // бесшовной бесконечной прокрутки
+      const clone = group.cloneNode(true);
+
+      clone.setAttribute("aria-hidden", "true");
+
+      clone.querySelectorAll("img").forEach((img) => {
+        img.alt = "";
+        img.loading = "eager";
+      });
+
+      track.appendChild(group);
+      track.appendChild(clone);
+
+      row.appendChild(track);
+      marquee.appendChild(row);
+
+      // Скорость одинаковая для всех строк
+      const updateDuration = () => {
+        const distance = group.scrollWidth;
+
+        const duration = distance / SPEED;
+
+        row.style.setProperty("--duration", `${duration}s`);
+      };
+
+      updateDuration();
+
+      window.addEventListener("resize", updateDuration);
+    });
+  } catch (error) {
+    console.error("Ошибка загрузки логотипов партнёров:", error);
+  }
+});
