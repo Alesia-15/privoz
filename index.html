@@ -577,8 +577,6 @@
 
       <div class="hero-container">
         <div class="hero-content">
-          <span class="hero-label">PRIVOZ</span>
-
           <h1 class="hero-title">
             Комплексные решения
             <br />
@@ -1654,5 +1652,86 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- CONSULTATION MODAL -->
+    <div class="consult-modal" id="consultModal" aria-hidden="true">
+      <div class="consult-modal-overlay" data-modal-close></div>
+
+      <div
+        class="consult-modal-window"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="consultModalTitle"
+        tabindex="-1"
+      >
+        <button
+          class="consult-modal-close"
+          type="button"
+          aria-label="Закрыть"
+          data-modal-close
+        >
+          ×
+        </button>
+
+        <h2 id="consultModalTitle">Оставить заявку</h2>
+
+        <p class="consult-modal-description">
+          Расскажите, как с вами связаться. Наш специалист ответит на ваши
+          вопросы.
+        </p>
+
+        <form id="consultModalForm" method="post">
+          <div class="consult-modal-field">
+            <label for="consultName">Ваше имя *</label>
+            <input
+              id="consultName"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="Имя"
+              required
+            />
+          </div>
+
+          <div class="consult-modal-field">
+            <label for="consultPhone">Номер телефона *</label>
+            <input
+              id="consultPhone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              placeholder="+48 000 000 000"
+              minlength="7"
+              required
+            />
+          </div>
+
+          <label class="consult-modal-consent">
+            <input type="checkbox" name="consent" value="yes" required />
+            <span>
+              Я согласен(на) на обработку персональных данных в соответствии с
+              <a
+                href="/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Политикой конфиденциальности </a
+              >.
+            </span>
+          </label>
+
+          <button class="consult-modal-submit" type="submit">
+            Отправить заявку <span>↗</span>
+          </button>
+
+          <p
+            class="consult-modal-status"
+            id="consultModalStatus"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

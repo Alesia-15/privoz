@@ -741,3 +741,79 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("consultModal");
+  if (!modal) return;
+
+  const windowEl = modal.querySelector(".consult-modal-window");
+  const form = document.getElementById("consultModalForm");
+  const status = document.getElementById("consultModalStatus");
+
+  let previousFocus = null;
+
+  function openModal() {
+    previousFocus = document.activeElement;
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    windowEl.focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    previousFocus?.focus();
+  }
+
+  document.addEventListener("click", (event) => {
+    const trigger = event.target.closest(".consultation-modal-open");
+
+    if (trigger) {
+      event.preventDefault();
+      openModal();
+      return;
+    }
+
+    if (event.target.closest("[data-modal-close]")) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!modal.classList.contains("is-open")) return;
+
+    if (event.key === "Escape") {
+      closeModal();
+    }
+
+    if (event.key === "Tab") {
+      const elements = [
+        ...modal.querySelectorAll(
+          "button:not(:disabled), input:not(:disabled), a[href]",
+        ),
+      ].filter((el) => el.getClientRects().length);
+
+      const first = elements[0];
+      const last = elements[elements.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    status.textContent =
+      "Форма заполнена. Для отправки необходимо подключить обработчик заявок.";
+  });
+});
