@@ -5122,7 +5122,7 @@ a {
 
   background: #101010;
 
-  color: #ffffff;
+  color: var(--white);
 }
 
 .privoz-footer-shell {
@@ -5134,9 +5134,6 @@ a {
     minmax(0, 1fr)
     minmax(0, 1fr)
     minmax(0, 1fr);
-
-  min-height: calc(100vh - var(--header-height));
-  height: auto;
 }
 
 /* ======================================================
@@ -5675,8 +5672,6 @@ a {
   width: 100%;
   height: auto;
 
-  filter: brightness(0) invert(1);
-
   opacity: 0.9;
 }
 
@@ -5803,11 +5798,6 @@ a {
 ====================================================== */
 
 @media (min-width: 1181px) {
-  .privoz-footer-shell {
-    min-height: calc(100vh - var(--header-height));
-    height: calc(100vh - var(--header-height));
-  }
-
   .privoz-footer-section {
     padding-top: 28px;
     padding-bottom: 18px;
