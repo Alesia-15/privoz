@@ -1055,23 +1055,21 @@
 }
 
 /* ======================================================
-   ABOUT NUMBERS
+   ABOUT NUMBERS — NEW DESIGN
 ====================================================== */
 
 .about-numbers {
   position: relative;
-
-  padding: 120px 0 135px;
-
+  padding: 110px 0 125px;
   overflow: hidden;
 
   background:
     radial-gradient(
-      circle at 80% 20%,
-      rgba(255, 104, 30, 0.08),
-      transparent 28%
+      circle at 90% 10%,
+      rgba(255, 104, 30, 0.06),
+      transparent 35%
     ),
-    linear-gradient(135deg, #0a0a0a 0%, #0e0e0e 58%, #17100d 100%);
+    #0c0c0c;
 
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -1079,32 +1077,24 @@
 .about-numbers-container {
   width: calc(100% - 100px);
   max-width: 1450px;
-
   margin: 0 auto;
 }
 
-/* ======================================================
-   HEAD
-====================================================== */
+/* HEAD */
 
 .about-numbers-head {
   max-width: 930px;
-
-  margin: 0 auto 90px;
-
-  text-align: center;
+  margin-bottom: 65px;
+  text-align: left;
 }
 
 .about-numbers-head .about-section-label {
   display: block;
-
   margin-bottom: 22px;
 
   color: var(--about-orange);
-
   font-size: 11px;
   font-weight: 600;
-
   letter-spacing: 0.2em;
 }
 
@@ -1112,160 +1102,223 @@
   margin: 0;
 
   color: #ffffff;
-
   font-size: clamp(46px, 5vw, 72px);
   font-weight: 500;
-
   line-height: 1.04;
-
   letter-spacing: -0.055em;
 }
 
 .about-numbers-title span {
   display: block;
-
   color: rgba(255, 255, 255, 0.4);
 }
 
 /* ======================================================
-   GRID
+   GRID — 3 COLUMNS
 ====================================================== */
 
 .about-numbers-grid {
   display: grid;
-
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-
-  column-gap: 40px;
-  row-gap: 80px;
-
-  align-items: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
-/* ======================================================
-   ITEM
-====================================================== */
-
-.about-number-item {
-  min-width: 0;
-}
-
-.about-number-item p {
-  max-width: 240px;
-
-  margin: 18px 0 0;
-
-  color: rgba(255, 255, 255, 0.48);
-
-  font-size: 14px;
-  font-weight: 400;
-
-  line-height: 1.55;
-}
-
-/* ======================================================
-   VALUE
-====================================================== */
-
-.about-number-value {
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-
-  gap: 8px;
-}
-
-.about-number-counter {
-  color: #ffffff;
-
-  font-size: clamp(68px, 6.3vw, 104px);
-  font-weight: 400;
-
-  line-height: 0.9;
-
-  letter-spacing: -0.065em;
-}
-
-.about-number-suffix {
-  padding-bottom: 6px;
-
-  color: #ffffff;
-
-  font-size: clamp(24px, 2vw, 34px);
-  font-weight: 500;
-
-  line-height: 1;
-}
-
-/* ======================================================
-   LARGE FIRST NUMBER
-====================================================== */
-
-.about-number-item-large .about-number-counter {
-  color: var(--about-orange);
-}
-
-/* ======================================================
-   STORAGE
-====================================================== */
-
-.about-number-item-wide {
-  grid-column: span 2;
-}
-
-.about-number-value-storage {
-  align-items: baseline;
-
-  gap: 10px 12px;
-}
-
-.about-number-value-storage .about-number-counter {
-  font-size: clamp(54px, 5vw, 82px);
-}
-
-.about-number-storage-text {
-  color: rgba(255, 255, 255, 0.42);
-
-  font-size: 18px;
-  font-weight: 400;
-
-  line-height: 1.4;
-}
-
-/* ======================================================
-   DECORATIVE LINES
-====================================================== */
+/* CARD */
 
 .about-number-item {
   position: relative;
+  min-width: 0;
+  min-height: 205px;
+  padding: 30px;
 
-  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #191919;
+  border: 1px solid rgba(255, 255, 255, 0.055);
+
+  clip-path: polygon(
+    12px 0,
+    100% 0,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    0 100%,
+    0 12px
+  );
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
+
+.about-number-item:hover {
+  background: #222222;
+  transform: translateY(-4px);
+}
+
+/* Orange decorative line */
 
 .about-number-item::before {
   content: "";
-
   position: absolute;
+  top: 0;
+  left: 30px;
 
-  top: -1px;
-  left: 0;
-
-  width: 38px;
+  width: 35px;
   height: 2px;
 
   background: var(--about-orange);
 
   transform: scaleX(0);
-
   transform-origin: left;
-
-  transition: transform 0.7s ease;
+  transition: transform 0.4s ease;
 }
 
-.about-number-item.reveal-visible::before {
+.about-number-item:hover::before {
   transform: scaleX(1);
+}
+
+/* NUMBER */
+
+.about-number-value {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  gap: 8px;
+  min-width: 0;
+}
+
+.about-number-counter {
+  display: inline-block;
+  white-space: nowrap;
+
+  color: #ffffff;
+  font-size: clamp(38px, 3.5vw, 58px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+
+  font-variant-numeric: tabular-nums;
+}
+
+.about-number-suffix {
+  flex-shrink: 0;
+
+  color: var(--about-orange);
+  font-size: clamp(18px, 1.65vw, 25px);
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* FIRST CARD */
+
+.about-number-item-large .about-number-counter {
+  color: var(--about-orange);
+}
+
+.about-number-item-large .about-number-suffix {
+  color: #ffffff;
+}
+
+/* DESCRIPTION */
+
+.about-number-item p {
+  max-width: 300px;
+  margin: 25px 0 0;
+
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+/* ======================================================
+   INFRASTRUCTURE
+====================================================== */
+
+.about-numbers-infrastructure {
+  position: relative;
+  margin-top: 14px;
+  padding: 34px 38px 40px;
+
+  background:
+    linear-gradient(
+      115deg,
+      rgba(255, 104, 30, 0.075),
+      rgba(255, 255, 255, 0.025) 70%
+    ),
+    #191919;
+
+  border: 1px solid rgba(255, 104, 30, 0.13);
+
+  clip-path: polygon(
+    14px 0,
+    100% 0,
+    100% calc(100% - 14px),
+    calc(100% - 14px) 100%,
+    0 100%,
+    0 14px
+  );
+}
+
+.about-numbers-infrastructure-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding-bottom: 28px;
+  margin-bottom: 30px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.about-numbers-infrastructure-head span:first-child {
+  color: var(--about-orange);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.about-numbers-infrastructure-head span:last-child {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+/* TWO COLUMNS */
+
+.about-numbers-infrastructure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 45px;
+}
+
+.about-infrastructure-item {
+  min-width: 0;
+}
+
+.about-infrastructure-item + .about-infrastructure-item {
+  padding-left: 45px;
+  border-left: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.about-infrastructure-item .about-number-counter {
+  font-size: clamp(48px, 4.2vw, 70px);
+}
+
+.about-infrastructure-item .about-number-suffix {
+  font-size: clamp(19px, 2vw, 27px);
+}
+
+.about-infrastructure-item p {
+  margin: 17px 0 0;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 /* ======================================================
@@ -1281,22 +1334,12 @@
     width: calc(100% - 50px);
   }
 
-  .about-numbers-head {
-    margin-bottom: 65px;
-  }
-
   .about-numbers-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 65px 45px;
   }
 
-  .about-number-item-wide {
-    grid-column: span 2;
-  }
-
-  .about-number-item p {
-    max-width: 300px;
+  .about-number-counter {
+    font-size: clamp(40px, 5vw, 58px);
   }
 }
 
@@ -1314,9 +1357,7 @@
   }
 
   .about-numbers-head {
-    margin-bottom: 55px;
-
-    text-align: left;
+    margin-bottom: 45px;
   }
 
   .about-numbers-title {
@@ -1325,391 +1366,338 @@
 
   .about-numbers-grid {
     grid-template-columns: 1fr;
-
-    row-gap: 48px;
+    gap: 10px;
   }
 
-  .about-number-item-wide {
-    grid-column: auto;
+  .about-number-item {
+    min-height: 155px;
+    padding: 25px;
   }
 
   .about-number-counter {
-    font-size: clamp(62px, 20vw, 88px);
+    font-size: clamp(40px, 10vw, 58px);
   }
 
   .about-number-suffix {
-    font-size: 25px;
-  }
-
-  .about-number-value-storage .about-number-counter {
-    font-size: 56px;
-  }
-
-  .about-number-storage-text {
-    width: 100%;
-
-    margin-top: 4px;
-
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .about-number-item p {
-    margin-top: 14px;
+    margin-top: 18px;
+    font-size: 13px;
+  }
 
+  /* INFRASTRUCTURE */
+
+  .about-numbers-infrastructure {
+    margin-top: 10px;
+    padding: 28px 25px;
+  }
+
+  .about-numbers-infrastructure-head {
+    margin-bottom: 25px;
+    padding-bottom: 22px;
+  }
+
+  .about-numbers-infrastructure-head span:last-child {
+    display: none;
+  }
+
+  .about-numbers-infrastructure-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-infrastructure-item + .about-infrastructure-item {
+    padding: 25px 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+  }
+
+  .about-infrastructure-item .about-number-counter {
+    font-size: clamp(43px, 11vw, 60px);
+  }
+
+  .about-infrastructure-item .about-number-suffix {
+    font-size: 20px;
+  }
+
+  .about-infrastructure-item p {
     font-size: 13px;
   }
 }
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  .about-number-item {
+    padding: 22px 18px;
+  }
+
+  .about-number-counter {
+    font-size: 37px;
+  }
+
+  .about-number-suffix {
+    font-size: 17px;
+  }
+
+  .about-infrastructure-item .about-number-counter {
+    font-size: 40px;
+  }
+}
+
 /* ======================================================
-   ABOUT TRUST
+   ABOUT TRUST — NEW DESIGN
 ====================================================== */
 
 .about-trust {
   position: relative;
-
-  padding: 120px 0 130px;
-
+  padding: 120px 0 135px;
   overflow: hidden;
 
   background:
     radial-gradient(
       circle at 88% 35%,
-      rgba(255, 104, 30, 0.09),
-      transparent 28%
+      rgba(255, 104, 30, 0.07),
+      transparent 30%
     ),
-    linear-gradient(135deg, #0a0a0a 0%, #101010 55%, #15100d 100%);
+    #0d0d0d;
 
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .about-trust-glow {
   position: absolute;
-
   width: 460px;
   height: 460px;
-
   left: -280px;
   bottom: -150px;
-
   border-radius: 50%;
-
   background: rgba(255, 104, 30, 0.1);
-
   filter: blur(120px);
-
   pointer-events: none;
 }
 
 .about-trust-container {
   position: relative;
-
   z-index: 2;
-
   width: calc(100% - 100px);
   max-width: 1450px;
-
   margin: 0 auto;
 }
 
-/* ======================================================
-   HEAD
-====================================================== */
+/* HEAD */
 
 .about-trust-head {
   max-width: 920px;
-
-  margin-bottom: 62px;
+  margin-bottom: 60px;
 }
 
 .about-trust-head .about-section-label {
   display: block;
-
   margin-bottom: 22px;
-
   color: var(--about-orange);
-
   font-size: 11px;
   font-weight: 600;
-
   letter-spacing: 0.2em;
 }
 
 .about-trust-title {
   margin: 0;
-
-  color: #ffffff;
-
+  color: #fff;
   font-size: clamp(46px, 5vw, 72px);
   font-weight: 500;
-
   line-height: 1.04;
-
   letter-spacing: -0.055em;
 }
 
 .about-trust-title span {
   display: block;
-
   color: rgba(255, 255, 255, 0.4);
 }
 
-/* ======================================================
-   SLIDER
-====================================================== */
+/* GRID */
 
-.about-trust-slider {
-  position: relative;
-}
-
-.about-trust-track {
+.about-trust-grid {
   display: grid;
-
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-
-  gap: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
 }
 
-/* ======================================================
-   CARD
-====================================================== */
+/* CARD */
 
 .about-trust-card {
   min-width: 0;
-}
-
-.about-trust-image {
-  position: relative;
-
-  aspect-ratio: 0.72;
-
-  overflow: hidden;
-
-  background: #171717;
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  background: #191919;
+  border: 1px solid rgba(255, 255, 255, 0.07);
 
   clip-path: polygon(
-    16px 0,
+    14px 0,
     100% 0,
-    100% calc(100% - 16px),
-    calc(100% - 16px) 100%,
+    100% calc(100% - 14px),
+    calc(100% - 14px) 100%,
     0 100%,
-    0 16px
+    0 14px
   );
 
   transition:
     transform 0.3s ease,
-    border-color 0.3s ease;
+    background 0.3s ease;
 }
 
-.about-trust-card:hover .about-trust-image {
+.about-trust-card:hover {
   transform: translateY(-6px);
+  background: #222;
+}
 
-  border-color: rgba(255, 104, 30, 0.5);
+/* IMAGE */
+
+.about-trust-image {
+  position: relative;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  overflow: hidden;
+  background: #111;
+  text-decoration: none;
 }
 
 .about-trust-image img {
   width: 100%;
   height: 100%;
-
-  object-fit: cover;
-
-  transition: transform 0.35s ease;
+  object-fit: contain;
+  transition: transform 0.4s ease;
 }
 
-.about-trust-card:hover .about-trust-image img {
-  transform: scale(1.025);
+.about-trust-image:hover img {
+  transform: scale(1.045);
 }
 
-/* ======================================================
-   PLACEHOLDER
-====================================================== */
+/* VIEW ICON */
 
-.about-trust-placeholder {
+.about-trust-view {
   position: absolute;
-
-  inset: 0;
-
-  padding: 25px;
+  right: 15px;
+  bottom: 15px;
+  width: 38px;
+  height: 38px;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  text-align: center;
+  background: var(--about-orange);
+  color: #fff;
+  font-size: 22px;
 
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0)),
-    #151515;
+  opacity: 0;
+  transform: translateY(6px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
-.about-trust-placeholder::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 20px;
-
-  border: 1px dashed rgba(255, 255, 255, 0.1);
+.about-trust-image:hover .about-trust-view,
+.about-trust-image:focus-visible .about-trust-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.about-trust-placeholder span {
-  position: relative;
-
-  z-index: 2;
-
-  margin-bottom: 10px;
-
-  color: var(--about-orange);
-
-  font-size: 10px;
-  font-weight: 700;
-
-  letter-spacing: 0.2em;
-}
-
-.about-trust-placeholder p {
-  position: relative;
-
-  z-index: 2;
-
-  margin: 0;
-
-  color: rgba(255, 255, 255, 0.4);
-
-  font-size: 13px;
-
-  line-height: 1.45;
-}
-
-/* ======================================================
-   CARD BOTTOM
-====================================================== */
+/* CONTENT */
 
 .about-trust-card-bottom {
+  padding: 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-trust-type {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--about-orange);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.about-trust-card-bottom h3 {
+  margin: 0 0 14px;
+  color: #fff;
+  font-size: clamp(19px, 1.7vw, 25px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.about-trust-card-bottom p {
+  margin: 0 0 25px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* YEAR */
+
+.about-trust-year {
+  margin-top: auto;
   padding-top: 16px;
+  width: 100%;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+
+  color: rgba(255, 255, 255, 0.32);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+/* LINK */
+
+.about-trust-link {
+  width: 100%;
+  min-height: 46px;
+  margin-top: auto;
+  padding: 0 15px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 15px;
 
-  gap: 20px;
-}
+  border: 1px solid rgba(255, 104, 30, 0.5);
 
-.about-trust-card-bottom span {
-  color: rgba(255, 255, 255, 0.62);
-
-  font-size: 13px;
-  font-weight: 500;
-}
-
-.about-trust-card-bottom strong {
-  color: rgba(255, 255, 255, 0.24);
-
-  font-size: 11px;
-  font-weight: 500;
-
-  letter-spacing: 0.12em;
-}
-
-/* ======================================================
-   CONTROLS
-====================================================== */
-
-.about-trust-controls {
-  margin-top: 42px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 18px;
-}
-
-.about-trust-arrow {
-  width: 52px;
-  height: 52px;
-
-  padding: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex: 0 0 auto;
-
-  border: 1px solid rgba(255, 255, 255, 0.14);
-
-  background: transparent;
-
-  color: #ffffff;
-
-  cursor: pointer;
-
-  clip-path: polygon(
-    8px 0,
-    100% 0,
-    100% calc(100% - 8px),
-    calc(100% - 8px) 100%,
-    0 100%,
-    0 8px
-  );
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
 
   transition:
-    background 0.2s ease,
-    border-color 0.2s ease;
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
-.about-trust-arrow:hover {
-  background: var(--about-orange);
+.about-trust-link span {
+  color: var(--about-orange);
+  font-size: 19px;
+}
 
+.about-trust-link:hover {
+  background: var(--about-orange);
   border-color: var(--about-orange);
 }
 
-.about-trust-arrow svg {
-  width: 18px;
-  height: 18px;
+.about-trust-link:hover span {
+  color: #fff;
 }
 
-.about-trust-arrow path {
-  fill: none;
-
-  stroke: currentColor;
-  stroke-width: 1.5;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-/* ======================================================
-   PROGRESS
-====================================================== */
-
-.about-trust-progress {
-  position: relative;
-
-  width: 180px;
-  height: 1px;
-
-  overflow: hidden;
-
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.about-trust-progress span {
-  position: absolute;
-
-  left: 0;
-  top: 0;
-
-  width: 35%;
-  height: 100%;
-
-  background: var(--about-orange);
-}
-
-/* ======================================================
-   TABLET
-====================================================== */
+/* TABLET */
 
 @media (max-width: 1120px) {
   .about-trust {
@@ -1720,18 +1708,16 @@
     width: calc(100% - 50px);
   }
 
-  .about-trust-track {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .about-trust-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .about-trust-card:nth-child(n + 4) {
-    display: none;
+  .about-trust-image {
+    height: 350px;
   }
 }
 
-/* ======================================================
-   MOBILE
-====================================================== */
+/* MOBILE */
 
 @media (max-width: 768px) {
   .about-trust {
@@ -1750,35 +1736,32 @@
     font-size: clamp(39px, 11vw, 54px);
   }
 
-  .about-trust-track {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 12px;
+  .about-trust-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
-  .about-trust-card:nth-child(n + 3) {
-    display: none;
+  .about-trust-image {
+    height: 340px;
   }
 
   .about-trust-card-bottom {
-    padding-top: 12px;
+    padding: 24px;
   }
 
-  .about-trust-card-bottom span {
-    font-size: 12px;
+  .about-trust-card-bottom h3 {
+    font-size: 23px;
   }
 
-  .about-trust-controls {
-    margin-top: 30px;
+  .about-trust-view {
+    opacity: 1;
+    transform: none;
   }
+}
 
-  .about-trust-arrow {
-    width: 46px;
-    height: 46px;
-  }
-
-  .about-trust-progress {
-    flex: 1;
+@media (max-width: 380px) {
+  .about-trust-image {
+    height: 280px;
   }
 }
 
@@ -4159,6 +4142,101 @@
     width: 100%;
 
     justify-content: space-between;
+  }
+}
+
+/* ======================================================
+   MANAGEMENT MODAL — SCROLL FIX
+====================================================== */
+
+/* Основное модальное окно */
+
+.about-page .management-modal {
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 24px;
+}
+
+/* Контейнер формы */
+
+.about-page .management-modal-dialog {
+  box-sizing: border-box;
+
+  width: min(900px, 100%);
+  max-width: 100%;
+  max-height: calc(100dvh - 48px);
+
+  padding: 42px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+
+/* Скролл Chrome / Edge */
+
+.about-page .management-modal-dialog::-webkit-scrollbar {
+  width: 5px;
+  height: 0;
+}
+
+.about-page .management-modal-dialog::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.about-page .management-modal-dialog::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+}
+
+.about-page .management-modal-dialog::-webkit-scrollbar-thumb:hover {
+  background: var(--about-orange);
+}
+
+/* Предотвращаем переполнение формы */
+
+.about-page .management-modal-dialog *,
+.about-page .management-modal-dialog *::before,
+.about-page .management-modal-dialog *::after {
+  box-sizing: border-box;
+}
+
+.about-page .management-form,
+.about-page .management-form-grid {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.about-page .management-field {
+  min-width: 0;
+}
+
+.about-page .management-field input,
+.about-page .management-field textarea,
+.about-page .management-field select {
+  max-width: 100%;
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+  .about-page .management-modal {
+    padding: 14px;
+  }
+
+  .about-page .management-modal-dialog {
+    max-height: calc(100dvh - 28px);
+    padding: 30px 22px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .about-page .management-modal-dialog {
+    padding: 28px 18px;
   }
 }
 
