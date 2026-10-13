@@ -6688,14 +6688,12 @@ a {
   flex: 0 0 auto;
 }
 
-/* Каждый логотип */
-
 .partners-section .partners-item {
-  width: 200px;
-  height: 80px;
-  flex: 0 0 200px;
+  width: 160px;
+  height: 72px;
+  flex: 0 0 160px;
 
-  margin-right: 35px;
+  margin-right: 18px;
 
   display: flex;
   align-items: center;
@@ -6705,22 +6703,16 @@ a {
   border: none;
 }
 
-/* Изображения */
-
 .partners-section .partners-item img {
   display: block;
 
-  max-width: 150px;
-  max-height: 64px;
+  max-width: 130px;
+  max-height: 54px;
 
   width: auto;
   height: auto;
 
   object-fit: contain;
-
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
 }
 
 /* Наведение */
@@ -6805,15 +6797,15 @@ a {
   }
 
   .partners-section .partners-item {
-    width: 165px;
-    height: 75px;
-    flex-basis: 165px;
-    margin-right: 25px;
+    width: 145px;
+    height: 66px;
+    flex-basis: 145px;
+    margin-right: 14px;
   }
 
   .partners-section .partners-item img {
-    max-width: 135px;
-    max-height: 58px;
+    max-width: 118px;
+    max-height: 48px;
   }
 }
 
@@ -6839,16 +6831,15 @@ a {
   }
 
   .partners-section .partners-item {
-    width: 135px;
-    height: 65px;
-    flex-basis: 135px;
-
-    margin-right: 18px;
+    width: 120px;
+    height: 58px;
+    flex-basis: 120px;
+    margin-right: 12px;
   }
 
   .partners-section .partners-item img {
-    max-width: 110px;
-    max-height: 48px;
+    max-width: 98px;
+    max-height: 42px;
   }
 }
 
@@ -6857,4 +6848,156 @@ a {
     animation: none !important;
     transform: none !important;
   }
+}
+
+/* ==========================================
+   PRIVOZ — РЕШЕНИЯ
+   ФИНАЛЬНАЯ КОМПОНОВКА КАРТОЧЕК
+========================================== */
+
+/* Сетка */
+.business-solutions-section .business-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+
+/* Карточка */
+.business-solutions-section .business-solution-card {
+  position: relative;
+  box-sizing: border-box;
+
+  height: auto;
+  min-height: 390px;
+  padding: 22px 20px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  overflow: hidden;
+}
+
+/* Изображение */
+.business-solutions-section .business-solution-icon {
+  position: relative;
+  top: auto;
+  right: auto;
+  left: auto;
+
+  width: 150px;
+  height: 135px;
+  margin: 0 auto 18px;
+  padding: 0;
+
+  flex: 0 0 135px;
+  align-self: center;
+
+  background: transparent;
+  clip-path: none;
+}
+
+.business-solutions-section .business-solution-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Заголовок */
+.business-solutions-section .business-solution-card h3 {
+  margin: 0 0 12px;
+  padding: 0;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+
+/* Описание */
+.business-solutions-section .business-solution-card p {
+  margin: 0 0 24px;
+  padding: 0;
+
+  font-size: 14px;
+  line-height: 1.55;
+  color: #55504d;
+}
+
+/* Кнопка */
+.business-solutions-section .business-solution-card > a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  flex-shrink: 0;
+  margin: auto 0 0;
+  padding: 12px 20px;
+  min-height: 42px;
+
+  background: #202020;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+}
+
+.business-solutions-section .business-solution-card > a:hover {
+  background: #ff681e;
+  color: #fff;
+}
+
+/* Планшеты: 2 карточки */
+@media (max-width: 900px) {
+  .business-solutions-section .business-solutions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .business-solutions-section .business-solution-card {
+    min-height: 370px;
+  }
+}
+
+/* Телефоны */
+@media (max-width: 550px) {
+  .business-solutions-section .business-solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .business-solutions-section .business-solution-card {
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .business-solutions-section .business-solution-icon {
+    width: 135px;
+    height: 115px;
+    flex-basis: 115px;
+    margin-bottom: 16px;
+  }
+
+  .business-solutions-section .business-solution-card h3 {
+    font-size: 19px;
+  }
+
+  .business-solutions-section .business-solution-card p {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+}
+
+/* Не обрезаем второй ряд */
+.business-solutions-section,
+.business-solutions-section .business-solutions-container,
+.business-solutions-section .business-solutions-grid {
+  height: auto;
+  max-height: none;
+  overflow: visible;
 }

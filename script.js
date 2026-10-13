@@ -831,7 +831,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Скорость движения в пикселях в секунду
   // Меньше число = медленнее
-  const SPEED = 25;
+  const SPEED = 50;
 
   const BASE_PATH = "images/partners/";
 
