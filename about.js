@@ -331,66 +331,195 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ======================================================
-     NUMBER COUNTERS
-  ====================================================== */
+   NUMBER COUNTERS — AUTOMATIC STATISTICS
+====================================================== */
+
+  // НАСТРОЙКИ
+
+  const statisticsSettings = {
+    // Дата основания PRIVOZ
+    foundedDate: "2016-09-27",
+
+    // Количество заказов на базовую дату
+    initialOrders: 396605,
+
+    // Дата, на которую зафиксировано initialOrders
+    ordersStartDate: "2026-10-13",
+
+    // Сколько заказов добавлять в сутки
+    ordersPerDay: 5,
+  };
+
+  /* ======================================================
+   DATE HELPERS
+====================================================== */
+
+  function parseCalendarDate(dateString) {
+    const [year, month, day] = dateString.split("-").map(Number);
+
+    return Date.UTC(year, month - 1, day);
+  }
+
+  function getTodayUTCDate() {
+    const now = new Date();
+
+    return Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  }
+
+  /* ======================================================
+   YEARS SINCE FOUNDATION
+====================================================== */
+
+  function calculateCompanyYears() {
+    const now = new Date();
+
+    const [year, month, day] = statisticsSettings.foundedDate
+      .split("-")
+      .map(Number);
+
+    let years = now.getFullYear() - year;
+
+    const anniversaryPassed =
+      now.getMonth() + 1 > month ||
+      (now.getMonth() + 1 === month && now.getDate() >= day);
+
+    if (!anniversaryPassed) {
+      years--;
+    }
+
+    return Math.max(0, years);
+  }
+
+  /* ======================================================
+   AUTOMATIC ORDER GROWTH
+====================================================== */
+
+  function calculateOrders() {
+    const startDate = parseCalendarDate(statisticsSettings.ordersStartDate);
+
+    const today = getTodayUTCDate();
+
+    const daysPassed = Math.max(0, Math.floor((today - startDate) / 86400000));
+
+    return (
+      statisticsSettings.initialOrders +
+      daysPassed * statisticsSettings.ordersPerDay
+    );
+  }
+
+  /* ======================================================
+   NUMBER FORMATTING
+====================================================== */
+
+  function formatNumber(value) {
+    return value.toLocaleString("ru-RU").replace(/\u00a0|\u202f/g, " ");
+  }
+
+  /* ======================================================
+   ANIMATION
+====================================================== */
 
   const counters = document.querySelectorAll(
     ".about-number-counter[data-number]",
   );
 
+  const animatedCounters = new WeakSet();
+
+  function getCounterTarget(counter) {
+    const statType = counter.dataset.stat;
+
+    if (statType === "years") {
+      return calculateCompanyYears();
+    }
+
+    if (statType === "orders") {
+      return calculateOrders();
+    }
+
+    return Number(counter.dataset.number);
+  }
+
+  function animateCounter(counter) {
+    if (animatedCounters.has(counter)) return;
+
+    animatedCounters.add(counter);
+
+    const target = getCounterTarget(counter);
+
+    if (!Number.isFinite(target)) return;
+
+    if (prefersReducedMotion) {
+      counter.textContent = formatNumber(target);
+      return;
+    }
+
+    const duration = 1600;
+    const startTime = performance.now();
+
+    function animate(currentTime) {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+
+      const eased = 1 - Math.pow(1 - progress, 4);
+
+      const current = Math.round(target * eased);
+
+      counter.textContent = formatNumber(current);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        counter.textContent = formatNumber(target);
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  /* ======================================================
+   OBSERVER
+====================================================== */
+
   if (counters.length) {
+    // Сразу устанавливаем актуальные значения
+    counters.forEach((counter) => {
+      const target = getCounterTarget(counter);
+
+      if (Number.isFinite(target)) {
+        counter.textContent = formatNumber(target);
+      }
+    });
+
     const counterObserver = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
-          }
+          if (!entry.isIntersecting) return;
 
-          const counter = entry.target;
+          animateCounter(entry.target);
 
-          const target = Number(counter.dataset.number);
-
-          if (!target || prefersReducedMotion) {
-            if (target) {
-              counter.textContent = target.toLocaleString("ru-RU");
-            }
-
-            observer.unobserve(counter);
-
-            return;
-          }
-
-          const duration = 1400;
-
-          const startTime = performance.now();
-
-          function animate(currentTime) {
-            const progress = Math.min((currentTime - startTime) / duration, 1);
-
-            const eased = 1 - Math.pow(1 - progress, 3);
-
-            const current = Math.round(target * eased);
-
-            counter.textContent = current.toLocaleString("ru-RU");
-
-            if (progress < 1) {
-              requestAnimationFrame(animate);
-            }
-          }
-
-          requestAnimationFrame(animate);
-
-          observer.unobserve(counter);
+          observer.unobserve(entry.target);
         });
       },
       {
-        threshold: 0.45,
+        threshold: 0.25,
       },
     );
 
     counters.forEach((counter) => {
       counterObserver.observe(counter);
     });
+
+    // Обновляем значения, если страница долго открыта
+    setInterval(() => {
+      counters.forEach((counter) => {
+        if (!animatedCounters.has(counter)) return;
+
+        const target = getCounterTarget(counter);
+
+        if (Number.isFinite(target)) {
+          counter.textContent = formatNumber(target);
+        }
+      });
+    }, 60000);
   }
 
   /* ======================================================
