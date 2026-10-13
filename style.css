@@ -7001,3 +7001,81 @@ a {
   max-height: none;
   overflow: visible;
 }
+
+/* MEGA MENU — GET SOLUTION */
+
+.mega-promo .mega-promo-button {
+  width: 100%;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+}
+
+.mega-promo button.mega-promo-button {
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+/* ======================================================
+   MEGA MENU — GET SOLUTION BUTTON
+====================================================== */
+
+.mega-promo button.mega-promo-button {
+  width: 100%;
+  min-height: 58px;
+  padding: 0 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  clip-path: polygon(
+    8px 0,
+    100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%,
+    0 8px
+  );
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.mega-promo button.mega-promo-button span {
+  color: inherit;
+}
+
+.mega-promo button.mega-promo-button svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.mega-promo button.mega-promo-button svg path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.mega-promo button.mega-promo-button:hover {
+  background: #ff681e;
+  border-color: #ff681e;
+  color: #ffffff;
+}
