@@ -337,17 +337,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // НАСТРОЙКИ
 
   const statisticsSettings = {
-    // Дата основания PRIVOZ
+    // Дата основания компании
     foundedDate: "2016-09-27",
 
-    // Количество заказов на базовую дату
-    initialOrders: 396605,
-
-    // Дата, на которую зафиксировано initialOrders
+    // Общая дата начала отсчёта статистики
     ordersStartDate: "2026-10-13",
 
-    // Сколько заказов добавлять в сутки
-    ordersPerDay: 5,
+    // Выполненные заказы
+    initialOrders: 396604,
+    ordersPerDay: 1,
+
+    // Розничные клиенты
+    initialRetail: 34127,
+    retailPerDay: 1,
+
+    // B2B-клиенты
+    initialB2B: 726,
+    b2bPerWeek: 1,
+
+    // Проверенные поставщики
+    initialSuppliers: 1285,
+    suppliersPerWeek: 1,
   };
 
   /* ======================================================
@@ -428,15 +438,49 @@ document.addEventListener("DOMContentLoaded", () => {
   function getCounterTarget(counter) {
     const statType = counter.dataset.stat;
 
+    // Годы работы компании
     if (statType === "years") {
       return calculateCompanyYears();
     }
 
-    if (statType === "orders") {
-      return calculateOrders();
-    }
+    // Количество дней с базовой даты
+    const startDate = parseCalendarDate(statisticsSettings.ordersStartDate);
 
-    return Number(counter.dataset.number);
+    const today = getTodayUTCDate();
+
+    const daysPassed = Math.max(0, Math.floor((today - startDate) / 86400000));
+
+    // Количество полных недель
+    const weeksPassed = Math.floor(daysPassed / 7);
+
+    switch (statType) {
+      case "orders":
+        return (
+          statisticsSettings.initialOrders +
+          daysPassed * statisticsSettings.ordersPerDay
+        );
+
+      case "retail":
+        return (
+          statisticsSettings.initialRetail +
+          daysPassed * statisticsSettings.retailPerDay
+        );
+
+      case "b2b":
+        return (
+          statisticsSettings.initialB2B +
+          weeksPassed * statisticsSettings.b2bPerWeek
+        );
+
+      case "suppliers":
+        return (
+          statisticsSettings.initialSuppliers +
+          weeksPassed * statisticsSettings.suppliersPerWeek
+        );
+
+      default:
+        return Number(counter.dataset.number);
+    }
   }
 
   function animateCounter(counter) {
