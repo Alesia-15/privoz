@@ -214,8 +214,6 @@
 }
 
 .purchases-hero-title span {
-  display: block;
-
   color: var(--purchases-accent);
 }
 

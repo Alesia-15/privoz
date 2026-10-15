@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const main = document.querySelector(".manufacturer-page");
+  const main = document.querySelector(".enterprise-page, .manufacturer-page");
 
   if (!main) return;
 
   /* =========================================================
-     1. ПЛАВНЫЙ ПЕРЕХОД К ЗАЯВКЕ
+     1. ПЛАВНЫЙ ПЕРЕХОД К ФОРМЕ ЗАЯВКИ
   ========================================================= */
 
   main.querySelectorAll('a[href="#request"]').forEach((link) => {
@@ -23,9 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =========================================================
-     2. КАРТОЧКИ "ПОЛНЫЙ ЦИКЛ"
-     На компьютере — hover через CSS
-     На телефоне / планшете — клик
+     2. КАРТОЧКИ «ПОЛНЫЙ ЦИКЛ»
+
+     Компьютер — hover через CSS.
+     Телефон и планшет — открытие по нажатию.
   ========================================================= */
 
   const cycleCards = main.querySelectorAll(".manufacturer-cycle-card");
@@ -46,10 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     card.addEventListener("click", () => {
-      if (
-        window.matchMedia("(hover: none)").matches ||
-        window.innerWidth <= 900
-      ) {
+      const isTouchDevice = window.matchMedia("(hover: none)").matches;
+
+      if (isTouchDevice || window.innerWidth <= 900) {
         toggleCard();
       }
     });
@@ -57,14 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
     card.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
-
         toggleCard();
       }
     });
   });
 
   /* =========================================================
-     3. АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ
+     3. АНИМАЦИЯ ПОЯВЛЕНИЯ БЛОКОВ ПРИ ПРОКРУТКЕ
   ========================================================= */
 
   const revealTargets = [
@@ -102,7 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
           if (!entry.isIntersecting) return;
 
           entry.target.classList.add("is-visible");
-
           currentObserver.unobserve(entry.target);
         });
       },
@@ -118,8 +116,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================================================
-     4. ПОИСК
-     Не отправляем форму, если строка пустая
+     4. ПОИСК ТОВАРА
+
+     Проверяем, что пользователь ввёл запрос.
+     Непустой запрос отправляется по адресу,
+     указанному в action HTML-формы.
   ========================================================= */
 
   const searchForm = main.querySelector(".manufacturer-search-form");
@@ -134,13 +135,17 @@ document.addEventListener("DOMContentLoaded", () => {
         if (searchInput) {
           searchInput.focus();
         }
+
+        return;
       }
+
+      searchInput.value = searchInput.value.trim();
     });
   }
 
   /* =========================================================
-     5. ЗАКРЫТИЕ КАРТОЧЕК "ПОЛНЫЙ ЦИКЛ"
-     ПРИ КЛИКЕ ВНЕ НИХ
+     5. ЗАКРЫТИЕ АКТИВНЫХ КАРТОЧЕК
+     ПРИ НАЖАТИИ ВНЕ НИХ
   ========================================================= */
 
   document.addEventListener("click", (event) => {

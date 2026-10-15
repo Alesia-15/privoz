@@ -833,7 +833,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Меньше число = медленнее
   const SPEED = 50;
 
-  const BASE_PATH = "images/partners/";
+  const BASE_PATH = window.location.pathname.includes("/solutions/")
+    ? "../images/partners/"
+    : "images/partners/";
 
   try {
     const response = await fetch(BASE_PATH + "manifest.json");

@@ -6640,11 +6640,6 @@ a {
   overflow: hidden;
 }
 
-.partners-section .partners-container {
-  width: 100%;
-  margin: 0 auto;
-}
-
 /* Заголовок */
 
 .partners-section .partners-header {
@@ -7157,4 +7152,302 @@ a {
   .hero-tagline-arrow {
     display: none;
   }
+}
+
+/* ==========================================
+   PRIVOZ — ОБЩИЙ БЛОК "ВСЕ УСЛУГИ"
+   Для всех страниц сайта
+========================================== */
+
+/* Основная секция */
+.ps-all-services {
+  padding: 65px 0 75px;
+  background: #ffffff;
+}
+
+/* Контейнер */
+.ps-all-services .ps-wrap {
+  width: calc(100% - 100px);
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+/* Плашка ВСЕ УСЛУГИ */
+.ps-all-services .ps-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  min-height: 34px;
+  padding: 10px 20px;
+  margin: 0 0 25px;
+
+  background: #fff1eb;
+  color: #ff641c;
+
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Главный заголовок */
+.ps-all-services h2 {
+  margin: 0 0 30px;
+
+  color: #171717;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(46px, 4.6vw, 68px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+}
+
+/* ==========================================
+   СЕТКА КАРТОЧЕК
+========================================== */
+
+.ps-all-services .about-company-grid-services {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+/* Основные карточки */
+.ps-all-services .about-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  width: 100%;
+  height: 175px;
+  min-width: 0;
+  min-height: 175px;
+
+  padding: 20px 22px;
+  margin: 0;
+
+  border: none;
+  border-radius: 0;
+  text-decoration: none;
+  overflow: hidden;
+
+  clip-path: polygon(
+    14px 0,
+    100% 0,
+    100% calc(100% - 14px),
+    calc(100% - 14px) 100%,
+    0 100%,
+    0 14px
+  );
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+/* Эффект наведения */
+.ps-all-services .about-card:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.03);
+}
+
+/* ==========================================
+   ЦВЕТА КАРТОЧЕК
+========================================== */
+
+.ps-all-services .about-card-orange {
+  background: #ffd2b9;
+}
+
+.ps-all-services .about-card-export {
+  background: #d3e2e6;
+}
+
+.ps-all-services .about-card-import {
+  background: #ebcfc4;
+}
+
+.ps-all-services .about-card-retail {
+  background: #e2e8d4;
+}
+
+.ps-all-services .about-card-procurement {
+  background: #ead2d8;
+}
+
+.ps-all-services .about-card-quality {
+  background: #d3e2df;
+}
+
+.ps-all-services .about-card-logistics {
+  background: #ebdeca;
+}
+
+.ps-all-services .about-card-expert {
+  background: #e5cccc;
+}
+
+.ps-all-services .about-card-additional {
+  background: #e0e1dd;
+}
+
+/* ==========================================
+   ИЗОБРАЖЕНИЯ
+========================================== */
+
+.ps-all-services .about-card-icon {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  bottom: auto;
+  left: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 105px;
+  height: 105px;
+  margin: 0;
+  padding: 0;
+
+  background: transparent;
+  transform: none;
+  z-index: 2;
+}
+
+.ps-all-services .about-card-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ==========================================
+   НАЗВАНИЯ УСЛУГ
+========================================== */
+
+.ps-all-services .about-card h3 {
+  position: relative;
+  z-index: 3;
+
+  max-width: 75%;
+  margin: 0;
+  padding: 0;
+
+  color: #171717;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.055em;
+  text-align: left;
+}
+
+/* ==========================================
+   АДАПТАЦИЯ — ПЛАНШЕТ
+========================================== */
+
+@media (max-width: 1000px) {
+  .ps-all-services .about-company-grid-services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ps-all-services .about-card {
+    height: 180px;
+    min-height: 180px;
+  }
+}
+
+/* ==========================================
+   АДАПТАЦИЯ — ТЕЛЕФОН
+========================================== */
+
+@media (max-width: 600px) {
+  .ps-all-services {
+    padding: 55px 0;
+  }
+
+  .ps-all-services .ps-wrap {
+    width: calc(100% - 36px);
+  }
+
+  .ps-all-services .ps-eyebrow {
+    margin-bottom: 25px;
+    font-size: 11px;
+  }
+
+  .ps-all-services h2 {
+    font-size: clamp(34px, 8vw, 46px);
+    margin-bottom: 25px;
+  }
+
+  .ps-all-services .about-company-grid-services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .ps-all-services .about-card {
+    height: 155px;
+    min-height: 155px;
+    padding: 14px;
+  }
+
+  .ps-all-services .about-card-icon {
+    top: 8px;
+    right: 8px;
+    width: 72px;
+    height: 72px;
+  }
+
+  .ps-all-services .about-card h3 {
+    font-size: 16px;
+    max-width: 95%;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 380px) {
+  .ps-all-services .about-company-grid-services {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Для пользователей с отключенной анимацией */
+@media (prefers-reduced-motion: reduce) {
+  .ps-all-services .about-card {
+    transition: none;
+  }
+
+  .ps-all-services .about-card:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================
+   SAFARI — ИСПРАВЛЕНИЕ ОБРЕЗАНИЯ ЗАГОЛОВКОВ
+========================================== */
+
+/* Не обрезаем текст заголовков */
+.solutions-section h2,
+.solutions-section .section-title {
+  line-height: 1.15;
+  padding-top: 0.12em;
+  overflow: visible;
+}
+
+/* Запас пространства над заголовком */
+.solutions-section {
+  padding-top: max(90px, 6vw);
 }
