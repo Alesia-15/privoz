@@ -690,3 +690,479 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================
+   ВСЕ УСЛУГИ — КАРТОЧКИ КАК НА ГЛАВНОЙ
+========================================== */
+
+.product-search-page .ps-all-services {
+  padding: 110px 0 120px;
+  background: #fff;
+}
+
+/* Заголовок */
+.product-search-page .ps-all-services h2 {
+  margin: 0 0 38px;
+  color: #171717;
+  font-size: clamp(46px, 4.6vw, 68px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+}
+
+/* Сетка 3 × 3 */
+.product-search-page .ps-all-services .about-company-grid-services {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+
+  width: 100%;
+  max-width: none;
+}
+
+/* Карточки */
+.product-search-page .ps-all-services .about-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  min-height: 245px;
+  aspect-ratio: auto;
+
+  padding: 26px;
+  margin: 0;
+
+  text-decoration: none;
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+/* Небольшой эффект при наведении */
+.product-search-page .ps-all-services .about-card:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.025);
+}
+
+/* Изображения — справа сверху */
+.product-search-page .ps-all-services .about-card-icon {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  left: auto;
+  bottom: auto;
+
+  width: 84px;
+  height: 84px;
+  margin: 0;
+}
+
+.product-search-page .ps-all-services .about-card-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Названия услуг */
+.product-search-page .ps-all-services .about-card h3 {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+  max-width: 85%;
+
+  color: #171717;
+  font-size: clamp(20px, 1.65vw, 26px);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.055em;
+}
+
+/* Планшеты */
+@media (max-width: 1000px) {
+  .product-search-page .ps-all-services .about-company-grid-services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-search-page .ps-all-services .about-card {
+    min-height: 220px;
+  }
+}
+
+/* Телефоны */
+@media (max-width: 600px) {
+  .product-search-page .ps-all-services {
+    padding: 70px 0;
+  }
+
+  .product-search-page .ps-all-services .about-company-grid-services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .product-search-page .ps-all-services .about-card {
+    min-height: 180px;
+    padding: 16px;
+  }
+
+  .product-search-page .ps-all-services .about-card-icon {
+    top: 12px;
+    right: 12px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .product-search-page .ps-all-services .about-card h3 {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 380px) {
+  .product-search-page .ps-all-services .about-company-grid-services {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   ВСЕ УСЛУГИ — КОМПАКТНЫЕ КАРТОЧКИ
+========================================== */
+
+/* Уменьшаем высоту всего блока */
+.product-search-page .ps-all-services {
+  padding: 65px 0 75px;
+}
+
+/* Заголовок ближе к карточкам */
+.product-search-page .ps-all-services .ps-eyebrow {
+  margin-bottom: 25px;
+}
+
+.product-search-page .ps-all-services h2 {
+  margin-bottom: 22px;
+}
+
+/* Сетка карточек */
+.product-search-page .ps-all-services .about-company-grid-services {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+/* Более низкие карточки */
+.product-search-page .ps-all-services .about-card {
+  height: 175px;
+  min-height: 175px;
+  padding: 20px 22px;
+}
+
+/* Увеличиваем картинки */
+.product-search-page .ps-all-services .about-card-icon {
+  top: 10px;
+  right: 14px;
+  width: 105px;
+  height: 105px;
+}
+
+.product-search-page .ps-all-services .about-card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Названия услуг */
+.product-search-page .ps-all-services .about-card h3 {
+  font-size: 22px;
+  line-height: 1.12;
+  max-width: 75%;
+}
+
+/* Планшет */
+@media (max-width: 1000px) {
+  .product-search-page .ps-all-services .about-company-grid-services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-search-page .ps-all-services .about-card {
+    height: 180px;
+    min-height: 180px;
+  }
+}
+
+/* Телефон */
+@media (max-width: 600px) {
+  .product-search-page .ps-all-services {
+    padding: 55px 0;
+  }
+
+  .product-search-page .ps-all-services .about-company-grid-services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .product-search-page .ps-all-services .about-card {
+    height: 155px;
+    min-height: 155px;
+    padding: 14px;
+  }
+
+  .product-search-page .ps-all-services .about-card-icon {
+    top: 8px;
+    right: 8px;
+    width: 72px;
+    height: 72px;
+  }
+
+  .product-search-page .ps-all-services .about-card h3 {
+    font-size: 16px;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 380px) {
+  .product-search-page .ps-all-services .about-company-grid-services {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Белый заголовок на тёмном фоне */
+.product-search-page .request-section .request-title {
+  color: #ffffff;
+}
+
+/* ==========================================
+   PRIVOZ — ЛИЧНЫЙ КАБИНЕТ
+   Светлый дизайн с оранжевыми акцентами
+========================================== */
+
+.product-search-page .ps-account {
+  background: #fffaf7;
+  padding: 105px 0;
+  color: #171717;
+}
+
+/* Основная карточка */
+.product-search-page .ps-account-card {
+  position: relative;
+  width: 100%;
+  min-height: 330px;
+  padding: 46px 44px;
+
+  display: flex;
+  align-items: center;
+
+  background: #ffffff;
+  border: 1px solid #f0e8e3;
+
+  overflow: hidden;
+}
+
+/* Содержимое слева */
+.product-search-page .ps-account-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 950px;
+}
+
+/* Надпись над заголовком */
+.product-search-page .ps-account-label {
+  display: block;
+  margin-bottom: 18px;
+
+  color: #c65c28;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+/* Заголовок */
+.product-search-page .ps-account-card h2 {
+  margin: 0 0 16px;
+
+  color: #3c3029;
+  font-size: clamp(34px, 3.5vw, 55px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.05em;
+}
+
+/* Описание */
+.product-search-page .ps-account-card p {
+  max-width: 780px;
+  margin: 0;
+
+  color: #8a7469;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* Кнопки */
+.product-search-page .ps-account-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+
+  margin-top: 26px;
+}
+
+/* Регистрация */
+.product-search-page .ps-account-register {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding: 17px 22px;
+  min-height: 54px;
+
+  background: #ff641c;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  clip-path: polygon(0 0, 100% 0, 100% 82%, 95% 100%, 0 100%);
+
+  transition: background 0.25s ease;
+}
+
+.product-search-page .ps-account-register:hover {
+  background: #e85310;
+  color: #ffffff;
+}
+
+/* Вход */
+.product-search-page .ps-account-login {
+  color: #b95a2c;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+
+.product-search-page .ps-account-login:hover {
+  color: #ff641c;
+}
+
+/* Декоративный контур справа */
+.product-search-page .ps-account-decoration {
+  position: absolute;
+
+  right: 65px;
+  top: -30px;
+
+  width: 260px;
+  height: 260px;
+
+  border: 1px solid rgba(255, 100, 28, 0.12);
+
+  transform: rotate(32deg);
+  pointer-events: none;
+}
+
+/* Дополнительная линия */
+.product-search-page .ps-account-decoration::after {
+  content: "";
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  top: 85px;
+  left: 85px;
+
+  border: 1px solid rgba(255, 100, 28, 0.08);
+}
+
+/* ==========================================
+   АДАПТАЦИЯ
+========================================== */
+
+@media (max-width: 768px) {
+  .product-search-page .ps-account {
+    padding: 70px 0;
+  }
+
+  .product-search-page .ps-account-card {
+    min-height: auto;
+    padding: 35px 26px;
+  }
+
+  .product-search-page .ps-account-card h2 {
+    font-size: clamp(32px, 7vw, 44px);
+  }
+
+  .product-search-page .ps-account-card p {
+    font-size: 15px;
+  }
+
+  .product-search-page .ps-account-decoration {
+    right: -130px;
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-search-page .ps-account-buttons {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .product-search-page .ps-account-register {
+    width: 100%;
+  }
+
+  .product-search-page .ps-account-card {
+    padding: 30px 22px;
+  }
+}
+
+/* ==========================================
+   ЛИЧНЫЙ КАБИНЕТ — КНОПКА ВХОДА
+========================================== */
+
+.product-search-page .ps-account-login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 54px;
+  padding: 16px 24px;
+
+  background: #fff1e8;
+  border: 1px solid #ffb58c;
+
+  color: #e85b16;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.product-search-page .ps-account-login:hover {
+  background: #ff641c;
+  border-color: #ff641c;
+  color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .product-search-page .ps-account-login {
+    width: 100%;
+    text-align: center;
+  }
+}

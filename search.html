@@ -770,56 +770,149 @@
           </div>
         </div>
       </section>
+
       <section class="ps-account">
-        <div class="ps-wrap ps-account-inner">
-          <div>
-            <span class="ps-eyebrow">ЛИЧНЫЙ КАБИНЕТ</span>
-            <h2>Ваши закупки —<br />в одном месте.</h2>
-            <p>
-              Войдите в личный кабинет или зарегистрируйтесь, чтобы пользоваться
-              сервисами PRIVOZ.
-            </p>
-          </div>
-          <div class="ps-account-actions">
-            <a class="ps-btn ps-btn-white" href="https://client.privoz.pl/"
-              >Войти в кабинет ↗</a
-            ><a
-              class="ps-outline"
-              href="https://client.privoz.pl/users/register"
-              >Зарегистрироваться ↗</a
-            >
+        <div class="ps-wrap">
+          <div class="ps-account-card">
+            <!-- Декоративная геометрия -->
+            <div class="ps-account-decoration" aria-hidden="true"></div>
+
+            <!-- Контент -->
+            <div class="ps-account-content">
+              <span class="ps-account-label"> ЛИЧНЫЙ КАБИНЕТ </span>
+
+              <h2>Ваши закупки — в одном месте</h2>
+
+              <p>
+                После регистрации в личном кабинете вы сможете оформлять заказы,
+                передавать ссылки на товары, получать информацию о заказах и
+                взаимодействовать с PRIVOZ.
+              </p>
+
+              <div class="ps-account-buttons">
+                <a
+                  href="https://client.privoz.pl/users/register"
+                  class="ps-account-register"
+                >
+                  Зарегистрироваться
+                  <span>→</span>
+                </a>
+
+                <a href="https://client.privoz.pl/" class="ps-account-login">
+                  Уже зарегистрированы? Войти →
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
       <section class="ps-section ps-all-services">
         <div class="ps-wrap">
-          <span class="ps-eyebrow">ВОЗМОЖНОСТИ PRIVOZ</span>
-          <h2>Все услуги <em>компании</em></h2>
-          <div class="ps-services">
-            <a class="ps-service ps-service-active" href="search.html"
-              ><span>01</span><strong>Поиск товара</strong><b>↗</b></a
-            ><a class="ps-service" href="export.html"
-              ><span>02</span><strong>Экспорт</strong><b>↗</b></a
-            ><a class="ps-service" href="import.html"
-              ><span>03</span><strong>Импорт</strong><b>↗</b></a
-            ><a class="ps-service" href="retail.html"
-              ><span>04</span><strong>Розничные покупки</strong><b>↗</b></a
-            ><a class="ps-service" href="procurement.html"
-              ><span>05</span><strong>Международные закупки</strong><b>↗</b></a
-            ><a class="ps-service" href="quality.html"
-              ><span>06</span><strong>Контроль качества</strong><b>↗</b></a
-            ><a class="ps-service" href="logistics.html"
-              ><span>07</span><strong>Международная логистика</strong
-              ><b>↗</b></a
-            ><a class="ps-service" href="expert.html"
-              ><span>08</span><strong>Экспертное сопровождение</strong
-              ><b>↗</b></a
-            ><a class="ps-service" href="additional.html"
-              ><span>09</span><strong>Дополнительные услуги</strong><b>↗</b></a
+          <span class="ps-eyebrow">ВСЕ УСЛУГИ</span>
+
+          <h2>Все услуги компании</h2>
+
+          <div class="about-company-grid about-company-grid-services">
+            <!-- 01 ПОИСК ТОВАРА -->
+            <a href="search.html" class="about-card about-card-orange">
+              <div class="about-card-icon">
+                <img src="images/about/search.png" alt="Поиск товара" />
+              </div>
+
+              <h3>Поиск<br />товара</h3>
+            </a>
+
+            <!-- 02 ЭКСПОРТ -->
+            <a href="export.html" class="about-card about-card-export">
+              <div class="about-card-icon">
+                <img src="images/about/export.png" alt="Экспорт" />
+              </div>
+
+              <h3>Экспорт</h3>
+            </a>
+
+            <!-- 03 ИМПОРТ -->
+            <a href="import.html" class="about-card about-card-import">
+              <div class="about-card-icon">
+                <img src="images/about/import.png" alt="Импорт" />
+              </div>
+
+              <h3>Импорт</h3>
+            </a>
+
+            <!-- 04 РОЗНИЧНЫЕ ПОКУПКИ -->
+            <a href="retail.html" class="about-card about-card-retail">
+              <div class="about-card-icon">
+                <img src="images/about/retail.png" alt="Розничные покупки" />
+              </div>
+
+              <h3>Розничные<br />покупки</h3>
+            </a>
+
+            <!-- 05 МЕЖДУНАРОДНЫЕ ЗАКУПКИ -->
+            <a
+              href="procurement.html"
+              class="about-card about-card-procurement"
             >
+              <div class="about-card-icon">
+                <img
+                  src="images/about/procurement.png"
+                  alt="Международные закупки"
+                />
+              </div>
+
+              <h3>Международные<br />закупки</h3>
+            </a>
+
+            <!-- 06 КОНТРОЛЬ КАЧЕСТВА -->
+            <a href="quality.html" class="about-card about-card-quality">
+              <div class="about-card-icon">
+                <img src="images/about/quality.png" alt="Контроль качества" />
+              </div>
+
+              <h3>Контроль<br />качества</h3>
+            </a>
+
+            <!-- 07 МЕЖДУНАРОДНАЯ ЛОГИСТИКА -->
+            <a href="logistics.html" class="about-card about-card-logistics">
+              <div class="about-card-icon">
+                <img
+                  src="images/about/logistics.png"
+                  alt="Международная логистика"
+                />
+              </div>
+
+              <h3>Международная<br />логистика</h3>
+            </a>
+
+            <!-- 08 ЭКСПЕРТНОЕ СОПРОВОЖДЕНИЕ -->
+            <a href="expert.html" class="about-card about-card-expert">
+              <div class="about-card-icon">
+                <img
+                  src="images/about/expert.png"
+                  alt="Экспертное сопровождение"
+                />
+              </div>
+
+              <h3>Экспертное<br />сопровождение</h3>
+            </a>
+
+            <!-- 09 ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ -->
+            <a href="additional.html" class="about-card about-card-additional">
+              <div class="about-card-icon">
+                <img
+                  src="images/about/additional.png"
+                  alt="Дополнительные услуги"
+                />
+              </div>
+
+              <h3>Дополнительные<br />услуги</h3>
+            </a>
           </div>
         </div>
       </section>
+
       <section class="partners-section" id="partners">
         <div class="partners-container">
           <div class="partners-head">
@@ -831,66 +924,118 @@
           <div class="partners-marquee" id="partnersMarquee"></div>
         </div>
       </section>
+
       <section class="request-section" id="request">
         <div class="request-container">
+          <!-- LEFT -->
           <div class="request-content">
-            <span class="request-label">ОСТАВИТЬ ЗАЯВКУ</span>
-            <h2 class="request-title">Расскажите,<br />что вы ищете</h2>
+            <span class="request-label"> ОСТАВИТЬ ЗАЯВКУ </span>
+
+            <h2 class="request-title">
+              Расскажите,
+              <br />
+              что вам нужно
+            </h2>
+
             <div class="request-text">
               <p>
-                Пришлите название, ссылку, артикул или описание товара. Мы
-                изучим задачу и свяжемся с вами.
+                Оставьте заявку, и наши специалисты помогут подобрать товар,
+                найти надежного производителя, рассчитать стоимость поставки и
+                предложить оптимальное решение для вашего бизнеса.
               </p>
+
+              <p>Заполните форму, и мы свяжемся с вами в ближайшее время.</p>
             </div>
           </div>
-          <form class="request-form" id="psRequestForm">
+
+          <!-- RIGHT -->
+          <form class="request-form" action="#" method="post">
             <div class="request-form-grid">
               <div class="request-field">
-                <label>Имя *</label
-                ><input name="name" required placeholder="Ваше имя" />
+                <label for="request-name"> Имя *</label>
+
+                <input
+                  id="request-name"
+                  name="name"
+                  type="text"
+                  placeholder="Ваше имя"
+                  required
+                />
               </div>
+
               <div class="request-field">
-                <label>Компания</label
-                ><input name="company" placeholder="Компания" />
+                <label for="request-company"> Компания </label>
+
+                <input
+                  id="request-company"
+                  name="company"
+                  type="text"
+                  placeholder="Название компании"
+                />
               </div>
+
               <div class="request-field">
-                <label>Телефон *</label
-                ><input
+                <label for="request-country"> Страна *</label>
+
+                <input
+                  id="request-country"
+                  name="country"
+                  type="text"
+                  placeholder="Страна"
+                  required
+                />
+              </div>
+
+              <div class="request-field">
+                <label for="request-phone"> Телефон *</label>
+
+                <input
+                  id="request-phone"
                   name="phone"
                   type="tel"
-                  required
                   placeholder="+48 000 000 000"
+                  required
                 />
               </div>
-              <div class="request-field">
-                <label>Страна *</label
-                ><input name="country" required placeholder="Страна" />
-              </div>
+
               <div class="request-field request-field-full">
-                <label>Что вы ищете?</label
-                ><input
+                <label for="request-product"> Что вы ищете? </label>
+
+                <input
+                  id="request-product"
                   name="product"
-                  placeholder="Товар, артикул или производитель"
+                  type="text"
+                  placeholder="Например: промышленное оборудование"
                 />
               </div>
+
               <div class="request-field request-field-full">
-                <label>Комментарий</label
-                ><textarea
+                <label for="request-comment"> Комментарий </label>
+
+                <textarea
+                  id="request-comment"
                   name="comment"
-                  rows="4"
-                  placeholder="Подробности запроса"
+                  rows="5"
+                  placeholder="Расскажите подробнее о вашей задаче"
                 ></textarea>
               </div>
             </div>
+
             <div class="request-form-bottom">
               <p class="request-form-note">
-                Отправка формы потребует подключения обработчика.
+                Нажимая кнопку, вы соглашаетесь с обработкой персональных
+                данных.
               </p>
+
               <button class="request-submit" type="submit">
-                Отправить заявку ↗
+                <span>Отправить заявку</span>
+
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M5 10H15"></path>
+                  <path d="M11 6L15 10L11 14"></path>
+                </svg>
               </button>
             </div>
-            <p id="psRequestStatus" role="status"></p>
           </form>
         </div>
       </section>
