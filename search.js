@@ -45,6 +45,32 @@ document.addEventListener("DOMContentLoaded", () => {
       if (current !== controller) return;
       if (!response.ok) throw new Error(payload.error || "Ошибка поиска");
       content.replaceChildren();
+
+      const searchLabels = {
+        manufacturer: "ПРОИЗВОДИТЕЛЬ",
+        part_number: "ПОИСК ПО АРТИКУЛУ",
+        product: "ПОИСК ТОВАРОВ",
+      };
+
+      const currentType = payload.search_type || "product";
+
+      if (note) {
+        note.textContent =
+          currentType === "manufacturer"
+            ? "Найдены страницы производителя и его продукции. Информацию проверяйте на официальном сайте."
+            : currentType === "part_number"
+              ? "Поиск по артикулу. Сверяйте полный номер модели и характеристики на сайте производителя."
+              : "Ищем товары, производителей и поставщиков в интернете.";
+      }
+
+      const category = el(
+        "span",
+        "ps-result-category",
+        searchLabels[currentType] || "ПОИСК ТОВАРОВ",
+      );
+
+      content.append(category);
+
       if (!payload.results?.length) {
         content.append(
           el(

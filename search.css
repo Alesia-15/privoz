@@ -1166,3 +1166,25 @@
     text-align: center;
   }
 }
+
+/* ==========================================
+   PRIVOZ — КАТЕГОРИЯ ПОИСКА
+========================================== */
+
+.ps-result-category {
+  display: inline-flex;
+  align-items: center;
+
+  margin: 0 0 24px;
+  padding: 11px 18px;
+
+  background: #fff0e8;
+  color: #ff641c;
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+}
