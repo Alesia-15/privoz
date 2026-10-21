@@ -18,7 +18,6 @@
   --factory-border: #e3d7c8;
 }
 
-
 /* =========================================================
    BASE
 ========================================================= */
@@ -92,7 +91,6 @@
   letter-spacing: -0.05em;
 }
 
-
 /* =========================================================
    HERO
 ========================================================= */
@@ -118,14 +116,13 @@
 
   z-index: 1;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(24, 21, 18, 0.94) 0%,
-      rgba(24, 21, 18, 0.74) 42%,
-      rgba(24, 21, 18, 0.1) 75%,
-      transparent 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(24, 21, 18, 0.94) 0%,
+    rgba(24, 21, 18, 0.74) 42%,
+    rgba(24, 21, 18, 0.1) 75%,
+    transparent 100%
+  );
 }
 
 .solution-hero-inner {
@@ -218,12 +215,7 @@
   font-size: 16px;
   font-weight: 600;
 
-  clip-path: polygon(
-    0 0,
-    calc(100% - 16px) 0,
-    100% 100%,
-    16px 100%
-  );
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 100%, 16px 100%);
 
   transition:
     transform 0.25s ease,
@@ -256,7 +248,6 @@
 
   stroke-width: 1.5;
 }
-
 
 /* =========================================================
    ABOUT
@@ -311,7 +302,6 @@
 
   color: #4f4337 !important;
 }
-
 
 /* =========================================================
    CATALOG
@@ -543,7 +533,6 @@
   color: var(--factory-main);
 }
 
-
 /* =========================================================
    SEARCH
 ========================================================= */
@@ -694,7 +683,6 @@
 
   stroke-width: 1.5;
 }
-
 
 /* =========================================================
    FULL CYCLE
@@ -849,7 +837,6 @@
   transform: translateY(0);
 }
 
-
 /* =========================================================
    PARTNER
 ========================================================= */
@@ -971,7 +958,6 @@
 
   line-height: 1.35;
 }
-
 
 /* =========================================================
    REQUEST
@@ -1149,12 +1135,7 @@
 
   cursor: pointer;
 
-  clip-path: polygon(
-    0 0,
-    calc(100% - 14px) 0,
-    100% 100%,
-    14px 100%
-  );
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 100%, 14px 100%);
 }
 
 .factory-page .request-submit svg {
@@ -1169,7 +1150,6 @@
 
   stroke-width: 1.5;
 }
-
 
 /* =========================================================
    SERVICES
@@ -1339,48 +1319,65 @@
 .solution-service-card--search {
   background: linear-gradient(145deg, #ffd4bc, #ffc9aa);
 }
-.solution-service-card--search .solution-service-icon { background: #ff681e; }
+.solution-service-card--search .solution-service-icon {
+  background: #ff681e;
+}
 
 .solution-service-card--export {
   background: linear-gradient(145deg, #dce8ec, #cbdde2);
 }
-.solution-service-card--export .solution-service-icon { background: #456d7b; }
+.solution-service-card--export .solution-service-icon {
+  background: #456d7b;
+}
 
 .solution-service-card--import {
   background: linear-gradient(145deg, #f1d8cc, #eacabb);
 }
-.solution-service-card--import .solution-service-icon { background: #b85e3d; }
+.solution-service-card--import .solution-service-icon {
+  background: #b85e3d;
+}
 
 .solution-service-card--retail {
   background: linear-gradient(145deg, #e6ead9, #dce3cb);
 }
-.solution-service-card--retail .solution-service-icon { background: #728455; }
+.solution-service-card--retail .solution-service-icon {
+  background: #728455;
+}
 
 .solution-service-card--procurement {
   background: linear-gradient(145deg, #efd9db, #e7cace);
 }
-.solution-service-card--procurement .solution-service-icon { background: #a84f56; }
+.solution-service-card--procurement .solution-service-icon {
+  background: #a84f56;
+}
 
 .solution-service-card--quality {
   background: linear-gradient(145deg, #dce7e3, #ceddd8);
 }
-.solution-service-card--quality .solution-service-icon { background: #607e76; }
+.solution-service-card--quality .solution-service-icon {
+  background: #607e76;
+}
 
 .solution-service-card--logistics {
   background: linear-gradient(145deg, #eee2d1, #e7d7c2);
 }
-.solution-service-card--logistics .solution-service-icon { background: #aa783c; }
+.solution-service-card--logistics .solution-service-icon {
+  background: #aa783c;
+}
 
 .solution-service-card--expert {
   background: linear-gradient(145deg, #ead6d4, #dfc3c0);
 }
-.solution-service-card--expert .solution-service-icon { background: #a84842; }
+.solution-service-card--expert .solution-service-icon {
+  background: #a84842;
+}
 
 .solution-service-card--additional {
   background: linear-gradient(145deg, #e5e5e2, #d9dad6);
 }
-.solution-service-card--additional .solution-service-icon { background: #555c57; }
-
+.solution-service-card--additional .solution-service-icon {
+  background: #555c57;
+}
 
 /* =========================================================
    NUMBERS
@@ -1438,7 +1435,6 @@
 
   line-height: 1.4;
 }
-
 
 /* =========================================================
    PARTNERS
@@ -1570,7 +1566,6 @@
   stroke-width: 1.5;
 }
 
-
 /* =========================================================
    REVEAL
 ========================================================= */
@@ -1591,13 +1586,11 @@
   transform: translateY(0);
 }
 
-
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
 @media (max-width: 1200px) {
-
   .solution-shell,
   .factory-page .request-container,
   .factory-page .partners-container {
@@ -1613,25 +1606,21 @@
   .factory-page .request-container {
     gap: 55px;
   }
-
 }
 
-
 @media (max-width: 900px) {
-
   .solution-hero {
     min-height: auto;
   }
 
   .solution-hero::before {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(10, 10, 10, 0.05) 0%,
-        rgba(10, 10, 10, 0.08) 35%,
-        rgba(24, 21, 18, 0.9) 75%,
-        rgba(24, 21, 18, 0.98) 100%
-      );
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.05) 0%,
+      rgba(10, 10, 10, 0.08) 35%,
+      rgba(24, 21, 18, 0.9) 75%,
+      rgba(24, 21, 18, 0.98) 100%
+    );
   }
 
   .solution-hero-media {
@@ -1692,12 +1681,9 @@
   .factory-page .partners-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-
 }
 
-
 @media (max-width: 640px) {
-
   .solution-shell,
   .factory-page .request-container,
   .factory-page .partners-container {
@@ -1872,21 +1858,15 @@
 
     padding: 18px;
   }
-
 }
 
-
 @media (max-width: 390px) {
-
   .solution-services-grid {
     grid-template-columns: 1fr;
   }
-
 }
 
-
 @media (prefers-reduced-motion: reduce) {
-
   .factory-page *,
   .factory-page *::before,
   .factory-page *::after {
@@ -1902,5 +1882,339 @@
 
     transform: none !important;
   }
+}
 
+/* =========================================================
+   SECTION LABELS — FACTORY PALETTE
+========================================================= */
+
+.factory-page .solution-kicker,
+.factory-page .request-label,
+.factory-page .partners-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 36px;
+  padding: 0 20px;
+  margin-bottom: 24px;
+  background: #f5ece2;
+  border: 1px solid #e5ccb2;
+  color: #9b602f;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+}
+
+.factory-page .solution-hero-copy .solution-kicker,
+.factory-page .factory-search-copy .solution-kicker,
+.factory-page .solution-centered-heading--light .solution-kicker {
+  background: rgba(255, 138, 79, 0.13);
+  border-color: rgba(255, 138, 79, 0.38);
+  color: #ff9b65;
+}
+
+@media (max-width: 640px) {
+  .factory-page .solution-kicker,
+  .factory-page .request-label,
+  .factory-page .partners-label {
+    min-height: 32px;
+    padding: 0 16px;
+    margin-bottom: 18px;
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   FACTORY REQUEST MODAL — SINGLE CLEAN IMPLEMENTATION
+========================================================= */
+
+.factory-page .factory-request-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.factory-page .factory-request-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.factory-request-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 13, 11, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+.factory-page .factory-request-modal-window {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: min(1120px, 100%);
+  max-height: 90dvh;
+  min-height: 0;
+  background: #fff;
+  overflow: hidden;
+  clip-path: polygon(
+    20px 0,
+    100% 0,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    0 100%,
+    0 20px
+  );
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
+  transform: translateY(14px);
+  transition: transform 0.25s ease;
+}
+
+.factory-page .factory-request-modal.is-open .factory-request-modal-window {
+  transform: translateY(0);
+}
+
+.factory-request-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  background: #ff681e;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.factory-request-modal-close:hover {
+  background: #e95612;
+}
+
+.factory-page .factory-request-modal-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  padding: 66px 44px 38px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+}
+
+.factory-page .factory-request-modal .request-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  align-items: center;
+  gap: 42px;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  transform: none;
+}
+
+/* The shared ../style.css may set global request offsets.
+   Reset them ONLY inside the modal. */
+.factory-page .factory-request-modal .request-content,
+.factory-page .factory-request-modal .request-title,
+.factory-page .factory-request-modal .request-text,
+.factory-page .factory-request-modal .request-text p {
+  position: static !important;
+  inset: auto !important;
+  left: auto !important;
+  right: auto !important;
+  translate: none !important;
+  transform: none !important;
+  text-indent: 0 !important;
+  float: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.factory-page .factory-request-modal .request-content {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left;
+}
+
+.factory-page .factory-request-modal .request-label {
+  margin-left: 0;
+}
+
+.factory-page .factory-request-modal .request-title {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 20px !important;
+  padding: 0 !important;
+  color: #171717;
+  font-size: clamp(30px, 3vw, 44px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+  overflow-wrap: break-word;
+}
+
+.factory-page .factory-request-modal .request-text {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #686868;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.factory-page .factory-request-modal .request-text p {
+  margin: 0 0 13px !important;
+  padding: 0 !important;
+  color: inherit;
+}
+
+.factory-page .factory-request-modal .request-form {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  padding: 25px;
+  background: #f8f6f3;
+  border: 1px solid #e8e1d9;
+  clip-path: none;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+.factory-page .factory-request-modal .solution-reveal {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+.factory-page .factory-request-modal .request-form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.factory-page .factory-request-modal .request-field-full {
+  grid-column: 1 / -1;
+}
+
+.factory-page .factory-request-modal .request-field input {
+  height: 46px;
+  min-width: 0;
+}
+
+.factory-page .factory-request-modal .request-field textarea {
+  min-height: 82px;
+  height: 82px;
+}
+
+.factory-page .factory-request-modal .request-form-bottom {
+  margin-top: 18px;
+  gap: 12px;
+}
+
+.factory-page .factory-request-modal .request-submit {
+  min-height: 50px;
+  padding: 0 18px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .factory-page .factory-request-modal .request-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .factory-page .factory-request-modal-body {
+    padding: 68px 28px 28px;
+  }
+
+  .factory-page .factory-request-modal .request-title {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 640px) {
+  .factory-page .factory-request-modal {
+    padding: 10px;
+  }
+
+  .factory-page .factory-request-modal-window {
+    max-height: 94dvh;
+  }
+
+  .factory-page .factory-request-modal-body {
+    padding: 66px 18px 24px;
+  }
+
+  .factory-page .factory-request-modal .request-title {
+    font-size: 32px;
+  }
+
+  .factory-page .factory-request-modal .request-form {
+    padding: 20px 16px;
+  }
+
+  .factory-page .factory-request-modal .request-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .factory-page .factory-request-modal .request-field-full {
+    grid-column: 1;
+  }
+
+  .factory-page .factory-request-modal .request-form-bottom {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .factory-page .factory-request-modal .request-submit {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* MODAL FORM: always visible, independent of page reveal animations */
+.factory-page .factory-request-modal .request-form,
+.factory-page .factory-request-modal .request-form > *,
+.factory-page .factory-request-modal .request-form-grid,
+.factory-page .factory-request-modal .request-field,
+.factory-page .factory-request-modal .request-form-bottom {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+.factory-page .factory-request-modal .request-form {
+  display: block !important;
 }

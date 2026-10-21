@@ -3,30 +3,189 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!main) return;
 
-  /* =========================================================
-     1. ПЛАВНЫЙ ПЕРЕХОД К ЗАЯВКЕ
-  ========================================================= */
+  /* ==========================================
+     1. FACTORY — REQUEST MODAL
+  ========================================== */
 
-  main.querySelectorAll('a[href="#request"]').forEach((link) => {
-    link.addEventListener("click", (event) => {
-      const target = document.querySelector("#request");
+  const factoryModal = document.getElementById("factoryRequestModal");
 
-      if (!target) return;
+  const factoryModalWindow = factoryModal?.querySelector(
+    ".factory-request-modal-window",
+  );
 
-      event.preventDefault();
+  const factoryModalContent = document.getElementById("factoryModalContent");
 
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+  const originalRequest = main.querySelector("#request .request-container");
+
+  let previousFocus = null;
+  let previousBodyOverflow = "";
+
+  if (
+    factoryModal &&
+    factoryModalWindow &&
+    factoryModalContent &&
+    originalRequest
+  ) {
+    // Копируем существующую форму
+    const requestClone = originalRequest.cloneNode(true);
+
+    // Полностью отключаем анимацию внутри копии
+    const cloneElements = [requestClone, ...requestClone.querySelectorAll("*")];
+
+    cloneElements.forEach((element) => {
+      element.classList.remove("solution-reveal", "is-visible");
+      element.removeAttribute("data-reveal");
+
+      element.style.removeProperty("transform");
+      element.style.removeProperty("opacity");
+      element.style.removeProperty("visibility");
+    });
+
+    // Исключаем повторение ID
+    requestClone.querySelectorAll("[id]").forEach((element) => {
+      element.id = "modal-" + element.id;
+    });
+
+    // Исправляем привязку label к полям
+    requestClone.querySelectorAll("label[for]").forEach((label) => {
+      label.htmlFor = "modal-" + label.htmlFor;
+    });
+
+    // Добавляем копию в модальное окно
+    factoryModalContent.appendChild(requestClone);
+
+    // Гарантируем видимость левой части и формы
+    const modalElements = requestClone.querySelectorAll(
+      ".request-content, .request-form",
+    );
+
+    modalElements.forEach((element) => {
+      element.classList.remove("solution-reveal", "is-visible");
+
+      element.style.setProperty("opacity", "1", "important");
+
+      element.style.setProperty("visibility", "visible", "important");
+
+      element.style.setProperty("transform", "none", "important");
+    });
+
+    /* ==========================================
+       OPEN MODAL
+    ========================================== */
+
+    const openFactoryModal = () => {
+      previousFocus = document.activeElement;
+      previousBodyOverflow = document.body.style.overflow;
+
+      factoryModal.classList.add("is-open");
+      factoryModal.setAttribute("aria-hidden", "false");
+
+      document.body.style.overflow = "hidden";
+
+      const modalBody = factoryModal.querySelector(
+        ".factory-request-modal-body",
+      );
+
+      if (modalBody) {
+        modalBody.scrollTop = 0;
+      }
+
+      factoryModalWindow.focus();
+    };
+
+    /* ==========================================
+       CLOSE MODAL
+    ========================================== */
+
+    const closeFactoryModal = () => {
+      factoryModal.classList.remove("is-open");
+      factoryModal.setAttribute("aria-hidden", "true");
+
+      document.body.style.overflow = previousBodyOverflow;
+
+      if (previousFocus && typeof previousFocus.focus === "function") {
+        previousFocus.focus();
+      }
+    };
+
+    /* ==========================================
+       BUTTONS — OPEN
+    ========================================== */
+
+    document.querySelectorAll(".factory-modal-trigger").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        openFactoryModal();
       });
     });
-  });
 
-  /* =========================================================
-     2. КАРТОЧКИ "ПОЛНЫЙ ЦИКЛ"
-     На компьютере — hover через CSS
-     На телефоне / планшете — клик
-  ========================================================= */
+    /* ==========================================
+       BUTTONS — CLOSE
+    ========================================== */
+
+    factoryModal
+      .querySelectorAll("[data-factory-modal-close]")
+      .forEach((button) => {
+        button.addEventListener("click", closeFactoryModal);
+      });
+
+    /* ==========================================
+       KEYBOARD
+    ========================================== */
+
+    document.addEventListener("keydown", (event) => {
+      if (!factoryModal.classList.contains("is-open")) {
+        return;
+      }
+
+      if (event.key === "Escape") {
+        event.preventDefault();
+
+        closeFactoryModal();
+        return;
+      }
+
+      if (event.key !== "Tab") {
+        return;
+      }
+
+      const focusable = [
+        ...factoryModal.querySelectorAll(
+          "button:not([disabled]), " +
+            "input:not([disabled]), " +
+            "textarea:not([disabled]), " +
+            "select:not([disabled]), " +
+            "a[href]",
+        ),
+      ].filter((element) => element.getClientRects().length > 0);
+
+      if (!focusable.length) {
+        event.preventDefault();
+        factoryModalWindow.focus();
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (
+        event.shiftKey &&
+        (document.activeElement === first ||
+          document.activeElement === factoryModalWindow)
+      ) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+  }
+
+  /* ==========================================
+     2. КАРТОЧКИ ПОЛНОГО ЦИКЛА
+  ========================================== */
 
   const cycleCards = main.querySelectorAll(".factory-cycle-card");
 
@@ -63,9 +222,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* =========================================================
-     3. АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ
-  ========================================================= */
+  /* ==========================================
+     3. АНИМАЦИЯ ПРИ ПРОКРУТКЕ
+  ========================================== */
 
   const revealTargets = [
     ...main.querySelectorAll(
@@ -83,7 +242,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ),
   ];
 
-  revealTargets.forEach((element) => {
+  // ВАЖНО:
+  // Полностью исключаем модальное окно из анимаций
+  const pageRevealTargets = revealTargets.filter((element) => {
+    return !element.closest(".factory-request-modal");
+  });
+
+  pageRevealTargets.forEach((element) => {
     element.classList.add("solution-reveal");
   });
 
@@ -92,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ).matches;
 
   if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-    revealTargets.forEach((element) => {
+    pageRevealTargets.forEach((element) => {
       element.classList.add("is-visible");
     });
   } else {
@@ -112,15 +277,14 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     );
 
-    revealTargets.forEach((element) => {
+    pageRevealTargets.forEach((element) => {
       observer.observe(element);
     });
   }
 
-  /* =========================================================
-     4. ПОИСК
-     Не отправляем форму, если строка пустая
-  ========================================================= */
+  /* ==========================================
+     4. ПОИСК ПО КАТАЛОГУ
+  ========================================== */
 
   const searchForm = main.querySelector(".factory-search-form");
 
@@ -138,10 +302,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* =========================================================
-     5. ЗАКРЫТИЕ КАРТОЧЕК "ПОЛНЫЙ ЦИКЛ"
-     ПРИ КЛИКЕ ВНЕ НИХ
-  ========================================================= */
+  /* ==========================================
+     5. ЗАКРЫТИЕ КАРТОЧЕК ПОЛНОГО ЦИКЛА
+  ========================================== */
 
   document.addEventListener("click", (event) => {
     if (event.target.closest(".factory-cycle-card")) {

@@ -650,8 +650,6 @@
 
         <div class="solution-shell solution-hero-inner">
           <div class="solution-hero-copy">
-            <span class="solution-kicker"> ЗАВОДАМ </span>
-
             <h1>
               Снабжение завода —
               <br />
@@ -663,7 +661,10 @@
               оборудование, запчасти, сырьё и комплектующие для производства.
             </p>
 
-            <a href="#request" class="solution-primary-button">
+            <a
+              href="#request"
+              class="solution-primary-button factory-modal-trigger"
+            >
               <span>Обсудить задачу</span>
 
               <svg viewBox="0 0 20 20" aria-hidden="true">
@@ -1593,7 +1594,10 @@
               оборудования, сырья и комплектующих.
             </p>
 
-            <a href="#request" class="solution-dark-button">
+            <a
+              href="#request"
+              class="solution-dark-button factory-modal-trigger"
+            >
               <span>Обсудить задачу</span>
 
               <svg viewBox="0 0 20 20">
@@ -1975,6 +1979,42 @@
           </div>
         </div>
       </section>
+
+      <!-- ==========================================
+     FACTORY REQUEST MODAL
+========================================== -->
+
+      <div
+        class="factory-request-modal"
+        id="factoryRequestModal"
+        aria-hidden="true"
+      >
+        <div
+          class="factory-request-modal-overlay"
+          data-factory-modal-close
+        ></div>
+
+        <div
+          class="factory-request-modal-window"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Обсудить задачу"
+          tabindex="-1"
+        >
+          <button
+            type="button"
+            class="factory-request-modal-close"
+            data-factory-modal-close
+            aria-label="Закрыть окно"
+          >
+            ×
+          </button>
+
+          <div class="factory-request-modal-body" id="factoryModalContent">
+            <!-- Сюда JS скопирует существующую форму -->
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer class="privoz-footer">

@@ -2233,3 +2233,204 @@
     -webkit-overflow-scrolling: touch;
   }
 }
+
+/* ==========================================
+   DESCRIPTION — LEFT ACCENT
+========================================== */
+
+.export-description-heading .export-description-accent {
+  margin-top: 65px;
+  padding-top: 28px;
+
+  max-width: 420px;
+
+  border-top: 1px solid var(--service-border);
+}
+
+.export-description-heading .export-description-accent span {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: var(--service-accent-dark);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.export-description-heading .export-description-accent strong {
+  display: block;
+
+  color: var(--service-text-dark);
+
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+}
+
+/* TABLET / MOBILE */
+
+@media (max-width: 1120px) {
+  .export-description-heading .export-description-accent {
+    margin-top: 40px;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .export-description-heading .export-description-accent {
+    margin-top: 35px;
+    padding-top: 25px;
+  }
+
+  .export-description-heading .export-description-accent strong {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+}
+
+/* DESCRIPTION — FINAL ADJUSTMENTS */
+
+.export-description-heading .export-description-accent {
+  margin-top: 45px;
+  max-width: 430px;
+}
+
+.export-description-heading .export-description-accent strong {
+  font-size: 20px;
+  line-height: 1.55;
+}
+
+.export-description-section {
+  padding-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+  .export-description-section {
+    padding-bottom: 75px;
+  }
+
+  .export-description-heading .export-description-accent {
+    margin-top: 35px;
+  }
+
+  .export-description-heading .export-description-accent strong {
+    font-size: 17px;
+  }
+}
+
+/* ==========================================
+   EXPORT — SECTION LABELS
+   Стиль как на главной
+========================================== */
+
+.export-page .export-section-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  min-height: 36px;
+
+  padding: 0 20px;
+
+  margin-bottom: 24px;
+
+  background: #e4eef1;
+  border: 1px solid #b9d0d8;
+  color: #456d7b;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+}
+
+/* Переопределяем старый display:block */
+
+.export-page .export-description-heading .export-section-label,
+.export-page .export-section-head .export-section-label,
+.export-page .export-process-head .export-section-label,
+.export-page .export-why-content .export-section-label,
+.export-page .export-request-copy .export-section-label,
+.export-page .export-other-head .export-section-label,
+.export-page .export-partners-head .export-section-label {
+  display: inline-flex;
+}
+
+/* Адаптация */
+
+@media (max-width: 768px) {
+  .export-page .export-section-label {
+    min-height: 32px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* ==========================================
+   WHY PRIVOZ — ABOUT BUTTON
+========================================== */
+
+.export-why-button {
+  min-height: 58px;
+  width: fit-content;
+
+  margin-top: 35px;
+  padding: 0 32px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+
+  background: #244651;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 100%, 16px 100%);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.export-why-button:hover {
+  background: #456d7b;
+  transform: translateY(-3px);
+}
+
+.export-why-button svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.export-why-button svg path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 768px) {
+  .export-why-button {
+    min-height: 54px;
+    margin-top: 28px;
+    padding: 0 26px;
+    font-size: 14px;
+  }
+}

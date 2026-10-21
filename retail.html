@@ -555,8 +555,6 @@
       <section class="retail-hero">
         <div class="container retail-hero-grid">
           <div class="retail-hero-content" data-reveal="left">
-            <span class="retail-section-kicker">Розничные покупки</span>
-
             <h1 class="retail-hero-title">
               Везде выбираю. <br />
               Здесь забираю.
@@ -665,23 +663,17 @@
       <section class="retail-marketplaces">
         <div class="container">
           <div class="retail-marketplaces-grid">
+            <!-- LEFT -->
             <div class="retail-marketplaces-text" data-reveal="left">
-              <span class="retail-section-kicker">Покупайте где хотите</span>
+              <span class="retail-section-kicker"> ПОКУПАЙТЕ ГДЕ ХОТИТЕ </span>
 
-              <h2>Один сервис — тысячи магазинов</h2>
-
-              <p>
-                Не ограничивайтесь одним сайтом. Вы можете выбрать товар в любом
-                интернет-магазине, на маркетплейсе или другой торговой площадке.
-              </p>
-
-              <p>
-                Если ссылки нет — достаточно назвать товар, модель или описать,
-                что вы ищете. Персональный менеджер поможет найти подходящий
-                вариант.
-              </p>
+              <h2>
+                Один сервис —<br />
+                тысячи магазинов
+              </h2>
             </div>
 
+            <!-- RIGHT -->
             <div class="retail-marketplaces-panel" data-reveal="right">
               <div class="retail-logo-marquee">
                 <div class="retail-logo-track">
@@ -709,27 +701,38 @@
 
               <form class="retail-search-box" id="retailSearchForm">
                 <label class="retail-search-label" for="retailSearchInput">
-                  🔗 Вставьте ссылку или напишите название товара
+                  Вставьте ссылку или напишите название товара
                 </label>
 
                 <div class="retail-search-row">
                   <input
                     id="retailSearchInput"
                     type="text"
-                    placeholder="Например: https://... / Nike Air Max / iPhone 15"
+                    placeholder="Ссылка или название товара"
+                    aria-label="Ссылка или название товара"
+                    required
                   />
 
-                  <button type="submit" class="retail-btn retail-btn-primary">
-                    <span>Найти товар</span>
-                    <span>→</span>
+                  <button type="submit" class="retail-search-button">
+                    <span>Найти</span>
+                    <span class="retail-search-button-arrow">↗</span>
                   </button>
                 </div>
-
-                <p class="retail-search-note">
-                  Или просто напишите название товара — менеджер найдёт его за
-                  вас.
-                </p>
               </form>
+            </div>
+
+            <!-- BOTTOM — FULL WIDTH -->
+            <div class="retail-marketplaces-description" data-reveal="up">
+              <p>
+                Не ограничивайтесь одним сайтом. Вы можете выбрать товар в любом
+                интернет-магазине, на маркетплейсе или другой торговой площадке.
+              </p>
+
+              <p>
+                Если ссылки нет — достаточно назвать товар, модель или описать,
+                что вы ищете. Персональный менеджер поможет найти подходящий
+                вариант.
+              </p>
             </div>
           </div>
         </div>
@@ -1189,8 +1192,6 @@
       <section class="retail-final">
         <div class="container">
           <div class="retail-final-panel" data-reveal="up">
-            <span class="retail-section-kicker">Финальный блок</span>
-
             <h2>
               Везде выбираю. <br />
               Здесь забираю.
@@ -1228,10 +1229,20 @@
          VAT MODAL
     ======================================================= -->
 
+    <!-- ==========================================
+     VAT / TAX FREE MODAL
+========================================== -->
+
     <div class="retail-modal" id="vatModal" aria-hidden="true">
       <div class="retail-modal-overlay" data-close-modal></div>
 
-      <div class="retail-modal-dialog" role="dialog" aria-modal="true">
+      <div
+        class="retail-modal-dialog retail-vat-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="retailVatTitle"
+        tabindex="-1"
+      >
         <button
           type="button"
           class="retail-modal-close"
@@ -1241,31 +1252,264 @@
           ×
         </button>
 
-        <span class="retail-section-kicker">Возврат VAT</span>
+        <div class="retail-vat-modal-content">
+          <span class="retail-section-kicker"> ВОЗВРАТ VAT / TAX FREE </span>
 
-        <h3>Верните до 23% VAT с покупок</h3>
+          <h3 id="retailVatTitle">Как вернуть VAT с покупок</h3>
 
-        <p>
-          При оформлении покупок через Privoz.pl мы помогаем пройти процедуру
-          возврата VAT и подготовить необходимые документы.
-        </p>
+          <p class="retail-vat-intro">
+            При покупке товаров через Privoz.pl вы можете воспользоваться
+            возможностью возврата VAT (НДС) при соблюдении условий TAX FREE.
+          </p>
 
-        <p>
-          Условия возврата зависят от типа товара, документов и направления
-          покупки. Для уточнения деталей свяжитесь с менеджером или
-          зарегистрируйтесь в личном кабинете.
-        </p>
+          <!-- 01 -->
+          <div class="retail-vat-block">
+            <span class="retail-vat-number">01 / УСЛОВИЯ</span>
 
-        <div class="retail-modal-actions">
-          <a
-            href="https://client.privoz.pl/users/register"
-            target="_blank"
-            rel="noopener"
-            class="retail-btn retail-btn-primary"
-          >
-            <span>Зарегистрироваться</span>
-            <span>→</span>
-          </a>
+            <h4>Что нужно знать перед покупкой</h4>
+
+            <p>
+              Прежде всего обратите внимание, выставляет ли продавец документы,
+              необходимые для возврата VAT. От этого зависит возможность
+              оформления TAX FREE.
+            </p>
+
+            <p>
+              Особенно внимательно проверяйте это при заказе товаров на
+              Allegro.pl. Информацию о фактуре обычно можно найти в
+              дополнительных сведениях о товаре.
+            </p>
+
+            <p>
+              Товар, бывший в употреблении, как правило, продаётся частными
+              лицами и поступает к нам без фактуры. По вашему желанию мы можем
+              осуществить такую покупку, но возврат VAT на неё не предусмотрен.
+            </p>
+
+            <p>
+              Крупные фирмы-производители и магазины, как правило, выставляют
+              фактуру VAT, однако не всегда оформляют документ TAX FREE,
+              особенно при покупке непосредственно у них.
+            </p>
+
+            <p>
+              После того как вы нашли нужный товар, скопируйте ссылку из
+              адресной строки браузера и передайте её нам для оформления заказа.
+            </p>
+          </div>
+
+          <!-- 02 -->
+          <div class="retail-vat-block">
+            <span class="retail-vat-number">02 / ОФОРМЛЕНИЕ</span>
+
+            <h4>Как вернуть VAT</h4>
+
+            <div class="retail-vat-step">
+              <span>ШАГ 01</span>
+              <h5>Получите документ TAX FREE</h5>
+
+              <p>
+                Если стоимость покупки с нашей комиссией составляет 200 zł и
+                более, на товары, по которым получены необходимые фактуры VAT,
+                мы можем оформить документ TAX FREE с прикреплённым чеком.
+              </p>
+
+              <p>
+                В один документ TAX FREE могут быть объединены покупки из разных
+                магазинов.
+              </p>
+            </div>
+
+            <div class="retail-vat-step">
+              <span>ШАГ 02</span>
+              <h5>Подтвердите вывоз товара на таможне</h5>
+
+              <p>
+                Вы должны пересечь границу не позднее конца третьего месяца
+                после совершения покупки, предъявив таможенным органам товар и
+                документ TAX FREE.
+              </p>
+
+              <p>
+                Документ TAX FREE оформляется в электронном виде. Подтверждение
+                вывоза фиксируется в системе таможни.
+              </p>
+
+              <p>
+                Рекомендуем сразу на месте проверить, отметил ли сотрудник
+                таможни вывоз товара в электронном сервисе TAX FREE.
+              </p>
+
+              <p>
+                Проверить подтверждение вывоза можно через
+                <a
+                  href="https://granica.gov.pl/TaxFree"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  сервис TAX FREE ↗
+                </a>
+              </p>
+
+              <p>
+                Подтверждение особенно важно, если товар куплен в Польше, но
+                вывезен через таможню другого государства, например Литвы или
+                Словакии.
+              </p>
+            </div>
+
+            <div class="retail-vat-step">
+              <span>ШАГ 03</span>
+              <h5>Получите возврат VAT</h5>
+
+              <p>
+                Получить возврат VAT можно в установленные сроки после
+                совершения покупки при наличии необходимых подтверждений вывоза.
+              </p>
+
+              <p>
+                Способ возврата необходимо выбрать до момента оформления
+                документа TAX FREE и сообщить кассиру при выдаче товара.
+              </p>
+            </div>
+          </div>
+
+          <!-- 03 -->
+          <div class="retail-vat-block">
+            <span class="retail-vat-number">03 / СПОСОБЫ ВОЗВРАТА</span>
+
+            <h4>Как получить деньги</h4>
+
+            <div class="retail-vat-methods">
+              <div class="retail-vat-method">
+                <h5>Наличными</h5>
+
+                <p>
+                  При следующей поездке в Польшу вы можете получить сумму
+                  возврата, указанную в документе TAX FREE.
+                </p>
+
+                <p>
+                  Получить возврат может только лицо, на которое оформлен
+                  документ TAX FREE.
+                </p>
+
+                <p>
+                  Возврат производится в любом пункте выдачи Privoz.pl,
+                  независимо от того, в каком пункте был выдан документ.
+                </p>
+              </div>
+
+              <div class="retail-vat-method">
+                <h5>Банковским переводом</h5>
+
+                <p>
+                  После подтверждения вывоза товара через польскую таможню
+                  возврат VAT может быть перечислен на счёт в польском банке,
+                  указанный при оформлении TAX FREE.
+                </p>
+
+                <p>
+                  По информации со старой страницы Privoz.pl, перевод
+                  выполняется в течение 7 рабочих дней.
+                </p>
+
+                <p>
+                  Если товар вывезен через таможню другого государства,
+                  покупателю может потребоваться предоставить дополнительные
+                  подтверждения вывоза товара.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 04 -->
+          <div class="retail-vat-block">
+            <span class="retail-vat-number">04 / ВАЖНО</span>
+
+            <h4>Особенности возврата VAT</h4>
+
+            <div class="retail-vat-notice">
+              <strong>Вывоз через другую страну</strong>
+
+              <p>
+                Если товары вывозятся через таможню Литвы, Словакии или другого
+                государства, могут потребоваться дополнительные подтверждения
+                вывоза от соответствующих таможенных органов.
+              </p>
+
+              <p>Это может увеличить время обработки возврата.</p>
+            </div>
+
+            <div class="retail-vat-notice">
+              <strong>Выбор способа возврата</strong>
+
+              <p>
+                Способ возврата VAT необходимо выбрать до момента выписки
+                документа TAX FREE и сообщить кассиру при выдаче товара.
+              </p>
+            </div>
+          </div>
+
+          <!-- 05 -->
+          <div class="retail-vat-block">
+            <span class="retail-vat-number">05 / ТРЕБОВАНИЯ</span>
+
+            <h4>Важные условия получения TAX FREE</h4>
+
+            <ul class="retail-vat-list">
+              <li>
+                Для оформления TAX FREE покупатель должен соответствовать
+                требованиям законодательства, в том числе в отношении
+                постоянного проживания за пределами Европейского союза.
+              </li>
+
+              <li>
+                Минимальная стоимость покупки, включая комиссию компании, по
+                информации старого сайта составляла 200 zł брутто.
+              </li>
+
+              <li>
+                В одном документе TAX FREE может быть указано не более 20
+                товарных позиций (наименований, а не единиц товара).
+              </li>
+
+              <li>
+                VAT не возвращается на отдельные категории товаров, в том числе
+                на товары, в стоимости которых не выделен НДС, например
+                некоторые бывшие в употреблении товары.
+              </li>
+
+              <li>
+                Сохраняйте чек на покупку. Он является важным подтверждением
+                приобретения товара.
+              </li>
+            </ul>
+          </div>
+
+          <!-- FINAL -->
+          <div class="retail-vat-footer">
+            <div>
+              <span class="retail-vat-footer-label"> НУЖНА ПОМОЩЬ? </span>
+
+              <h4>Поможем разобраться с возвратом VAT</h4>
+
+              <p>
+                Уточните условия TAX FREE и возможность оформления документов
+                для вашего заказа у менеджера Privoz.pl.
+              </p>
+            </div>
+
+            <a
+              href="https://client.privoz.pl/users/register"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="retail-btn retail-btn-primary"
+            >
+              <span>Зарегистрироваться</span>
+              <span>↗</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -1436,3 +1436,63 @@ section.additional {
     margin-top: 52px !important;
   }
 }
+
+/* ==========================================
+   RELIABILITY — ABOUT BUTTON
+========================================== */
+
+.additional-reliability-btn {
+  min-height: 58px;
+  width: fit-content;
+
+  padding: 0 32px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+
+  background: #171717;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 100%, 16px 100%);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.additional-reliability-btn:hover {
+  background: #ff641e;
+  transform: translateY(-3px);
+}
+
+.additional-reliability-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.additional-reliability-btn svg path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .additional-reliability-btn {
+    min-height: 54px;
+    padding: 0 26px;
+    gap: 25px;
+    font-size: 14px;
+  }
+}
