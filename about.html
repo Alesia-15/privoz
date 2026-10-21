@@ -558,27 +558,6 @@
   ====================================================== -->
 
       <section class="about-hero">
-        <!--
-      ВАРИАНТ С ФОТО:
-      замени background-image в CSS.
-
-      ВАРИАНТ С ВИДЕО:
-      раскомментируй video ниже.
-    -->
-
-        <!--
-    <video
-      class="about-hero-video"
-      autoplay
-      muted
-      loop
-      playsinline
-      poster="images/about/about-hero.jpg"
-    >
-      <source src="video/about-hero.mp4" type="video/mp4" />
-    </video>
-    -->
-
         <div class="about-hero-overlay"></div>
 
         <div class="about-hero-glow about-hero-glow-1"></div>
@@ -602,13 +581,8 @@
                 международными рынками.
               </p>
 
-              <a data-link="#contacts" class="about-hero-button">
-                <span>Связаться с нами</span>
-
-                <svg viewBox="0 0 20 20" aria-hidden="true">
-                  <path d="M5 10H15"></path>
-                  <path d="M11 6L15 10L11 14"></path>
-                </svg>
+              <a href="#" class="about-hero-button consultation-modal-open">
+                Связаться с нами
               </a>
             </div>
           </div>
@@ -649,12 +623,6 @@
               <span class="about-intro-year-label"> НА РЫНКЕ С </span>
 
               <strong>2016</strong>
-            </div>
-
-            <div class="about-intro-media-caption">
-              <span>POLAND</span>
-              <span>EUROPE</span>
-              <span>WORLDWIDE</span>
             </div>
           </div>
 
@@ -2263,5 +2231,86 @@
 
     <script src="script.js"></script>
     <script src="about.js"></script>
+
+    <!-- CONSULTATION MODAL -->
+    <div class="consult-modal" id="consultModal" aria-hidden="true">
+      <div class="consult-modal-overlay" data-modal-close></div>
+
+      <div
+        class="consult-modal-window"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="consultModalTitle"
+        tabindex="-1"
+      >
+        <button
+          class="consult-modal-close"
+          type="button"
+          aria-label="Закрыть"
+          data-modal-close
+        >
+          ×
+        </button>
+
+        <h2 id="consultModalTitle">Оставить заявку</h2>
+
+        <p class="consult-modal-description">
+          Расскажите, как с вами связаться. Наш специалист ответит на ваши
+          вопросы.
+        </p>
+
+        <form id="consultModalForm" method="post">
+          <div class="consult-modal-field">
+            <label for="consultName">Ваше имя *</label>
+            <input
+              id="consultName"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="Имя"
+              required
+            />
+          </div>
+
+          <div class="consult-modal-field">
+            <label for="consultPhone">Номер телефона *</label>
+            <input
+              id="consultPhone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              placeholder="+48 000 000 000"
+              minlength="7"
+              required
+            />
+          </div>
+
+          <label class="consult-modal-consent">
+            <input type="checkbox" name="consent" value="yes" required />
+            <span>
+              Я согласен(на) на обработку персональных данных в соответствии с
+              <a
+                href="/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Политикой конфиденциальности </a
+              >.
+            </span>
+          </label>
+
+          <button class="consult-modal-submit" type="submit">
+            Отправить заявку <span>↗</span>
+          </button>
+
+          <p
+            class="consult-modal-status"
+            id="consultModalStatus"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

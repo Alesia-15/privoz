@@ -1945,3 +1945,291 @@
     transition: none !important;
   }
 }
+
+/* ==========================================
+   EXPORT MODAL
+========================================== */
+
+.export-primary-button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.export-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.export-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.export-modal-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(12, 28, 34, 0.78);
+  backdrop-filter: blur(9px);
+}
+
+.export-modal-dialog {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 760px;
+  max-height: calc(100vh - 48px);
+
+  padding: 42px;
+
+  overflow-y: auto;
+
+  background: #fbfdfd;
+  border: 1px solid rgba(102, 139, 153, 0.25);
+
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.25);
+
+  transform: translateY(30px) scale(0.97);
+
+  transition: transform 0.3s ease;
+}
+
+.export-modal.is-open .export-modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.export-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  background: #e4eef1;
+  color: #244651;
+
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.export-modal-close:hover {
+  background: #244651;
+  color: #fff;
+}
+
+.export-modal-heading {
+  margin-bottom: 30px;
+  padding-right: 35px;
+}
+
+.export-modal-heading .export-section-label {
+  display: block;
+  margin-bottom: 18px;
+  color: #456d7b;
+}
+
+.export-modal-heading h2 {
+  margin: 0 0 18px;
+
+  color: #24444e;
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+
+.export-modal-heading h2 span {
+  color: #668b99;
+}
+
+.export-modal-heading p {
+  max-width: 550px;
+  margin: 0;
+
+  color: #5e7780;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Форма внутри окна */
+
+.export-modal .export-request-form {
+  padding: 0;
+  border: none;
+  background: transparent;
+  clip-path: none;
+}
+
+.export-modal .export-request-submit {
+  margin-top: 25px;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .export-modal {
+    padding: 12px;
+  }
+
+  .export-modal-dialog {
+    padding: 28px 20px;
+    max-height: calc(100vh - 24px);
+  }
+
+  .export-modal-heading h2 {
+    font-size: 36px;
+  }
+
+  .export-modal-close {
+    top: 12px;
+    right: 12px;
+  }
+}
+
+/* ==========================================
+   EXPORT MODAL — FIX
+========================================== */
+
+/* Передаём модальному окну цвета страницы экспорта */
+.export-modal {
+  --service-bg: #edf4f6;
+  --service-card: #fbfdfd;
+
+  --service-accent: #668b99;
+  --service-accent-dark: #456d7b;
+  --service-accent-deep: #244651;
+  --service-accent-rgb: 102, 139, 153;
+
+  --service-text: #24444e;
+  --service-text-dark: #183942;
+  --service-text-soft: #5e7780;
+
+  --service-border: rgba(69, 109, 123, 0.17);
+}
+
+/* Исправляем кнопку отправки */
+.export-modal .export-request-submit {
+  background: #244651;
+  color: #ffffff;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.export-modal .export-request-submit:hover {
+  background: #456d7b;
+}
+
+.export-modal .export-request-submit svg {
+  color: #ffffff;
+}
+
+/* Убираем лишнее пространство */
+.export-modal-dialog {
+  height: auto;
+  max-height: calc(100dvh - 48px);
+}
+
+/* Исправляем отображение формы */
+.export-modal .export-request-form {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .export-modal-dialog {
+    max-height: calc(100dvh - 24px);
+  }
+}
+
+/* ==========================================
+   PROCESS — FIXED HORIZONTAL SCROLL
+========================================== */
+
+/* Важно для работы position: sticky */
+.export-page {
+  overflow: clip;
+}
+
+@media (min-width: 769px) {
+  .export-process {
+    position: relative;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .export-process > .export-page-container {
+    position: sticky;
+
+    top: var(--header-height, 80px);
+
+    height: calc(100dvh - var(--header-height, 80px));
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .export-process-head {
+    flex-shrink: 0;
+    margin-bottom: 55px;
+  }
+
+  .export-process-scroll {
+    flex-shrink: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+
+  .export-process-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .export-process-track {
+    width: max-content;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .export-process {
+    height: auto !important;
+  }
+
+  .export-process > .export-page-container {
+    position: static;
+    height: auto;
+  }
+
+  .export-process-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

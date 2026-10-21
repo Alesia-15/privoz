@@ -566,14 +566,17 @@
               назначения.
             </p>
 
-            <a data-link="#export-request" class="export-primary-button">
+            <button
+              type="button"
+              class="export-primary-button export-modal-open"
+            >
               <span>Организовать поставку</span>
 
               <svg viewBox="0 0 20 20" aria-hidden="true">
                 <path d="M5 10H15"></path>
                 <path d="M11 6L15 10L11 14"></path>
               </svg>
-            </a>
+            </button>
           </div>
 
           <div class="export-hero-visual">
@@ -1386,5 +1389,40 @@
 
     <script src="script.js"></script>
     <script src="export.js"></script>
+
+    <!-- EXPORT REQUEST MODAL -->
+    <div class="export-modal" id="exportModal" aria-hidden="true">
+      <div class="export-modal-overlay" data-export-close></div>
+
+      <div
+        class="export-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="exportModalTitle"
+        tabindex="-1"
+      >
+        <button
+          type="button"
+          class="export-modal-close"
+          data-export-close
+          aria-label="Закрыть"
+        >
+          &times;
+        </button>
+
+        <div class="export-modal-heading">
+          <span class="export-section-label">ОРГАНИЗОВАТЬ ПОСТАВКУ</span>
+
+          <h2 id="exportModalTitle">Рассчитаем <span>вашу поставку</span></h2>
+
+          <p>
+            Расскажите, какую продукцию необходимо экспортировать. Мы изучим
+            задачу и свяжемся с вами.
+          </p>
+        </div>
+
+        <div id="exportModalFormContainer"></div>
+      </div>
+    </div>
   </body>
 </html>

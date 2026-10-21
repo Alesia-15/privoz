@@ -1,0 +1,1121 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Каталог товаров — PRIVOZ</title>
+    <meta
+      name="description"
+      content="Поиск товаров, производителей и предложений магазинов в каталоге PRIVOZ."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="catalog.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- LOGO -->
+        <a data-link="/" class="header-logo" aria-label="Privoz">
+          <img src="images/logo.svg" alt="Privoz" />
+        </a>
+
+        <!-- DESKTOP NAV -->
+        <nav class="header-nav" aria-label="Основное меню">
+          <ul class="header-nav-list">
+            <!-- УСЛУГИ -->
+            <li class="header-nav-item has-mega-menu">
+              <button
+                class="header-nav-link mega-menu-toggle"
+                type="button"
+                aria-expanded="false"
+              >
+                <span>Услуги</span>
+
+                <svg class="nav-arrow" viewBox="0 0 12 8" aria-hidden="true">
+                  <path d="M1 1.5L6 6.5L11 1.5"></path>
+                </svg>
+              </button>
+
+              <div class="mega-menu">
+                <div class="mega-menu-panel">
+                  <div class="mega-menu-main">
+                    <div class="mega-column">
+                      <a data-link="/search.html" class="mega-featured">
+                        <span class="mega-title"> Поиск товара </span>
+
+                        <span class="mega-description">
+                          Поиск продукции и производителей под вашу задачу
+                        </span>
+                      </a>
+
+                      <a data-link="/export.html" class="mega-link">
+                        <span class="mega-title"> Экспорт </span>
+
+                        <span class="mega-description">
+                          Организация экспортных поставок товаров на
+                          международные рынки
+                        </span>
+                      </a>
+
+                      <a data-link="/import.html" class="mega-link">
+                        <span class="mega-title"> Импорт </span>
+
+                        <span class="mega-description">
+                          Импорт товаров и сопровождение международных сделок
+                        </span>
+                      </a>
+                    </div>
+
+                    <div class="mega-column">
+                      <a data-link="/retail.html" class="mega-link">
+                        <span class="mega-title"> Розничные покупки </span>
+
+                        <span class="mega-description">
+                          Выкуп товаров для частных клиентов и бизнеса
+                        </span>
+                      </a>
+
+                      <a data-link="/procurement.html" class="mega-link">
+                        <span class="mega-title"> Международные закупки </span>
+
+                        <span class="mega-description">
+                          Поиск и закупка товаров у поставщиков по всему миру
+                        </span>
+                      </a>
+
+                      <a data-link="/quality.html" class="mega-link">
+                        <span class="mega-title"> Контроль качества </span>
+
+                        <span class="mega-description">
+                          Проверка товаров, поставщиков и производства
+                        </span>
+                      </a>
+                    </div>
+
+                    <div class="mega-column">
+                      <a data-link="/logistics.html" class="mega-link">
+                        <span class="mega-title">
+                          Международная логистика
+                        </span>
+
+                        <span class="mega-description">
+                          Организация международной доставки грузов
+                        </span>
+                      </a>
+
+                      <a data-link="/expert.html" class="mega-link">
+                        <span class="mega-title">
+                          Экспертное сопровождение
+                        </span>
+
+                        <span class="mega-description">
+                          Поддержка сделок и решение нестандартных задач
+                        </span>
+                      </a>
+
+                      <a data-link="/additional.html" class="mega-link">
+                        <span class="mega-title"> Дополнительные услуги </span>
+
+                        <span class="mega-description">
+                          Дополнительные решения для международного бизнеса
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="mega-promo mega-promo">
+                    <div class="mega-promo-top">
+                      <span class="mega-promo-label"> PRIVOZ </span>
+
+                      <h3>Нужна помощь с международной поставкой?</h3>
+
+                      <p>
+                        Разберём задачу и предложим подходящий формат работы.
+                      </p>
+                    </div>
+
+                    <button
+                      type="button"
+                      class="mega-promo-button consultation-modal-open"
+                    >
+                      <span> Получить консультацию </span>
+                      <svg viewBox="0 0 20 20">
+                        <path d="M5 10H15"></path>
+                        <path d="M11 6L15 10L11 14"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- КАТАЛОГ -->
+            <li class="header-nav-item">
+              <a
+                data-link="/catalog.html"
+                href="catalog.html"
+                class="header-nav-link"
+              >
+                <span>Каталог</span>
+              </a>
+            </li>
+
+            <!-- РЕШЕНИЕ -->
+            <li class="header-nav-item has-mega-menu">
+              <button
+                class="header-nav-link mega-menu-toggle"
+                type="button"
+                aria-expanded="false"
+              >
+                <span>Решение</span>
+
+                <svg class="nav-arrow" viewBox="0 0 12 8" aria-hidden="true">
+                  <path d="M1 1.5L6 6.5L11 1.5"></path>
+                </svg>
+              </button>
+
+              <div class="mega-menu">
+                <div class="mega-menu-panel">
+                  <div class="mega-menu-main">
+                    <div class="mega-column">
+                      <a
+                        data-link="/solutions/retail.html"
+                        class="mega-featured"
+                      >
+                        <span class="mega-title"> Розничным покупателям </span>
+
+                        <span class="mega-description">
+                          Покупка и доставка товаров из других стран
+                        </span>
+                      </a>
+
+                      <a
+                        data-link="/solutions/manufacturers.html"
+                        class="mega-link"
+                      >
+                        <span class="mega-title"> Производителям </span>
+
+                        <span class="mega-description">
+                          Закупка сырья, оборудования и выход на новые рынки
+                        </span>
+                      </a>
+
+                      <a
+                        data-link="/solutions/factories.html"
+                        class="mega-link"
+                      >
+                        <span class="mega-title"> Заводам </span>
+
+                        <span class="mega-description">
+                          Международное снабжение и логистические решения
+                        </span>
+                      </a>
+                    </div>
+
+                    <div class="mega-column">
+                      <a
+                        data-link="/solutions/wholesale.html"
+                        class="mega-link"
+                      >
+                        <span class="mega-title"> Оптовым компаниям </span>
+
+                        <span class="mega-description">
+                          Закупка крупных партий товаров и организация поставок
+                        </span>
+                      </a>
+
+                      <a
+                        data-link="/solutions/distributors.html"
+                        class="mega-link"
+                      >
+                        <span class="mega-title"> Дистрибьюторам </span>
+
+                        <span class="mega-description">
+                          Международные закупки и расширение ассортимента
+                        </span>
+                      </a>
+
+                      <a
+                        data-link="/solutions/retailers.html"
+                        class="mega-link"
+                      >
+                        <span class="mega-title"> Ритейлу </span>
+
+                        <span class="mega-description">
+                          Поставка товаров для розничных сетей
+                        </span>
+                      </a>
+                    </div>
+
+                    <div class="mega-column">
+                      <a
+                        data-link="/solutions/marketplaces.html"
+                        class="mega-link"
+                      >
+                        <span class="mega-title"> Маркетплейсам </span>
+
+                        <span class="mega-description">
+                          Импорт и поставка товаров для онлайн-площадок
+                        </span>
+                      </a>
+
+                      <a
+                        data-link="/solutions/government.html"
+                        class="mega-link"
+                      >
+                        <span class="mega-title">
+                          Государственным предприятиям
+                        </span>
+
+                        <span class="mega-description">
+                          Международные закупки и комплексное сопровождение
+                        </span>
+                      </a>
+
+                      <a
+                        data-link="/solutions/construction.html"
+                        class="mega-link"
+                      >
+                        <span class="mega-title"> Строительным компаниям </span>
+
+                        <span class="mega-description">
+                          Поставка оборудования, материалов и комплектующих
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="mega-promo mega-promo-dark">
+                    <div>
+                      <span class="mega-promo-label"> РЕШЕНИЯ </span>
+
+                      <h3>Подберём решение под ваш бизнес</h3>
+
+                      <p>
+                        Сформируем схему закупки, логистики и сопровождения.
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      class="mega-promo-button consultation-modal-open"
+                    >
+                      <span> Получить решение </span>
+                      <svg viewBox="0 0 20 20">
+                        <path d="M5 10H15"></path>
+                        <path d="M11 6L15 10L11 14"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- О КОМПАНИИ -->
+            <li class="header-nav-item has-mega-menu about-mega-item">
+              <a
+                data-link="/about.html"
+                class="header-nav-link mega-menu-toggle"
+              >
+                <span>О компании</span>
+
+                <svg class="nav-arrow" viewBox="0 0 12 8" aria-hidden="true">
+                  <path d="M1 1.5L6 6.5L11 1.5"></path>
+                </svg>
+              </a>
+
+              <div class="mega-menu">
+                <div class="mega-menu-panel">
+                  <div class="mega-menu-main">
+                    <div class="mega-column">
+                      <a data-link="/about.html" class="mega-featured">
+                        <span class="mega-title">О нас</span>
+
+                        <span class="mega-description">
+                          О компании, опыте и направлениях работы Privoz.pl
+                        </span>
+                      </a>
+
+                      <a data-link="/about.html#addresses" class="mega-link">
+                        <span class="mega-title">Адреса</span>
+
+                        <span class="mega-description">
+                          Офис и собственные склады компании в Польше
+                        </span>
+                      </a>
+                    </div>
+
+                    <div class="mega-column">
+                      <a data-link="/about.html#jobs" class="mega-link">
+                        <span class="mega-title">Работа</span>
+
+                        <span class="mega-description">
+                          Открытые вакансии и возможность присоединиться к
+                          команде
+                        </span>
+                      </a>
+
+                      <a data-link="/about.html#contacts" class="mega-link">
+                        <span class="mega-title">Контакты</span>
+
+                        <span class="mega-description">
+                          Контактные данные отделов и руководства компании
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <a data-link="/about.html" class="mega-promo mega-promo-dark">
+                    <div>
+                      <span class="mega-promo-label"> PRIVOZ </span>
+
+                      <h3>
+                        Международная торговля начинается с надёжного партнёра
+                      </h3>
+
+                      <p>
+                        Работаем с международными поставками и сопровождаем
+                        бизнес на всех этапах сделки.
+                      </p>
+                    </div>
+
+                    <span class="mega-promo-button">
+                      О компании
+
+                      <svg viewBox="0 0 20 20">
+                        <path d="M5 10H15"></path>
+                        <path d="M11 6L15 10L11 14"></path>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- ЛИЧНЫЙ КАБИНЕТ -->
+            <li class="header-nav-item has-account-menu">
+              <button
+                class="header-nav-link account-toggle"
+                type="button"
+                aria-expanded="false"
+              >
+                <span>Личный кабинет</span>
+
+                <svg class="nav-arrow" viewBox="0 0 12 8" aria-hidden="true">
+                  <path d="M1 1.5L6 6.5L11 1.5"></path>
+                </svg>
+              </button>
+
+              <div class="account-dropdown">
+                <a
+                  href="https://client.privoz.pl/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Вход
+                </a>
+
+                <a
+                  href="https://client.privoz.pl/users/register"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Регистрация
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- RIGHT ACTIONS -->
+        <div class="header-actions">
+          <!-- CONSULTATION -->
+          <a
+            data-link="#request"
+            class="consultation-button consultation-modal-open"
+          >
+            <span> Получить консультацию </span>
+
+            <span class="consultation-arrow">
+              <svg viewBox="0 0 20 20">
+                <path d="M5 10H15"></path>
+                <path d="M11 6L15 10L11 14"></path>
+              </svg>
+            </span>
+          </a>
+
+          <!-- LANGUAGE - САМОЕ КРАЙНЕЕ СПРАВА -->
+          <div class="language-switcher">
+            <button class="language-button" type="button" aria-expanded="false">
+              RU
+
+              <svg viewBox="0 0 12 8">
+                <path d="M1 1.5L6 6.5L11 1.5"></path>
+              </svg>
+            </button>
+
+            <div class="language-dropdown">
+              <a data-link="#" class="is-active">RU</a>
+              <a data-link="#">EN</a>
+              <a data-link="#">PL</a>
+              <a data-link="#">DE</a>
+              <a data-link="#">UA</a>
+              <a data-link="#">FR</a>
+              <a data-link="#">ES</a>
+            </div>
+          </div>
+
+          <!-- BURGER -->
+          <button
+            class="burger"
+            type="button"
+            aria-label="Открыть меню"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE -->
+      <div class="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-inner">
+          <nav class="mobile-nav">
+            <!-- MOBILE УСЛУГИ -->
+            <div class="mobile-nav-dropdown">
+              <button class="mobile-nav-toggle" type="button">
+                <span>Услуги</span>
+                <span class="mobile-plus"></span>
+              </button>
+
+              <div class="mobile-submenu">
+                <a data-link="/search.html">Поиск товара</a>
+                <a data-link="/export.html">Экспорт</a>
+                <a data-link="/import.html">Импорт</a>
+                <a data-link="/retail.html">Розничные покупки</a>
+                <a data-link="/purchases.html">Международные закупки</a>
+                <a data-link="/quality.html">Контроль качества</a>
+                <a data-link="/logistics.html">Международная логистика</a>
+                <a data-link="/expert.html">Экспертное сопровождение</a>
+                <a data-link="/additional.html">Дополнительные услуги</a>
+              </div>
+            </div>
+
+            <a
+              data-link="/catalog.html"
+              href="catalog.html"
+              class="mobile-main-link"
+            >
+              Каталог
+            </a>
+
+            <!-- MOBILE РЕШЕНИЕ -->
+            <div class="mobile-nav-dropdown">
+              <button class="mobile-nav-toggle" type="button">
+                <span>Решение</span>
+                <span class="mobile-plus"></span>
+              </button>
+
+              <div class="mobile-submenu">
+                <a data-link="/solutions/retail.html">
+                  Розничным покупателям
+                </a>
+
+                <a data-link="/solutions/manufacturers.html">
+                  Производителям
+                </a>
+
+                <a data-link="/solutions/factories.html"> Заводам </a>
+
+                <a data-link="/solutions/wholesale.html"> Оптовым компаниям </a>
+
+                <a data-link="/solutions/distributors.html"> Дистрибьюторам </a>
+
+                <a data-link="/solutions/retailers.html"> Ритейлу </a>
+
+                <a data-link="/solutions/marketplaces.html"> Маркетплейсам </a>
+
+                <a data-link="/solutions/government.html">
+                  Государственным предприятиям
+                </a>
+
+                <a data-link="/solutions/construction.html">
+                  Строительным компаниям
+                </a>
+              </div>
+            </div>
+
+            <a data-link="/about.html" class="mobile-main-link"> О компании </a>
+
+            <!-- MOBILE CABINET -->
+            <div class="mobile-nav-dropdown">
+              <button class="mobile-nav-toggle" type="button">
+                <span>Личный кабинет</span>
+                <span class="mobile-plus"></span>
+              </button>
+
+              <div class="mobile-submenu">
+                <a data-link="/login/">Вход</a>
+                <a data-link="/registration/">Регистрация</a>
+              </div>
+            </div>
+          </nav>
+
+          <div class="mobile-bottom">
+            <a
+              data-link="#"
+              class="mobile-consultation consultation-modal-open"
+            >
+              Получить консультацию
+            </a>
+
+            <div class="mobile-languages">
+              <a data-link="#" class="is-active">RU</a>
+              <a data-link="#">EN</a>
+              <a data-link="#">PL</a>
+              <a data-link="#">DE</a>
+              <a data-link="#">UA</a>
+              <a data-link="#">FR</a>
+              <a data-link="#">ES</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="privoz-catalog" id="main-content">
+      <section class="pc-hero">
+        <div class="pc-wrap">
+          <h1>Каталог <span>товаров</span></h1>
+          <p class="pc-hero-description">
+            Ищите товары и производителей по названию, модели или артикулу.
+            Сравнивайте предложения продавцов и выбирайте подходящий вариант.
+          </p>
+          <form id="pcSearchForm" class="pc-search" role="search">
+            <label for="pcQuery" class="pc-visually-hidden"
+              >Поиск товара или производителя</label
+            >
+            <span class="pc-search-icon" aria-hidden="true">⌕</span>
+            <input
+              id="pcQuery"
+              type="search"
+              name="q"
+              placeholder="Название товара, производителя или артикул"
+              autocomplete="off"
+              maxlength="200"
+              required
+            />
+            <button type="submit">
+              Найти товар <span aria-hidden="true">↗</span>
+            </button>
+          </form>
+          <div class="pc-suggestions">
+            <span>Например:</span>
+            <button type="button" data-query="Bosch GSR 18V-55">
+              Bosch GSR 18V-55</button
+            ><button type="button" data-query="Makita DDF482">
+              Makita DDF482</button
+            ><button type="button" data-query="6ES7214-1AG40-0XB0">
+              Siemens 6ES7214-1AG40-0XB0
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="pc-results-section" aria-labelledby="pcResultsHeading">
+        <div class="pc-wrap">
+          <div class="pc-results-head">
+            <div>
+              <span class="pc-eyebrow">РЕЗУЛЬТАТЫ ПОИСКА</span>
+              <h2 id="pcResultsHeading">Найденные товары</h2>
+              <p id="pcResultsCount" role="status" aria-live="polite">
+                Введите запрос, чтобы увидеть товары.
+              </p>
+            </div>
+          </div>
+          <div class="pc-layout">
+            <aside class="pc-sidebar" aria-label="Фильтры каталога">
+              <div class="pc-filter-title">
+                Фильтры
+                <button id="pcResetFilters" type="button">Сбросить</button>
+              </div>
+              <label for="pcStoreFilter">Продавец</label>
+              <select id="pcStoreFilter">
+                <option value="">Все продавцы</option>
+              </select>
+              <label for="pcTextFilter">Поиск среди результатов</label>
+              <input
+                id="pcTextFilter"
+                type="search"
+                placeholder="Название товара"
+                autocomplete="off"
+              />
+              <p class="pc-filter-caption">
+                Фильтры применяются к найденным товарам этой страницы, а не ко
+                всему интернету.
+              </p>
+              <a class="pc-manager-link" href="search.html#catalog"
+                >Не нашли нужный товар?
+                <strong>Поиск через менеджера ↗</strong></a
+              >
+            </aside>
+            <div class="pc-content">
+              <div class="pc-toolbar">
+                <span id="pcVisibleCount">Пока нет результатов</span
+                ><label for="pcSort"
+                  >Сортировка
+                  <select id="pcSort">
+                    <option value="default">По релевантности</option>
+                    <option value="price-asc">Сначала дешевле</option>
+                    <option value="price-desc">Сначала дороже</option>
+                    <option value="title">По названию</option>
+                  </select></label
+                >
+              </div>
+              <div
+                id="pcStatus"
+                class="pc-status"
+                role="status"
+                aria-live="polite"
+              >
+                Введите название товара или производителя в поисковой строке
+                выше.
+              </div>
+              <div
+                id="pcGrid"
+                class="pc-grid"
+                aria-label="Найденные товары"
+              ></div>
+              <p class="pc-disclaimer">
+                Данные получены из Google Shopping через SerpApi. Цены, наличие,
+                изображения и соответствие модели проверяйте у продавца. PRIVOZ
+                не подтверждает эти предложения.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="pc-modal" id="pcModal" hidden>
+      <div class="pc-modal-backdrop" data-pc-close></div>
+      <section
+        class="pc-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="pcModalTitle"
+        tabindex="-1"
+      >
+        <button
+          class="pc-modal-close"
+          type="button"
+          data-pc-close
+          aria-label="Закрыть карточку"
+        >
+          ×
+        </button>
+        <div id="pcModalBody"></div>
+      </section>
+    </div>
+
+    <footer class="privoz-footer">
+      <div class="privoz-footer-shell">
+        <section class="privoz-footer-section privoz-footer-section-contacts">
+          <div class="privoz-footer-section-inner">
+            <div class="privoz-footer-head">
+              <h2>Контакты</h2>
+            </div>
+
+            <div class="privoz-footer-company">
+              <span class="privoz-footer-label"> Юридическое название </span>
+
+              <strong> Privoz Sp. z o.o. </strong>
+            </div>
+
+            <div class="privoz-footer-socials">
+              <span class="privoz-footer-label"> Социальные сети </span>
+
+              <div class="privoz-footer-social-links">
+                <a href="#" aria-label="LinkedIn">
+                  <img src="images/icons/linkedin.png" alt="LinkedIn" />
+                </a>
+
+                <a href="#" aria-label="Facebook">
+                  <img src="images/icons/facebook.png" alt="Facebook" />
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                  <img src="images/icons/instagram.png" alt="Instagram" />
+                </a>
+              </div>
+            </div>
+
+            <div class="privoz-footer-departments">
+              <div class="privoz-footer-department">
+                <div class="privoz-footer-department-top">
+                  <span> Оптовый отдел </span>
+
+                  <small> B2B </small>
+                </div>
+
+                <div class="privoz-footer-department-info">
+                  <p>Пн–Пт 09:00–17:00</p>
+
+                  <a href="tel:+48786664505"> +48 786 664 505 </a>
+
+                  <a href="mailto:trade@privoz.pl"> trade@privoz.pl </a>
+                </div>
+
+                <div class="privoz-footer-messengers">
+                  <a
+                    href="https://t.me/PrivozOsobyPrawne"
+                    aria-label="Telegram"
+                  >
+                    <img src="images/icons/telegram.png" alt="Telegram" />
+                  </a>
+
+                  <a href="https://wa.me/48786664505" aria-label="WhatsApp">
+                    <img src="images/icons/whatsapp.png" alt="WhatsApp" />
+                  </a>
+                </div>
+              </div>
+
+              <div class="privoz-footer-department">
+                <div class="privoz-footer-department-top">
+                  <span> Розничный отдел </span>
+
+                  <small> B2C </small>
+                </div>
+
+                <div class="privoz-footer-department-info">
+                  <p>Пн–Пт 08:00–16:00</p>
+
+                  <a href="tel:+48780522333"> +48 780 522 333 </a>
+
+                  <a href="mailto:info@privoz.pl"> info@privoz.pl </a>
+                </div>
+
+                <div class="privoz-footer-messengers">
+                  <a href="https://t.me/privozpl" aria-label="Telegram">
+                    <img src="images/icons/telegram.png" alt="Telegram" />
+                  </a>
+
+                  <a href="https://wa.me/48780522333" aria-label="WhatsApp">
+                    <img src="images/icons/whatsapp.png" alt="WhatsApp" />
+                  </a>
+
+                  <a
+                    href="viber://chat?number=%2B48780522333"
+                    aria-label="Viber"
+                  >
+                    <img src="images/icons/viber.png" alt="Viber" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="privoz-footer-section privoz-footer-section-warehouses">
+          <div class="privoz-footer-section-inner">
+            <div class="privoz-footer-head">
+              <h2>Склады</h2>
+            </div>
+
+            <div class="privoz-footer-warehouses">
+              <!-- KUZNICA -->
+
+              <article class="privoz-footer-warehouse">
+                <div>
+                  <span class="privoz-footer-label"> Склад </span>
+
+                  <h3>Кузница</h3>
+                </div>
+
+                <div class="privoz-footer-warehouse-data">
+                  <div>
+                    <span>Телефон</span>
+
+                    <a href="tel:+48514750615"> +48 514 750 615 </a>
+                  </div>
+
+                  <div>
+                    <span>Время работы</span>
+
+                    <p>Пн–Пт 08:00–17:00</p>
+                  </div>
+
+                  <div>
+                    <span>Адрес</span>
+
+                    <p>
+                      ul. Sokólska 39,<br />
+                      16-123 Kuźnica
+                    </p>
+                  </div>
+                </div>
+
+                <a
+                  href="https://goo.gl/maps/syasMwYNUJsmpZR57"
+                  class="privoz-footer-map-button"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span> Посмотреть в Google картах </span>
+
+                  <span> ↗ </span>
+                </a>
+              </article>
+
+              <!-- BIALYSTOK -->
+
+              <article class="privoz-footer-warehouse">
+                <div>
+                  <span class="privoz-footer-label"> Склад </span>
+
+                  <h3>Белосток</h3>
+                </div>
+
+                <div class="privoz-footer-warehouse-data">
+                  <div>
+                    <span>Телефон</span>
+
+                    <a href="tel:+48516323116"> +48 516 323 116 </a>
+                  </div>
+
+                  <div>
+                    <span>Время работы</span>
+
+                    <p>
+                      Пн–Пт 08:00–17:00<br />
+                      Сб 08:00–13:00
+                    </p>
+                  </div>
+
+                  <div>
+                    <span>Адрес</span>
+
+                    <p>
+                      ul. Ciesielska 2 lok.22,<br />
+                      15-542 Białystok
+                    </p>
+                  </div>
+                </div>
+
+                <a
+                  href="https://goo.gl/maps/bvbyAB58YfTNAzuY7"
+                  class="privoz-footer-map-button"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span> Посмотреть в Google картах </span>
+
+                  <span> ↗ </span>
+                </a>
+              </article>
+
+              <!-- BIALA PODLASKA -->
+
+              <article class="privoz-footer-warehouse">
+                <div>
+                  <span class="privoz-footer-label"> Склад </span>
+
+                  <h3>Бяла-Подляска</h3>
+                </div>
+
+                <div class="privoz-footer-warehouse-data">
+                  <div>
+                    <span>Телефон</span>
+
+                    <a href="tel:+48514065495"> +48 514 065 495 </a>
+                  </div>
+
+                  <div>
+                    <span>Время работы</span>
+
+                    <p>
+                      Пн–Пт 08:00–16:00<br />
+                      Сб 08:00–13:00
+                    </p>
+                  </div>
+
+                  <div>
+                    <span>Адрес</span>
+
+                    <p>
+                      ul. Sidorska 2D,<br />
+                      21-500 Biała Podlaska
+                    </p>
+                  </div>
+                </div>
+
+                <a
+                  href="https://maps.app.goo.gl/sDS6HV8wojLu6Xtd9"
+                  class="privoz-footer-map-button"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span> Посмотреть в Google картах </span>
+
+                  <span> ↗ </span>
+                </a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================
+         3. DOCUMENTS
+    ====================================================== -->
+
+        <section class="privoz-footer-section privoz-footer-section-documents">
+          <div class="privoz-footer-section-inner">
+            <div class="privoz-footer-head">
+              <h2>Документы</h2>
+            </div>
+
+            <div class="privoz-footer-documents">
+              <div class="privoz-footer-document-links">
+                <a
+                  href="https://privoz.pl/regulamin_strony_ru_pl_wer.05.10.23.pdf"
+                >
+                  <span> Регламент компании </span>
+
+                  <span> ↗ </span>
+                </a>
+
+                <a href="https://privoz.pl/x.rodo_ru_pl_wer.05.10.23.pdf">
+                  <span> Политика конфиденциальности RODO </span>
+
+                  <span> ↗ </span>
+                </a>
+
+                <a href="https://privoz.pl/tariffs_ru_pl_v50.pdf">
+                  <span> Тарифы компании </span>
+
+                  <span> ↗ </span>
+                </a>
+              </div>
+
+              <a
+                href="https://wizytowka.rzetelnafirma.pl/DAVNOGDW"
+                class="privoz-footer-trust-card"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="privoz-footer-label"> Проверенная компания </span>
+
+                <div class="privoz-footer-rzetelna-logo">
+                  <img src="images/rz.svg" alt="Rzetelna Firma" />
+                </div>
+
+                <span class="privoz-footer-trust-link">
+                  Проверить компанию ↗
+                </span>
+              </a>
+            </div>
+
+            <div class="privoz-footer-bottom">
+              <div class="privoz-footer-bottom-brand">
+                <img src="images/logo.svg" alt="Privoz" />
+              </div>
+
+              <p>
+                © 2016–<span id="current-year"></span> Privoz Sp. z o.o. Все
+                права защищены.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="catalog.js"></script>
+    <!-- CONSULTATION MODAL -->
+    <div class="consult-modal" id="consultModal" aria-hidden="true">
+      <div class="consult-modal-overlay" data-modal-close></div>
+
+      <div
+        class="consult-modal-window"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="consultModalTitle"
+        tabindex="-1"
+      >
+        <button
+          class="consult-modal-close"
+          type="button"
+          aria-label="Закрыть"
+          data-modal-close
+        >
+          ×
+        </button>
+
+        <h2 id="consultModalTitle">Оставить заявку</h2>
+
+        <p class="consult-modal-description">
+          Расскажите, как с вами связаться. Наш специалист ответит на ваши
+          вопросы.
+        </p>
+
+        <form id="consultModalForm" method="post">
+          <div class="consult-modal-field">
+            <label for="consultName">Ваше имя *</label>
+            <input
+              id="consultName"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="Имя"
+              required
+            />
+          </div>
+
+          <div class="consult-modal-field">
+            <label for="consultPhone">Номер телефона *</label>
+            <input
+              id="consultPhone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              placeholder="+48 000 000 000"
+              minlength="7"
+              required
+            />
+          </div>
+
+          <label class="consult-modal-consent">
+            <input type="checkbox" name="consent" value="yes" required />
+            <span>
+              Я согласен(на) на обработку персональных данных в соответствии с
+              <a
+                href="/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Политикой конфиденциальности </a
+              >.
+            </span>
+          </label>
+
+          <button class="consult-modal-submit" type="submit">
+            Отправить заявку <span>↗</span>
+          </button>
+
+          <p
+            class="consult-modal-status"
+            id="consultModalStatus"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -109,22 +109,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const steps = document.querySelectorAll(".export-process-step");
 
   function updateProcess() {
-    if (!processSection || !progress || !marker) {
-      return;
-    }
+    if (!processSection || !progress || !marker) return;
 
-    const rect = processSection.getBoundingClientRect();
+    const maxScroll = processScroll.scrollWidth - processScroll.clientWidth;
 
-    const start = window.innerHeight * 0.85;
-
-    const finish = -rect.height * 0.15;
-
-    const rawProgress = (start - rect.top) / (start - finish);
-
-    const value = Math.max(0, Math.min(rawProgress, 1));
+    const value = maxScroll > 0 ? processScroll.scrollLeft / maxScroll : 1;
 
     progress.style.width = `${value * 100}%`;
-
     marker.style.left = `${value * 100}%`;
 
     steps.forEach((step, index) => {
@@ -135,39 +126,71 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ======================================================
-     HORIZONTAL PROCESS SCROLL
-  ====================================================== */
+   PINNED HORIZONTAL PROCESS SCROLL — FIX
+====================================================== */
 
   const processScroll = document.querySelector(".export-process-scroll");
 
-  if (processScroll && window.innerWidth > 768) {
-    processScroll.addEventListener(
-      "wheel",
-      (event) => {
-        const maxScroll = processScroll.scrollWidth - processScroll.clientWidth;
+  const processContainer = processSection?.querySelector(
+    ".export-page-container",
+  );
 
-        if (maxScroll <= 0) {
-          return;
-        }
+  let processStartY = 0;
+  let processDistance = 0;
+  let processPinned = false;
 
-        const canRight =
-          event.deltaY > 0 && processScroll.scrollLeft < maxScroll;
+  function setupProcessScroll() {
+    if (!processSection || !processScroll || !processContainer) return;
 
-        const canLeft = event.deltaY < 0 && processScroll.scrollLeft > 0;
+    processPinned = window.innerWidth > 768;
 
-        if (!canRight && !canLeft) {
-          return;
-        }
+    processSection.style.height = "";
 
-        event.preventDefault();
+    if (!processPinned) {
+      updateProcess();
+      return;
+    }
 
-        processScroll.scrollLeft += event.deltaY * 0.8;
-      },
-      {
-        passive: false,
-      },
+    const headerHeight =
+      document.querySelector(".site-header")?.getBoundingClientRect().height ||
+      80;
+
+    const availableHeight = window.innerHeight - headerHeight;
+
+    processDistance = Math.max(
+      0,
+      processScroll.scrollWidth - processScroll.clientWidth,
     );
+
+    // Высота экрана + путь горизонтального движения
+    processSection.style.height = `${availableHeight + processDistance}px`;
+
+    // Точка начала горизонтальной прокрутки
+    processStartY =
+      processSection.getBoundingClientRect().top +
+      window.scrollY -
+      headerHeight;
+
+    syncProcessScroll();
   }
+
+  function syncProcessScroll() {
+    if (!processPinned || !processScroll) return;
+
+    const traveled = Math.max(
+      0,
+      Math.min(window.scrollY - processStartY, processDistance),
+    );
+
+    processScroll.scrollLeft = traveled;
+
+    updateProcess();
+  }
+
+  setupProcessScroll();
+
+  window.addEventListener("resize", setupProcessScroll);
+  window.addEventListener("load", setupProcessScroll);
 
   /* ======================================================
      ORBIT
@@ -231,7 +254,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ticking = true;
 
     requestAnimationFrame(() => {
-      updateProcess();
+      if (processPinned) {
+        syncProcessScroll();
+      } else {
+        updateProcess();
+      }
 
       ticking = false;
     });
@@ -244,4 +271,125 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   window.addEventListener("resize", updateProcess);
+});
+
+/* ==========================================
+   EXPORT REQUEST MODAL
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("exportModal");
+  const modalContainer = document.getElementById("exportModalFormContainer");
+  const originalForm = document.querySelector(
+    "#export-request .export-request-form",
+  );
+
+  if (!modal || !modalContainer || !originalForm) return;
+
+  const dialog = modal.querySelector(".export-modal-dialog");
+  let previousFocus = null;
+
+  // Копируем существующую форму
+  const clonedForm = originalForm.cloneNode(true);
+
+  // Убираем дублирование ID полей и обновляем label
+  clonedForm.querySelectorAll("[id]").forEach((element) => {
+    const oldId = element.id;
+    const newId = `${oldId}-modal`;
+
+    element.id = newId;
+
+    clonedForm.querySelectorAll("label[for]").forEach((label) => {
+      if (label.getAttribute("for") === oldId) {
+        label.setAttribute("for", newId);
+      }
+    });
+  });
+
+  clonedForm.classList.remove(
+    "export-reveal-right",
+    "is-visible",
+    "is-success",
+  );
+  clonedForm.style.removeProperty("transition-delay");
+
+  modalContainer.appendChild(clonedForm);
+
+  // Открытие
+  function openModal() {
+    previousFocus = document.activeElement;
+
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+    dialog.focus();
+  }
+
+  // Закрытие
+  function closeModal() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+
+    document.body.style.overflow = "";
+
+    if (previousFocus && previousFocus.isConnected) {
+      previousFocus.focus();
+    }
+  }
+
+  // Кнопки открытия
+  document.querySelectorAll(".export-modal-open").forEach((button) => {
+    button.addEventListener("click", openModal);
+  });
+
+  // Закрытие по кнопке и фону
+  modal.querySelectorAll("[data-export-close]").forEach((element) => {
+    element.addEventListener("click", closeModal);
+  });
+
+  // Escape
+  document.addEventListener("keydown", (event) => {
+    if (!modal.classList.contains("is-open")) return;
+
+    if (event.key === "Escape") {
+      closeModal();
+    }
+
+    if (event.key === "Tab") {
+      const focusable = Array.from(
+        dialog.querySelectorAll(
+          "button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), a[href]",
+        ),
+      ).filter((el) => el.getClientRects().length > 0);
+
+      if (!focusable.length) {
+        event.preventDefault();
+        dialog.focus();
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
+  // Отправка формы в модальном окне
+  clonedForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!clonedForm.reportValidity()) return;
+
+    // Только демонстрация успешного заполнения.
+    // Реальную отправку нужно подключить отдельно.
+    clonedForm.classList.add("is-success");
+  });
 });

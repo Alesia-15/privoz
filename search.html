@@ -628,59 +628,73 @@
           </div>
         </div>
       </section>
+
       <section class="ps-section ps-methods" id="catalog">
         <div class="ps-wrap">
           <span class="ps-eyebrow">ВЫБЕРИТЕ СПОСОБ</span>
+
           <h2>Два способа <em>найти товар</em></h2>
+
           <div class="ps-method-grid">
+            <!-- 01 КАТАЛОГ -->
             <article class="ps-method ps-method-orange">
               <div class="ps-method-number">01 / САМОСТОЯТЕЛЬНО</div>
+
               <div class="ps-method-symbol">⌕</div>
+
               <h3>Каталог товаров</h3>
+
               <p>
-                Ищите товары и производителей по названию. Посмотрите, как будет
-                выглядеть подбор в каталоге.
+                Ищите товары, производителей и поставщиков по названию, модели
+                или артикулу. Просматривайте фотографии, характеристики и
+                доступные предложения.
               </p>
-              <form id="psSearchForm" class="ps-search">
+
+              <form
+                id="psSearchForm"
+                class="ps-search"
+                action="catalog.html"
+                method="get"
+              >
                 <input
+                  type="search"
                   id="psQuery"
-                  placeholder="Товар или производитель"
-                  aria-label="Товар или производитель"
+                  name="q"
+                  placeholder="Название товара, бренд или артикул"
+                  aria-label="Поиск товара или производителя"
+                  autocomplete="off"
                   required
-                /><button type="submit">Найти ↗</button>
+                />
+
+                <button type="submit">
+                  Найти товар
+                  <span>↗</span>
+                </button>
               </form>
             </article>
+
+            <!-- 02 ПОИСК ЧЕРЕЗ МЕНЕДЖЕРА -->
             <article class="ps-method ps-method-light">
               <div class="ps-method-number">02 / ПЕРСОНАЛЬНЫЙ ПОДХОД</div>
+
               <div class="ps-method-symbol">↗</div>
+
               <h3>Поиск по запросу</h3>
+
               <p>
                 Менеджер найдёт товар, производителя или поставщика по вашим
                 требованиям, подберёт аналоги и подготовит предложение.
               </p>
-              <button class="ps-btn consultation-modal-open">
-                Поиск через менеджера <span>↗</span>
+
+              <button type="button" class="ps-btn consultation-modal-open">
+                Поиск через менеджера
+                <span>↗</span>
               </button>
             </article>
           </div>
         </div>
       </section>
-      <section id="psResults" class="ps-section ps-results" hidden>
-        <div class="ps-wrap">
-          <div class="ps-results-heading">
-            <div>
-              <span class="ps-eyebrow">ДЕМО / РЕЗУЛЬТАТЫ</span>
-              <h2 id="psResultsTitle">Результаты поиска</h2>
-            </div>
-            <button id="psCloseResults" class="ps-link">Закрыть ×</button>
-          </div>
-          <p class="ps-demo-note">
-            Демонстрационные данные. Поиск на официальных сайтах и оформление
-            заказа пока не подключены.
-          </p>
-          <div id="psResultContent"></div>
-        </div>
-      </section>
+
       <section class="ps-section ps-process">
         <div class="ps-wrap">
           <span class="ps-eyebrow">ПРОЦЕСС РАБОТЫ</span>
@@ -1357,6 +1371,7 @@
     <script src="script.js"></script>
     <script src="search.js"></script>
     <script src="search-product-card.js"></script>
+    <script src="search_shopping.js"></script>
 
     <!-- CONSULTATION MODAL -->
     <div class="consult-modal" id="consultModal" aria-hidden="true">
