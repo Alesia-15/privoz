@@ -7451,3 +7451,423 @@ a {
 .solutions-section {
   padding-top: max(90px, 6vw);
 }
+
+/* ======================================================
+   ABOUT NUMBERS — NEW DESIGN
+====================================================== */
+
+.about-numbers {
+  position: relative;
+  padding: 110px 0 125px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(255, 104, 30, 0.06),
+      transparent 35%
+    ),
+    #0c0c0c;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.about-numbers-container {
+  width: calc(100% - 100px);
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+/* HEAD */
+
+.about-numbers-head {
+  max-width: 930px;
+  margin-bottom: 65px;
+  text-align: left;
+}
+
+.about-numbers-head .about-section-label {
+  display: block;
+  margin-bottom: 22px;
+
+  color: var(--about-orange);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.about-numbers-title {
+  margin: 0;
+
+  color: #ffffff;
+  font-size: clamp(46px, 5vw, 72px);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+}
+
+.about-numbers-title span {
+  display: block;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ======================================================
+   GRID — 3 COLUMNS
+====================================================== */
+
+.about-numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* CARD */
+
+.about-number-item {
+  position: relative;
+  min-width: 0;
+  min-height: 205px;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: #191919;
+  border: 1px solid rgba(255, 255, 255, 0.055);
+
+  clip-path: polygon(
+    12px 0,
+    100% 0,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    0 100%,
+    0 12px
+  );
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.about-number-item:hover {
+  background: #222222;
+  transform: translateY(-4px);
+}
+
+/* Orange decorative line */
+
+.about-number-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 30px;
+
+  width: 35px;
+  height: 2px;
+
+  background: var(--about-orange);
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.about-number-item:hover::before {
+  transform: scaleX(1);
+}
+
+/* NUMBER */
+
+.about-number-value {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  gap: 8px;
+  min-width: 0;
+}
+
+.about-number-counter {
+  display: inline-block;
+  white-space: nowrap;
+
+  color: #ffffff;
+  font-size: clamp(38px, 3.5vw, 58px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+
+  font-variant-numeric: tabular-nums;
+}
+
+.about-number-suffix {
+  flex-shrink: 0;
+
+  color: var(--about-orange);
+  font-size: clamp(18px, 1.65vw, 25px);
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* FIRST CARD */
+
+.about-number-item-large .about-number-counter {
+  color: var(--about-orange);
+}
+
+.about-number-item-large .about-number-suffix {
+  color: #ffffff;
+}
+
+/* DESCRIPTION */
+
+.about-number-item p {
+  max-width: 300px;
+  margin: 25px 0 0;
+
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+/* ======================================================
+   INFRASTRUCTURE
+====================================================== */
+
+.about-numbers-infrastructure {
+  position: relative;
+  margin-top: 14px;
+  padding: 34px 38px 40px;
+
+  background:
+    linear-gradient(
+      115deg,
+      rgba(255, 104, 30, 0.075),
+      rgba(255, 255, 255, 0.025) 70%
+    ),
+    #191919;
+
+  border: 1px solid rgba(255, 104, 30, 0.13);
+
+  clip-path: polygon(
+    14px 0,
+    100% 0,
+    100% calc(100% - 14px),
+    calc(100% - 14px) 100%,
+    0 100%,
+    0 14px
+  );
+}
+
+.about-numbers-infrastructure-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding-bottom: 28px;
+  margin-bottom: 30px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.about-numbers-infrastructure-head span:first-child {
+  color: var(--about-orange);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.about-numbers-infrastructure-head span:last-child {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+/* TWO COLUMNS */
+
+.about-numbers-infrastructure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 45px;
+}
+
+.about-infrastructure-item {
+  min-width: 0;
+}
+
+.about-infrastructure-item + .about-infrastructure-item {
+  padding-left: 45px;
+  border-left: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.about-infrastructure-item .about-number-counter {
+  font-size: clamp(48px, 4.2vw, 70px);
+}
+
+.about-infrastructure-item .about-number-suffix {
+  font-size: clamp(19px, 2vw, 27px);
+}
+
+.about-infrastructure-item p {
+  margin: 17px 0 0;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ======================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 1120px) {
+  .about-numbers {
+    padding: 95px 0 105px;
+  }
+
+  .about-numbers-container {
+    width: calc(100% - 50px);
+  }
+
+  .about-numbers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-number-counter {
+    font-size: clamp(40px, 5vw, 58px);
+  }
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 768px) {
+  .about-numbers {
+    padding: 75px 0 85px;
+  }
+
+  .about-numbers-container {
+    width: calc(100% - 32px);
+  }
+
+  .about-numbers-head {
+    margin-bottom: 45px;
+  }
+
+  .about-numbers-title {
+    font-size: clamp(39px, 11vw, 54px);
+  }
+
+  .about-numbers-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .about-number-item {
+    min-height: 155px;
+    padding: 25px;
+  }
+
+  .about-number-counter {
+    font-size: clamp(40px, 10vw, 58px);
+  }
+
+  .about-number-suffix {
+    font-size: 20px;
+  }
+
+  .about-number-item p {
+    margin-top: 18px;
+    font-size: 13px;
+  }
+
+  /* INFRASTRUCTURE */
+
+  .about-numbers-infrastructure {
+    margin-top: 10px;
+    padding: 28px 25px;
+  }
+
+  .about-numbers-infrastructure-head {
+    margin-bottom: 25px;
+    padding-bottom: 22px;
+  }
+
+  .about-numbers-infrastructure-head span:last-child {
+    display: none;
+  }
+
+  .about-numbers-infrastructure-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-infrastructure-item + .about-infrastructure-item {
+    padding: 25px 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+  }
+
+  .about-infrastructure-item .about-number-counter {
+    font-size: clamp(43px, 11vw, 60px);
+  }
+
+  .about-infrastructure-item .about-number-suffix {
+    font-size: 20px;
+  }
+
+  .about-infrastructure-item p {
+    font-size: 13px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  .about-number-item {
+    padding: 22px 18px;
+  }
+
+  .about-number-counter {
+    font-size: 37px;
+  }
+
+  .about-number-suffix {
+    font-size: 17px;
+  }
+
+  .about-infrastructure-item .about-number-counter {
+    font-size: 40px;
+  }
+}
+
+/* Цветовая переменная для перенесённого блока */
+.about-numbers {
+  --about-orange: #ff681e;
+  color: #ffffff;
+}
+
+/* Чтобы общие стили страницы партнёров не меняли заголовок */
+.pp-page .about-numbers-title {
+  color: #ffffff;
+  font-size: clamp(46px, 5vw, 72px);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+  margin: 0;
+}
+
+.pp-page .about-numbers-title span {
+  display: block;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .pp-page .about-numbers-title {
+    font-size: clamp(39px, 11vw, 54px);
+  }
+}

@@ -931,3 +931,239 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Ошибка загрузки логотипов партнёров:", error);
   }
 });
+
+/* ======================================================
+   NUMBER COUNTERS — AUTOMATIC STATISTICS
+====================================================== */
+
+// НАСТРОЙКИ
+
+const statisticsSettings = {
+  // Дата основания компании
+  foundedDate: "2016-09-27",
+
+  // Общая дата начала отсчёта статистики
+  ordersStartDate: "2026-10-13",
+
+  // Выполненные заказы
+  initialOrders: 396604,
+  ordersPerDay: 1,
+
+  // Розничные клиенты
+  initialRetail: 34127,
+  retailPerDay: 1,
+
+  // B2B-клиенты
+  initialB2B: 726,
+  b2bPerWeek: 1,
+
+  // Проверенные поставщики
+  initialSuppliers: 1285,
+  suppliersPerWeek: 1,
+};
+
+/* ======================================================
+   DATE HELPERS
+====================================================== */
+
+function parseCalendarDate(dateString) {
+  const [year, month, day] = dateString.split("-").map(Number);
+
+  return Date.UTC(year, month - 1, day);
+}
+
+function getTodayUTCDate() {
+  const now = new Date();
+
+  return Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+}
+
+/* ======================================================
+   YEARS SINCE FOUNDATION
+====================================================== */
+
+function calculateCompanyYears() {
+  const now = new Date();
+
+  const [year, month, day] = statisticsSettings.foundedDate
+    .split("-")
+    .map(Number);
+
+  let years = now.getFullYear() - year;
+
+  const anniversaryPassed =
+    now.getMonth() + 1 > month ||
+    (now.getMonth() + 1 === month && now.getDate() >= day);
+
+  if (!anniversaryPassed) {
+    years--;
+  }
+
+  return Math.max(0, years);
+}
+
+/* ======================================================
+   AUTOMATIC ORDER GROWTH
+====================================================== */
+
+function calculateOrders() {
+  const startDate = parseCalendarDate(statisticsSettings.ordersStartDate);
+
+  const today = getTodayUTCDate();
+
+  const daysPassed = Math.max(0, Math.floor((today - startDate) / 86400000));
+
+  return (
+    statisticsSettings.initialOrders +
+    daysPassed * statisticsSettings.ordersPerDay
+  );
+}
+
+/* ======================================================
+   NUMBER FORMATTING
+====================================================== */
+
+function formatNumber(value) {
+  return value.toLocaleString("ru-RU").replace(/\u00a0|\u202f/g, " ");
+}
+
+/* ======================================================
+   ANIMATION
+====================================================== */
+
+const counters = document.querySelectorAll(
+  ".about-number-counter[data-number]",
+);
+
+const animatedCounters = new WeakSet();
+
+function getCounterTarget(counter) {
+  const statType = counter.dataset.stat;
+
+  // Годы работы компании
+  if (statType === "years") {
+    return calculateCompanyYears();
+  }
+
+  // Количество дней с базовой даты
+  const startDate = parseCalendarDate(statisticsSettings.ordersStartDate);
+
+  const today = getTodayUTCDate();
+
+  const daysPassed = Math.max(0, Math.floor((today - startDate) / 86400000));
+
+  // Количество полных недель
+  const weeksPassed = Math.floor(daysPassed / 7);
+
+  switch (statType) {
+    case "orders":
+      return (
+        statisticsSettings.initialOrders +
+        daysPassed * statisticsSettings.ordersPerDay
+      );
+
+    case "retail":
+      return (
+        statisticsSettings.initialRetail +
+        daysPassed * statisticsSettings.retailPerDay
+      );
+
+    case "b2b":
+      return (
+        statisticsSettings.initialB2B +
+        weeksPassed * statisticsSettings.b2bPerWeek
+      );
+
+    case "suppliers":
+      return (
+        statisticsSettings.initialSuppliers +
+        weeksPassed * statisticsSettings.suppliersPerWeek
+      );
+
+    default:
+      return Number(counter.dataset.number);
+  }
+}
+
+function animateCounter(counter) {
+  if (animatedCounters.has(counter)) return;
+
+  animatedCounters.add(counter);
+
+  const target = getCounterTarget(counter);
+
+  if (!Number.isFinite(target)) return;
+
+  if (prefersReducedMotion) {
+    counter.textContent = formatNumber(target);
+    return;
+  }
+
+  const duration = 1600;
+  const startTime = performance.now();
+
+  function animate(currentTime) {
+    const progress = Math.min((currentTime - startTime) / duration, 1);
+
+    const eased = 1 - Math.pow(1 - progress, 4);
+
+    const current = Math.round(target * eased);
+
+    counter.textContent = formatNumber(current);
+
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    } else {
+      counter.textContent = formatNumber(target);
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+
+/* ======================================================
+   OBSERVER
+====================================================== */
+
+if (counters.length) {
+  // Сразу устанавливаем актуальные значения
+  counters.forEach((counter) => {
+    const target = getCounterTarget(counter);
+
+    if (Number.isFinite(target)) {
+      counter.textContent = formatNumber(target);
+    }
+  });
+
+  const counterObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        animateCounter(entry.target);
+
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.25,
+    },
+  );
+
+  counters.forEach((counter) => {
+    counterObserver.observe(counter);
+  });
+
+  // Обновляем значения, если страница долго открыта
+  setInterval(() => {
+    counters.forEach((counter) => {
+      if (!animatedCounters.has(counter)) return;
+
+      const target = getCounterTarget(counter);
+
+      if (Number.isFinite(target)) {
+        counter.textContent = formatNumber(target);
+      }
+    });
+  }, 60000);
+}
