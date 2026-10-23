@@ -1480,3 +1480,42 @@
     transition: none !important;
   }
 }
+
+/* HERO VIDEO */
+
+.quality-page .quality-hero-media-video {
+  padding: 0;
+  overflow: hidden;
+  background: #253433;
+}
+
+.quality-page .quality-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.quality-page .quality-hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(37, 52, 51, 0.02) 0%,
+    rgba(37, 52, 51, 0.12) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .quality-page .quality-hero-media-video {
+    inset: 15px 5px;
+  }
+
+  .quality-page .quality-hero-video {
+    object-position: center;
+  }
+}
