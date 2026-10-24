@@ -595,15 +595,20 @@
             <div class="retail-hero-shape retail-hero-shape-back"></div>
             <div class="retail-hero-shape retail-hero-shape-middle"></div>
 
-            <div class="retail-hero-card">
-              <div class="retail-hero-card-frame">
-                <span class="retail-visual-kicker">IMAGE / VIDEO</span>
+            <div class="retail-hero-card retail-hero-card-video">
+              <video
+                class="retail-hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              >
+                <source src="videos/retail.mp4" type="video/mp4" />
+                Ваш браузер не поддерживает видео.
+              </video>
 
-                <h3>
-                  Покупки у производителей <br />
-                  и в интернет-магазинах
-                </h3>
-              </div>
+              <div class="retail-hero-video-overlay"></div>
             </div>
           </div>
         </div>

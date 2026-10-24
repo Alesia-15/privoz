@@ -2434,3 +2434,20 @@
     font-size: 14px;
   }
 }
+
+/* =========================================
+   EXPORT — HERO VIDEO
+========================================= */
+
+.export-page .export-hero-video {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  background: #244651;
+}
+
+@media (max-width: 768px) {
+  .export-page .export-hero-video {
+    object-position: center;
+  }
+}

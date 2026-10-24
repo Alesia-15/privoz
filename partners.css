@@ -877,3 +877,61 @@
   border-color: rgba(255, 255, 255, 0.4);
   color: #fff;
 }
+
+/* ======================================================
+   PARTNERS — CONTACT LOGO
+====================================================== */
+
+.pp-contact-logo {
+  display: flex;
+  align-items: center;
+
+  width: fit-content;
+  max-width: 100%;
+
+  margin-top: 42px;
+  padding-top: 30px;
+
+  border-top: 1px solid #dedede;
+}
+
+.pp-contact-logo img {
+  display: block;
+
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+
+/* Небольшой эффект при наведении */
+.pp-contact-logo:hover img {
+  transform: translateX(5px);
+}
+
+/* Планшеты */
+@media (max-width: 1120px) {
+  .pp-contact-logo {
+    margin-top: 35px;
+    padding-top: 25px;
+  }
+
+  .pp-contact-logo img {
+    width: 230px;
+  }
+}
+
+/* Телефоны */
+@media (max-width: 768px) {
+  .pp-contact-logo {
+    margin-top: 30px;
+    padding-top: 22px;
+  }
+
+  .pp-contact-logo img {
+    width: 200px;
+  }
+}

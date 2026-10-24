@@ -1834,3 +1834,43 @@
     width: 100%;
   }
 }
+
+/* =========================================
+   RETAIL — HERO VIDEO
+========================================= */
+
+.retail-main .retail-hero-card-video {
+  position: absolute;
+  overflow: hidden;
+  background: #2f3b25;
+}
+
+.retail-main .retail-hero-video {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.retail-main .retail-hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    180deg,
+    rgba(47, 59, 37, 0.02) 0%,
+    rgba(47, 59, 37, 0.12) 100%
+  );
+}
+
+@media (max-width: 900px) {
+  .retail-main .retail-hero-video {
+    object-position: center;
+  }
+}

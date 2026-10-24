@@ -1496,3 +1496,47 @@
     transition: none !important;
   }
 }
+
+/* =========================================
+   EXPERT — HERO VIDEO
+========================================= */
+
+.expert-page .expert-hero-media-video {
+  padding: 0;
+  overflow: hidden;
+  background: #422b29;
+}
+
+.expert-page .expert-hero-video {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.expert-page .expert-hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    180deg,
+    rgba(66, 43, 41, 0.02) 0%,
+    rgba(66, 43, 41, 0.12) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .expert-page .expert-hero-media-video {
+    inset: 15px 5px;
+  }
+
+  .expert-page .expert-hero-video {
+    object-position: center;
+  }
+}
